@@ -1,0 +1,162 @@
+/* Styles généraux */
+.home-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.intro {
+    background-color: #008080;
+    color: white;
+    padding: 50px 20px;
+}
+
+.intro h1 {
+    font-size: 3rem;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.about-us {
+    background-color: #f4f4f4;
+    padding: 30px;
+}
+
+.about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.services-preview {
+    padding: 40px;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.service-item {
+    background-color: #e0e0e0;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    color: #008080;
+}
+
+.service-item p {
+    font-size: 1rem;
+}
+
+.btn-services,
+.btn-realisations,
+.btn-contact {
+    background-color: #008080;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-services:hover,
+.btn-realisations:hover,
+.btn-contact:hover {
+    background-color: #006666;
+}
+
+.contact-cta {
+    padding: 40px;
+    background-color: #008080;
+    color: white;
+}
+
+.contact-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+    }
+
+    .service-item {
+        width: 220px;
+        padding: 15px;
+    }
+
+    .btn-services,
+    .btn-realisations,
+    .btn-contact {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .intro {
+        padding: 30px 15px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .about-us {
+        padding: 20px;
+    }
+
+    .about-us h2 {
+        font-size: 1.8rem;
+    }
+
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 90%;
+    }
+
+    .btn-services,
+    .btn-realisations,
+    .btn-contact {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .contact-cta {
+        padding: 30px;
+    }
+
+    .contact-cta h2 {
+        font-size: 1.5rem;
+    }
+}

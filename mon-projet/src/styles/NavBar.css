@@ -1,0 +1,196 @@
+/* Styles généraux de la navbar */
+.navbar {
+    position: relative;
+    background-image: url("../assets/photos/architecture-1853096_1920.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Conteneur pour le logo et les liens */
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Style du logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Style des liens de navigation (Desktop) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour chaque lien */
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+/* Menu Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hamburger to X transformation */
+.navbar.active .hamburger .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+    background-color: white;
+    z-index: 1;
+}
+
+.navbar.active .hamburger .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar.active .hamburger .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+    background-color: white;
+    z-index: 1;
+}
+
+/* Style du menu burger en mode mobile */
+@media screen and (max-width: 768px) {
+
+    /* Menu Burger - Changer la couleur de fond du navbar quand le menu est ouvert */
+    .navbar.active {
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Fond noir transparent */
+    }
+
+    /* Cacher les liens de navigation par défaut en mode mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        /* Faire en sorte que le menu prenne toute la hauteur */
+        text-align: center;
+        margin-top: 0;
+        /* Supprimer l'espace au-dessus */
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #000000d4;
+        /* Fond noir pour le menu */
+        padding: 20px;
+        border-radius: 0;
+        /* Enlever les coins arrondis */
+        transition: all 0.3s ease;
+    }
+
+    /* Affichage du menu burger et des liens quand le menu est actif */
+    .navbar.active .nav-links {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        opacity: 1; 
+    }
+
+    /* Affiche le menu hamburger sur mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Animation pour les liens */
+    .nav-links li {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    .nav-links li:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+
+    .nav-links li:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .nav-links li:nth-child(4) {
+        animation-delay: 0.5s;
+    }
+
+    /* Centrer verticalement les liens dans le menu */
+    .nav-links {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Animation des liens (apparaître en fondu) */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
