@@ -1,30 +1,30 @@
 /* Styles généraux de la navbar */
 .navbar {
-    position: relative;
-    background-image: url("../assets/photos/architecture-1853096_1920.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 20px;
-    transition: background-color 0.3s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(12, 57, 87, 0.6);
+    /* Utilisation de la couleur du background principal */
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
-/* Conteneur pour le logo et les liens */
+/* Effet de scroll */
+.navbar.scrolled {
+    background-color: rgba(12, 57, 87, 0.9);
+    /* Couleur plus foncée lors du scroll */
+    padding: 10px 0;
+}
+
+/* Conteneur du logo et des liens */
 .navbar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     max-width: 1200px;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: auto;
 }
 
 /* Style du logo */
@@ -44,6 +44,7 @@
     width: 50px;
     height: 50px;
     margin-right: 10px;
+    object-fit: contain;
 }
 
 .logo span {
@@ -67,25 +68,32 @@
 
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
+    /* Utilisation de la couleur du texte définie dans style.css */
     font-size: 1.1rem;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #ffcc00;
+/* Ajout d'un style pour le lien actif */
+.nav-link.active {
+    color: var(--link-hover-color);
+    /* Couleur du lien actif */
+    font-weight: bold;
 }
 
-/* Menu Hamburger */
+/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position: relative;
+    /* Position relative pour pouvoir gérer le z-index */
 }
 
+/* Barres du hamburger */
 .hamburger .bar {
     width: 30px;
     height: 3px;
@@ -93,61 +101,83 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hamburger to X transformation */
-.navbar.active .hamburger .bar:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-    background-color: white;
-    z-index: 1;
+/* Transformation des barres quand le menu est ouvert */
+.hamburger.open .bar1 {
+    transform: rotate(45deg);
+    /* Rotation de la première barre */
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    /* Positionne cette barre au-dessus des autres */
 }
 
-.navbar.active .hamburger .bar:nth-child(2) {
+.hamburger.open .bar2 {
     opacity: 0;
-}
-
-.navbar.active .hamburger .bar:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-    background-color: white;
+    /* Masquer la deuxième barre */
     z-index: 1;
+    /* Assurer qu'elle est en dessous de la première barre */
 }
 
-/* Style du menu burger en mode mobile */
-@media screen and (max-width: 768px) {
+.hamburger.open .bar3 {
+    transform: rotate(-45deg);
+    /* Rotation de la troisième barre */
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    /* Positionne cette barre au-dessus des autres */
+}
 
-    /* Menu Burger - Changer la couleur de fond du navbar quand le menu est ouvert */
-    .navbar.active {
-        background-color: rgba(0, 0, 0, 0.8);
-        /* Fond noir transparent */
+/* Bouton de fermeture dans le menu mobile */
+.close-btn {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 10;
+    /* La croix se positionne au-dessus de tout le reste */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    /* Cacher la croix au départ */
+}
+
+/* Affiche la croix uniquement quand le menu est ouvert */
+.hamburger.open .close-btn {
+    opacity: 1;
+}
+/* Menu Mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 0;
     }
 
-    /* Cacher les liens de navigation par défaut en mode mobile */
     .nav-links {
         display: none;
         flex-direction: column;
         gap: 20px;
         width: 100%;
-        height: 100%;
-        /* Faire en sorte que le menu prenne toute la hauteur */
+        height: 100vh;
         text-align: center;
-        margin-top: 0;
-        /* Supprimer l'espace au-dessus */
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #000000d4;
-        /* Fond noir pour le menu */
-        padding: 20px;
-        border-radius: 0;
-        /* Enlever les coins arrondis */
+        background-color: rgba(12, 57, 87, 0.9);
+        /* Utilisation de la couleur du background lors de l’ouverture du menu */
+        justify-content: center;
+        align-items: center;
         transition: all 0.3s ease;
     }
 
-    /* Affichage du menu burger et des liens quand le menu est actif */
-    .navbar.active .nav-links {
+    .nav-links.open {
         display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        opacity: 1; 
+        position: fixed;
+        z-index: 1000;
+
     }
 
     /* Affiche le menu hamburger sur mobile */
@@ -155,42 +185,19 @@
         display: flex;
     }
 
-    /* Animation pour les liens */
-    .nav-links li {
-        opacity: 0;
-        animation: fadeIn 0.5s ease forwards;
-    }
-
-    .nav-links li:nth-child(1) {
-        animation-delay: 0.2s;
-    }
-
-    .nav-links li:nth-child(2) {
-        animation-delay: 0.3s;
-    }
-
-    .nav-links li:nth-child(3) {
-        animation-delay: 0.4s;
-    }
-
-    .nav-links li:nth-child(4) {
-        animation-delay: 0.5s;
-    }
-
-    /* Centrer verticalement les liens dans le menu */
-    .nav-links {
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-/* Animation des liens (apparaître en fondu) */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
+    /* Bouton de fermeture dans le menu mobile */
+    .close-btn {
+        display: inline-block;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        z-index: 1100;
+        /* Assure que la croix soit au-dessus du menu */
     }
 }

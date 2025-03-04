@@ -1,27 +1,19 @@
-import { Link } from "react-router-dom";
-import "../styles/Home.css"; // Assure-toi d'avoir un fichier CSS pour les styles
+import React from "react";
+import About from "../components/About";
+import HomeServices from "../components/HomeServices";
+import HomeContact from "../components/HomeContact";
+import "../styles/Home.css";
+import imageSrc from "../assets/photos/architecture-1853096_1920.webp"; // Remplace par le chemin réel de ton image
 
 function Home() {
   return (
     <main className="home-container">
-      {/* Section principale */}
+      <img src={imageSrc} alt="Description de l'image" className="home-image" />
 
-      <section className="about-us"></section>
-
-      {/* Services */}
-      <section className="services-preview">
-        <Link to="/services" className="btn-services">
-          Découvrez tous nos services
-        </Link>
-      </section>
-
-      {/* Contact */}
-      <section className="contact-cta">
-        <h2>Vous souhaitez en savoir plus ?</h2>
-        <Link to="/contact" className="btn-contact">
-          Contactez-nous
-        </Link>
-      </section>
+      {/* Composants */}
+      <About />
+      <HomeServices />
+      <HomeContact />
     </main>
   );
 }
