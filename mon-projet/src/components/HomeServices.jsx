@@ -4,7 +4,9 @@ import "../styles/HomeServices.css";
 const HomeServices = () => {
   return (
     <section className="home-services-container">
-      <h2>Nos Services</h2>
+      <div className="home-services-title">
+        <h1>Nos Services</h1>
+      </div>
       <div className="services">
         <div className="service-item">
           <h3>Arrosage automatique</h3>
