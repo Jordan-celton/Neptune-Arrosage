@@ -5,7 +5,7 @@ const HomeContact = () => {
   return (
     <section className="home-contact-container">
       <div className="home-contact-title">
-        <h1>Contactez-nous</h1>
+        <h1>Contact</h1>
       </div>
       <div className="home-contact-content">
         <p>

@@ -1,52 +1,124 @@
-.about-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-.about-title {
-    margin-right: 30px;
+/* About Section Styles */
+.about-container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-title h1 {
-    transform: rotate(-90deg);
-    white-space: nowrap;
-    margin: 0;
-    font-size: 2em;
+    font-size: 48px;
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .about-content {
-    max-width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    max-width: 45%;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    color: var(--title-color);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #7f8c8d;
     line-height: 1.6;
 }
 
-.about-content ul {
+.about-image {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+.about-section {
+    margin-bottom: 60px;
+}
+
+.about-section h3 {
+    font-size: 28px;
+    color: var(--title-color);
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.about-section ul {
     list-style-type: none;
     padding-left: 0;
 }
 
+.about-section ul li {
+    font-size: 16px;
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+.about-content.reverse {
+    flex-direction: row-reverse;
+}
+
 @media (max-width: 768px) {
-    .about-container {
+
+    .about-content,
+    .about-content.reverse {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 10px;
+        align-items: center;
     }
 
-    .about-title {
-        margin-right: 0;
-        margin-bottom: 20px;
+    .about-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .about-image {
+        max-width: 100%;
+        margin-bottom: 30px;
     }
 
     .about-title h1 {
-        transform: none;
-        white-space: normal;
-        font-size: 1.5em;
+        font-size: 36px;
     }
 
-    .about-content {
-        max-width: 100%;
+    .about-text h2 {
+        font-size: 28px;
+    }
+
+    .about-section h3 {
+        font-size: 24px;
     }
 }
