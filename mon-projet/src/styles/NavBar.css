@@ -107,8 +107,9 @@
     /* Rotation de la première barre */
     position: absolute;
     top: 0;
-    z-index: 2;
+    z-index: 10000;
     /* Positionne cette barre au-dessus des autres */
+    color: wheat;
 }
 
 .hamburger.open .bar2 {
@@ -123,8 +124,9 @@
     /* Rotation de la troisième barre */
     position: absolute;
     bottom: 0;
-    z-index: 2;
+    z-index: 10000;
     /* Positionne cette barre au-dessus des autres */
+    color: wheat;
 }
 
 /* Bouton de fermeture dans le menu mobile */

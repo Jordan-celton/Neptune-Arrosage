@@ -1,138 +1,84 @@
-/* Mise en forme du conteneur principal */
+/* Section principale du contact */
 .home-contact-container {
     background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
     padding: 40px 20px;
-    box-sizing: border-box;
-    min-height: 100vh;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    color: var(--text-color);
 }
 
-/* Titre de la section Contact */
+/* Titre principal */
 .home-contact-title h1 {
     font-size: 2.5rem;
     color: var(--title-color);
     margin-bottom: 20px;
 }
 
-/* Contenu de la section Contact */
-.home-contact-content {
-    background-color: var(--background-color);
-    padding: 40px;
-    border-radius: 10px;
-    border: 1px solid #ecf0f1;
-    max-width: 1200px;
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-/* Texte d'introduction */
+/* Texte de présentation */
 .home-contact-content p {
-    font-size: 1.2rem;
-    color: #7f8c8d !important;
-    margin-bottom: 30px;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
 }
 
-/* Détails de contact en grille */
+/* Conteneur des informations de contact */
 .contact-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Item de contact */
+/* Éléments individuels de contact */
 .contact-item {
-    background-color: wheat;
-    padding: 20px;
+    background: var(--subtitle-color);
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
+.contact-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Titres des éléments */
 .contact-item h3 {
-    font-size: 1.5rem;
-    color: var(--subtitle-color);
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--button-color);
+    margin-bottom: 5px;
 }
 
+/* Texte des éléments */
 .contact-item p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text-color);
 }
 
-/* Liens interactifs */
+/* Liens (email et téléphone) */
 .contact-item a {
-    color: var(--link-color);
     text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
 }
 
 .contact-item a:hover {
     color: var(--link-hover-color);
+    text-decoration: underline;
 }
 
-/* Style responsive */
-@media (max-width: 768px) {
+/* Adaptation responsive */
+@media (max-width: 600px) {
+    .home-contact-container {
+        padding: 20px;
+    }
 
-    /* Réduire la taille du titre et du texte d'introduction */
     .home-contact-title h1 {
         font-size: 2rem;
     }
 
-    .home-contact-content p {
-        font-size: 1rem;
-    }
-
-    /* Ajustement de la grille pour les petits écrans */
-    .contact-details {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Réduire les marges et les padding pour les petits écrans */
-    .home-contact-container {
-        padding: 20px 10px;
-    }
-
-    .home-contact-content {
-        padding: 30px;
-    }
-
-    .contact-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .contact-item p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-contact-title h1 {
-        font-size: 1.8rem;
-    }
-
-    .home-contact-content p {
-        font-size: 0.9rem;
-    }
-
-    .contact-item h3 {
-        font-size: 1.1rem;
-    }
-
-    .contact-item p {
-        font-size: 0.9rem;
-    }
-
-    .home-contact-container {
-        padding: 10px;
-    }
-
-    .home-contact-content {
-        padding: 15px;
+    .contact-item {
+        padding: 12px;
     }
 }
