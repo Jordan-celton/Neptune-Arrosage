@@ -4,6 +4,7 @@ import HomeServices from "../components/HomeServices";
 import HomeContact from "../components/HomeContact";
 import "../styles/Home.css";
 import imageSrc from "../assets/photos/architecture-1853096_1920.webp"; // Remplace par le chemin réel de ton image
+import OurProjects from "../components/OurProjects";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       {/* Composants */}
       <About />
       <HomeServices />
+      <OurProjects />
       <HomeContact />
     </main>
   );

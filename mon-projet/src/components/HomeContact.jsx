@@ -22,7 +22,7 @@ const HomeContact = () => {
           <div className="contact-item">
             <h3>📞 Téléphone</h3>
             <p>
-              <a href="tel:+33234567890">+33 2 34 56 78 90</a>
+              <a href="tel:+33234567890"> 02 34 56 78 90</a>
             </p>
           </div>
 

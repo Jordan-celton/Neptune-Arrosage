@@ -1,112 +1,138 @@
+/* Mise en forme du conteneur principal */
 .home-contact-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    padding: 40px;
-    flex-wrap: wrap;
     background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 
-.home-contact-title {
-    margin-right: 40px;
-}
-
+/* Titre de la section Contact */
 .home-contact-title h1 {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 2.8em;
-    font-weight: bold;
+    font-size: 2.5rem;
     color: var(--title-color);
+    margin-bottom: 20px;
 }
 
+/* Contenu de la section Contact */
 .home-contact-content {
-    max-width: 50%;
+    background-color: var(--background-color);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #ecf0f1;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
+/* Texte d'introduction */
 .home-contact-content p {
     font-size: 1.2rem;
+    color: #7f8c8d !important;
     margin-bottom: 30px;
-    color: var(--text-color);
+    line-height: 1.6;
 }
 
+/* Détails de contact en grille */
 .contact-details {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
+    margin-top: 20px;
 }
 
+/* Item de contact */
 .contact-item {
-    flex: 1 1 calc(50% - 15px);
-    min-width: 250px;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: wheat;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.contact-item:hover {
-    transform: scale(1.05);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .contact-item h3 {
-    font-size: 1.3em;
+    font-size: 1.5rem;
+    color: var(--subtitle-color);
     margin-bottom: 10px;
-    color: var(--button-color);
 }
 
 .contact-item p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--text-color);
 }
 
-.contact-item p a {
-    text-decoration: none;
+/* Liens interactifs */
+.contact-item a {
     color: var(--link-color);
-    font-weight: bold;
+    text-decoration: none;
 }
 
-.contact-item p a:hover {
+.contact-item a:hover {
     color: var(--link-hover-color);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .home-contact-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        height: auto;
-    }
+/* Style responsive */
+@media (max-width: 768px) {
 
-    .home-contact-title {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
+    /* Réduire la taille du titre et du texte d'introduction */
     .home-contact-title h1 {
-        writing-mode: initial;
-        transform: none;
-        font-size: 2.5em;
+        font-size: 2rem;
+    }
+
+    .home-contact-content p {
+        font-size: 1rem;
+    }
+
+    /* Ajustement de la grille pour les petits écrans */
+    .contact-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Réduire les marges et les padding pour les petits écrans */
+    .home-contact-container {
+        padding: 20px 10px;
     }
 
     .home-contact-content {
-        max-width: 100%;
+        padding: 30px;
     }
 
-    .contact-details {
-        flex-direction: column;
-        align-items: center;
+    .contact-item h3 {
+        font-size: 1.2rem;
     }
 
-    .contact-item {
-        width: 80%;
+    .contact-item p {
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 768px) {
-    .contact-item {
-        width: 100%;
+@media (max-width: 480px) {
+    .home-contact-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .home-contact-content p {
+        font-size: 0.9rem;
+    }
+
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+
+    .home-contact-container {
+        padding: 10px;
+    }
+
+    .home-contact-content {
+        padding: 15px;
     }
 }

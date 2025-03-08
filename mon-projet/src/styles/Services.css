@@ -1,0 +1,195 @@
+/* Global Styles */
+:root {
+    --background-color: #0c3957;
+    --subtitle-color: #2A2D29;
+    --title-color: #bdcdd4;
+    --button-color: #D8C5A7;
+    --text-color: #D8C5A7;
+    --link-color: #3498db;
+    --link-hover-color: #2980b9;
+}
+
+/* Container des services */
+.services-container {
+    padding: 80px 5%;
+    text-align: center;
+    background: var(--background-color);
+    margin-bottom: 50px;
+}
+
+/* Titre des services */
+.services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--title-color);
+    margin-bottom: 40px;
+}
+
+/* Grille des services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Carte de chaque service */
+.service-card {
+    background: var(--subtitle-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image de chaque service */
+.service-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Contenu de chaque service */
+.service-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.service-content h3 {
+    margin: 0;
+    color: var(--title-color);
+    font-size: 1.4rem;
+}
+
+.service-content p {
+    color: var(--text-color);
+    margin: 10px 0 20px;
+}
+
+/* Bouton "En savoir plus" */
+.service-btn {
+    display: inline-block;
+    background: var(--button-color);
+    color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.service-btn:hover {
+    background: var(--link-hover-color);
+    color: white;
+}
+
+/* Filtres de service */
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filters button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: var(--button-color);
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.filters button:hover {
+    background-color: var(--link-hover-color);
+    color: white;
+}
+
+/* Témoignages */
+.testimonials {
+    margin-top: 50px;
+    background-color: var(--subtitle-color);
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.testimonial-item {
+    margin-bottom: 30px;
+    font-style: italic;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.testimonial-item h4 {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: var(--title-color);
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-bottom: 30px;
+}
+
+/* Appel à l'action */
+.cta-section {
+    text-align: center;
+    margin-top: 50px;
+    background: var(--link-hover-color);
+    padding: 50px;
+    color: white;
+    border-radius: 10px;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    background-color: var(--button-color);
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: var(--subtitle-color);
+    color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

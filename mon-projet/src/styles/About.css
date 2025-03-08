@@ -7,12 +7,30 @@
 }
 
 /* About Section Styles */
+/* About Section Styles */
 .about-container {
-    padding: 60px 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 30px;
+    position: relative;
+    /* Ajouté pour ::after */
+    width: 80%;
+    text-align: center;
 }
 
+/* Bordure sous le conteneur, plus fine et centrée */
+.about-container::after {
+    content: "";
+    display: block;
+    width: 50%;
+    /* Ajuste la largeur de la bordure */
+    height: 2px;
+    /* Épaisseur plus fine */
+    background: wheat;
+    margin: 20px auto 0;
+    /* Centre la bordure */
+}
 .about-title h1 {
     font-size: 48px;
     color: var(--title-color);
@@ -98,16 +116,15 @@
     .about-content.reverse {
         flex-direction: column;
         align-items: center;
+        margin: 0;
     }
 
     .about-text {
         max-width: 100%;
-        margin-bottom: 30px;
     }
 
     .about-image {
         max-width: 100%;
-        margin-bottom: 30px;
     }
 
     .about-title h1 {
