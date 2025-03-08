@@ -11,7 +11,7 @@
 /* Titre principal */
 .services-title {
     font-size: 2.5rem;
-    color: var(--title-color);
+    color: wheat;
     margin-bottom: 30px;
 }
 
@@ -21,14 +21,13 @@
 }
 
 .filters button {
-    background-color: var(--button-color);
+    background-color: var(--title-color);
     color: black;
     border: none;
     padding: 12px 18px;
     /* Taille plus grande */
     font-size: 1.1rem;
     /* Texte plus grand */
-    font-weight: bold;
     margin: 8px;
     cursor: pointer;
     border-radius: 25px;
