@@ -1,200 +1,85 @@
-/* Conteneur des services */
-.home-services-container {
-    display: flex;
-    align-items: center;
-    /* Centre verticalement */
-    justify-content: center;
-    /* Centre horizontalement */
-    height: auto;
-    padding: 30px;
-    flex-direction: row-reverse;
-    position: relative;
-    padding-bottom: 40px;
+/* Reset général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Bordure en bas du composant */
+/* Conteneur principal */
+.home-services-container {
+    background-color: var(--background-color);
+    text-align: center;
+    position: relative;
+}
+
 .home-services-container::after {
     content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
     width: 50%;
-    height: 2px;
-    background-color: var(--text-color);
+    height: 3px;
+    background-color: wheat;
+    margin: 40px auto 0;
+    border-radius: 5px;
 }
 
-/* Centrer le titre verticalement */
-.home-services-title {
-    display: flex;
-    align-items: center;
-    /* Centre verticalement */
-    justify-content: center;
-    /* Centre horizontalement si nécessaire */
-    height: 100%;
-}
-
-/* Ajustement du texte */
-.home-services-title h1 {
-    transform: rotate(-90deg);
-    white-space: nowrap;
-    margin: 0;
-    text-align: center;
-    /* Assure que le texte est bien centré */
-}
-
-.home-services-title {
-    margin-left: 20px;
-    /* Ajoute de l'espace entre le titre et le contenu */
+/* Titre principal */
+.services-title {
+    font-size: 2.5rem;
+    color: wheat;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 /* Grille des services */
 .services {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    /* Espacement entre les éléments */
-    justify-items: center;
-    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Uniformiser la taille des items */
+/* Carte de service */
 .service-item {
-    width: 100%;
-    min-height: 250px;
-    /* Définir une hauteur minimale */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* Répartir le contenu */
-    padding: 20px;
-    background-color: var(--text-color);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Éviter que le texte ne change la taille des éléments */
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
 .service-item h3 {
-    font-size: 1.5em;
+    font-size: 1.8rem;
+    color: var(--text-color);
     margin-bottom: 15px;
-    color: var(--background-color) !important;
-    flex-grow: 1;
-    /* Permet d'égaliser la hauteur des titres */
 }
 
 .service-item p {
-    font-size: 1em;
-    color: var(--subtitle-color) !important;
-    flex-grow: 2;
-    /* Évite que certains textes ne soient trop courts ou trop longs */
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    line-height: 1.6;
 }
 
-/* Pour les grands écrans, conserver le transform */
-@media (min-width: 1025px) {
-    .service-item:nth-child(odd) {
-        transform: translateY(20px);
-        /* Décalage pour l'élément impair */
-    }
-
-    .service-item:nth-child(even) {
-        transform: translateY(-20px);
-        /* Décalage pour l'élément pair */
-    }
-}
-
-/* Media queries pour la réactivité */
-
-/* À partir de 1024px : 2 colonnes */
-@media (max-width: 1024px) {
-    .home-services-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .home-services-title {
-        margin-left: 0;
-        margin-bottom: 20px;
-    }
-
-    .home-services-title h1 {
-        transform: none;
-        font-size: 2.5em;
-    }
-
-    .services {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 colonnes */
-        gap: 20px;
-    }
-
-    /* Suppression du transform sur les tablettes */
-    .service-item:nth-child(odd),
-    .service-item:nth-child(even) {
-        transform: none;
-        /* Suppression de l'effet translate */
-    }
-}
-
-/* À partir de 768px : 1 colonne */
+/* Responsivité */
 @media (max-width: 768px) {
-    .home-services-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .home-services-title {
-        margin-left: 0;
-        margin-bottom: 20px;
-    }
-
-    .home-services-title h1 {
-        transform: none;
-        font-size: 2em;
-    }
-
     .services {
         grid-template-columns: 1fr;
-        /* 1 colonne */
-        gap: 15px;
     }
 
-    /* Suppression du transform sur les tablettes et mobiles */
-    .service-item:nth-child(odd),
-    .service-item:nth-child(even) {
-        transform: none;
-        /* Suppression de l'effet translate */
-    }
-}
-
-/* À partir de 480px : Réduction des espaces */
-@media (max-width: 480px) {
-    .home-services-container {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
+    .services-title {
+        font-size: 2rem;
     }
 
-    .home-services-title h1 {
-        transform: none;
-        font-size: 1.8em;
-    }
-
-    .services {
-        grid-template-columns: 1fr;
-        /* 1 colonne */
-        gap: 10px;
-    }
-
-    .service-item {
-        padding: 15px;
-    }
-
-    /* Suppression du transform sur les tablettes et mobiles */
-    .service-item:nth-child(odd),
-    .service-item:nth-child(even) {
-        transform: none;
-        /* Suppression de l'effet translate */
+    .home-services-container::after {
+        width: 70%;
+        /* Ajuste la largeur pour les petits écrans */
     }
 }

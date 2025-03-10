@@ -1,89 +1,82 @@
+/* Realisations.css */
+
+/* Grille de réalisations */
 .realisations-container {
-    padding: 40px;
+    padding: 20px;
     background-color: var(--background-color);
 }
 
 .realisations-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
     color: var(--title-color);
-    margin-bottom: 20px;
-}
-
-.realisations-intro {
+    font-size: 2.5rem;
     text-align: center;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .realisations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 .realisations-card {
-    background-color: black;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.realisations-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.realisations-content h3 {
-    font-size: 1.5rem;
-    margin-top: 10px;
+.realisations-card h3 {
     color: var(--title-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
-.realisations-content p {
-    font-size: 1rem;
-    margin-top: 5px;
+.realisations-card p {
     color: var(--text-color);
-}
-
-.testimonials {
-    margin-top: 60px;
-    background-color: black;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-item {
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
-.testimonial-item p {
-    font-size: 1rem;
-    color: var(--text-color);
+.image-grid {
+    display: flex;
+    justify-content: space-between;
 }
 
-.cta-section {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.cta-btn {
-    background-color: var(--button-color);
-    color: black;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    text-decoration: none;
+.realisations-image {
+    width: 32%;
+    height: auto;
+    border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.cta-btn:hover {
-    background-color: var(--link-hover-color);
+.realisations-image:hover {
+    transform: scale(1.05);
+}
+
+/* Modal (agrandir l'image) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -91,12 +84,11 @@
         font-size: 2rem;
     }
 
-    .realisations-intro {
-        font-size: 1rem;
+    .realisations-card {
+        padding: 15px;
     }
 
-    .cta-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
+    .realisations-image {
+        width: 48%;
     }
 }

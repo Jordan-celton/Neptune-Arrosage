@@ -92,6 +92,15 @@ function Navbar() {
               Contact
             </Link>
           </li>
+          <li>
+            <Link
+              to="/recrutement"
+              className={getLinkClass("/recrutement")}
+              onClick={closeMenu}
+            >
+              Recrutement
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

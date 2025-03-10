@@ -1,83 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Services.css";
 import image1 from "../assets/photos/20200512_155618.webp";
 import image2 from "../assets/photos/20180614_160716.webp";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import HomeContact from "../components/HomeContact";
 
-// Données des services
 const servicesData = [
   {
     title: "Arrosage automatique",
     description:
-      "Optimisez l’irrigation avec nos systèmes intelligents, adaptés à tous types d’espaces verts. Nos solutions permettent de réduire la consommation d'eau tout en maintenant des espaces verts luxuriants.",
+      "Optimisez l’irrigation avec nos systèmes intelligents, adaptés à tous types d’espaces verts.",
     image: image1,
-    details:
-      "Nous utilisons des capteurs météo et des programmateurs pour ajuster l'arrosage en fonction des conditions climatiques.",
-    price: "À partir de 1500€",
+    details: "Systèmes intelligents avec capteurs météo et programmateurs.",
     time: "Installation en 2 à 3 jours",
-    category: "arrosage",
   },
   {
     title: "Aménagement hydraulique",
-    description:
-      "Apportez une touche d’élégance avec nos fontaines, miroirs d’eau et bassins sur-mesure. Idéal pour embellir vos espaces extérieurs.",
+    description: "Ajoutez une touche d’élégance avec nos fontaines et bassins.",
     image: image2,
-    details:
-      "Nous concevons des installations sur mesure pour s'adapter à vos préférences et à l'esthétique de votre jardin.",
-    price: "À partir de 2500€",
+    details: "Conceptions sur mesure adaptées à votre jardin.",
     time: "Installation en 5 jours",
-    category: "hydraulique",
-  },
-  {
-    title: "Gestion durable de l'eau",
-    description:
-      "Réduisez votre consommation grâce à des solutions de récupération et de réutilisation de l’eau.",
-    image: "/images/gestion-eau.jpg",
-    details:
-      "Nous installons des systèmes pour collecter l'eau de pluie et réutiliser les eaux grises, réduisant ainsi l'empreinte écologique.",
-    price: "À partir de 1200€",
-    time: "Installation en 2 jours",
-    category: "eau",
   },
 ];
 
-// Témoignages clients
-const testimonials = [
-  {
-    name: "Jean Dupont",
-    feedback:
-      "Le système d'arrosage automatique a changé la gestion de mon jardin. Un gain de temps et d'eau considérable !",
-  },
-  {
-    name: "Marie Martin",
-    feedback:
-      "L'aménagement de la fontaine a transformé mon jardin. Très satisfait du service et de l'installation.",
-  },
+const galleryImages = [
+  image1,
+  image2,
+  "/images/realisation1.jpg",
+  "/images/realisation2.jpg",
 ];
 
 const Services = () => {
-  const [filter, setFilter] = useState("all");
-
-  // Filtrer les services en fonction de la catégorie
-  const filteredServices = servicesData.filter(
-    (service) => filter === "all" || service.category === filter
-  );
-
   return (
     <section className="services-container">
-      {/* Titre */}
       <h1 className="services-title">Nos Services</h1>
-
-      {/* Filtres */}
-      <div className="filters">
-        <button onClick={() => setFilter("all")}>Tous</button>
-        <button onClick={() => setFilter("arrosage")}>Arrosage</button>
-        <button onClick={() => setFilter("hydraulique")}>Hydraulique</button>
-        <button onClick={() => setFilter("eau")}>Gestion de l'eau</button>
-      </div>
-
-      {/* Grille des services */}
       <div className="services-grid">
-        {filteredServices.map((service, index) => (
+        {servicesData.map((service, index) => (
           <div key={index} className="service-card">
             <img
               src={service.image}
@@ -91,36 +50,45 @@ const Services = () => {
                 <strong>Détails:</strong> {service.details}
               </p>
               <p>
-                <strong>Prix:</strong> {service.price}
-              </p>
-              <p>
                 <strong>Temps d'installation:</strong> {service.time}
               </p>
-              <button className="service-btn">En savoir plus</button>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Témoignages */}
-      <div className="testimonials">
-        <h2>Témoignages</h2>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial-item">
-            <p>"{testimonial.feedback}"</p>
-            <h4>- {testimonial.name}</h4>
-          </div>
-        ))}
+      <div className="gallery">
+        <h2>Nos Réalisations</h2>
+        <Carousel showThumbs={false} autoPlay infiniteLoop>
+          {galleryImages.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt={`Réalisation ${index + 1}`} />
+            </div>
+          ))}
+        </Carousel>
       </div>
 
-      {/* Appel à l'action */}
+      <div className="process">
+        <h2>Notre Processus</h2>
+        <ul>
+          <li>
+            <strong>1. Consultation :</strong> Analyse des besoins et devis.
+          </li>
+          <li>
+            <strong>2. Conception :</strong> Plan et validation du projet.
+          </li>
+          <li>
+            <strong>3. Installation :</strong> Mise en place et tests.
+          </li>
+          <li>
+            <strong>4. Suivi :</strong> Entretien et assistance après
+            installation.
+          </li>
+        </ul>
+      </div>
+
       <div className="cta-section">
-        <h2>
-          Prêt à faire passer vos espaces extérieurs au niveau supérieur ?
-        </h2>
-        <a href="mailto:contact@neptune-arrosage.fr?subject=Demande de devis&body=Bonjour, je souhaite obtenir un devis pour...">
-          <button className="cta-btn">Demander un devis</button>
-        </a>
+        <HomeContact />
       </div>
     </section>
   );

@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -37,10 +36,6 @@
 
     .home-container p {
         font-size: 1rem;
-    }
-
-    .home-container {
-        padding: 10px;
     }
 
     .home-container p {
