@@ -77,8 +77,7 @@
 
 /* Ajout d'un style pour le lien actif */
 .nav-link.active {
-    color: var(--link-hover-color);
-    /* Couleur du lien actif */
+    color: #73E2A7;
     font-weight: bold;
 }
 

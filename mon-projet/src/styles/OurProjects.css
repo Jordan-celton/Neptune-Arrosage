@@ -1,5 +1,7 @@
 /* Reset général */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,6 +12,8 @@
     background-color: var(--background-color);
     text-align: center;
     position: relative;
+    overflow: hidden;
+    /* évite l'affichage d'éléments en dehors du carrousel */
 }
 
 /* Titre principal */
@@ -19,6 +23,7 @@
     margin-bottom: 40px;
     letter-spacing: 2px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Carrousel */
@@ -26,7 +31,6 @@
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .carousel-wrapper {
@@ -37,19 +41,25 @@
 .carousel-item {
     min-width: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
+/* État actif des items */
 .carousel-item.active {
     opacity: 1;
     position: relative;
 }
 
+/* Style des images */
 .carousel-item img {
     width: 100%;
+    height: 400px;
+    /* Fixe la hauteur des images */
+    object-fit: cover;
+    /* Assure que l'image couvre entièrement l'espace sans déformation */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -60,38 +70,16 @@
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
+    font-size: 1rem;
 }
 
-/* Boutons */
+/* Boutons de navigation */
 .carousel-prev,
 .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--text-color);
-    border: none;
-    padding: 10px 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.3s ease;
+    display: none;
 }
 
-.carousel-prev:hover,
-.carousel-next:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-prev {
-    left: 10px;
-}
-
-.carousel-next {
-    right: 10px;
-}
-
-/* Indicateurs */
+/* Indicateurs du carrousel */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -120,5 +108,15 @@
 
     .carousel-container {
         max-width: 100%;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        font-size: 1.8rem;
+    }
+
+    .carousel-item img {
+        height: 300px;
+        /* Ajuste la hauteur des images sur mobile */
     }
 }

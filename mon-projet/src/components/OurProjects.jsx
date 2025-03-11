@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "../styles/OurProjects.css";
-import image1 from "../assets/photos/architecture-1853096_1920.webp";
+import image1 from "../assets/photos/20180614_160716.webp";
+import image2 from "../assets/photos/architecture-1853096_1920.webp";
+import image3 from "../assets/photos/Fontaine 2.webp";
+import image4 from "../assets/photos/HRO1.webp";
 
 const OurProjects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,14 +18,20 @@ const OurProjects = () => {
     },
     {
       id: 2,
-      imageUrl: image1,
+      imageUrl: image2,
       altText: "Projet 2",
       description: "Aménagement hydraulique pour un grand jardin privé",
     },
     {
       id: 3,
-      imageUrl: image1,
+      imageUrl: image3,
       altText: "Projet 3",
+      description: "Système d'irrigation pour espace public",
+    },
+    {
+      id: 4,
+      imageUrl: image4,
+      altText: "Projet 4",
       description: "Système d'irrigation pour espace public",
     },
   ];
@@ -44,7 +53,7 @@ const OurProjects = () => {
       nextSlide();
     }, intervalTime);
     return () => clearInterval(interval);
-  }, [currentIndex, nextSlide]);
+  }, [nextSlide]); // Pas besoin de dépendre de currentIndex
 
   return (
     <section className="our-projects-container">
@@ -58,16 +67,31 @@ const OurProjects = () => {
                 index === currentIndex ? "active" : ""
               }`}
             >
-              <img src={project.imageUrl} alt={project.altText} />
+              <picture>
+                <source srcSet={project.imageUrl} type="image/webp" />
+                <img
+                  src={project.imageUrl}
+                  alt={project.altText}
+                  loading="lazy"
+                />
+              </picture>
               <div className="description">{project.description}</div>
             </div>
           ))}
         </div>
 
-        <button className="carousel-prev" onClick={prevSlide}>
+        <button
+          className="carousel-prev"
+          onClick={prevSlide}
+          aria-label="Projet précédent"
+        >
           ‹
         </button>
-        <button className="carousel-next" onClick={nextSlide}>
+        <button
+          className="carousel-next"
+          onClick={nextSlide}
+          aria-label="Projet suivant"
+        >
           ›
         </button>
 
@@ -79,6 +103,7 @@ const OurProjects = () => {
                 index === currentIndex ? "active" : ""
               }`}
               onClick={() => setCurrentIndex(index)}
+              aria-label={`Aller au projet ${index + 1}`}
             />
           ))}
         </div>
@@ -87,4 +112,4 @@ const OurProjects = () => {
   );
 };
 
-export default OurProjects;
+export default React.memo(OurProjects);
