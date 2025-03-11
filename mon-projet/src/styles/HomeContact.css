@@ -6,8 +6,14 @@
         margin: 0 auto;
 }
 
+.home-contact-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
 .home-contact-title h1 {
-    color: var(--title-color);
+    color: wheat;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
