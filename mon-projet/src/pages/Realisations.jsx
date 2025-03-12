@@ -1,27 +1,48 @@
 import React, { useState } from "react";
 import "../styles/Realisations.css";
 import HomeContact from "../components/HomeContact";
-
+import image1 from "../assets/photos/20180614_160716.webp";
+import image2 from "../assets/photos/20200512_155618.webp";
+import image3 from "../assets/photos/architecture-1853096_1920.webp";
+import image4 from "../assets/photos/Fontaine 2.webp";
+import image5 from "../assets/photos/Fontaine Rueil Imp 1.webp";
+import image6 from "../assets/photos/HRO1.webp";
+import image7 from "../assets/photos/istockphoto-612254260-2048x2048.webp";
 const realisationsData = [
   {
     title: "Jardin de Luxe à Nantes",
     description: "Un aménagement paysager complet avec un système d'arrosage.",
-    images: [
-      "../assets/photos/20180614_160716.webp",
-      "/images/jardin-luxe-2.jpg",
-      "/images/jardin-luxe-3.jpg",
-    ],
+    images: [image1, image2, image3],
   },
   {
-    title: "Espace Vert au Parc de la Ville",
+    title: "Espace Vert",
     description:
       "Aménagement de grands espaces verts avec des zones d'ombrage.",
-    images: [
-      "/images/espace-vert-1.jpg",
-      "/images/espace-vert-2.jpg",
-      "/images/espace-vert-3.jpg",
-    ],
+    images: [image4, image5, image6, image7],
   },
+  {
+    title: "Jardin de Luxe à Nantes",
+    description: "Un aménagement paysager complet avec un système d'arrosage.",
+    images: [image1, image2, image3],
+  },
+  {
+    title: "Espace Vert",
+    description:
+      "Aménagement de grands espaces verts avec des zones d'ombrage.",
+    images: [image4, image5, image6, image7],
+  },
+  {
+    title: "Jardin de Luxe à Nantes",
+    description: "Un aménagement paysager complet avec un système d'arrosage.",
+    images: [image1, image2, image3],
+  },
+  {
+    title: "Espace Vert",
+    description:
+      "Aménagement de grands espaces verts avec des zones d'ombrage.",
+    images: [image4, image5, image6, image7],
+  },
+
   // Ajoute d'autres réalisations ici si nécessaire...
 ];
 

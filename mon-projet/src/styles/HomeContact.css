@@ -2,14 +2,11 @@
 .home-contact-container {
     background: linear-gradient(135deg, var(--background-color) 0%, rgba(0, 0, 0, 0.8) 100%);
         text-align: center;
-        padding: 20px;
         margin: 0 auto;
 }
 
 .home-contact-container {
     max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
 }
 
 .home-contact-title h1 {
@@ -24,7 +21,8 @@
         gap: 50px;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start;
+
+        align-items: baseline;
 }
 
 .contact-text {
@@ -63,6 +61,11 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .contact-section {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
     .home-contact-container {
         padding: 30px 15px;
     }

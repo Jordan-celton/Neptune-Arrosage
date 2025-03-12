@@ -30,7 +30,7 @@
 }
 
 .about-content.reverse {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .about-text {
