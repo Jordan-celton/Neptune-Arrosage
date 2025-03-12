@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "../styles/About.css";
-import fontaineWebp from "../assets/photos/istockphoto-612254260-2048x2048.webp";
+import fontaineWebp from "../assets/photos/fountain-2955681_1280.webp";
 import fontaine3webp from "../assets/photos/HRO1.webp";
-import fontaine2Webp from "../assets/photos/architecture-1853096_1920.webp";
+import fontaine2Webp from "../assets/photos/park-2625002_1280.webp";
 import fontaine4webp from "../assets/photos/Fontaine 2.webp";
 
 const getImage = (webp, fallback, alt) => (

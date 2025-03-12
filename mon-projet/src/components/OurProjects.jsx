@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "../styles/OurProjects.css";
 import image1 from "../assets/photos/20180614_160716.webp";
-import image2 from "../assets/photos/architecture-1853096_1920.webp";
+import image2 from "../assets/photos/HRO4.webp";
 import image3 from "../assets/photos/Fontaine 2.webp";
 import image4 from "../assets/photos/HRO1.webp";
 
@@ -20,7 +20,7 @@ const OurProjects = () => {
       id: 2,
       imageUrl: image2,
       altText: "Projet 2",
-      description: "Aménagement hydraulique pour un grand jardin privé",
+      description: "Système d'irrigation pour espace public",
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const OurProjects = () => {
       id: 4,
       imageUrl: image4,
       altText: "Projet 4",
-      description: "Système d'irrigation pour espace public",
+      description: "Système d'irrigation pour espace public", // A modifier
     },
   ];
 

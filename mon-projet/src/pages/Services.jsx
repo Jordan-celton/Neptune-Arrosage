@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/Services.css"; // Assurez-vous que le CSS soit adapté
 import { Link } from "react-scroll";
 import image1 from "../assets/photos/20200512_155618.webp";
-import image2 from "../assets/photos/20180614_160716.webp";
-import image3 from "../assets/photos/istockphoto-612254260-2048x2048.webp";
-import HomeContact from "../components/HomeContact"; // Assurez-vous que ce composant existe
+import image2 from "../assets/photos/Fontaine Rueil Imp 1.webp";
+import image3 from "../assets/photos/sprinkler-498514_1920.webp";
+import image4 from "../assets/photos/istockphoto-612254260-2048x2048.webp";
+import image5 from "../assets/photos/irrigation-7262563_1920.webp";
+import HomeContact from "../components/HomeContact";
 
 const servicesData = [
   {
@@ -25,6 +27,12 @@ const servicesData = [
       "Améliorez les performances de vos terrains sportifs avec nos solutions de brumisation et de rafraichissement, idéales pour les clubs et les collectivités.",
     image: image3,
   },
+  {
+    title: "Terres agricoles",
+    description:
+      "Optimisez la production de vos terres agricoles avec nos solutions de brumisation et d'irrigation, idéales pour les exploitations et les coopératives.",
+    image: image5,
+  },
 ];
 
 const Services = () => {
@@ -33,7 +41,7 @@ const Services = () => {
       {/* Section d'Introduction avec fond animé */}
       <section
         className="hero-section"
-        style={{ backgroundImage: `url(${image3})` }}
+        style={{ backgroundImage: `url(${image4})` }}
       >
         <div className="hero-overlay">
           <h1>Transformez votre Espace</h1>
