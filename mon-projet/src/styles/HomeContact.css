@@ -5,11 +5,6 @@
         margin: 0 auto;
 }
 
-.home-contact-container {
-    max-width: 1200px;
-    margin: 15px;
-}
-
 .home-contact-title h1 {
     color: wheat;
     font-size: 2.5rem;
@@ -17,13 +12,12 @@
 }
 
 .home-contact-content {
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
 }
 
 .contact-text {

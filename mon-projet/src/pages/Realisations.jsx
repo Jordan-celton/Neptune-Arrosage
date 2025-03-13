@@ -86,7 +86,11 @@ const Realisations = () => {
           ))}
         </div>
       </section>
-      <HomeContact />
+
+      {/* Section de contact */}
+      <section className="contact-section">
+        <HomeContact />
+      </section>
     </main>
   );
 };
