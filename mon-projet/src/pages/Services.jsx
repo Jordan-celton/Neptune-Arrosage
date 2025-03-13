@@ -1,39 +1,10 @@
 import React from "react";
 import "../styles/Services.css"; // Assurez-vous que le CSS soit adapté
 import { Link } from "react-scroll";
-import image1 from "../assets/photos/20200512_155618.webp";
-import image2 from "../assets/photos/Fontaine Rueil Imp 1.webp";
-import image3 from "../assets/photos/sprinkler-498514_1920.webp";
+import servicesData from "../data/servicesData";
 import image4 from "../assets/photos/istockphoto-612254260-2048x2048.webp";
-import image5 from "../assets/photos/irrigation-7262563_1920.webp";
-import HomeContact from "../components/HomeContact";
 
-const servicesData = [
-  {
-    title: "Espace Public",
-    description:
-      "Transformez les espaces publics en lieux accueillants et fonctionnels grâce à nos solutions innovantes d'ilots de fraicheur et de canopées brumisation.",
-    image: image1,
-  },
-  {
-    title: "Fontaines et Bassins",
-    description:
-      "Créez des ambiances uniques et rafraichissantes avec nos fontaines et bassins d'agrément, idéales pour les jardins et les espaces de détente.",
-    image: image2,
-  },
-  {
-    title: "Terrains sportifs",
-    description:
-      "Améliorez les performances de vos terrains sportifs avec nos solutions de brumisation et de rafraichissement, idéales pour les clubs et les collectivités.",
-    image: image3,
-  },
-  {
-    title: "Terres agricoles",
-    description:
-      "Optimisez la production de vos terres agricoles avec nos solutions de brumisation et d'irrigation, idéales pour les exploitations et les coopératives.",
-    image: image5,
-  },
-];
+import HomeContact from "../components/HomeContact";
 
 const Services = () => {
   return (
@@ -57,6 +28,61 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Nouvelle Section - Nos Services et Produits */}
+      <section className="info-supplementaires">
+        <h2>Nos Services et Produits</h2>
+        <div className="services">
+          <div className="service">
+            <h3>Négoce & Distribution de Matériaux</h3>
+            <p>
+              Nous proposons un large choix de matériaux et équipements pour
+              l’aménagement des espaces verts. Retrouvez dans notre magasin plus
+              de <strong>200 références</strong> de grandes marques : dallages,
+              pavés, bordures, systèmes d’arrosage, et bien plus.
+            </p>
+            <ul className="features-list">
+              <li>Conseil personnalisé par nos experts</li>
+              <li>Produits de qualité pour un aménagement durable</li>
+              <li>Stock disponible et livraison rapide</li>
+            </ul>
+          </div>
+
+          <div className="service">
+            <h3>Calepinage pour Parcs et Jardins</h3>
+            <p>
+              Notre service de <strong>calepinage sur-mesure</strong> vous
+              accompagne dans la conception et l’aménagement de vos espaces
+              extérieurs. Que ce soit pour un parc public ou un jardin privé,
+              nous optimisons l’agencement des matériaux pour un rendu
+              esthétique et fonctionnel.
+            </p>
+            <ul className="features-list">
+              <li>Étude et modélisation 3D</li>
+              <li>Sélection des matériaux adaptés</li>
+              <li>Plan de pose détaillé pour une installation optimale</li>
+            </ul>
+          </div>
+
+          <div className="service">
+            <h3>Recyclage et Gestion Durable de l’Eau</h3>
+            <p>
+              Engagés dans une démarche écologique, nous proposons des solutions
+              pour une gestion durable des ressources en eau.
+              <strong>
+                Récupération des eaux pluviales, systèmes de pompage et stockage
+              </strong>
+              pour réduire l’impact environnemental et optimiser l’irrigation
+              des espaces verts.
+            </p>
+            <ul className="features-list">
+              <li>Systèmes de filtration et stockage d’eau</li>
+              <li>Solutions économiques et écologiques</li>
+              <li>Intégration avec vos installations existantes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Section Services - Grid horizontale avec effet hover */}
       <section id="services" className="services-section">
         <h2>Nos Services</h2>
@@ -73,27 +99,54 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Section Processus - Illustrations interactives */}
       <section className="process-section">
-        <h2>Notre Processus</h2>
+        <h2>Notre Processus en 4 étapes</h2>
         <div className="process-steps">
           <div className="step">
-            <h4>1. Consultation</h4>
-            <p>Analyse des besoins et devis.</p>
+            <h4>1. Consultation Initiale</h4>
+            <p>
+              Nous commençons par une analyse approfondie de vos besoins
+              spécifiques. Nous vous écoutons attentivement pour comprendre vos
+              attentes, puis nous vous fournissons un devis personnalisé et
+              détaillé.
+            </p>
           </div>
+
           <div className="step">
-            <h4>2. Conception</h4>
-            <p>Planification sur mesure.</p>
+            <h4>2. Conception Sur-Mesure</h4>
+            <p>
+              Une fois les besoins identifiés, nous créons une solution
+              entièrement adaptée à vos exigences. Chaque projet est unique et
+              nous nous assurons que la conception reflète parfaitement vos
+              objectifs.
+            </p>
           </div>
+
           <div className="step">
-            <h4>3. Installation</h4>
-            <p>Mise en place et tests.</p>
+            <h4>3. Installation Professionnelle</h4>
+            <p>
+              Nous procédons à l'installation de la solution dans votre
+              environnement, en veillant à respecter les délais et à tester
+              chaque fonctionnalité pour assurer une performance optimale dès le
+              départ.
+            </p>
           </div>
+
           <div className="step">
-            <h4>4. Suivi</h4>
-            <p>Entretien et assistance après installation.</p>
+            <h4>4. Suivi et Assistance Continue</h4>
+            <p>
+              Une fois l'installation terminée, nous ne vous laissons pas seuls.
+              Notre équipe assure un suivi régulier, avec un entretien prévu et
+              une assistance disponible en cas de besoin, afin de garantir une
+              satisfaction à long terme.
+            </p>
           </div>
         </div>
+        <p className="process-note">
+          Notre approche détaillée et rigoureuse garantit que chaque étape est
+          réalisée avec soin, dans le but de vous offrir une solution sur
+          mesure, efficace et pérenne.
+        </p>
       </section>
 
       {/* Section de contact */}

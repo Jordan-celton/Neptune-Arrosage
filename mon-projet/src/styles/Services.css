@@ -1,7 +1,7 @@
 /* Section Hero */
 .hero-section {
     position: relative;
-    background: url('/20200512_155618.webp') center/cover no-repeat;
+    background: url('/20200512_155618.webp') center/cover no-repeat fixed;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -44,6 +44,123 @@
     background-color: var(--title2-color);
 }
 
+/* Nouvelle Section - Nos Services et Produits */
+.info-supplementaires {
+    background-color: var(--background-color);
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.info-supplementaires h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: wheat;
+    margin-bottom: 30px;
+}
+
+/* Conteneur des services */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* Style de chaque service */
+.service {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 380px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--title2-color);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.service h3::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 12px auto 0;
+}
+
+.service p {
+    font-size: 1.1rem;
+    color: var(--subtitle-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service p strong {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Liste des fonctionnalités */
+.features-list {
+    font-size: 1.1rem;
+    color: var(--subtitle-color);
+    line-height: 1.8;
+    margin-top: 15px;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.features-list li::before {
+    content: "🔹";
+    font-size: 1.6rem;
+    margin-right: 12px;
+    color: var(--primary-color);
+}
+
+.features-list li:hover {
+    color: var(--primary-color);
+}
+
+.service .btn-service {
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    align-self: flex-start;
+    margin-top: auto;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.service .btn-service:hover {
+    background-color: var(--button-hover);
+}
+
 /* Section Services */
 .services-section {
     text-align: center;
@@ -79,6 +196,11 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
 }
 
 .card-info {
@@ -98,7 +220,7 @@
 
 /* Section Processus */
 .process-section {
-    padding: 60px 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -112,6 +234,11 @@
     display: flex;
     justify-content: center;
     gap: 50px;
+}
+
+.process-note {
+    font-size: 1.5rem;
+    margin-top: 20px;
 }
 
 .step {
@@ -131,6 +258,39 @@
 .step p {
     font-size: 1rem;
     color: #666;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.contact-section .btn-primary {
+    padding: 12px 30px;
+    background-color: var(--button-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.contact-section .btn-primary:hover {
+    background-color: var(--title2-color);
 }
 
 /* Média Queries pour la réactivité */
@@ -171,6 +331,23 @@
         width: 80%;
         margin-bottom: 20px;
     }
+
+    .services {
+        gap: 20px;
+    }
+
+    .service {
+        max-width: 300px;
+        padding: 20px;
+    }
+
+    .service h3 {
+        font-size: 1.4rem;
+    }
+
+    .service p {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -206,13 +383,27 @@
         margin: 20px 0;
     }
 
-    .process-steps {
-        flex-direction: column;
-        align-items: center;
+        .process-steps {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+    
+        .step {
+            width: 80%;
+            margin-bottom: 30px;
+        }
+
+    .service {
+        padding: 25px;
+        max-width: 100%;
     }
 
-    .step {
-        width: 80%;
-        margin-bottom: 20px;
+    .service h3 {
+        font-size: 1.6rem;
+    }
+
+    .service .features-list li {
+        font-size: 1rem;
     }
 }

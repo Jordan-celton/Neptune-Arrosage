@@ -1,97 +1,93 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import data from "../data/realisations";
 import "../styles/Realisations.css";
 import HomeContact from "../components/HomeContact";
-import image1 from "../assets/photos/20180614_160716.webp";
-import image2 from "../assets/photos/20200512_155618.webp";
-import image3 from "../assets/photos/architecture-1853096_1920.webp";
-import image4 from "../assets/photos/Fontaine 2.webp";
-import image5 from "../assets/photos/Fontaine Rueil Imp 1.webp";
-import image6 from "../assets/photos/HRO1.webp";
-import image7 from "../assets/photos/istockphoto-612254260-2048x2048.webp";
-const realisationsData = [
-  {
-    title: "Jardin de Luxe à Nantes",
-    description: "Un aménagement paysager complet avec un système d'arrosage.",
-    images: [image1, image2, image3],
-  },
-  {
-    title: "Espace Vert",
-    description:
-      "Aménagement de grands espaces verts avec des zones d'ombrage.",
-    images: [image4, image5, image6, image7],
-  },
-  {
-    title: "Jardin de Luxe à Nantes",
-    description: "Un aménagement paysager complet avec un système d'arrosage.",
-    images: [image1, image2, image3],
-  },
-  {
-    title: "Espace Vert",
-    description:
-      "Aménagement de grands espaces verts avec des zones d'ombrage.",
-    images: [image4, image5, image6, image7],
-  },
-  {
-    title: "Jardin de Luxe à Nantes",
-    description: "Un aménagement paysager complet avec un système d'arrosage.",
-    images: [image1, image2, image3],
-  },
-  {
-    title: "Espace Vert",
-    description:
-      "Aménagement de grands espaces verts avec des zones d'ombrage.",
-    images: [image4, image5, image6, image7],
-  },
-
-  // Ajoute d'autres réalisations ici si nécessaire...
-];
 
 const Realisations = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [categorie, setCategorie] = useState("Toutes");
 
-  const openImage = (image) => {
-    setSelectedImage(image);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
+  // Filtrage des réalisations
+  const realisationsFiltrees =
+    categorie === "Toutes"
+      ? data
+      : data.filter((r) => r.categorie === categorie);
 
   return (
-    <section className="realisations-container main-container">
-      <h1 className="realisations-title">Nos Réalisations</h1>
-      <div className="realisations-grid">
-        {realisationsData.map((realis, index) => (
-          <div key={index} className="realisations-card">
-            <h3>{realis.title}</h3>
-            <p>{realis.description}</p>
-            <div className="image-grid">
-              {realis.images.map((image, idx) => (
-                <img
-                  key={idx}
-                  src={image}
-                  alt={realis.title}
-                  className="realisations-image"
-                  onClick={() => openImage(image)}
-                />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+    <main className="main-container">
+      <header>
+        {/* Titre principal de la page */}
+        <h1>Nos Réalisations</h1>
+        {/* Description pour améliorer l'indexation */}
+        <meta
+          name="description"
+          content="Découvrez nos réalisations dans divers domaines tels que l'agriculture, le sport et les collectivités. Explorez nos projets en détail."
+        />
+        {/* Balises Open Graph pour un meilleur partage sur les réseaux sociaux */}
+        <meta
+          property="og:title"
+          content="Nos Réalisations - Neptune-Arrosage"
+        />
+        <meta
+          property="og:description"
+          content="Découvrez nos réalisations dans divers domaines tels que l'agriculture, le sport et les collectivités."
+        />
+        <meta property="og:image" content="[URL de l'image de la page]" />
+        <meta property="og:url" content="[URL de la page]" />
+        <meta property="og:type" content="website" />
+        {/* Balises Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Nos Réalisations - [Nom de l'entreprise]"
+        />
+        <meta
+          name="twitter:description"
+          content="Découvrez nos réalisations dans divers domaines tels que l'agriculture, le sport et les collectivités."
+        />
+        <meta name="twitter:image" content="[URL de l'image de la page]" />
+      </header>
 
-      {selectedImage && (
-        <div className="modal" onClick={closeModal}>
-          <img
-            src={selectedImage}
-            alt="Expanded view"
-            className="modal-image"
-          />
+      {/* Filtres */}
+      <section aria-labelledby="filters">
+        <div className="filtres">
+          {[
+            "Toutes",
+            "Agriculture",
+            "Sport",
+            "Collectivités",
+            "Particuliers",
+          ].map((cat) => (
+            <button
+              key={cat}
+              className={categorie === cat ? "actif" : ""}
+              onClick={() => setCategorie(cat)}
+              aria-label={`Filtrer par catégorie ${cat}`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
-      )}
+      </section>
 
+      {/* Liste des réalisations */}
+      <section aria-labelledby="realisations">
+        <div className="grid">
+          {realisationsFiltrees.map((r) => (
+            <article key={r.id} className="card">
+              {/* Conteneur pour l'effet de zoom */}
+              <div className="image-container">
+                <img src={r.image} alt={r.nom} />
+              </div>
+              {/* Titre de la réalisation */}
+              <h3>{r.nom}</h3>
+              {/* Description de la réalisation */}
+              <p>{r.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
       <HomeContact />
-    </section>
+    </main>
   );
 };
 
