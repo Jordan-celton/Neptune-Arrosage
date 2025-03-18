@@ -1,3 +1,4 @@
+/* Container de la page d'accueil */
 .home-container {
     min-height: 100vh;
     display: flex;
@@ -6,11 +7,49 @@
     justify-content: flex-start;
     text-align: center;
     box-sizing: border-box;
+    padding: 20px;
+    /* Ajout de padding pour éviter que le contenu touche les bords */
 }
 
+/* Image de la section d'accueil */
 .home-image {
     width: 100%;
     height: auto;
     margin-bottom: 30px;
     z-index: 1;
+    max-width: 100%;
+    /* Empêche l'image de s'étirer au-delà de la largeur du conteneur */
+}
+
+/* Responsive Design pour tablettes et petits écrans */
+@media (max-width: 1024px) {
+    .home-container {
+        padding: 20px;
+    }
+
+    .home-image {
+        margin-bottom: 20px;
+        /* Réduction de la marge pour mieux s'adapter aux petits écrans */
+    }
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        padding: 15px;
+    }
+
+    .home-image {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        padding: 10px;
+    }
+
+    .home-image {
+        margin-bottom: 10px;
+        /* Réduction de la marge sur les très petits écrans */
+    }
 }

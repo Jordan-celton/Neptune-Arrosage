@@ -60,8 +60,9 @@
     content: "";
     position: absolute;
     bottom: -10px;
-    left: 0;
-    width: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
     height: 4px;
     background: var(--color-gradient-1);
     border-radius: 2px;
@@ -150,17 +151,21 @@
     .about-text p {
         font-size: 1rem;
     }
+
+    /* Ajuster l'espacement entre les éléments */
+    .about-content {
+        gap: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        grid-template-areas: "text" "image";
-        gap: 20px;
-    }
 
-    .about-content.reverse {
-        grid-template-areas: "text" "image";
+    /* Passage à une disposition à une seule colonne */
+    .about-content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
     }
 
     .about-hero h1 {
@@ -181,6 +186,13 @@
 
     .about-content.special {
         padding: 30px;
+    }
+
+    /* Ajuster les images pour qu'elles ne débordent pas */
+    .about-image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }
 
@@ -207,5 +219,19 @@
 
     .about-content.special {
         padding: 20px;
+    }
+
+    /* Images: Suppression de la box-shadow */
+    .about-image {
+        box-shadow: none;
+    }
+
+    .about-content {
+        gap: 20px;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        height: auto;
     }
 }
