@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { navLinks } from "../data/navLinks"; // Import des liens
+import { navLinks } from "../data/NavLinks";
 import "../styles/NavBar.css";
 import logo from "../assets/logo.jpg";
 import Burger from "../components/Burger";
