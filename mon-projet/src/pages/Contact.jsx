@@ -56,7 +56,7 @@ const Contact = () => {
         <h3>Envoyer un message</h3>
         <a
           href={`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}`}
-          className="contact-button"
+          className="contact-button-page"
         >
           Contacter par email
         </a>

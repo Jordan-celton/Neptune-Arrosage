@@ -1,38 +1,3 @@
-/* Reset de la mise en forme par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Définition des couleurs de base */
-:root {
-    --background-color: #0c3957;
-    /* Fond global */
-    --subtitle-color: #2A2D29;
-    /* Couleur des sous-titres */
-    --title-color: #bdcdd4;
-    /* Couleur des titres */
-    --title2-color: #73E2A7;
-    /* Couleur des titres secondaires */
-    --button-color: #D8C5A7;
-    /* Couleur des boutons */
-    --text-color: #D8C5A7;
-    /* Couleur du texte */
-    --link-color: #3498db;
-    /* Couleur des liens */
-    --link-hover-color: #2980b9;
-    /* Couleur des liens au survol */
-}
-
-/* Mise en forme de la page */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
 /* Conteneur principal */
 .recrutement-container {
     padding: 40px 20px;

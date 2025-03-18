@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/HomeServices.css";
+import { FaTint, FaWater, FaLeaf } from "react-icons/fa";
 
 const HomeServices = () => {
   return (
@@ -10,22 +11,26 @@ const HomeServices = () => {
       <div className="services">
         {[
           {
-            title: "Arrosage automatique",
+            title: "Arrosage Automatique",
             description:
-              "Nous concevons des systèmes d’arrosage automatique sur-mesure pour jardins, espaces publics et terrains sportifs, afin d’optimiser la gestion de l’eau.",
+              "Des systèmes d'arrosage sur-mesure pour jardins, espaces verts et terrains sportifs, conçus pour optimiser l'utilisation de l'eau.",
+            icon: <FaTint />,
           },
           {
-            title: "Aménagement hydraulique",
+            title: "Fontaines & Bassins",
             description:
-              "Conception et réalisation de systèmes d’aménagements hydrauliques, tels que fontaines, miroirs d’eau et bassins, pour embellir vos espaces extérieurs.",
+              "Conception et installation de fontaines et bassins pour embellir vos espaces extérieurs tout en respectant l'environnement.",
+            icon: <FaWater />,
           },
           {
-            title: "Gestion durable de l'eau",
+            title: "Économie d'Eau",
             description:
-              "Solutions innovantes pour une gestion raisonnée de l’eau : récupération des eaux de pluie, pompage des eaux de surface et réutilisation des eaux grises.",
+              "Solutions innovantes pour une gestion durable de l'eau : récupération des eaux de pluie, systèmes de réutilisation et optimisation des ressources.",
+            icon: <FaLeaf />,
           },
         ].map((service, index) => (
           <div key={index} className="service-item">
+            <div className="service-icon">{service.icon}</div>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
           </div>

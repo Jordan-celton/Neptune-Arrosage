@@ -1,0 +1,153 @@
+/* Import de la police Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: #73E2A7;
+    --color-secondary: #1E3A5F;
+    --color-gradient-1: linear-gradient(45deg, #73E2A7, #E2D173);
+    --color-gradient-2: linear-gradient(45deg, #87CEEB, #1E3A5F);
+    --font: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styles des boutons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button.primary {
+    background: var(--color-primary);
+    color: var(--color-black);
+}
+
+.button.secondary {
+    background: var(--color-gradient-1);
+    color: var(--color-black);
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+/* Styles des liens */
+a {
+    text-decoration: none;
+    color: var(--color-black);
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Header */
+.header {
+    background: var(--color-gradient-2);
+    color: var(--color-white);
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Animation de bulles */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Entre le fond et le contenu */
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 15px;
+    height: 20px;
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+    box-shadow: 0 0 15px rgba(135, 206, 235, 0.8);
+    /* Ombre bleu clair */
+    filter: brightness(1.2);
+    /* Augmente la luminosité */
+}
+
+.bubble.blue-dark {
+    background: rgba(30, 58, 95, 0.6);
+    /* Bleu marine semi-transparent */
+}
+
+.bubble.blue-light {
+    background: rgba(135, 206, 235, 0.6);
+    /* Bleu clair semi-transparent */
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        bottom: 100%;
+        transform: translateX(-100px);
+    }
+}
+
+/* Délais et tailles aléatoires pour les bulles */
+.bubble:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+    width: 15px;
+    height: 15px;
+}
+
+.bubble:nth-child(2) {
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    width: 25px;
+    height: 25px;
+}
+
+/* Ajoutez les autres bulles ici... */

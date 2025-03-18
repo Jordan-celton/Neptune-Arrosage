@@ -1,87 +1,54 @@
-/* Styles spécifiques pour la section HomeContact */
+/* Import de la police Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Styles de la section HomeContact */
 .home-contact-container {
-    background: linear-gradient(135deg, var(--background-color) 0%, rgba(0, 0, 0, 0.8) 100%);
-        text-align: center;
-        margin: 0 auto;
+    background: var(--color-gradient-2);
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
 }
 
+/* Titre principal */
 .home-contact-title h1 {
-    color: wheat;
-    font-size: 2.5rem;
+    font-size: 36px;
+    font-weight: 700;
+    background: var(--color-gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     margin-bottom: 20px;
 }
 
-.home-contact-content {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-}
-
+/* Texte d'introduction */
 .contact-text {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    max-width: 60%;
-    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-white);
+    /* Couleur du texte en blanc */
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
+/* Style du bouton de contact */
 .contact-button {
-    background-color: var(--button-color);
-    color: black;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: bold;
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-flex;
-    align-items: center;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(115, 226, 167, 0.3);
 }
 
 .contact-button:hover {
-    background-color: #73E2A7;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    /* Ombre pour le bouton au survol */
-}
-
-.contact-button:active {
-    transform: scale(1);
-    /* Empêche l'effet de survol lors de l'activation */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-section {
-            margin: 0 auto;
-            padding: 0;
-        }
-        
-    .home-contact-container {
-        padding: 30px 15px;
-    }
-
-    .home-contact-title h1 {
-        font-size: 2rem;
-    }
-
-    .home-contact-content {
-        flex-direction: row;
-        text-align: center;
-    }
-
-    .contact-text {
-        font-size: 1rem;
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .contact-button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
+    background: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: 0 6px 15px rgba(115, 226, 167, 0.4);
 }

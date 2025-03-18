@@ -7,11 +7,13 @@ import Realisations from "./pages/Realisations";
 import Contact from "./pages/Contact";
 import Recrutement from "./pages/Recrutement";
 import { HelmetProvider } from "react-helmet-async";
+import Background from "./components/Background";
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
+        <Background />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,17 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "../styles/About.css";
-import fontaineWebp from "../assets/photos/fountain-2955681_1280.webp";
-import fontaine3webp from "../assets/photos/HRO1.webp";
-import fontaine2Webp from "../assets/photos/park-2625002_1280.webp";
-import fontaine4webp from "../assets/photos/Fontaine 2.webp";
 
-const getImage = (webp, fallback, alt) => (
-  <picture>
-    <source srcSet={webp} type="image/webp" />
-    <img src={fallback} alt={alt} loading="lazy" />
-  </picture>
-);
+import image1 from "../assets/photos/DSC_0778.webp"; // Image d'illustration
+import image2 from "../assets/photos/IMG_1312.webp"; // Deuxième image
 
 const About = () => {
   return (
@@ -29,16 +21,10 @@ const About = () => {
         />
       </Helmet>
 
-      <section
-        className="about-container"
-        aria-labelledby="about-title"
-        role="region"
-      >
-        <div className="about-title">
-          <h1 id="about-title">
-            Neptune Arrosage - Expert en solutions d’arrosage et d’aménagement
-            hydraulique
-          </h1>
+      <section className="about-container">
+        <div className="about-hero">
+          <h1>Neptune Arrosage</h1>
+          <p>Expert en solutions d’arrosage et d’aménagement hydraulique</p>
         </div>
 
         <div className="about-content">
@@ -48,41 +34,24 @@ const About = () => {
               spécialisée dans les solutions d’arrosage et d’aménagements
               hydrauliques. Forte de plus de 50 ans d'expérience, elle
               intervient dans des projets variés tels que les fontaines, les
-              terrains sportifs, et les grands jardins.
+              terrains sportifs et les grands jardins.
+            </p>
+            <p>
+              Une équipe basée à Paris est également disponible pour répondre à
+              tous vos besoins et vous accompagner dans vos projets.{" "}
+              <a href="/contact" className="contact-link">
+                Contactez-nous
+              </a>
             </p>
           </div>
           <div className="about-image">
-            {getImage(
-              fontaineWebp,
-              fontaine4webp,
-              "Fontaine élégante dans un jardin"
-            )}
+            <img src={image1} alt="Projets d'arrosage" loading="lazy" />
           </div>
-        </div>
-
-        <div className="about-section">
-          <h2>Un engagement pour une gestion durable de l’eau</h2>
-          <p>
-            Neptune Arrosage développe des solutions innovantes pour optimiser
-            l’usage de l'eau, telles que :
-          </p>
-          <ul>
-            <li>💧 Stockage des eaux de pluie pour réutilisation</li>
-            <li>
-              ⚡ Pompage des eaux de surface pour réduire l’utilisation d’eau
-              potable
-            </li>
-            <li>♻️ Réutilisation des eaux grises</li>
-          </ul>
         </div>
 
         <div className="about-content reverse">
           <div className="about-image">
-            {getImage(
-              fontaine2Webp,
-              fontaine3webp,
-              "Installation hydraulique moderne"
-            )}
+            <img src={image2} alt="Équipe Neptune Arrosage" loading="lazy" />
           </div>
           <div className="about-text">
             <h2>Savoir-faire et innovation</h2>
