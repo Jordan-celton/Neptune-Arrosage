@@ -8,13 +8,13 @@
 .recrutement-title {
     font-size: 2.5rem;
     color: var(--title2-color);
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* Section des détails de recrutement */
 .recrutement-details {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 20px;
 }
 
 /* Section des offres d'emploi */
@@ -35,11 +35,9 @@
 }
 
 .offer-card {
-    background-color: #2A2D29;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
 }
 
 .offer-card h4 {
