@@ -9,6 +9,7 @@ const ContactInfo = () => {
           <FaMapMarkerAlt className="icon" />
           <h3>Adresse</h3>
           <p>3 Rue Réaumur, 44100 Nantes</p>
+          <p>1 avenue du bois carreaux, 92290 Chatenay Malabry</p>
         </div>
         <div className="info-item">
           <FaPhoneAlt className="icon" />

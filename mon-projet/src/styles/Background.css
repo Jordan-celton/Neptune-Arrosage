@@ -15,10 +15,24 @@
     bottom: -100px;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    /* Bulles semi-transparentes */
+    background: var(--color-primary);
+    /* Utilise la couleur primaire */
     border-radius: 50%;
     animation: rise 10s infinite ease-in;
+    opacity: 0.7;
+    /* Ajoute une transparence pour un effet plus doux */
+}
+
+.bubble.blue-dark {
+    background: var(--color-secondary);
+    /* Utilise la couleur secondaire */
+    opacity: 0.6;
+}
+
+.bubble.blue-light {
+    background: var(--color-gradient-2);
+    /* Utilise le dégradé secondaire */
+    opacity: 0.6;
 }
 
 @keyframes rise {

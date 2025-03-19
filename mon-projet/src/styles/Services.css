@@ -16,11 +16,12 @@
 }
 
 .service-page h2 {
-    font-size: 2.5rem;
-    /* Taille du titre */
+    font-size: 2.8rem;
     margin-bottom: 40px;
-    /* Espacement sous le titre */
-    color: var(--color-secondary);
+    background: var(--color-gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .service-page-grid {
@@ -42,6 +43,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 0;
 }
 
 .service-page-card:hover {

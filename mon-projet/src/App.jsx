@@ -3,11 +3,11 @@ import Footer from "./components/Footer";
 import Navbar from "./components/NavBar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import Realisations from "./pages/Realisations";
 import Contact from "./pages/Contact";
 import Recrutement from "./pages/Recrutement";
 import { HelmetProvider } from "react-helmet-async";
 import Background from "./components/Background";
+import FontainesBassins from "./pages/FontainesBassins";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/realisations" element={<Realisations />} />
+          <Route path="/fontaines-bassins" element={<FontainesBassins />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/recrutement" element={<Recrutement />} />
         </Routes>
