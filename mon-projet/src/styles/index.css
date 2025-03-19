@@ -42,7 +42,7 @@
 }
 
 .button.secondary {
-    background: var(--color-gradient-1);
+    background: var(--color-white);
     color: var(--color-black);
 }
 

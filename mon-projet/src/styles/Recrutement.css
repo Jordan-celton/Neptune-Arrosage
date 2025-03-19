@@ -1,3 +1,19 @@
+:root {
+    --background-color: #f0f0f0;
+    /* Couleur de fond */
+    --title-color: #1E3A5F;
+    /* Couleur des titres principaux */
+    --title2-color: #73E2A7;
+    /* Couleur des sous-titres */
+    --button-color: #E2D173;
+    /* Couleur des boutons */
+    --subtitle-color: #ffffff;
+    /* Couleur de fond des sections */
+    --text-color: #333;
+    /* Couleur du texte principal */
+}
+
+
 /* Conteneur principal */
 .recrutement-container {
     padding: 40px 20px;
@@ -13,7 +29,6 @@
 
 /* Section des détails de recrutement */
 .recrutement-details {
-    max-width: 1000px;
     margin: 20px;
 }
 
@@ -38,6 +53,13 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--subtitle-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .offer-card h4 {
@@ -92,27 +114,35 @@
     border-radius: 5px;
     border: 1px solid #ddd;
     font-size: 1rem;
+    background-color: var(--background-color);
+    /* Fond des champs */
+    transition: border-color 0.3s ease;
+    /* Animation au focus */
 }
 
 .apply-form input:focus,
 .apply-form textarea:focus {
-    border-color: var(--background-color);
+    border-color: var(--title2-color);
+    /* Couleur de la bordure au focus */
     outline: none;
 }
 
 .apply-form .apply-button {
     background-color: var(--button-color);
-    color: black;
+    color: var(--text-color);
     padding: 15px 30px;
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .apply-form .apply-button:hover {
     background-color: #d1b18d;
+    /* Couleur au survol */
+    transform: translateY(-3px);
+    /* Effet de "levage" */
 }
 
 /* Mise en forme des icônes */
@@ -168,5 +198,22 @@ img {
 
     .apply-form {
         padding: 20px;
+    }
+
+    .apply-form h3 {
+        font-size: 1.5rem;
+        /* Taille de police réduite pour les petits écrans */
+    }
+
+    .apply-form input,
+    .apply-form textarea {
+        padding: 10px;
+        /* Padding réduit pour les petits écrans */
+    }
+
+    .apply-form .apply-button {
+        padding: 12px 24px;
+        /* Taille de bouton réduite */
+        font-size: 1rem;
     }
 }

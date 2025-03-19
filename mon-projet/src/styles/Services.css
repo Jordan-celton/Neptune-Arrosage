@@ -12,7 +12,7 @@
     text-align: center;
     width: 100%;
     max-width: 1200px;
-    /* Limite la largeur pour les grands écrans */
+    margin: 0 auto;
 }
 
 .service-page h2 {
