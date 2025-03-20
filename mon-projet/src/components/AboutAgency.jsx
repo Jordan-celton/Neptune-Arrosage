@@ -2,7 +2,7 @@ import React from "react";
 import {
   FaUsers,
   FaHandshake,
-  FaChartLine,
+  FaBoxOpen,
   FaBuilding,
   FaComments,
 } from "react-icons/fa";
@@ -49,43 +49,52 @@ const AboutAgency = () => {
       </div>
 
       {/* Points forts de l'agence */}
-      <div className="agency-highlights">
-        {/* Point fort 1 : Équipe expérimentée */}
-        <div className="highlight-card">
-          <div className="highlight-icon">
-            <FaUsers />
+      <section className="agency-highlights">
+        <h2>Nos points forts</h2>
+        <div className="highlights-container">
+          {/* Point fort 1 : Équipe expérimentée */}
+          <div className="highlight-card">
+            <div className="highlight-icon">
+              <FaUsers />
+            </div>
+            <div className="highlight-text">
+              <h3>Équipe expérimentée</h3>
+              <p>
+                Notre équipe de professionnels certifiés vous accompagne de la
+                conception à l'installation.
+              </p>
+            </div>
           </div>
-          <h3>Équipe expérimentée</h3>
-          <p>
-            Notre équipe de professionnels certifiés vous accompagne de la
-            conception à l'installation.
-          </p>
-        </div>
 
-        {/* Point fort 2 : Engagement client */}
-        <div className="highlight-card">
-          <div className="highlight-icon">
-            <FaHandshake />
+          {/* Point fort 2 : Engagement client */}
+          <div className="highlight-card">
+            <div className="highlight-icon">
+              <FaHandshake />
+            </div>
+            <div className="highlight-text">
+              <h3>Engagement client</h3>
+              <p>
+                Nous nous engageons à vous fournir des solutions sur-mesure et
+                un service personnalisé.
+              </p>
+            </div>
           </div>
-          <h3>Engagement client</h3>
-          <p>
-            Nous nous engageons à vous fournir des solutions sur-mesure et un
-            service personnalisé.
-          </p>
-        </div>
 
-        {/* Point fort 3 : Résultats prouvés */}
-        <div className="highlight-card">
-          <div className="highlight-icon">
-            <FaChartLine />
+          {/* Point fort 3 : Résultats prouvés */}
+          <div className="highlight-card">
+            <div className="highlight-icon">
+              <FaBoxOpen /> {/* Icône pour le matériel fourni */}
+            </div>
+            <div className="highlight-text">
+              <h3>Matériel fourni</h3>
+              <p>
+                Nous fournissons tout le matériel nécessaire pour une
+                installation complète et de qualité.
+              </p>
+            </div>
           </div>
-          <h3>Résultats prouvés</h3>
-          <p>
-            Nos systèmes ont permis à nos clients de réduire leur consommation
-            d'eau jusqu'à 30 %.
-          </p>
         </div>
-      </div>
+      </section>
     </section>
   );
 };
