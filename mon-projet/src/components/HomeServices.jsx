@@ -16,14 +16,14 @@ const HomeServices = () => {
             description:
               "Des systèmes d'arrosage sur-mesure pour jardins, espaces verts et terrains sportifs, conçus pour optimiser l'utilisation de l'eau.",
             icon: <FaTint />,
-            link: "/arrosage-automatique", // Lien vers la page correspondante
+            link: "/arrosage-automatique",
           },
           {
             title: "Fontaines & Bassins",
             description:
               "Conception et installation de fontaines et bassins pour embellir vos espaces extérieurs tout en respectant l'environnement.",
             icon: <FaWater />,
-            link: "/fontaines-bassins", // Lien vers la page correspondante
+            link: "/fontaines-bassins",
           },
           {
             title: "Économie d'Eau",

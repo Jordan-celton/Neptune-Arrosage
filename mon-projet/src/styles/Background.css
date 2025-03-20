@@ -6,7 +6,6 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    /* Place le fond en arrière-plan */
     overflow: hidden;
 }
 
@@ -25,13 +24,11 @@
 
 .bubble.blue-dark {
     background: var(--color-secondary);
-    /* Utilise la couleur secondaire */
     opacity: 0.6;
 }
 
 .bubble.blue-light {
     background: var(--color-gradient-2);
-    /* Utilise le dégradé secondaire */
     opacity: 0.6;
 }
 

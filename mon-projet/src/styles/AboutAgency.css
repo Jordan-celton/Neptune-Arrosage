@@ -1,0 +1,125 @@
+/* Section "Notre Agence" */
+.about-agency {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+
+.about-agency h2 {
+    font-size: 2.8rem;
+    background: var(--color-gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-agency h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--color-gradient-1);
+    margin: 20px auto;
+}
+
+.agency-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+}
+
+/* Section avec photo et détails de l'agence */
+.agency-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.agency-image-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+.agency-image {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agency-info {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.info-item {
+    margin-bottom: 30px;
+    background: white;
+}
+
+.info-icon {
+    font-size: 2rem;
+    color: #73E2A7;
+    /* Couleur du thème */
+    margin-bottom: 10px;
+}
+
+.info-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1E3A5F;
+    /* Couleur du thème */
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Points forts de l'agence */
+.agency-highlights {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.highlight-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    color: #73E2A7;
+    /* Couleur du thème */
+    margin-bottom: 15px;
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1E3A5F;
+    /* Couleur du thème */
+}
+
+.highlight-card p {
+    font-size: 1rem;
+    color: #555;
+}
