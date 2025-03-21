@@ -120,6 +120,11 @@
     margin-bottom: 15px;
 }
 
+.service-button:hover {
+    opacity: 0.8;
+    color: var(--color-secondary);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .home-services-container {

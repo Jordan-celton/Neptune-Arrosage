@@ -23,7 +23,7 @@
     display: block;
     width: 100px;
     height: 3px;
-    background: var(--color-primary);
+    background: var(--color-gradient-1);
     margin: 20px auto;
 }
 
@@ -46,6 +46,7 @@
 .agency-image-container {
     width: 100%;
     max-width: 500px;
+    position: relative;
 }
 
 .agency-image {
@@ -66,6 +67,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .info-icon {
