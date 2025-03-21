@@ -3,12 +3,7 @@ import image1 from "../assets/photos/20200512_155618.webp";
 import image2 from "../assets/photos/DSC_0778.webp";
 import image3 from "../assets/photos/IMG_1310.webp";
 import "../styles/ArrosageAuto.css";
-import {
-  FaCheckCircle,
-  FaTools,
-  FaShieldAlt,
-  FaRulerCombined,
-} from "react-icons/fa";
+import { FaCheckCircle, FaTools, FaRulerCombined } from "react-icons/fa";
 
 const ArrosageAuto = () => {
   return (

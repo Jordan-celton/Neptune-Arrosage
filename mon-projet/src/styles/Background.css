@@ -15,11 +15,9 @@
     width: 20px;
     height: 20px;
     background: var(--color-primary);
-    /* Utilise la couleur primaire */
     border-radius: 50%;
     animation: rise 10s infinite ease-in;
     opacity: 0.7;
-    /* Ajoute une transparence pour un effet plus doux */
 }
 
 .bubble.blue-dark {
