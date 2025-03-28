@@ -1,86 +1,89 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { navLinks } from "../data/NavLinks";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/NavBar.css";
-import logo from "../assets/logo.jpg";
-import Burger from "../components/Burger";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const navbarRef = useRef(null);
+const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesHovered, setIsServicesHovered] = useState(false);
+  const servicesRef = useRef(null);
 
-  // Ferme le menu mobile quand on clique sur un lien
-  const closeMenu = useCallback(() => {
-    setMenuOpen(false);
-  }, []);
-
-  // Détecte le scroll pour rendre la navbar plus visible
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Ferme le menu quand on clique en dehors
+  // Ferme le sous-menu si on clique à l'extérieur
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
-        closeMenu();
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setIsServicesHovered(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [closeMenu]);
-
-  // Vérifie si la route actuelle correspond à un lien
-  const getLinkClass = (path) => {
-    return location.pathname === path ? "nav-link active" : "nav-link";
-  };
+  }, []);
 
   return (
-    <nav
-      ref={navbarRef}
-      className={`navbar ${scrolled ? "scrolled" : ""} ${
-        menuOpen ? "active" : ""
-      }`}
-    >
-      <div className="navbar-header">
-        <div className="logo">
-          <Link to="/" className="logo-link" onClick={closeMenu}>
-            <img src={logo} alt="Logo Neptune Arrosage" className="logo-img" />
-          </Link>
-        </div>
-
-        {/* Utilisation du composant Burger */}
-        <Burger
-          menuOpen={menuOpen}
-          toggleMenu={() => setMenuOpen((prev) => !prev)}
-        />
-
-        {/* Liens de navigation */}
-        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                to={link.path}
-                className={getLinkClass(link.path)}
-                onClick={closeMenu}
-                aria-current={
-                  location.pathname === link.path ? "page" : undefined
-                }
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <a href="/" aria-label="Accueil Neptune Arrosage"></a>
       </div>
+
+      <button
+        className={`navbar-toggle ${isMenuOpen ? "active" : ""}`}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-expanded={isMenuOpen}
+        aria-label="Menu navigation"
+      >
+        <span className="navbar-toggle-icon"></span>
+      </button>
+
+      <ul className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+        <li>
+          <a href="#neptune" onClick={() => setIsMenuOpen(false)}>
+            NEPTUNE
+          </a>
+        </li>
+        <li
+          className="services-menu"
+          ref={servicesRef}
+          onMouseEnter={() => setIsServicesHovered(true)}
+          onMouseLeave={() => setIsServicesHovered(false)}
+          onClick={() =>
+            window.innerWidth <= 768 && setIsServicesHovered(!isServicesHovered)
+          }
+        >
+          <a href="#services">
+            NOS SERVICES
+            {isServicesHovered ? <FaChevronUp /> : <FaChevronDown />}
+          </a>
+          <ul className={`submenu ${isServicesHovered ? "show" : ""}`}>
+            <li>
+              <a href="#arrosage" onClick={() => setIsMenuOpen(false)}>
+                Systèmes d'arrosage
+              </a>
+            </li>
+            <li>
+              <a href="#fontaines" onClick={() => setIsMenuOpen(false)}>
+                Fontaines décoratives
+              </a>
+            </li>
+            <li>
+              <a href="#eclairage" onClick={() => setIsMenuOpen(false)}>
+                Éclairage de jardin
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#realisations" onClick={() => setIsMenuOpen(false)}>
+            RÉALISATIONS
+          </a>
+        </li>
+        <li>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+            CONTACT
+          </a>
+        </li>
+      </ul>
     </nav>
   );
-}
+};
 
-export default Navbar;
+export default NavBar;
