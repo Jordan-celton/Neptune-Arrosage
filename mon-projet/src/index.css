@@ -11,6 +11,8 @@
     /* Gris anthracite - Texte principal */
     --light-bg: #FFF;
     /* Blanc - Arrière-plan */
+    --text-color: black;
+    /* Couleur du texte */
 
     /* Variations */
     --primary-light: rgba(80, 139, 191, 0.1);
