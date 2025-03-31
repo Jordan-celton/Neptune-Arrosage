@@ -59,8 +59,11 @@ const ServicesSection = () => {
         <div className="hero-image-container">
           <img
             src={ServiceImage}
-            alt="Services Neptune"
+            alt="Services d'arrosage et d'aménagement paysager"
             className="hero-image"
+            loading="eager" // Prioritaire car visible
+            width="1200"
+            height="800"
           />
         </div>
         <div className="hero-title-container">
@@ -73,17 +76,23 @@ const ServicesSection = () => {
       {/* Section des services avec effet de chevauchement */}
       <div className="services-overlay-container">
         <div className="services-scroller">
-          <div className="services-cards">
+          <div
+            className="services-cards"
+            role="region"
+            aria-label="Liste des services"
+            tabIndex="0"
+          >
             {services.map((service) => (
               <div className="service-card" key={service.id}>
                 <div className="card-image-container">
                   <img
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - ${service.description}`} // Texte alt unique
                     className="card-image"
                     loading="lazy"
+                    width="320" // Dimensions explicites
+                    height="200"
                   />
-                  <div className="card-icon-container">{service.icon}</div>
                 </div>
                 <div className="card-content">
                   <h3>{service.title}</h3>
@@ -92,6 +101,7 @@ const ServicesSection = () => {
                     Lire la suite <span>→</span>
                   </a>
                 </div>
+                <div className="card-icon-container">{service.icon}</div>
               </div>
             ))}
           </div>

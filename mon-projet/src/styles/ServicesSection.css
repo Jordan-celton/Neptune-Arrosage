@@ -2,7 +2,7 @@
 
 .services-section {
     position: relative;
-    padding: 80px 0 0rem;
+    padding: 80px 0 0;
     background-color: var(--light-bg);
     overflow: hidden;
 }
@@ -11,15 +11,16 @@
 .hero-block {
     display: flex;
     align-items: center;
-    max-width: 1400px;
     margin: 0 auto 5rem;
     padding: 0 2rem;
     gap: 4rem;
+    max-width: 1400px;
 }
 
 .hero-image-container {
     flex: 1;
     min-width: 300px;
+    max-width: 100%;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -43,7 +44,8 @@
 }
 
 .services-main-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* Taille responsive */
     color: var(--text-color);
     line-height: 1.2;
     margin-bottom: 10rem;
@@ -89,12 +91,15 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     position: relative;
-    bottom: 250px;
+    bottom: 150px;
+    scrollbar-width: thin;
+    /* Pour Firefox */
 }
 
 /* Card Styles */
 .service-card {
-    min-width: 320px;
+    min-width: min(320px, 90vw);
+    /* Adaptatif */
     background: white;
     border-radius: 16px;
     overflow: hidden;
@@ -133,24 +138,30 @@
 /* Icon Styles */
 .card-icon-container {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 50px;
-    height: 50px;
+    top: 50%;
+    /* Centre verticalement */
+    left: 50%;
+    /* Centre horizontalement */
+    transform: translate(-50%, -50%) scale(1);
+    /* Ajustement précis */
+    width: clamp(45px, 6vw, 70px);
+    height: clamp(45px, 6vw, 70px);
     background: var(--primary);
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    /* Supprimer right et les valeurs top spécifiques */
 }
 
 .service-card:hover .card-icon-container {
     background: var(--secondary);
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
+        /* Maintient le centrage */
 }
 
 .service-icon {
@@ -167,10 +178,11 @@
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
+    font-size: clamp(1.2rem, 3vw, 1.3rem);
     color: var(--primary);
-    margin-bottom: 0.8rem;
+    margin: 1.8rem 0;
     font-weight: 600;
+    text-align: center;
 }
 
 .card-content p {
@@ -178,6 +190,7 @@
     margin-bottom: 1.5rem;
     line-height: 1.5;
     flex-grow: 1;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .service-link {
@@ -188,6 +201,7 @@
     text-decoration: none;
     transition: all 0.3s ease;
     margin-top: auto;
+    justify-content: center;
 }
 
 .service-link span {
@@ -223,10 +237,6 @@
     .hero-block {
         gap: 2rem;
     }
-
-    .services-main-title {
-        font-size: 2.5rem;
-    }
 }
 
 @media (max-width: 992px) {
@@ -241,61 +251,88 @@
     }
 
     .services-main-title {
+        margin-bottom: 5rem;
         text-align: center;
     }
 
+    .services-scroller {
+        margin-top: 0rem;
+        padding-top: 2rem;
+    } 
+    
+    .services-cards {
+        bottom: 50px;
+        padding-top: 0;
+        flex-wrap: wrap;
+        overflow-x: visible;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        overflow-x: visible;
+    }
+
     .service-card {
-        min-width: 280px;
+        min-width: 100%;
+        /* Prend toute la largeur */
+        margin-bottom: 2rem;
+    }
+    
+    .card-icon-container {
+        width: 60px;
+        height: 60px;
     }
 }
 
 @media (max-width: 768px) {
     .services-section {
-        padding-bottom: 8rem;
-    }
-
-    .services-main-title {
-        font-size: 2rem;
+        padding: 60px 0 0;
     }
 
     .services-scroller {
-        margin-top: -3rem;
-        padding-top: 3rem;
+        padding-top: 5rem;
+    }
+
+    .services-cards {
+        bottom: 180px;
     }
 
     .card-icon-container {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media (max-width: 576px) {
-    .services-main-title {
-        font-size: 1.8rem;
-    }
-
     .hero-block {
         padding: 0 1rem;
+        margin-bottom: 2rem;
     }
 
     .services-overlay-container {
         padding: 0 1rem;
     }
 
+    .services-main-title {
+        margin-bottom: 3rem;
+    }
+
     .service-card {
-        min-width: 260px;
+        min-width: 85vw;
+        scroll-snap-align: center;
+    }
+
+    .services-cards {
+        padding: 1rem 0.5rem;
+        bottom: 150px;
+        gap: 1.5rem;
+    }
+
+    .card-icon-container {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 
     .card-content {
-        padding: 1.2rem;
-    }
-
-    .card-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .card-content p {
-        font-size: 0.9rem;
+        padding: 1rem;
     }
 }
