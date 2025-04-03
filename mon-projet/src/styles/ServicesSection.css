@@ -142,7 +142,7 @@
     /* Centre verticalement */
     left: 50%;
     /* Centre horizontalement */
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -90%) scale(1);
     /* Ajustement précis */
     width: clamp(45px, 6vw, 70px);
     height: clamp(45px, 6vw, 70px);
@@ -160,8 +160,7 @@
 
 .service-card:hover .card-icon-container {
     background: var(--secondary);
-    transform: translate(-50%, -50%) scale(1.1);
-        /* Maintient le centrage */
+
 }
 
 .service-icon {
@@ -175,6 +174,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .card-content h3 {
@@ -202,6 +202,9 @@
     transition: all 0.3s ease;
     margin-top: auto;
     justify-content: center;
+    border: 1px solid var(--secondary);
+    width: 70%;
+    border-radius: 5px;
 }
 
 .service-link span {

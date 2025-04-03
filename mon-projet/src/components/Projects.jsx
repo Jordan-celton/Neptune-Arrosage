@@ -1,8 +1,10 @@
 // src/components/RealisationList.jsx
 import React, { useRef } from "react";
 import "../styles/Projects.css";
-import image1 from "../assets/photos/AdobeStock_201488180_Preview.jpeg";
+import image1 from "../assets/photos/20200512_155618.jpg";
 import image2 from "../assets/photos/Capture.webp";
+import image3 from "../assets/photos/DSC_0779.webp";
+import image4 from "../assets/photos/20180614_160716.webp";
 
 const Projects = () => {
   const carouselRef = useRef(null);
@@ -29,16 +31,16 @@ const Projects = () => {
       date: "27 MARS 2025",
       titre: "Rénovation du système d'arrosage du jardin des Tuileries",
       lien: "Lire la suite",
-      backgroundImage: `url(${image1})`,
+      backgroundImage: `url(${image3})`,
       category: "ESPACES VERTS",
     },
     {
       ville: "LYON (69)",
       date: "27 MARS 2025",
-      titre: "Rénovation du système d'arrosage de la place Bellecour",
+      titre: "Mise en placed'une fontaine à Lyon",
       lien: "Lire la suite",
-      backgroundImage: `url(${image2})`,
-      category: "ESPACES VERTS",
+      backgroundImage: `url(${image4})`,
+      category: "FONTAINES",
     },
   ];
 

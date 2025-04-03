@@ -55,18 +55,28 @@ const NavBar = () => {
           </a>
           <ul className={`submenu ${isServicesHovered ? "show" : ""}`}>
             <li>
-              <a href="#arrosage" onClick={() => setIsMenuOpen(false)}>
-                Systèmes d'arrosage
-              </a>
-            </li>
-            <li>
               <a href="#fontaines" onClick={() => setIsMenuOpen(false)}>
-                Fontaines décoratives
+                FONTAINERIE
               </a>
             </li>
             <li>
-              <a href="#eclairage" onClick={() => setIsMenuOpen(false)}>
-                Éclairage de jardin
+              <a href="#sports" onClick={() => setIsMenuOpen(false)}>
+                TERRAINS SPORTIFS
+              </a>
+            </li>
+            <li>
+              <a href="#jardins" onClick={() => setIsMenuOpen(false)}>
+                JARDINS & ESPACES PUBLICS
+              </a>
+            </li>
+            <li>
+              <a href="#contrats" onClick={() => setIsMenuOpen(false)}>
+                CONTRATS ENTRETIEN
+              </a>
+            </li>
+            <li>
+              <a href="#recupération" onClick={() => setIsMenuOpen(false)}>
+                RECUPERATION EAU DE PLUIE
               </a>
             </li>
           </ul>

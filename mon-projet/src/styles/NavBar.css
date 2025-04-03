@@ -39,7 +39,7 @@
 
 .navbar-links li a {
     text-decoration: none;
-    color: var(--dark-text);
+    color: var(--text-color);
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
@@ -50,7 +50,7 @@
 }
 
 .navbar-links li a:hover {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .navbar-links li a::after {
@@ -121,8 +121,8 @@
 }
 
 .submenu li a:hover {
-    background-color: var(--light-accent);
-    color: var(--primary);
+    background-color: var(--secondary);
+    color: var(--light-bg);
     padding-left: 1.8rem;
 }
 

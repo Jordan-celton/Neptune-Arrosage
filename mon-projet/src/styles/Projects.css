@@ -2,7 +2,6 @@
 
 /* Styles de base */
 .realisation-section {
-    font-family: 'Arial', sans-serif;
     padding: 60px 0;
     background-color: #f9f9f9;
 }
@@ -50,7 +49,7 @@
 
 /* Cartes de réalisation */
 .realisation-card {
-    min-width: 300px;
+    width: 450px;
     flex: 0 0 auto;
     background: white;
     border-radius: 8px;
@@ -119,7 +118,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #0066CC;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -182,7 +181,7 @@
 }
 
 .see-all-button {
-    background-color: #0066CC;
+    background-color: var(--secondary);
     color: white;
     border: none;
     padding: 12px 24px;

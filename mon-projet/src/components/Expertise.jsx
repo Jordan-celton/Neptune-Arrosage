@@ -13,7 +13,9 @@ const Expertise = () => {
           <h2 className="section-title-expertise">
             Savoir-faire et innovation
           </h2>
-          <p className="section-subtitle">au service de l'environnement</p>
+          <span className="section-subtitle">
+            au service de l'environnement
+          </span>
           <p>
             Grâce à une expertise technique reconnue et une approche sur-mesure,
             Neptune Arrosage accompagne les collectivités, architectes
