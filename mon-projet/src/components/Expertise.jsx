@@ -1,5 +1,5 @@
 import React from "react";
-import iconearth from "../assets/iconearth.png";
+import iconearth from "../assets/ecology.png";
 
 import "../styles/Expertise.css";
 
@@ -10,7 +10,9 @@ const Expertise = () => {
       <div className="container">
         <div className="section-header">
           <img src={iconearth} alt="Icône terre" />
-          <h2 className="section-title">Savoir-faire et innovation</h2>
+          <h2 className="section-title-expertise">
+            Savoir-faire et innovation
+          </h2>
           <p className="section-subtitle">au service de l'environnement</p>
           <p>
             Grâce à une expertise technique reconnue et une approche sur-mesure,

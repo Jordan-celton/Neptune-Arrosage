@@ -2,8 +2,7 @@
 .expertise-section {
     position: relative;
     padding: 6rem 0;
-    color: white;
-    /* Couleur de texte par défaut pour mieux contraster */
+    color: var(--light-bg);
     overflow: hidden;
 }
 
@@ -47,7 +46,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.section-title {
+.section-title-expertise {
     color: var(--light-bg);
 }
 

@@ -14,6 +14,12 @@
     --text-color: black;
     /* Couleur du texte */
 
+    /* Ombres et effets */
+
+    --overlay-dark: rgba(0, 0, 0, 0.8);
+    --overlay-light: rgba(255, 255, 255, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
     /* Variations */
     --primary-light: rgba(80, 139, 191, 0.1);
     --secondary-dark: #16C172;

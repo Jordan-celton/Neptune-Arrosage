@@ -1,9 +1,9 @@
 /* ContactBanner.css */
 .contact-banner {
-    background-color: #ffffff;
     padding: 40px 0;
     font-family: Arial, sans-serif;
     text-align: center;
+    border-bottom: solid 1px var(--light-bg);
 }
 
 .contact-banner__container {
@@ -15,8 +15,8 @@
 }
 
 .contact-banner__title {
-    font-size: 28px;
-    color: #333333;
+    font-size: 2.5rem;
+    color: var(--light-bg);
     margin-bottom: 20px;
     font-weight: 700;
 }
@@ -37,15 +37,15 @@
 .contact-banner__phone {
     display: flex;
     font-size: 24px;
-    color: #0066cc;
+    color: var(--secondary);
     font-weight: 700;
     align-items: center;
     justify-content: space-evenly;
 }
 
 .contact-banner__button {
-    background-color: #0066cc;
-    color: white;
+    background-color: var(--secondary);
+    color: var(--light-bg);
     border: none;
     padding: 12px 30px;
     border-radius: 4px;
@@ -54,23 +54,56 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .contact-banner__button:hover {
-    background-color: #004d99;
+    background-color: var(--primary);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 992px) {
     .contact-banner__title {
-        font-size: 24px;
+        font-size: 2rem;
     }
 
     .contact-banner__phone {
-        font-size: 20px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-banner {
+        padding: 2.5rem 0;
+    }
+
+    .contact-banner__title {
+        font-size: 1.75rem;
+    }
+
+    .contact-banner__phone {
+        font-size: 1.25rem;
     }
 
     .contact-banner__button {
-        padding: 10px 25px;
-        font-size: 14px;
+        padding: 0.65rem 1.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-banner__container {
+        padding: 0 1.25rem;
+    }
+
+    .contact-banner__title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .contact-banner__divider {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-banner__phone {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
