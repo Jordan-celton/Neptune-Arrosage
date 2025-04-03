@@ -1,0 +1,76 @@
+/* ContactBanner.css */
+.contact-banner {
+    background-color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.contact-banner__container {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact-banner__title {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contact-banner__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact-banner__contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-banner__phone {
+    display: flex;
+    font-size: 24px;
+    color: #0066cc;
+    font-weight: 700;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-banner__button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-banner__button:hover {
+    background-color: #004d99;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-banner__title {
+        font-size: 24px;
+    }
+
+    .contact-banner__phone {
+        font-size: 20px;
+    }
+
+    .contact-banner__button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}

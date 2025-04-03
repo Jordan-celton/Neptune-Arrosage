@@ -1,0 +1,243 @@
+/* src/styles/Projects.css */
+
+/* Styles de base */
+.realisation-section {
+    font-family: 'Arial', sans-serif;
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Conteneur du carrousel */
+.carousel-container {
+    position: relative;
+    margin: 0 auto 40px;
+    max-width: 1200px;
+}
+
+/* Carrousel */
+.realisation-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Pour Firefox */
+    -ms-overflow-style: none;
+    /* Pour IE et Edge */
+    padding: 20px 0;
+    margin: 0 40px;
+    /* Espace pour les boutons */
+}
+
+.realisation-carousel::-webkit-scrollbar {
+    display: none;
+    /* Pour Chrome, Safari et Opera */
+}
+
+/* Cartes de réalisation */
+.realisation-card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.realisation-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.category-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.separator {
+    color: #ccc;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.read-more {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #0066CC;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.read-more:hover {
+    color: #004499;
+}
+
+.read-more svg {
+    transition: transform 0.2s ease;
+}
+
+.read-more:hover svg {
+    transform: translateX(3px);
+}
+
+/* Boutons de navigation */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #f5f5f5;
+    border-color: #0066CC;
+}
+
+.nav-button.left {
+    left: 0;
+}
+
+.nav-button.right {
+    right: 0;
+}
+
+.nav-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Bouton "Voir toutes les réalisations" */
+.section-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.see-all-button {
+    background-color: #0066CC;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.see-all-button:hover {
+    background-color: #004499;
+}
+
+.see-all-button svg {
+    transition: transform 0.2s ease;
+}
+
+.see-all-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .realisation-card {
+        min-width: 280px;
+    }
+
+    .nav-button {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .realisation-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .realisation-card {
+        min-width: 260px;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+}
