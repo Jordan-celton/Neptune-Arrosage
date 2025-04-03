@@ -3,11 +3,11 @@ import { FaTools, FaSeedling, FaTint } from "react-icons/fa";
 import { GiSoccerField } from "react-icons/gi";
 import { TbFountain } from "react-icons/tb";
 import ServiceImage from "../assets/photos/AdobeStock_220745292.jpeg";
-import Service1Img from "../assets/photos/AdobeStock_220745292.jpeg";
-import Service2Img from "../assets/photos/AdobeStock_220745292.jpeg";
-import Service3Img from "../assets/photos/AdobeStock_220745292.jpeg";
-import Service4Img from "../assets/photos/AdobeStock_220745292.jpeg";
-import Service5Img from "../assets/photos/AdobeStock_220745292.jpeg";
+import Service1Img from "../assets/photos/DSC_0767.webp";
+import Service2Img from "../assets/photos/20200512_155618.jpg";
+import Service3Img from "../assets/photos/Fontaine 2.webp";
+import Service4Img from "../assets/photos/AdobeStock_201488180_Preview.jpeg";
+import Service5Img from "../assets/photos/sprinkler-498514_1920.webp";
 import "../styles/ServicesSection.css";
 
 const ServicesSection = () => {
