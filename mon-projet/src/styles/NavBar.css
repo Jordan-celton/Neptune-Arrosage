@@ -1,33 +1,34 @@
-/* NavBar.css */
+/* NavBar.css - Version complète avec votre palette */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
     background-color: var(--light-bg);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 20px var(--primary-light);
     position: sticky;
     top: 0;
     z-index: 1000;
     font-family: 'Segoe UI', Roboto, sans-serif;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
+/* Logo */
 .navbar-logo a {
     display: block;
     width: 180px;
     height: 50px;
-    background-image: url('../assets/logo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('../assets/logo.jpg') center/contain no-repeat;
     text-indent: -9999px;
-    transition: transform 0.3s ease;
+    transition: var(--transition);
 }
 
 .navbar-logo a:hover {
     transform: scale(1.05);
 }
 
+/* Liens principaux */
 .navbar-links {
     display: flex;
     list-style: none;
@@ -37,52 +38,58 @@
     align-items: center;
 }
 
-.navbar-links li a {
+.nav-link,
+.services-button {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     position: relative;
     padding: 0.5rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.navbar-links li a:hover {
+.nav-link:hover,
+.services-button:hover {
     color: var(--secondary);
 }
 
-.navbar-links li a::after {
+/* Effet de soulignement */
+.nav-link::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--secondary);
-    transition: width 0.3s ease, left 0.3s ease;
+    background-color: var(--primary);
+    transition: var(--transition);
 }
 
-.navbar-links li a:hover::after {
+.nav-link:hover::after,
+.services-button:focus-visible::after {
     width: 100%;
 }
 
+/* Menu Services */
 .services-menu {
     position: relative;
 }
 
-.services-menu>a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .services-menu svg {
     font-size: 0.8rem;
-    transition: transform 0.3s ease;
+    transition: var(--transition);
 }
 
+/* Sous-menu */
 .submenu {
     position: absolute;
     top: 100%;
@@ -90,19 +97,18 @@
     width: 220px;
     background-color: var(--light-bg);
     border: 1px solid var(--light-accent);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px var(--primary-light);
     border-radius: 0 0 5px 5px;
     overflow: hidden;
     max-height: 0;
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.2s ease;
+    transition: max-height var(--transition), opacity 0.2s ease;
     z-index: 1000;
 }
 
 .submenu.show {
     max-height: 500px;
     opacity: 1;
-    background-color: var(--light-bg);
 }
 
 .submenu li {
@@ -117,7 +123,7 @@
     text-transform: none;
     letter-spacing: normal;
     border-bottom: 1px solid var(--light-accent);
-    transition: all 0.2s ease;
+    transition: var(--transition);
 }
 
 .submenu li a:hover {
@@ -130,6 +136,7 @@
     border-bottom: none;
 }
 
+/* Bouton toggle mobile */
 .navbar-toggle {
     display: none;
     background: none;
@@ -137,16 +144,17 @@
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
-    outline: none;
 }
 
-.navbar-toggle-icon {
+.navbar-toggle-icon,
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
     display: block;
     width: 28px;
     height: 2px;
     background-color: var(--primary);
     position: relative;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .navbar-toggle-icon::before,
@@ -155,8 +163,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--primary);
-    transition: all 0.3s ease;
 }
 
 .navbar-toggle-icon::before {
@@ -181,6 +187,18 @@
     transform: rotate(-45deg);
 }
 
+/* Accessibilité */
+.nav-link:focus-visible,
+.services-button:focus-visible,
+.navbar-toggle:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* ==================== */
+/* VERSION MOBILE (768px) */
+/* ==================== */
 @media (max-width: 992px) {
     .navbar-links {
         gap: 1.5rem;
@@ -190,7 +208,6 @@
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 1.5rem;
-        flex-wrap: wrap;
     }
 
     .navbar-logo a {
@@ -202,81 +219,120 @@
         display: block;
     }
 
+    /* Menu principal */
     .navbar-links {
         flex-direction: column;
         width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        position: absolute;
-        top: 80px;
+        position: fixed;
+        top: 70px;
         left: 0;
+        right: 0;
+        height: calc(100vh - 80px);
         background-color: var(--light-bg);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 15px -3px var(--primary-light);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: 999;
     }
 
     .navbar-links.active {
-        max-height: 500px;
-        padding: 1rem 0;
+        transform: translateY(0);
+        opacity: 1;
+        display: flex;
+        justify-content: center;
     }
 
+    /* Items du menu */
     .navbar-links li {
         width: 100%;
         text-align: center;
     }
 
-    .navbar-links li a {
+    .nav-link,
+    .services-button {
         padding: 1rem 0;
+        width: 100%;
+        justify-content: center;
         border-bottom: 1px solid var(--light-accent);
     }
 
-    .navbar-links li:last-child a {
+    .navbar-links li:last-child .nav-link {
         border-bottom: none;
     }
 
-    .navbar-links li a::after {
+    /* Masquer l'effet de soulignement en mobile */
+    .nav-link::after {
         display: none;
     }
 
-    .services-menu {
-        flex-direction: column;
-    }
-
+    /* Sous-menu mobile */
     .submenu {
         position: static;
         width: 100%;
         box-shadow: none;
-        background-color: var(--light-accent);
-    }
-
-    .submenu.show {
-        max-height: none;
+        background-color: var(--primary-light);
     }
 
     .submenu li a {
         padding: 0.8rem 2rem;
-        font-size: 0.9rem;
+        font-size: 0.9em;
+        text-align: center;
     }
 
-    .services-menu>a {
-        justify-content: center;
-    }
-}
-
-@keyframes slideDown {
-    from {
+    /* Overlay semi-transparent */
+    .navbar-links::before {
+        content: '';
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--light-bg);
+        z-index: -1;
         opacity: 0;
-        transform: translateY(-20px);
+        transition: var(--transition);
     }
 
-    to {
+    .navbar-links.active::before {
         opacity: 1;
-        transform: translateY(0);
+    }
+
+    /* Bloquer le scroll quand le menu est ouvert */
+    body.navbar-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
     }
 }
 
+/* Très petits écrans (480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar-logo a {
+        width: 130px;
+        height: 35px;
+    }
+
+    .navbar-links {
+        top: 60px;
+        height: calc(100vh - 72px);
+    }
+
+    .navbar-links::before {
+        top: 60px;
+    }
+}
+
+/* Animation d'entrée des items */
 .navbar-links.active li {
-    animation: slideDown 0.4s ease forwards;
+    animation: fadeIn 0.4s ease forwards;
 }
 
 .navbar-links.active li:nth-child(1) {
@@ -293,4 +349,8 @@
 
 .navbar-links.active li:nth-child(4) {
     animation-delay: 0.4s;
+}
+
+.navbar-links.active li:nth-child(5) {
+    animation-delay: 0.5s;
 }

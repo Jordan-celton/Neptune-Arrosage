@@ -6,6 +6,9 @@ import Image1 from "../assets/photos/Home/20180614_160716.webp";
 import Image2 from "../assets/photos/Home/20200512_155618.webp";
 import Image3 from "../assets/photos/Home/DSC_0779.webp";
 
+// Import de l'icône
+import Icon from "../assets/icons/picto_bulles.svg";
+
 const AboutSection = () => {
   return (
     <section className="about-section" id="about">
@@ -38,9 +41,12 @@ const AboutSection = () => {
 
           {/* Colonne du texte */}
           <div className="text-column">
-            <h2 className="about-heading">
-              Pour des espaces verts d'exception
-            </h2>
+            <div className="title-with-icon">
+              <img src={Icon} alt="" className="icon-before-heading" />
+              <h2 className="about-heading">
+                Pour des espaces verts d'exception
+              </h2>
+            </div>
             <h3 className="about-subheading">
               L'art de l'eau & <span>de l'arrosage</span>
             </h3>
