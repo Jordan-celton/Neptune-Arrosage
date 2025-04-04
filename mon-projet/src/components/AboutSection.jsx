@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/AboutSection.css";
 
 // Import des images
-import Image1 from "../assets/photos/20180614_160716.webp";
-import Image2 from "../assets/photos/20200512_155618.jpg";
-import Image3 from "../assets/photos/DSC_0779.webp";
+import Image1 from "../assets/photos/Home/20180614_160716.webp";
+import Image2 from "../assets/photos/Home/20200512_155618.webp";
+import Image3 from "../assets/photos/Home/DSC_0779.webp";
 
 const AboutSection = () => {
   return (

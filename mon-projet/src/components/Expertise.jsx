@@ -1,5 +1,5 @@
 import React from "react";
-import iconearth from "../assets/ecology.png";
+import iconearth from "../assets/icons/picto_environnement.svg";
 
 import "../styles/Expertise.css";
 
