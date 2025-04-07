@@ -91,7 +91,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     position: relative;
-    bottom: 150px;
+    bottom: 350px;
     scrollbar-width: thin;
     /* Pour Firefox */
 }
@@ -139,14 +139,11 @@
 .card-icon-container {
     position: absolute;
     top: 50%;
-    /* Centre verticalement */
     left: 50%;
-    /* Centre horizontalement */
     transform: translate(-50%, -90%) scale(1);
-    /* Ajustement précis */
     width: clamp(45px, 6vw, 70px);
     height: clamp(45px, 6vw, 70px);
-    background: var(--primary);
+    background: var(--light-bg);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -155,17 +152,11 @@
     font-size: clamp(1.2rem, 2vw, 1.3rem);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    /* Supprimer right et les valeurs top spécifiques */
-}
-
-.service-card:hover .card-icon-container {
-    background: var(--secondary);
-
 }
 
 .service-icon {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
 }
 
 /* Content Styles */
@@ -179,7 +170,7 @@
 
 .card-content h3 {
     font-size: clamp(1.2rem, 3vw, 1.3rem);
-    color: var(--primary);
+    color: var(--text-color);
     margin: 1.8rem 0;
     font-weight: 600;
     text-align: center;
@@ -327,7 +318,9 @@
 
     .services-cards {
         padding: 1rem 0.5rem;
-        bottom: 150px;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column-reverse;
         gap: 1.5rem;
     }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/ContactHome.css";
-import { MdContactPhone } from "react-icons/md";
+import icon from "../assets/icons/picto_casque_tel.svg";
 
 const ContactBanner = () => {
   return (
@@ -13,7 +13,8 @@ const ContactBanner = () => {
           <div className="contact-banner__contact-info">
             <p className="contact-banner__phone">
               {" "}
-              <MdContactPhone /> 02 40 73 64 89
+              <img src={icon} className="picto-casque" alt="" srcset="" /> 02 40
+              73 64 89
             </p>
             <button className="contact-banner__button">
               Discuter de votre projet

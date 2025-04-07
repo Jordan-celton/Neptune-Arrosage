@@ -37,10 +37,16 @@
 .contact-banner__phone {
     display: flex;
     font-size: 24px;
-    color: var(--secondary);
+    color: var(--light-bg);
     font-weight: 700;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.picto-casque {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .contact-banner__button {

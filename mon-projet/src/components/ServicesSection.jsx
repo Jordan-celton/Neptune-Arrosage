@@ -1,13 +1,15 @@
 import React from "react";
-import { FaTools, FaSeedling, FaTint } from "react-icons/fa";
-import { GiSoccerField } from "react-icons/gi";
-import { TbFountain } from "react-icons/tb";
 import ServiceImage from "../assets/photos/Home/bg_nos_services.webp";
 import Service1Img from "../assets/photos/Home/DSC_0767.webp";
 import Service2Img from "../assets/photos/Home/20200512_155618.webp";
 import Service3Img from "../assets/photos/Home/Fontaine 2.webp";
 import Service4Img from "../assets/photos/Home/article_réalisation.webp";
 import Service5Img from "../assets/photos/Home/sprinkler-498514_1920.webp";
+import icon1 from "../assets/icons/picto_contrats_entretien.svg";
+import icon2 from "../assets/icons/picto_parc_jardins.svg";
+import icon3 from "../assets/icons/picto_fontainerie.svg";
+import icon4 from "../assets/icons/picto_terrains_sportifs.svg";
+import icon5 from "../assets/icons/picto_materiel_arrosage.svg";
 import "../styles/ServicesSection.css";
 
 const ServicesSection = () => {
@@ -17,14 +19,16 @@ const ServicesSection = () => {
       title: "Contrats d'entretien",
       description:
         "Entretien et maintenance de vos installations d'arrosage automatique",
-      icon: <FaTools className="service-icon" />,
+      icon: (
+        <img src={icon1} alt="Contrats d'entretien" className="service-icon" />
+      ),
       image: Service1Img,
     },
     {
       id: 2,
       title: "Jardins & espaces publics",
       description: "Réalisation de jardins et d'espaces publics d'exception",
-      icon: <FaSeedling className="service-icon" />,
+      icon: <img src={icon2} alt="" className="service-icon" />,
       image: Service2Img,
     },
     {
@@ -32,7 +36,7 @@ const ServicesSection = () => {
       title: "Fontainerie",
       description:
         "Conception et réalisation de fontaines et d'aménagements hydrauliques",
-      icon: <TbFountain className="service-icon" />,
+      icon: <img src={icon3} alt="" className="service-icon" />,
       image: Service3Img,
     },
     {
@@ -40,14 +44,14 @@ const ServicesSection = () => {
       title: "Terrains Sportifs",
       description:
         "Arrosage et maintenance des terrains sportifs pour la rénovation ou la création",
-      icon: <GiSoccerField className="service-icon" />,
+      icon: <img src={icon4} alt="" className="service-icon" />,
       image: Service4Img,
     },
     {
       id: 5,
       title: "Matériel d'arrosage",
       description: "Vente de matériel d'arrosage et de jardinage",
-      icon: <FaTint className="service-icon" />,
+      icon: <img src={icon5} alt="" className="service-icon" />,
       image: Service5Img,
     },
   ];
