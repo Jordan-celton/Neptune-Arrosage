@@ -13,7 +13,7 @@ const ContactBanner = () => {
           <div className="contact-banner__contact-info">
             <p className="contact-banner__phone">
               {" "}
-              <img src={icon} className="picto-casque" alt="" srcset="" /> 02 40
+              <img src={icon} className="picto-casque" alt="" srcSet="" /> 02 40
               73 64 89
             </p>
             <button className="contact-banner__button">
