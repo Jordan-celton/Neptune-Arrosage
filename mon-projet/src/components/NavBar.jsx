@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
-import "../styles/NavBar.css";
+import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import "../styles/NavBar.css";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,49 +9,39 @@ const NavBar = () => {
   const navbarRef = useRef(null);
   const servicesRef = useRef(null);
 
-  // Fermeture du menu lors du clic à l'extérieur ou sur un lien
+  // Gestion du scroll et du body quand le menu est ouvert
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("navbar-open");
+    } else {
+      document.body.classList.remove("navbar-open");
+    }
+  }, [isMenuOpen]);
+
+  // Fermeture au clic extérieur
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Fermer le menu principal si clic à l'extérieur
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
-        setIsMenuOpen(false);
-      }
-
-      // Fermer le sous-menu services si clic à l'extérieur
-      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-        setIsServicesOpen(false);
-      }
-    };
-
-    // Fermer le menu lors du redimensionnement de la fenêtre
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
         setIsMenuOpen(false);
         setIsServicesOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Empêcher le défilement de la page lorsque le menu est ouvert
+  // Fermeture au redimensionnement
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
+      }
     };
-  }, [isMenuOpen]);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -63,7 +54,7 @@ const NavBar = () => {
     setIsServicesOpen(!isServicesOpen);
   };
 
-  const closeMenu = () => {
+  const closeAllMenus = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   };
@@ -71,7 +62,13 @@ const NavBar = () => {
   return (
     <nav className="navbar" ref={navbarRef}>
       <div className="navbar-logo">
-        <a href="/" aria-label="Accueil Neptune Arrosage"></a>
+        <NavLink
+          to="/"
+          aria-label="Accueil Neptune Arrosage"
+          onClick={closeAllMenus}
+        >
+          {/* Logo sera affiché via le CSS */}
+        </NavLink>
       </div>
 
       <button
@@ -90,10 +87,15 @@ const NavBar = () => {
         aria-hidden={!isMenuOpen}
       >
         <li>
-          <a href="#neptune" onClick={closeMenu}>
+          <NavLink
+            to="/neptune"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            onClick={closeAllMenus}
+          >
             NEPTUNE
-          </a>
+          </NavLink>
         </li>
+
         <li
           className="services-menu"
           ref={servicesRef}
@@ -113,47 +115,78 @@ const NavBar = () => {
             NOS SERVICES
             {isServicesOpen ? <FaChevronUp /> : <FaChevronDown />}
           </button>
+
           <ul
             id="services-submenu"
             className={`submenu ${isServicesOpen ? "show" : ""}`}
             aria-hidden={!isServicesOpen}
           >
             <li>
-              <a href="#fontaines" onClick={closeMenu}>
+              <NavLink
+                to="/services#fontaines"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeAllMenus}
+              >
                 FONTAINERIE
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#sports" onClick={closeMenu}>
+              <NavLink
+                to="/services#sports"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeAllMenus}
+              >
                 TERRAINS SPORTIFS
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#jardins" onClick={closeMenu}>
+              <NavLink
+                to="/services#jardins"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeAllMenus}
+              >
                 JARDINS & ESPACES PUBLICS
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#contrats" onClick={closeMenu}>
+              <NavLink
+                to="/services#contrats"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeAllMenus}
+              >
                 CONTRATS ENTRETIEN
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#recupération" onClick={closeMenu}>
+              <NavLink
+                to="/services#recuperation"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeAllMenus}
+              >
                 RECUPERATION EAU DE PLUIE
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>
+
         <li>
-          <a href="#realisations" onClick={closeMenu}>
+          <NavLink
+            to="/realisations"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            onClick={closeAllMenus}
+          >
             RÉALISATIONS
-          </a>
+          </NavLink>
         </li>
+
         <li>
-          <a href="#contact" onClick={closeMenu}>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            onClick={closeAllMenus}
+          >
             CONTACT
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>

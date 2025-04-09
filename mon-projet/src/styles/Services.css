@@ -1,0 +1,154 @@
+/* Style général de la page Services */
+.services-page {
+    padding-top: 2rem;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.services-page h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Styles pour chaque section de service */
+.service-section {
+    padding: 4rem 0;
+    scroll-margin-top: 100px;
+    /* Compense le header fixe */
+    border-bottom: 1px solid var(--primary-light);
+}
+
+.service-section:last-child {
+    border-bottom: none;
+}
+
+.service-section h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.service-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.service-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.service-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--primary-light);
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.service-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Styles pour les listes de caractéristiques */
+.service-features {
+    margin: 1.5rem 0;
+    list-style-type: none;
+}
+
+.service-features li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.service-features li::before {
+    content: '✓';
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Bouton spécifique aux services */
+.service-btn {
+    margin-top: 1.5rem;
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.service-btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(22, 193, 114, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-section {
+        padding: 3rem 0;
+        scroll-margin-top: 80px;
+    }
+
+    .service-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-content {
+        flex-direction: column;
+    }
+
+    .service-image {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Animation spécifique pour les sections */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service-section:nth-child(odd) {
+    animation: slideIn 0.6s ease forwards;
+}
+
+.service-section:nth-child(even) {
+    animation: slideIn 0.6s ease 0.1s forwards;
+}
