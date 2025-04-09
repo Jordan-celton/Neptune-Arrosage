@@ -40,15 +40,25 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Section Récupération Eau de Pluie */}
-      <section id="recuperation" className="service-section">
-        <h2>Récupération Eau de Pluie</h2>
+      {/* Section Matériel d'Arrosage */}
+      <section id="materiel" className="service-section">
+        <h2>Matériel d'Arrosage</h2>
         <div className="service-content">
-          <p>Description des systèmes de récupération d'eau de pluie...</p>
+          <p>Description des matériels d'arrosage disponibles...</p>
         </div>
       </section>
     </div>
   );
 };
+
+{
+  /* Section Récupération Eau de Pluie
+<section id="recuperation" className="service-section">
+  <h2>Récupération Eau de Pluie</h2>
+  <div className="service-content">
+    <p>Description des systèmes de récupération d'eau de pluie...</p>
+  </div>
+</section> */
+}
 
 export default Services;

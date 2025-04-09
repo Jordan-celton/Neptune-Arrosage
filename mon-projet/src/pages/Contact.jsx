@@ -34,9 +34,14 @@ const Contact = () => {
               <div className="contact-text">
                 <h3>Adresse</h3>
                 <p>
-                  123 Rue des Fontaines
+                  3 rue Réaumur
                   <br />
-                  75000 Paris, France
+                  44100 Nantes
+                </p>
+                <p>
+                  1 rue du bois des carreaux
+                  <br />
+                  92290 Chantenay Malabry
                 </p>
               </div>
             </div>
@@ -48,7 +53,7 @@ const Contact = () => {
               <div className="contact-text">
                 <h3>Téléphone</h3>
                 <p>
-                  <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                  <a href="tel:+33123456789">02 40 73 64 89</a>
                 </p>
               </div>
             </div>
@@ -73,11 +78,7 @@ const Contact = () => {
               </div>
               <div className="contact-text">
                 <h3>Horaires</h3>
-                <p>
-                  Lundi-Vendredi: 8h-18h
-                  <br />
-                  Samedi: 9h-12h
-                </p>
+                <p>Lundi-Vendredi: 8h-18h</p>
               </div>
             </div>
           </div>

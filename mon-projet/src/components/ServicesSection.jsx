@@ -23,6 +23,7 @@ const ServicesSection = () => {
         <img src={icon1} alt="Contrats d'entretien" className="service-icon" />
       ),
       image: Service1Img,
+      anchor: "contrats",
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const ServicesSection = () => {
       description: "Réalisation de jardins et d'espaces publics d'exception",
       icon: <img src={icon2} alt="" className="service-icon" />,
       image: Service2Img,
+      anchor: "jardins",
     },
     {
       id: 3,
@@ -38,6 +40,7 @@ const ServicesSection = () => {
         "Conception et réalisation de fontaines et d'aménagements hydrauliques",
       icon: <img src={icon3} alt="" className="service-icon" />,
       image: Service3Img,
+      anchor: "fontaines",
     },
     {
       id: 4,
@@ -46,6 +49,7 @@ const ServicesSection = () => {
         "Arrosage et maintenance des terrains sportifs pour la rénovation ou la création",
       icon: <img src={icon4} alt="" className="service-icon" />,
       image: Service4Img,
+      anchor: "sports",
     },
     {
       id: 5,
@@ -53,6 +57,7 @@ const ServicesSection = () => {
       description: "Vente de matériel d'arrosage et de jardinage",
       icon: <img src={icon5} alt="" className="service-icon" />,
       image: Service5Img,
+      anchor: "materiel",
     },
   ];
 
@@ -101,7 +106,21 @@ const ServicesSection = () => {
                 <div className="card-content">
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <a href="#" className="service-link">
+                  <a
+                    href={`/services#${service.anchor}`} // Lien vers la page Services avec ancre
+                    className="service-link"
+                    onClick={(e) => {
+                      // Si vous êtes déjà sur la page Services
+                      if (window.location.pathname === "/services") {
+                        e.preventDefault();
+                        document
+                          .getElementById(service.anchor)
+                          ?.scrollIntoView({
+                            behavior: "smooth",
+                          });
+                      }
+                    }}
+                  >
                     Lire la suite <span>→</span>
                   </a>
                 </div>

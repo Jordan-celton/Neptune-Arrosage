@@ -107,13 +107,15 @@ const NavBar = () => {
           }
         >
           <button
+            className="services-button"
             onClick={toggleServices}
             aria-expanded={isServicesOpen}
             aria-controls="services-submenu"
-            className="services-button"
           >
-            NOS SERVICES
-            {isServicesOpen ? <FaChevronUp /> : <FaChevronDown />}
+            <NavLink to="/services">
+              NOS SERVICES
+              {isServicesOpen ? <FaChevronUp /> : <FaChevronDown />}
+            </NavLink>
           </button>
 
           <ul

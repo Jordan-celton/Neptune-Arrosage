@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/AboutSection.css";
 
 // Import des images
@@ -10,6 +11,8 @@ import Image3 from "../assets/photos/Home/DSC_0779.webp";
 import Icon from "../assets/icons/picto_bulles.svg";
 
 const AboutSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="about-section" id="about">
       <div className="container">
@@ -60,7 +63,10 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <button className="about-button">
+            <button
+              className="about-button"
+              onClick={() => navigate("/neptune")}
+            >
               En savoir plus sur Neptune
               <span className="button-arrow">→</span>
             </button>
