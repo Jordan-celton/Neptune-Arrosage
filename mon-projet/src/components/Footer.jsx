@@ -57,12 +57,24 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Nos services</h3>
           <ul className="footer-links">
-            <li>Fontainerie</li>
-            <li>Terrains sportifs</li>
-            <li>Jardins & espaces publics</li>
-            <li>Matériel d'arrosage</li>
-            <li>Contrats d'entretien</li>
-            <li>Récupération des EP</li>
+            <li>
+              <a href="/services#fontaines">Fontainerie</a>
+            </li>
+            <li>
+              <a href="/services#sports">Terrains sportifs</a>
+            </li>
+            <li>
+              <a href="/services#jardins">Jardins & espaces publics</a>
+            </li>
+            <li>
+              <a href="/services#materiel">Matériel d'arrosage</a>
+            </li>
+            <li>
+              <a href="/services#contrats">Contrats d'entretien</a>
+            </li>
+            {/* <li>
+              <a href="/services#recuperation-ep">Récupération des EP</a>
+            </li> */}
           </ul>
         </div>
       </div>

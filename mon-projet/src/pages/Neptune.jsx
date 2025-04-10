@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Neptune.css";
 
+import agence from "../assets/photos/Neptune/agence-Nantes.webp";
+import tuyaux from "../assets/photos/Neptune/tuyaux.webp";
+import arroseur from "../assets/photos/Home/bg_footer.webp";
+import fontaine from "../assets/photos/Home/Fontaine 2.webp";
+
 const Neptune = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,11 +31,11 @@ const Neptune = () => {
             <div className="presentation-text">
               <h2>Notre Expertise Hydraulique</h2>
               <p>
-                Depuis 2010, Neptune conçoit, installe et entretient des
-                systèmes d'arrosage performants pour les collectivités, les
-                professionnels et les particuliers. Notre parc de 2 hectares
-                nous permet de stocker tout le matériel nécessaire pour répondre
-                rapidement à vos besoins.
+                Depuis 50 ans, Neptune Arrosage conçoit, installe et entretient
+                des systèmes d'arrosage performants pour les collectivités, les
+                professionnels et les particuliers. Notre agence de Nantes
+                stocke 200 références de grandes marques ce qui nous permet de
+                répondre rapidement à vos besoins.
               </p>
               <ul className="expertise-list">
                 <li>Arrosage automatique sur-mesure</li>
@@ -40,10 +45,7 @@ const Neptune = () => {
               </ul>
             </div>
             <div className="presentation-image">
-              <img
-                src="/images/parc-materiel.jpg"
-                alt="Parc de stockage Neptune"
-              />
+              <img src={agence} alt="Parc de stockage Neptune" />
             </div>
           </div>
         </div>
@@ -90,11 +92,11 @@ const Neptune = () => {
             </p>
             <div className="materiel-list">
               <div className="materiel-item">
-                <img src="/icons/tuyaux.png" alt="Tuyaux" />
+                <img src={tuyaux} />
                 <span>+15 km de tuyaux en stock</span>
               </div>
               <div className="materiel-item">
-                <img src="/icons/arroseurs.png" alt="Arroseurs" />
+                <img src={arroseur} />
                 <span>500 arroseurs disponibles</span>
               </div>
               <div className="materiel-item">
@@ -102,7 +104,7 @@ const Neptune = () => {
                 <span>30 modèles de pompes</span>
               </div>
               <div className="materiel-item">
-                <img src="/icons/fontaines.png" alt="Fontaines" />
+                <img src={fontaine} alt="Fontaines" />
                 <span>Composants pour fontaines</span>
               </div>
             </div>
@@ -139,17 +141,6 @@ const Neptune = () => {
               <p>Contrats d'entretien adaptés</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="cta-section">
-        <div className="container">
-          <h2>Un projet d'arrosage ou de fontaine ?</h2>
-          <p>Notre équipe vous conseille et vous accompagne</p>
-          <Link to="/contact" className="cta-button">
-            Demander un devis
-          </Link>
         </div>
       </section>
     </div>

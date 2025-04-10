@@ -5,6 +5,8 @@ import Service2Img from "../assets/photos/Home/20200512_155618.webp";
 import Service3Img from "../assets/photos/Home/Fontaine 2.webp";
 import Service4Img from "../assets/photos/Home/article_réalisation.webp";
 import Service5Img from "../assets/photos/Home/sprinkler-498514_1920.webp";
+
+import Icon from "../assets/icons/picto_bulles.svg";
 import icon1 from "../assets/icons/picto_contrats_entretien.svg";
 import icon2 from "../assets/icons/picto_parc_jardins.svg";
 import icon3 from "../assets/icons/picto_fontainerie.svg";
@@ -77,6 +79,7 @@ const ServicesSection = () => {
         </div>
         <div className="hero-title-container">
           <h1 className="services-main-title">
+            <img src={Icon} alt="" className="icon-before-heading" />
             Des services adaptés <span>à vos besoins</span>
           </h1>
         </div>

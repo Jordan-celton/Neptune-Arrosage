@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/ContactHome.css";
 import icon from "../assets/icons/picto_casque_tel.svg";
 
 const ContactBanner = () => {
+  const navigate = useNavigate();
   return (
     <section className="contact-banner">
       <div className="contact-banner__container">
@@ -16,7 +18,10 @@ const ContactBanner = () => {
               <img src={icon} className="picto-casque" alt="" srcSet="" /> 02 40
               73 64 89
             </p>
-            <button className="contact-banner__button">
+            <button
+              className="contact-banner__button"
+              onClick={() => navigate("/contact")}
+            >
               Discuter de votre projet
             </button>
           </div>

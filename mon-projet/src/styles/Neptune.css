@@ -1,37 +1,38 @@
-/* Neptune.css - Styles spécifiques à la page Agence */
+/* Neptune.css */
+
+/* Styles généraux de la page */
+.neptune-page {
+    color: var(--dark-text);
+}
 
 /* Hero Section */
 .hero-arrosage {
-    background: linear-gradient(var(--overlay-dark), var(--overlay-dark)),
-        url('/images/hero-arrosage.jpg') center/cover no-repeat;
-    height: 70vh;
+    background: 
+        url('../assets/photos/Home/bg_footer.webp') center/cover no-repeat;
+    height: 60vh;
+    min-height: 400px;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: var(--light-bg);
+    color: white;
     position: relative;
 }
 
-.hero-arrosage .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    animation: fadeIn 1s ease-out;
-}
-
-.hero-arrosage h1 {
+.hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px var(--overlay-dark);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-arrosage .tagline {
+.tagline {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Presentation Section */
+/* Section Présentation */
 .presentation-section {
     background-color: var(--light-bg);
 }
@@ -51,18 +52,18 @@
 
 .presentation-text p {
     margin-bottom: 1.5rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 .expertise-list {
-    margin-top: 2rem;
     list-style-type: none;
+    margin-top: 1.5rem;
 }
 
 .expertise-list li {
     position: relative;
-    padding-left: 2rem;
-    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .expertise-list li::before {
@@ -73,24 +74,14 @@
     font-weight: bold;
 }
 
-.presentation-image {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
 .presentation-image img {
     width: 100%;
     height: auto;
-    display: block;
-    transition: transform 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.presentation-image:hover img {
-    transform: scale(1.05);
-}
-
-/* Domaines Section */
+/* Domaines d'Intervention */
 .domaines-section {
     background-color: var(--primary-light);
 }
@@ -103,71 +94,51 @@
 
 .domaines-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
 .domaine-card {
-    background: var(--light-bg);
+    background: white;
     padding: 2rem;
     border-radius: 10px;
-    text-align: center;
-    transition: var(--transition);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.domaine-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--primary);
-    transition: height 0.3s ease;
-    z-index: -1;
-}
-
-.domaine-card:hover::after {
-    height: 100%;
+    transition: var(--transition);
+    text-align: center;
 }
 
 .domaine-card:hover {
-    color: var(--light-bg);
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .domaine-card h3 {
+    color: var(--primary);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
 }
 
 .domaine-card p {
     margin-bottom: 1.5rem;
-    color: inherit;
+    color: var(--dark-text);
 }
 
-.domaine-card .see-more {
-    color: var(--primary);
+.see-more {
+    color: var(--secondary);
     font-weight: 600;
     display: inline-block;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: var(--transition);
 }
 
-.domaine-card:hover .see-more {
-    color: var(--light-bg);
-    border-bottom-color: var(--light-bg);
+.see-more:hover {
+    background-color: var(--secondary);
+    color: white;
 }
 
-/* Parc Matériel Section */
+/* Parc Matériel */
 .parc-section {
-    background: url('/images/texture-eau.png') center/cover,
-        linear-gradient(to right, var(--primary-light), var(--light-bg));
+    background-color: white;
 }
 
 .parc-section h2 {
@@ -177,19 +148,18 @@
 }
 
 .parc-content {
-    max-width: 800px;
-    margin: 0 auto;
     text-align: center;
 }
 
 .parc-content p {
-    margin-bottom: 2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
     font-size: 1.1rem;
 }
 
 .materiel-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: 3rem 0;
 }
@@ -198,27 +168,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 1rem;
-    background: var(--light-bg);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-}
-
-.materiel-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .materiel-item img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
 }
 
 .materiel-item span {
-    text-align: center;
     font-weight: 600;
     color: var(--primary);
 }
@@ -229,9 +189,9 @@
     font-weight: 600;
 }
 
-/* Technique Section */
+/* Approche Technique */
 .technique-section {
-    background-color: var(--light-bg);
+    background-color: var(--light-accent);
 }
 
 .technique-section h2 {
@@ -242,124 +202,98 @@
 
 .technique-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    counter-reset: step-counter;
 }
 
 .step {
-    position: relative;
-    padding: 2rem 1.5rem;
-    background: var(--light-bg);
+    background: white;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px var(--primary-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
+    position: relative;
     transition: var(--transition);
-    counter-increment: step-counter;
 }
 
 .step:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .step-number {
-    width: 50px;
-    height: 50px;
-    background: var(--secondary);
-    color: var(--light-bg);
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     font-weight: bold;
-    margin: 0 auto 1.5rem;
-    position: relative;
-}
-
-.step-number::before {
-    content: counter(step-counter);
+    margin: 0 auto 1rem;
 }
 
 .step h3 {
-    margin-bottom: 1rem;
     color: var(--primary);
-}
-
-/* CTA Section */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
-    color: var(--light-bg);
-    text-align: center;
-}
-
-.cta-section h2 {
     margin-bottom: 1rem;
-    font-size: 2.2rem;
 }
 
-.cta-section p {
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-button {
-    background: var(--light-bg);
-    color: var(--primary);
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-block;
-    transition: var(--transition);
-    border: 2px solid transparent;
-}
-
-.cta-button:hover {
-    background: transparent;
-    color: var(--light-bg);
-    border-color: var(--light-bg);
-    transform: translateY(-3px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
     .presentation-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-arrosage h1 {
+    .presentation-image {
+        order: -1;
+    }
+
+    .domaines-grid,
+    .technique-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .materiel-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
         font-size: 2.2rem;
     }
 
-    .hero-arrosage .tagline {
+    .tagline {
         font-size: 1.2rem;
     }
 
+    .domaines-grid,
     .technique-steps {
         grid-template-columns: 1fr;
     }
-}
 
-/* Animations spécifiques */
-@keyframes waterFlow {
-    0% {
-        background-position: 0% 50%;
+    .materiel-list {
+        grid-template-columns: 1fr;
     }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
+    section {
+        padding: 3rem 0;
     }
 }
 
-.water-animation {
-    animation: waterFlow 15s ease infinite;
-    background-size: 200% 200%;
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .presentation-text h2,
+    .domaines-section h2,
+    .parc-section h2,
+    .technique-section h2 {
+        font-size: 1.5rem;
+    }
 }

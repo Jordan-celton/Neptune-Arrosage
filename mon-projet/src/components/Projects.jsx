@@ -1,5 +1,6 @@
 // src/components/RealisationList.jsx
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Projects.css";
 import image1 from "../assets/photos/Home/20200512_155618.webp";
 import image2 from "../assets/photos/Home/Capture.webp";
@@ -55,6 +56,8 @@ const Projects = () => {
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <section className="realisation-section">
@@ -141,7 +144,10 @@ const Projects = () => {
         </div>
 
         <div className="section-footer">
-          <button className="see-all-button">
+          <button
+            className="see-all-button"
+            onClick={() => navigate("/realisations")}
+          >
             Voir toutes nos réalisations
             <svg
               width="16"
