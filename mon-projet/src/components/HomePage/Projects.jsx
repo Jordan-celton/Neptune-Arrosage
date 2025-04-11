@@ -1,11 +1,11 @@
 // src/components/RealisationList.jsx
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Projects.css";
-import image1 from "../assets/photos/Home/20200512_155618.webp";
-import image2 from "../assets/photos/Home/Capture.webp";
-import image3 from "../assets/photos/Home/DSC_0779.webp";
-import image4 from "../assets/photos/Home/20180614_160716.webp";
+import "../../styles/HomePage/Projects.css";
+import image1 from "../../assets/photos/Home/20200512_155618.webp";
+import image2 from "../../assets/photos/Home/Capture.webp";
+import image3 from "../../assets/photos/Home/DSC_0779.webp";
+import image4 from "../../assets/photos/Home/20180614_160716.webp";
 
 const Projects = () => {
   const carouselRef = useRef(null);

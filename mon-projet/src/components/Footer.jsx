@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Footer.css";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
-import ContactHome from "../components/ContactHome";
+import ContactHome from "../../src/components/HomePage/ContactHome";
 
 const Footer = () => {
   return (

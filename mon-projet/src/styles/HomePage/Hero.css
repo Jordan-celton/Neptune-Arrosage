@@ -3,7 +3,7 @@
     position: relative;
     height: 100vh;
     min-height: 700px;
-    background: url('../assets/photos/Home/header_accueil.webp') no-repeat center center;
+    background: url('../../assets/photos/Home/header_accueil.webp') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;

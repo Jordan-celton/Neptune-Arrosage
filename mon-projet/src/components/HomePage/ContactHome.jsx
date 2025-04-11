@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/ContactHome.css";
-import icon from "../assets/icons/picto_casque_tel.svg";
+import "../../styles/HomePage/ContactHome.css";
+import icon from "../../assets/icons/picto_casque_tel.svg";
 
 const ContactBanner = () => {
   const navigate = useNavigate();

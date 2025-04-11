@@ -1,7 +1,7 @@
 import React from "react";
-import iconearth from "../assets/icons/picto_environnement.svg";
+import iconearth from "../../assets/icons/picto_environnement.svg";
 
-import "../styles/Expertise.css";
+import "../../styles/HomePage/Expertise.css";
 
 const Expertise = () => {
   return (

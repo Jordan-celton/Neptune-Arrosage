@@ -1,18 +1,18 @@
 import React from "react";
-import ServiceImage from "../assets/photos/Home/bg_nos_services.webp";
-import Service1Img from "../assets/photos/Home/DSC_0767.webp";
-import Service2Img from "../assets/photos/Home/20200512_155618.webp";
-import Service3Img from "../assets/photos/Home/Fontaine 2.webp";
-import Service4Img from "../assets/photos/Home/article_réalisation.webp";
-import Service5Img from "../assets/photos/Home/sprinkler-498514_1920.webp";
+import ServiceImage from "../../assets/photos/Home/bg_nos_services.webp";
+import Service1Img from "../../assets/photos/Home/DSC_0767.webp";
+import Service2Img from "../../assets/photos/Home/20200512_155618.webp";
+import Service3Img from "../../assets/photos/Home/Fontaine 2.webp";
+import Service4Img from "../../assets/photos/Home/article_réalisation.webp";
+import Service5Img from "../../assets/photos/Home/sprinkler-498514_1920.webp";
 
-import Icon from "../assets/icons/picto_bulles.svg";
-import icon1 from "../assets/icons/picto_contrats_entretien.svg";
-import icon2 from "../assets/icons/picto_parc_jardins.svg";
-import icon3 from "../assets/icons/picto_fontainerie.svg";
-import icon4 from "../assets/icons/picto_terrains_sportifs.svg";
-import icon5 from "../assets/icons/picto_materiel_arrosage.svg";
-import "../styles/ServicesSection.css";
+import Icon from "../../assets/icons/picto_bulles.svg";
+import icon1 from "../../assets/icons/picto_contrats_entretien.svg";
+import icon2 from "../../assets/icons/picto_parc_jardins.svg";
+import icon3 from "../../assets/icons/picto_fontainerie.svg";
+import icon4 from "../../assets/icons/picto_terrains_sportifs.svg";
+import icon5 from "../../assets/icons/picto_materiel_arrosage.svg";
+import "../../styles/HomePage/ServicesSection.css";
 
 const ServicesSection = () => {
   const services = [
