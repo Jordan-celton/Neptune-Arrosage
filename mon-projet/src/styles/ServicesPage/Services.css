@@ -7,7 +7,7 @@
 
 /* ----------- Fil d’Ariane ----------- */
 .breadcrumb-section {
-    background: url("../../assets/photos/Services/Fontaine Rueil Imp 1.webp") no-repeat center center / cover;
+    background: url("../../assets/photos/Home//Fontaine 2.webp") no-repeat center center / cover;
     padding: 6rem 2rem;
     position: relative;
 }
@@ -130,6 +130,35 @@
     text-decoration: none;
 }
 
+.service-item.active {
+    background-color: #eaf6f6;
+    font-weight: bold;
+    border-left: 4px solid #4bb4b4;
+}
+
+.arrow-icon {
+    margin-left: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.service-item.active .arrow-icon {
+    color: #4bb4b4;
+}
+
+.services-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-overlay,
+.services-image-section {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .arrow-icon {
     font-size: 1.2rem;
 }
@@ -143,6 +172,11 @@
 .service-icon {
     width: 60px;
     height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item.active .service-icon {
+    transform: scale(1.1);
 }
 
 /* ----------- Image + Texte ----------- */
@@ -184,7 +218,6 @@
         flex: 1 1 100%;
     }
 }
-
 
 @media (max-width: 768px) {
     .services-header h1 {
