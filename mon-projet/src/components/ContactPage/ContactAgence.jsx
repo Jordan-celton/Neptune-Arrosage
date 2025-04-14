@@ -7,20 +7,18 @@ const ContactAgence = () => {
     {
       city: "Paris",
       region: "Île-de-France",
-      address: "12 Rue de l'Arrosage, 75015 Paris",
-      phone: "01 23 45 67 89",
+      address: "1 Rue du bois des carreaux, 92290 Chantenay-Malabry",
+      phone: "02 34 56 78 90",
       email: "contact@neptune-arrosage.fr",
       hours: "Lun-Ven: 9h-18h / Sam: 9h-12h",
-      coverImage: "/assets/agences/paris-agence.webp",
     },
     {
       city: "Nantes",
       region: "Pays de la Loire",
-      address: "24 Boulevard des Fontaines, 44000 Nantes",
+      address: "3 rue réaumur, 44100 Nantes",
       phone: "02 34 56 78 90",
       email: "contact@neptune-arrosage.fr",
       hours: "Lun-Ven: 8h30-17h30 / Sam: fermé",
-      coverImage: "/assets/agences/nantes-agence.webp",
     },
   ];
 
@@ -47,14 +45,9 @@ const ContactAgence = () => {
         <div className="agencies-grid">
           {agencies.map((agency, index) => (
             <div key={index} className="agency-card">
-              <div
-                className="agency-image"
-                style={{ backgroundImage: `url(${agency.coverImage})` }}
-              >
-                <div className="city-badge">
-                  <FaMapMarkerAlt className="icon" />
-                  <span>{agency.city}</span>
-                </div>
+              <div className="city-badge">
+                <FaMapMarkerAlt className="icon" />
+                <span>{agency.city}</span>
               </div>
 
               <div className="agency-details">

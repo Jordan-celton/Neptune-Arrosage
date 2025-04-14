@@ -1,37 +1,37 @@
-.agencies-section {
-    background-color: #f9f9f9;
-    padding: 5rem 2rem;
-    position: relative;
-}
+/* ContactAgence.css */
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+.agencies-section {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    position: relative;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #508BBF;
+    color: var(--primary);
+    font-size: 2.5rem;
     margin-bottom: 2rem;
+    text-align: center;
     position: relative;
+    padding-bottom: 1rem;
 }
 
 .section-title::after {
     content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: #16C172;
-    margin: 1rem auto 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: var(--secondary);
+    border-radius: 2px;
 }
 
 .intro-text {
     max-width: 800px;
     margin: 0 auto 3rem;
     text-align: center;
-    line-height: 1.7;
-    color: #736B5C;
+    line-height: 1.8;
 }
 
 .intro-text p {
@@ -42,44 +42,36 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .agency-card {
-    background: white;
+    background: var(--light-bg);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(80, 139, 191, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.agency-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(80, 139, 191, 0.2);
-}
-
-.agency-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
+    box-shadow: 0 5px 15px var(--primary-light);
+    transition: var(--transition);
     position: relative;
 }
 
+.agency-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(80, 139, 191, 0.2);
+}
+
 .city-badge {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(80, 139, 191, 0.9);
+    background-color: var(--primary);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .city-badge .icon {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .agency-details {
@@ -87,80 +79,72 @@
 }
 
 .agency-details h3 {
-    color: #508BBF;
+    color: var(--secondary);
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
+    text-align: center;
 }
 
 .contact-info {
-    display: grid;
-    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.8rem;
-    color: #736B5C;
-    line-height: 1.5;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 .info-item .icon {
-    color: #16C172;
+    color: var(--primary);
     margin-top: 0.2rem;
     flex-shrink: 0;
 }
 
 .info-item a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--dark-text);
+    transition: var(--transition);
 }
 
 .info-item a:hover {
-    color: #508BBF;
+    color: var(--secondary);
 }
 
-.map-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #508BBF;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.map-embed {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.map-link:hover {
-    color: #16C172;
-    text-decoration: underline;
-}
-
-.map-link::after {
-    content: '→';
-    transition: transform 0.3s ease;
-}
-
-.map-link:hover::after {
-    transform: translateX(3px);
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    .agencies-section {
-        padding: 3rem 1rem;
-    }
-
     .section-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .agencies-grid {
         grid-template-columns: 1fr;
     }
 
+    .agency-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
     .intro-text {
         text-align: left;
-        margin-bottom: 2rem;
+    }
+
+    .info-item {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }

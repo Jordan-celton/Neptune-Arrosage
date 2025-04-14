@@ -86,6 +86,7 @@
     line-height: 1.6;
     transition: var(--transition);
     color: var(--light-bg);
+    justify-content: center;
 }
 
 .footer-contact:hover {
