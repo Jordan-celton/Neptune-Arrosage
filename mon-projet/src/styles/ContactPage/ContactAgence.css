@@ -1,0 +1,166 @@
+.agencies-section {
+    background-color: #f9f9f9;
+    padding: 5rem 2rem;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #508BBF;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #16C172;
+    margin: 1rem auto 2rem;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    line-height: 1.7;
+    color: #736B5C;
+}
+
+.intro-text p {
+    margin-bottom: 1.5rem;
+}
+
+.agencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.agency-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(80, 139, 191, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agency-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(80, 139, 191, 0.2);
+}
+
+.agency-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.city-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(80, 139, 191, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.city-badge .icon {
+    font-size: 1rem;
+}
+
+.agency-details {
+    padding: 1.5rem;
+}
+
+.agency-details h3 {
+    color: #508BBF;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.contact-info {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: #736B5C;
+    line-height: 1.5;
+}
+
+.info-item .icon {
+    color: #16C172;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.info-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #508BBF;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #508BBF;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    color: #16C172;
+    text-decoration: underline;
+}
+
+.map-link::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.map-link:hover::after {
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .agencies-section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .agencies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-text {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+}
