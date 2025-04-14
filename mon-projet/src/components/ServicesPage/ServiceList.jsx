@@ -1,0 +1,34 @@
+import React from "react";
+import "../../styles/ServicesPage/ServiceList.css";
+
+const ServiceList = ({ services, selectedService, setSelectedService }) => (
+  <>
+    <h2 className="section-title">Nos services</h2>
+    <ul className="services-list">
+      {services.map((service) => {
+        const slug = service.name
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/\s+/g, "-");
+
+        const isActive = selectedService.name === service.name;
+
+        return (
+          <li
+            key={slug}
+            className={`service-item ${isActive ? "active" : ""}`}
+            onClick={() => setSelectedService(service)}
+          >
+            <a href={`#${slug}`} className="service-link-page">
+              {service.name}
+              <span className="arrow-icon">{isActive ? "✔" : "→"}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </>
+);
+
+export default ServiceList;
