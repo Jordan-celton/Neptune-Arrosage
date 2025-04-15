@@ -1,9 +1,9 @@
 /* index.css */
 :root {
     /* Palette de base */
-    --primary: #508BBF;
+    --primary: #232B63;
     /* Bleu Neptune - Couleur dominante */
-    --secondary: #16C172;
+    --secondary: #104911;
     /* Vert menthe - Couleur secondaire */
     --light-accent: #F1F2C4;
     /* Crème clair - Arrière-plan doux */
@@ -22,7 +22,7 @@
 
     /* Variations */
     --primary-light: rgba(80, 139, 191, 0.1);
-    --secondary-dark: #16C172;
+    --secondary-dark: #104911;
 }
 
 /* Reset et base */
