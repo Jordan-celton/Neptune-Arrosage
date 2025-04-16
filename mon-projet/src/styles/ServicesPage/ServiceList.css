@@ -65,9 +65,9 @@
     margin-bottom: 1rem;
 }
 
-.service-icon {
+.service-list-icon {
 
-    height: auto;
+    height: 120px;
     transition: transform 0.3s ease-in-out;
 }
 

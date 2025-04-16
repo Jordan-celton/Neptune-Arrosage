@@ -53,10 +53,6 @@ a {
     transition: all 0.3s ease;
 }
 
-a:hover {
-    color: var(--secondary);
-}
-
 /* Layout */
 .container {
     width: 100%;
