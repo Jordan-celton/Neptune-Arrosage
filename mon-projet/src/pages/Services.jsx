@@ -25,7 +25,7 @@ const Services = () => {
               <img
                 src={selectedService.icon}
                 alt={`Icône de ${selectedService.name}`}
-                className="service-list-icon"
+                className="service-page-icon"
               />
             </div>
           </div>

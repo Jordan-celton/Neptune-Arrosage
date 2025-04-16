@@ -8,7 +8,7 @@
 /* ----------- Section Services ----------- */
 .services-section {
     padding: 4rem 2rem;
-    background-color: var(--light-bg);
+    background-color: var(--light-alt, #f9f9f9);
 }
 
 .services-list-container {

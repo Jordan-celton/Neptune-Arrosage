@@ -20,6 +20,13 @@ const ServiceList = ({ services, selectedService, setSelectedService }) => (
             className={`service-item ${isActive ? "active" : ""}`}
             onClick={() => setSelectedService(service)}
           >
+            <div className="service-icon">
+              <img
+                src={service.icon}
+                alt={`Icône de ${service.name}`}
+                className="service-list-icon"
+              />
+            </div>
             <a href={`#${slug}`} className="service-link-page">
               {service.name}
               <span className="arrow-icon">{isActive ? "✔" : "→"}</span>

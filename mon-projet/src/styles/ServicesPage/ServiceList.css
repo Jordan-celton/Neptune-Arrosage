@@ -1,7 +1,7 @@
 /* ----------- Liste des services ----------- */
 .services-overlay {
     flex: 1 1 45%;
-    background-color: var(--light-alt, #f9f9f9);
+    background-color: var(--light-bg);
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
@@ -27,26 +27,30 @@
 }
 
 .service-item {
-    background-color: var(--primary-light);
-    border-left: 5px solid var(--primary);
+    display: flex;
+    align-items: center;
     padding: 1rem 1.2rem;
     border-radius: 10px;
     transition: var(--transition);
+    color: #232B63;
+    position: relative;
+    gap: 1rem;
 }
 
 .service-link-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     color: inherit;
     font-weight: 600;
     text-decoration: none;
 }
 
 .service-item.active {
-    background-color: #eaf6f6;
     font-weight: bold;
-    border-left: 4px solid #4bb4b4;
+    background-color: var(--primary);
+    color: var(--light-bg);
 }
 
 .arrow-icon {
@@ -56,7 +60,7 @@
 }
 
 .service-item.active .arrow-icon {
-    color: #4bb4b4;
+    color: var(--light-bg);
 }
 
 /* ----------- Icône ----------- */
@@ -65,7 +69,7 @@
     margin-bottom: 1rem;
 }
 
-.service-list-icon {
+.service-page-icon {
 
     height: 120px;
     transition: transform 0.3s ease-in-out;
