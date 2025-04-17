@@ -21,7 +21,6 @@
     flex: 1;
     min-width: 300px;
     max-width: 100%;
-    border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -92,7 +91,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     position: relative;
-    bottom: 350px;
+    bottom: 280px;
     scrollbar-width: thin;
     /* Pour Firefox */
 }
@@ -156,7 +155,6 @@
 
 .service-icon {
     width: 36px;
-    height: 36px;
 }
 
 /* Content Styles */
@@ -287,13 +285,12 @@
     }
 
     .services-cards {
-        bottom: 180px;
+        bottom: 0;
     }
 
     .card-icon-container {
         width: 40px;
         height: 40px;
-        top: calc(60% - 20px);
         font-size: 1rem;
     }
 }
@@ -322,12 +319,13 @@
         bottom: 0px;
         display: flex;
         flex-direction: column-reverse;
+        align-content: center;
         gap: 1.5rem;
     }
 
     .card-icon-container {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         font-size: 1rem;
     }
 

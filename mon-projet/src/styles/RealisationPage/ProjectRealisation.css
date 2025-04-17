@@ -182,14 +182,14 @@
 
 .filter-btn {
     padding: 0.5rem 1rem;
-    border: 1px solid var(--primary-light);
+    border: 1px solid var(--secondary);
     background: white;
-    color: var(--dark-text);
-    border-radius: 50px;
-    /* Cohérence avec les autres boutons */
+    color: var(--primary);
+    border-radius: 10px;
     cursor: pointer;
     transition: var(--transition);
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .filter-btn:hover {
