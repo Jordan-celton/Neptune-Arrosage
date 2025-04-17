@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/ServicesPage/Services.css";
 import Breadcrumb from "../components/ServicesPage/Breadcrumb";
 import ServiceList from "../components/ServicesPage/ServiceList";
@@ -8,7 +9,27 @@ import EmotionWaterBanner from "../components/ServicesPage/EmotionWaterBanner";
 import ProjectGallery from "../components/ServicesPage/ProjectGallery";
 
 const Services = () => {
+  const location = useLocation();
   const [selectedService, setSelectedService] = useState(servicesData[0]);
+
+  // Mise à jour du service sélectionné selon le hash dans l'URL
+  useEffect(() => {
+    const hash = location.hash.replace("#", "").toLowerCase();
+
+    if (hash) {
+      const matchedService = servicesData.find((service) =>
+        service.name.toLowerCase().includes(hash)
+      );
+      if (matchedService) {
+        setSelectedService(matchedService);
+      }
+    }
+  }, [location.pathname, location.hash]);
+
+  // Scroll vers le haut quand le service change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [selectedService]);
 
   return (
     <main className="services-page">

@@ -10,7 +10,7 @@ import iconSport from "../../assets/icons/picto_terrains_sportifs.svg";
 import iconJardin from "../../assets/icons/picto_parc_jardins.svg";
 import iconMateriel from "../../assets/icons/picto_materiel_arrosage.svg";
 import iconContrat from "../../assets/icons/picto_contrats_entretien.svg";
-import iconEau from "../../assets/icons/picto_bulles.svg";
+import iconEau from "../../assets/icons/picto_recup_EP.svg";
 
 export const servicesData = [
   {

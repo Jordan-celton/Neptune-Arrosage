@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Footer.css";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import ContactHome from "../../src/components/HomePage/ContactHome";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -58,22 +59,22 @@ const Footer = () => {
           <h3 className="footer-section-title">Nos services</h3>
           <ul className="footer-links">
             <li>
-              <a href="/services#fontaines">Fontainerie</a>
+              <Link to="/services#fontaines">Fontainerie</Link>
             </li>
             <li>
-              <a href="/services#sports">Terrains sportifs</a>
+              <Link to="/services#terrains">Terrains sportifs</Link>
             </li>
             <li>
-              <a href="/services#jardins">Jardins & espaces publics</a>
+              <Link to="/services#jardins">Jardins et parcs</Link>
             </li>
             <li>
-              <a href="/services#materiel">Matériel d'arrosage</a>
+              <Link to="/services#materiel">Matériel d'arrosage</Link>
             </li>
             <li>
-              <a href="/services#contrats">Contrats d'entretien</a>
+              <Link to="/services#contrats">Contrats d'entretien</Link>
             </li>
             {/* <li>
-              <a href="/services#recuperation-ep">Récupération des EP</a>
+              <Link to="/services#recuperation">Récupération des eaux</Link>
             </li> */}
           </ul>
         </div>
