@@ -24,7 +24,6 @@ const HeroNeptune = () => {
             alt="Logo Neptune Arrosage"
             className="heroNeptune-logo"
           />
-          <div className="heroNeptune-title">O A R R O S A G E</div>
         </div>
 
         {/* Contenu texte */}

@@ -3,12 +3,12 @@ import "../../styles/NeptunePage/Breadcrumb.css";
 
 const Breadcrumb = ({ title }) => (
   <div>
-    <section className="breadcrumb-section">
-      <div className="breadcrumb-overlay">
-        <header className="services-header">
+    <section className="breadcrumbNeptune-section">
+      <div className="breadcrumbNeptune-overlay">
+        <header className="servicesNeptune-header">
           <h1>{title}</h1>
         </header>
-        <nav aria-label="Fil d'Ariane" className="breadcrumb">
+        <nav aria-label="Fil d'Ariane" className="breadcrumbNeptune">
           <ol>
             <li>
               <a href="/">Accueil</a>
