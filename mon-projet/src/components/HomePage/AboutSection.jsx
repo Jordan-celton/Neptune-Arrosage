@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "../../styles/HomePage/AboutSection.css";
 
 // Import des images
-import Image1 from "../../assets/photos/Home/20200512_155618.webp";
-import Image2 from "../../assets/photos/Home/DSC_0767.webp";
-import Image3 from "../../assets/photos/Home/Fontaine 2.webp";
+import Image1 from "../../assets/photos/Home/20180614_160716.webp";
+import Image2 from "../../assets/photos/Home/Capture.webp";
+import Image3 from "../../assets/photos/Home/DSC_0779.webp";
 
 // Import de l'icône
 import Icon from "../../assets/icons/picto_bulles.svg";

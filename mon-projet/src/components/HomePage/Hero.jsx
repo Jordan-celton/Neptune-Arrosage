@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/HomePage/Hero.css";
+import logoNeptuneBlanc from "../../assets/logo/logo_neptune_blanc.svg";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -10,7 +11,9 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-container">
         <div className="hero-content">
+          <img src={logoNeptuneBlanc} alt="Logo de l'entreprise" />
           <div className="hero-tagline">EXPERT EN SOLUTIONS</div>
+
           <h1 className="hero-title">
             <span className="hero-title-line">Arrosage &</span>
             <span className="hero-title-line">aménagement</span>

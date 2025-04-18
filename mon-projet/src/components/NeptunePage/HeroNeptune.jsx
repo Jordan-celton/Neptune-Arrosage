@@ -1,36 +1,44 @@
 import React from "react";
 import logo from "../../assets/logo/logo_neptune.svg";
 import heroImage from "../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp";
-import "../../styles/NeptunePage/Hero.css";
+import "../../styles/NeptunePage/HeroNeptune.css";
 
-const Hero = () => {
+const HeroNeptune = () => {
   return (
-    <div className="hero">
+    <div className="heroNeptune">
       {/* Colonne de l'image */}
-      <div className="hero-image-column">
+      <div className="heroNeptune-image-column">
         <img
           src={heroImage}
           alt="Fontaine Wallace à Paris"
-          className="hero-image"
+          className="heroNeptune-image"
         />
       </div>
 
       {/* Colonne du contenu */}
-      <div className="hero-content-column">
+      <div className="heroNeptune-content-column">
         {/* Logo et titre */}
-        <div className="hero-header">
-          <img src={logo} alt="Logo Neptune Arrosage" className="hero-logo" />
-          <div className="hero-title">O A R R O S A G E</div>
+        <div className="heroNeptune-header">
+          <img
+            src={logo}
+            alt="Logo Neptune Arrosage"
+            className="heroNeptune-logo"
+          />
+          <div className="heroNeptune-title">O A R R O S A G E</div>
         </div>
 
         {/* Contenu texte */}
-        <div className="hero-content">
-          <div className="hero-divider"></div>
-          <h3 className="hero-tagline">Depuis 1970 expert en solutions</h3>
-          <div className="hero-divider"></div>
-          <h4 className="hero-service">Arrosage & aménagement hydraulique</h4>
+        <div className="heroNeptune-content">
+          <div className="heroNeptune-divider"></div>
+          <h3 className="heroNeptune-tagline">
+            Depuis 1970 expert en solutions
+          </h3>
+          <div className="heroNeptune-divider"></div>
+          <h4 className="heroNeptune-service">
+            Arrosage & aménagement hydraulique
+          </h4>
 
-          <div className="hero-description">
+          <div className="heroNeptune-description">
             <p>
               Fondée en 1970 à Nantes, Neptune Arrosage est une entreprise
               spécialisée dans la conception et la réalisation de solutions
@@ -46,4 +54,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroNeptune;
