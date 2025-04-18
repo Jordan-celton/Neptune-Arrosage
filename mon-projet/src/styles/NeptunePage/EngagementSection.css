@@ -1,0 +1,147 @@
+/* EngagementSection.css */
+.engagement-section {
+    background-color: #f9fbfd;
+    padding: 5rem 0;
+}
+
+.engagement-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.engagement-image-container {
+    position: relative;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.engagement-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(42, 92, 124, 0.3) 0%, rgba(22, 58, 82, 0.7) 100%);
+}
+
+.engagement-content {
+    padding: 2rem;
+}
+
+.engagement-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.engagement-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2a5c7c;
+    line-height: 1;
+}
+
+.engagement-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2a5c7c;
+    margin: 0;
+}
+
+.engagement-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4a728c;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.engagement-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #2a5c7c;
+}
+
+.engagement-text {
+    color: #444;
+    line-height: 1.7;
+}
+
+.engagement-list {
+    margin-top: 1.5rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.engagement-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.engagement-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 12px;
+    height: 12px;
+    background-color: #2a5c7c;
+    border-radius: 50%;
+}
+
+.engagement-list strong {
+    color: #2a5c7c;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .engagement-container {
+        grid-template-columns: 1fr;
+    }
+
+    .engagement-image-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .engagement-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .engagement-number {
+        font-size: 2.8rem;
+    }
+
+    .engagement-title {
+        font-size: 1.8rem;
+    }
+
+    .engagement-subtitle {
+        font-size: 1.3rem;
+    }
+}

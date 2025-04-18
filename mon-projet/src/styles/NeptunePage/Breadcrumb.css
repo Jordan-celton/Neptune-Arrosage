@@ -1,0 +1,53 @@
+/* ----------- Fil d’Ariane ----------- */
+.breadcrumb-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.932)), url("../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp") no-repeat center center / cover;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.breadcrumb-overlay {
+    padding: 3rem 2rem;
+    color: var(--light-bg);
+    text-align: center;
+}
+
+.services-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.breadcrumb {
+    font-size: 0.95rem;
+    color: var(--light-bg);
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: var(--light-accent);
+    text-decoration: none;
+}
+
+.breadcrumb li::after {
+    content: "/";
+    margin: 0 0.5rem;
+    color: var(--light-accent);
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .services-header h1 {
+        font-size: 2rem;
+    }
+}
