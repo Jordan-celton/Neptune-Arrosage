@@ -48,18 +48,19 @@
     position: relative;
 }
 
-.services-title {
-    font-size: 1.2rem;
-    color: var(--secondary);
+/* Label au-dessus du titre */
+.services-label {
+    font-size: 1rem;
     font-weight: 600;
+    color: var(--secondary);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: inline-block;
 }
 
-.services-main-title span {
+/* Partie verte du titre */
+.highlight-green {
     color: var(--secondary);
-    display: block;
-    margin-top: 0.5rem;
 }
 
 .icon-before-heading {
@@ -162,6 +163,11 @@
     object-fit: contain;
 }
 
+/* Ajout fond vert clair sur les icônes */
+.card-icon-container.green-bg {
+    background-color: #eaf7ea;
+}
+
 /* Contenu */
 .card-content {
     padding: 1.8rem;
@@ -173,10 +179,12 @@
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
-    color: var(--text-color);
-    margin: 1rem 0 0.8rem;
+    font-size: 1.2rem;
     font-weight: 700;
+    color: var(--text-color);
+    margin: 1rem 0 0.5rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
 .card-content p {
@@ -190,18 +198,19 @@
 .service-link {
     display: inline-flex;
     align-items: center;
-    color: var(--secondary);
+    color: var(--primary-green);
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary-green);
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     margin-top: auto;
 }
 
 .service-link:hover {
-    background: rgba(42, 122, 156, 0.1);
+    background: rgba(35, 137, 57, 0.1);
+    transform: translateY(-1px);
 }
 
 .service-link span {

@@ -33,10 +33,10 @@ const ServicesSection = () => {
               className="icon-before-heading"
               aria-hidden="true"
             />
-            <span className="services-title">
-              {servicesHero.title} <br />
-            </span>
-            {servicesHero.title2} <span>{servicesHero.subtitle}</span>
+            <span className="services-label">Nos services</span>
+            <br />
+            Des services adaptés <br />
+            <span className="highlight-green">à vos besoins</span>
           </h1>
         </div>
       </div>
@@ -63,7 +63,6 @@ const ServicesSection = () => {
   );
 };
 
-// Composant Carte de Service
 const ServiceCard = ({ service, onLinkClick }) => (
   <div className="service-card">
     <div className="card-image-container">
@@ -75,7 +74,7 @@ const ServiceCard = ({ service, onLinkClick }) => (
         height={300}
         className="serviceSection-image"
       />
-      <div className="card-icon-container">
+      <div className="card-icon-container green-bg">
         <img src={service.icon} alt="" aria-hidden="true" />
       </div>
     </div>
