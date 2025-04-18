@@ -1,7 +1,7 @@
 /* AboutSection.css */
 
 .about-section {
-    background-color: var(--light-bg);
+    background-color: #FFF8E7;
     position: relative;
     overflow: hidden;
     padding: 4rem 0;
@@ -85,7 +85,6 @@
 .title-with-icon {
     display: flex;
     align-items: center;
-    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 

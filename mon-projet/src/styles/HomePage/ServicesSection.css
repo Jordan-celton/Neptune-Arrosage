@@ -50,10 +50,9 @@
 
 /* Label au-dessus du titre */
 .services-label {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: bold;
     color: var(--secondary);
-    text-transform: uppercase;
     margin-bottom: 1rem;
     display: inline-block;
 }
