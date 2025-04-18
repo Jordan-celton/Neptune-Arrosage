@@ -111,14 +111,16 @@
     display: flex;
     justify-content: flex-end;
     padding-top: 15px;
-    border-top: 1px solid #eee;
 }
 
 .read-more {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    padding: 10px 15px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;

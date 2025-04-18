@@ -197,11 +197,11 @@
 .service-link {
     display: inline-flex;
     align-items: center;
-    color: var(--primary-green);
+    color: var(--secondary);
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid var(--primary-green);
+    border: 1px solid var(--secondary);
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     margin-top: auto;
