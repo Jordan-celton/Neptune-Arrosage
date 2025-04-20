@@ -152,6 +152,15 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
+                to="/services#materiel"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeAllMenus}
+              >
+                MATERIEL D'ARROSAGE
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/services#contrats"
                 className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={closeAllMenus}

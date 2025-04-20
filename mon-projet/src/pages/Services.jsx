@@ -17,19 +17,14 @@ const Services = () => {
     const hash = location.hash.replace("#", "").toLowerCase();
 
     if (hash) {
-      const matchedService = servicesData.find((service) =>
-        service.name.toLowerCase().includes(hash)
+      const matchedService = servicesData.find(
+        (service) => service.id === hash
       );
       if (matchedService) {
         setSelectedService(matchedService);
       }
     }
   }, [location.pathname, location.hash]);
-
-  // Scroll vers le haut quand le service change
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [selectedService]);
 
   return (
     <main className="services-page">

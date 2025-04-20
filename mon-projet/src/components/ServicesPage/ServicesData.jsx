@@ -14,6 +14,7 @@ import iconEau from "../../assets/icons/picto_recup_EP.svg";
 
 export const servicesData = [
   {
+    id: "fontaines",
     name: "Fontainerie",
     description:
       "Neptune Arrosage possède une solide expertise dans la conception et la réalisation de fontaines et d'aménagements hydrauliques, alliant génie civil, stations de pompage, traitement et filtration de l'eau.",
@@ -21,6 +22,7 @@ export const servicesData = [
     icon: iconFontaine,
   },
   {
+    id: "sports",
     name: "Terrains sportifs",
     description:
       "Neptune Arrosage est spécialisée dans l'arrosage des terrains sportifs, qu'il s'agisse de gazon naturel ou synthétique. Nous concevons des systèmes d'arrosage adaptés à chaque type de terrain.",
@@ -28,6 +30,7 @@ export const servicesData = [
     icon: iconSport,
   },
   {
+    id: "jardins",
     name: "Jardins et parcs",
     description:
       "Nous proposons des solutions d'arrosage adaptées aux jardins et parcs, garantissant une irrigation efficace et respectueuse de l'environnement.",
@@ -35,6 +38,7 @@ export const servicesData = [
     icon: iconJardin,
   },
   {
+    id: "materiel",
     name: "Matériel d'arrosage",
     description:
       "Nous fournissons du matériel d'arrosage de haute qualité, adapté à tous les types de projets. Notre équipe vous conseille sur le choix du matériel le plus adapté à vos besoins.",
@@ -42,6 +46,7 @@ export const servicesData = [
     icon: iconMateriel,
   },
   {
+    id: "contrats",
     name: "Contrats d'entretien",
     description:
       "Nous proposons des contrats d'entretien pour garantir le bon fonctionnement de vos systèmes d'arrosage tout au long de l'année.",
@@ -49,6 +54,7 @@ export const servicesData = [
     icon: iconContrat,
   },
   {
+    id: "recuperation",
     name: "Récupération des eaux pluviales",
     description:
       "Nous vous aidons à mettre en place des systèmes de récupération des eaux pluviales pour une gestion durable de l'eau.",

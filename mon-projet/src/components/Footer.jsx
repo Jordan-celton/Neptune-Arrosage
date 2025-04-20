@@ -62,7 +62,7 @@ const Footer = () => {
               <Link to="/services#fontaines">Fontainerie</Link>
             </li>
             <li>
-              <Link to="/services#terrains">Terrains sportifs</Link>
+              <Link to="/services#sports">Terrains sportifs</Link>
             </li>
             <li>
               <Link to="/services#jardins">Jardins et parcs</Link>
@@ -73,9 +73,9 @@ const Footer = () => {
             <li>
               <Link to="/services#contrats">Contrats d'entretien</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/services#recuperation">Récupération des eaux</Link>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>
