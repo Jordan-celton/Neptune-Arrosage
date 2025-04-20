@@ -1,14 +1,21 @@
+/* HeroNeptune.css */
+
+/* Structure principale */
 .heroNeptune {
     display: flex;
+    min-height: 100vh;
+    width: 100%;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
-    color: #333;
+    background-color: #ffffff;
 }
 
+/* Colonne image */
 .heroNeptune-image-column {
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 2rem;
 }
 
@@ -17,57 +24,113 @@
     height: 100%;
     max-height: 80vh;
     object-fit: cover;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.heroNeptune-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Colonne contenu */
 .heroNeptune-content-column {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+    padding: 4rem;
+    position: relative;
 }
 
+/* En-tête avec logo */
 .heroNeptune-header {
-    text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .heroNeptune-logo {
-    height: 80px;
-    margin-bottom: 1rem;
+    height: 150px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.3s ease;
 }
 
+/* Conteneur de contenu */
 .heroNeptune-content {
-    text-align: center;
+    max-width: 580px;
 }
 
-.heroNeptune-divider {
-    width: 80px;
-    height: 2px;
-    background-color: #2a5c7c;
-    margin: 1.5rem auto;
+/* Groupe icône + titre */
+.heroNeptune-title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.icon-before-heading {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
 }
 
 .heroNeptune-tagline {
-    font-size: 1.4rem;
-    font-weight: normal;
-    margin: 1rem 0;
-    color: #2a5c7c;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--secondary);
+    letter-spacing: 0.3px;
 }
 
+/* Titre principal */
 .heroNeptune-service {
-    font-size: 1.8rem;
-    margin: 1rem 0 2rem;
-    color: #2a5c7c;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0 0 2.5rem 0;
+    line-height: 1.2;
+    color: var(--text-color);
+    position: relative;
 }
 
+.heroNeptune-service span {
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+/* Description */
 .heroNeptune-description {
-    text-align: left;
-    line-height: 1.6;
     margin-top: 2rem;
-    padding: 0 1rem;
+}
+
+.heroNeptune-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444444;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .heroNeptune-content-column {
+        padding: 3rem;
+    }
+
+    .heroNeptune-service {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .heroNeptune-service {
+        font-size: 2rem;
+    }
+
+    .heroNeptune-description p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -77,23 +140,48 @@
 
     .heroNeptune-image-column,
     .heroNeptune-content-column {
-        padding: 1rem;
+        padding: 2rem;
+        width: 100%;
     }
 
-    .heroNeptune-logo {
-        height: 60px;
+    .heroNeptune-image {
+        max-height: 60vh;
     }
 
-    .heroNeptune-title {
-        font-size: 1rem;
-        letter-spacing: 0.2em;
+    .heroNeptune-content {
+        text-align: center;
+        margin: 0 auto;
     }
 
-    .heroNeptune-tagline {
-        font-size: 1.2rem;
+    .heroNeptune-title-with-icon {
+        justify-content: center;
+    }
+
+    .heroNeptune-service::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .heroNeptune-header {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroNeptune-content-column {
+        padding: 1.5rem;
     }
 
     .heroNeptune-service {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+    }
+
+    .heroNeptune-tagline {
+        font-size: 1.1rem;
+    }
+
+    .icon-before-heading {
+        width: 28px;
+        height: 28px;
     }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/logo/logo_neptune.svg";
 import heroImage from "../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp";
 import "../../styles/NeptunePage/HeroNeptune.css";
+import Icon from "../../assets/icons/picto_bulles.svg";
 
 const HeroNeptune = () => {
   return (
@@ -28,15 +29,15 @@ const HeroNeptune = () => {
 
         {/* Contenu texte */}
         <div className="heroNeptune-content">
-          <div className="heroNeptune-divider"></div>
-          <h3 className="heroNeptune-tagline">
-            Depuis 1970 expert en solutions
-          </h3>
-          <div className="heroNeptune-divider"></div>
+          <div className="heroNeptune-title-with-icon">
+            <img src={Icon} alt="" className="icon-before-heading" />
+            <h3 className="heroNeptune-tagline">
+              Depuis 1970 expert en solutions
+            </h3>
+          </div>
           <h4 className="heroNeptune-service">
-            Arrosage & aménagement hydraulique
+            Arrosage & aménagement <span>hydraulique</span>
           </h4>
-
           <div className="heroNeptune-description">
             <p>
               Fondée en 1970 à Nantes, Neptune Arrosage est une entreprise
