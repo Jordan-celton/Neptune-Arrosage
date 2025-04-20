@@ -55,8 +55,7 @@ const EngagementSection = () => {
             <img src={icon1} alt="Pompage icon" />
           </div>
           <p>
-            <strong>Pompage des eaux de surface</strong> pour limiter
-            l'utilisation d’eau potable
+            Pompage des eaux de surface pour limiter l'utilisation d’eau potable
           </p>
         </div>
 
@@ -65,10 +64,7 @@ const EngagementSection = () => {
           <div className="engagement-card-icon">
             <img src={icon2} alt="Stockage icon" />
           </div>
-          <p>
-            <strong>Stockage des eaux de pluie</strong> pour réutilisation
-            optimisée
-          </p>
+          <p>Stockage des eaux de pluie pour réutilisation optimisée</p>
         </div>
 
         <div className="engagement-card">
@@ -77,8 +73,8 @@ const EngagementSection = () => {
             <img src={icon3} alt="Réutilisation icon" />
           </div>
           <p>
-            <strong>La réutilisation des eaux grises</strong>, une alternative
-            efficace et écologique
+            La réutilisation des eaux grises, une alternative efficace et
+            écologique
           </p>
         </div>
       </div>
