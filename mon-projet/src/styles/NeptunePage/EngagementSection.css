@@ -1,11 +1,9 @@
 /* EngagementSection.css */
 .engagement-section {
     padding: 5rem 0 8rem;
-    /* Ajout d'espace en bas pour laisser respirer sous les cards */
-    position: relative;
     background-color: #f9f9f9;
+    position: relative;
     overflow: visible;
-    /* Important pour laisser dépasser les cards */
 }
 
 .engagement-container {
@@ -90,10 +88,8 @@
     gap: 2rem;
     justify-content: center;
     margin-top: -6rem;
-    /* accentue le chevauchement */
     position: relative;
     z-index: 10;
-    /* + élevé que la section */
     padding: 0 2rem;
     flex-wrap: wrap;
 }
@@ -102,13 +98,16 @@
     background: white;
     border-radius: 1rem;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    /* ombre un peu plus marquée */
-    padding: 2rem;
     width: 100%;
     max-width: 320px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Centrer les éléments en haut de la carte */
 }
 
 .engagement-card:hover {
@@ -118,8 +117,23 @@
 
 .engagement-card img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    position: relative;
+}
+
+.engagement-card-icon-container {
+    display: flex;
+    justify-content: center;
+    /* Centrer les icônes horizontalement */
+    position: absolute;
+    /* Positionnement absolu par rapport à l'image */
+    bottom: 1rem;
+    /* Placer les icônes 1rem au-dessus du bas de l'image */
+    width: 100%;
+    gap: 1rem;
 }
 
 .engagement-card-icon {
@@ -127,15 +141,21 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin: -30px auto 1rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .engagement-card-icon img {
     width: 30px;
     height: 30px;
+}
+
+/* Modification de la taille des icônes */
+.engagement-card .engagement-card-icon img {
+    width: 40px;
+    height: 40px;
 }
 
 .engagement-card p {
@@ -163,6 +183,22 @@
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
+    }
+
+    .engagement-card {
+        max-width: 100%;
+    }
+
+    .engagement-card img {
+        height: 180px;
+    }
+
+    /* Adaptation des icônes sur mobile */
+    .engagement-card-icon-container {
+        flex-direction: column;
+        /* Les icônes seront empilées verticalement */
+        align-items: center;
+        gap: 1rem;
     }
 }
 
