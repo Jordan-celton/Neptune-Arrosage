@@ -1,6 +1,8 @@
+/* Engagement Section */
 .engagement-section {
     padding: 5rem 0 8rem;
-    background-color: #f9f9f9;
+    background-color: var(--light-bg);
+    /* Utilisation de la couleur claire de l'index.css */
     position: relative;
     overflow: visible;
 }
@@ -43,7 +45,8 @@
 }
 
 .engagement-content {
-    background-color: var(--light-alt, #f9f9f9);
+    background-color: var(--light-bg);
+    /* Utilisation de la couleur blanche de l'index.css */
     padding: 2rem;
     height: 100%;
 }
@@ -64,6 +67,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--secondary);
+    /* Utilisation de la couleur secondaire définie dans index.css */
     margin: 0;
 }
 
@@ -71,6 +75,7 @@
     font-size: 2.2rem;
     font-weight: bold;
     color: var(--text-color);
+    /* Utilisation de la couleur du texte de l'index.css */
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 0.5rem;
@@ -79,10 +84,11 @@
 
 .engagement-subtitle span {
     color: var(--secondary);
+    /* Utilisation de la couleur secondaire pour le texte mis en surbrillance */
 }
 
 .engagement-text {
-    color: #444;
+    color: var(--dark-text);
     line-height: 1.7;
     font-size: 1.1rem;
 }
@@ -103,7 +109,8 @@
     width: 100%;
     max-width: 350px;
     flex-shrink: 0;
-    background: white;
+    background: var(--light-bg);
+    /* Utilisation de la couleur blanche */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -140,7 +147,6 @@
     width: 64px;
     height: 64px;
     background: transparent;
-    /* on retire le blanc ici */
     border-radius: 50%;
     z-index: 10;
     display: flex;
@@ -149,10 +155,9 @@
 }
 
 .icon-wrapper-engagement {
-    background: white;
+    background: var(--light-bg);
     border-radius: 50%;
     padding: 6px;
-    /* espace pour faire le contour blanc */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,7 +165,7 @@
 
 .icon-background {
     background-color: #eaf7ea;
-    /* vert clair */
+    /* Utilisation du vert clair défini dans index.css */
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -186,10 +191,10 @@
 }
 
 .engagement-card-content p {
-    color: #444;
+    color: var(--text-color);
     margin: 0;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 1.5;
 }
 
