@@ -50,32 +50,81 @@ const EngagementSection = () => {
       {/* Cartes superposées */}
       <div className="engagement-card-list">
         <div className="engagement-card">
-          <img src={cardsImage1} alt="Pompage des eaux" />
-          <div className="engagement-card-icon">
-            <img src={icon1} alt="Pompage icon" />
+          <div className="card-image-container">
+            <img
+              src={cardsImage1}
+              alt="Pompage des eaux"
+              className="engagement-card-image"
+            />
           </div>
-          <p>
-            Pompage des eaux de surface pour limiter l'utilisation d’eau potable
-          </p>
+          <div className="engagement-card-icon-container">
+            <div className="icon-wrapper-engagement">
+              <div className="icon-background">
+                <img
+                  src={icon1}
+                  alt="Pompage icon"
+                  className="engagement-card-icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="engagement-card-content">
+            <p>
+              Pompage des eaux de surface pour limiter l'utilisation d'eau
+              potable
+            </p>
+          </div>
         </div>
 
         <div className="engagement-card">
-          <img src={cardsImage2} alt="Stockage des eaux" />
-          <div className="engagement-card-icon">
-            <img src={icon2} alt="Stockage icon" />
+          <div className="card-image-container">
+            <img
+              src={cardsImage2}
+              alt="Stockage des eaux"
+              className="engagement-card-image"
+            />
           </div>
-          <p>Stockage des eaux de pluie pour réutilisation optimisée</p>
+          <div className="engagement-card-icon-container">
+            <div className="icon-wrapper-engagement">
+              <div className="icon-background">
+                <img
+                  src={icon2}
+                  alt="Stockage icon"
+                  className="engagement-card-icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="engagement-card-content">
+            <p>Stockage des eaux de pluie pour réutilisation optimisée</p>
+          </div>
         </div>
 
         <div className="engagement-card">
-          <img src={cardsImage3} alt="Réutilisation des eaux grises" />
-          <div className="engagement-card-icon">
-            <img src={icon3} alt="Réutilisation icon" />
+          <div className="card-image-container">
+            <img
+              src={cardsImage3}
+              alt="Réutilisation des eaux grises"
+              className="engagement-card-image"
+            />
           </div>
-          <p>
-            La réutilisation des eaux grises, une alternative efficace et
-            écologique
-          </p>
+          <div className="engagement-card-icon-container">
+            <div className="icon-wrapper-engagement">
+              <div className="icon-background">
+                <img
+                  src={icon3}
+                  alt="Réutilisation icon"
+                  className="engagement-card-icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="engagement-card-content">
+            <p>
+              La réutilisation des eaux grises, une alternative efficace et
+              écologique
+            </p>
+          </div>
         </div>
       </div>
     </section>

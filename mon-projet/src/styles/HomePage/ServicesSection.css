@@ -193,7 +193,7 @@
 
 .service-link {
     white-space: nowrap;
-    color: #4CAF50;
+    color: var(--secondary);
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
@@ -202,7 +202,7 @@
 }
 
 .service-link:hover {
-    color: #3d8b40;
+    color: var(--secondary);
 }
 
 .service-link span {

@@ -6,8 +6,9 @@
     min-height: 100vh;
     width: 100%;
     margin: 0 auto;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+    font-family: inherit;
+    /* Utilise la police définie dans le body */
+    background-color: var(--light-bg);
 }
 
 /* Colonne image */
@@ -25,8 +26,8 @@
     max-height: 80vh;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px var(--primary-light);
+    transition: var(--transition);
 }
 
 .heroNeptune-image:hover {
@@ -65,7 +66,6 @@
 .heroNeptune-title-with-icon {
     display: flex;
     align-items: center;
-    gap: 15px;
     margin-bottom: 1.5rem;
 }
 
@@ -73,6 +73,8 @@
     width: 32px;
     height: 32px;
     flex-shrink: 0;
+    color: var(--secondary);
+    /* Couleur de l'icône */
 }
 
 .heroNeptune-tagline {
@@ -108,8 +110,16 @@
 .heroNeptune-description p {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #444444;
-    margin: 0;
+    color: var(--dark-text);
+    margin: 0 0 1.5rem 0;
+}
+
+/* Boutons - Utilisation des styles du index.css */
+.heroNeptune-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* Responsive Design */
@@ -121,6 +131,10 @@
     .heroNeptune-service {
         font-size: 2.4rem;
     }
+
+    .heroNeptune-image {
+        max-height: 70vh;
+    }
 }
 
 @media (max-width: 992px) {
@@ -130,6 +144,10 @@
 
     .heroNeptune-description p {
         font-size: 1rem;
+    }
+
+    .heroNeptune-image {
+        max-height: 65vh;
     }
 }
 
@@ -165,6 +183,10 @@
     .heroNeptune-header {
         text-align: center;
     }
+
+    .heroNeptune-cta {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -183,5 +205,10 @@
     .icon-before-heading {
         width: 28px;
         height: 28px;
+    }
+
+    .heroNeptune-cta {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
