@@ -1,4 +1,3 @@
-// src/components/HomePage/ServicesSection.js
 import React from "react";
 import { servicesHero, servicesList } from "../../data/servicesData";
 import "../../styles/HomePage/ServicesSection.css";
@@ -74,11 +73,13 @@ const ServiceCard = ({ service, onLinkClick }) => (
         height={300}
         className="serviceSection-image"
       />
-      <div className="card-icon-container green-bg">
+    </div>
+    <div className="icon-wrapper">
+      <div className="card-icon-container">
         <img src={service.icon} alt="" aria-hidden="true" />
       </div>
     </div>
-    <div className="card-content">
+    <div className="card-content-services">
       <h3>{service.title}</h3>
       <p>{service.description}</p>
       <a
