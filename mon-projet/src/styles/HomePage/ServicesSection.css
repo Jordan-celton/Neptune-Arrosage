@@ -106,7 +106,6 @@
 .service-card {
     position: relative;
     width: 300px;
-    height: 420px;
     flex-shrink: 0;
     background: white;
     border-radius: 8px;
@@ -193,6 +192,7 @@
 }
 
 .service-link {
+    white-space: nowrap;
     color: #4CAF50;
     text-decoration: none;
     font-weight: 500;
