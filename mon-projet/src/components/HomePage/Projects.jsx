@@ -1,63 +1,21 @@
-// src/components/RealisationList.jsx
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/HomePage/Projects.css";
-import image1 from "../../assets/photos/Home/20200512_155618.webp";
-import image2 from "../../assets/photos/Home/Capture.webp";
-import image3 from "../../assets/photos/Home/DSC_0779.webp";
-import image4 from "../../assets/photos/Home/20180614_160716.webp";
+import realisationsData from "../../data/realisationData";
+import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
+import { MapPin } from "lucide-react"; // Importer l'icône de localisation
 
 const Projects = () => {
   const carouselRef = useRef(null);
-
-  const realisations = [
-    {
-      ville: "SAINT-DENIS (93)",
-      date: "27 MARS 2025",
-      titre: "Rénovation du système d'arrosage du stade de france",
-      lien: "Lire la suite",
-      backgroundImage: `url(${image1})`,
-      category: "ESPACES VERTS",
-    },
-    {
-      ville: "ANGERS (49)",
-      date: "27 MARS 2025",
-      titre: "Rénovation du système d'arrosage du tramway d'Angers",
-      lien: "Lire la suite",
-      backgroundImage: `url(${image2})`,
-      category: "TRANSPORT",
-    },
-    {
-      ville: "PARIS (75)",
-      date: "27 MARS 2025",
-      titre: "Rénovation du système d'arrosage du jardin des Tuileries",
-      lien: "Lire la suite",
-      backgroundImage: `url(${image3})`,
-      category: "ESPACES VERTS",
-    },
-    {
-      ville: "LYON (69)",
-      date: "27 MARS 2025",
-      titre: "Mise en place d'une fontaine à Lyon",
-      lien: "Lire la suite",
-      backgroundImage: `url(${image4})`,
-      category: "FONTAINES",
-    },
-  ];
+  const navigate = useNavigate();
 
   const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
+    carouselRef.current?.scrollBy({ left: -300, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
+    carouselRef.current?.scrollBy({ left: 300, behavior: "smooth" });
   };
-
-  const navigate = useNavigate();
 
   return (
     <section className="realisation-section">
@@ -66,25 +24,11 @@ const Projects = () => {
 
         <div className="carousel-container">
           <button className="nav-button left" onClick={scrollLeft}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 18L9 12L15 6"
-                stroke="#0066CC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <ArrowLeft color="var(--secondary)" size={24} />
           </button>
 
           <div className="realisation-carousel" ref={carouselRef}>
-            {realisations.map((item, index) => (
+            {realisationsData.map((item, index) => (
               <article key={index} className="realisation-card">
                 <div
                   className="card-image"
@@ -92,31 +36,25 @@ const Projects = () => {
                 >
                   <span className="category-badge">{item.category}</span>
                 </div>
-
                 <div className="card-content">
                   <div className="meta-info">
-                    <span className="location">{item.ville}</span>
+                    <span className="location">
+                      <MapPin
+                        size={16}
+                        color="#666"
+                        style={{ marginRight: "5px" }}
+                      />{" "}
+                      {/* Icône de localisation */}
+                      {item.ville}
+                    </span>
                     <span className="separator">•</span>
                     <span className="date">{item.date}</span>
                   </div>
-
                   <h2 className="card-title">{item.titre}</h2>
-
                   <div className="card-footer">
                     <a href="#" className="read-more">
                       {item.lien}
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.93945 13.3333L5.27279 12.6666L9.93945 7.99998L5.27279 3.33331L5.93945 2.66665L11.2728 7.99998L5.93945 13.3333Z"
-                          fill="#0066CC"
-                        />
-                      </svg>
+                      <ChevronRight size={16} color="var(--secondary)" />
                     </a>
                   </div>
                 </div>
@@ -125,21 +63,7 @@ const Projects = () => {
           </div>
 
           <button className="nav-button right" onClick={scrollRight}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 18L15 12L9 6"
-                stroke="#0066CC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <ArrowRight color="var(--secondary)" size={24} />
           </button>
         </div>
 
@@ -149,18 +73,7 @@ const Projects = () => {
             onClick={() => navigate("/realisations")}
           >
             Voir toutes nos réalisations
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.93945 13.3333L5.27279 12.6666L9.93945 7.99998L5.27279 3.33331L5.93945 2.66665L11.2728 7.99998L5.93945 13.3333Z"
-                fill="white"
-              />
-            </svg>
+            <ChevronRight size={16} color="white" />
           </button>
         </div>
       </div>

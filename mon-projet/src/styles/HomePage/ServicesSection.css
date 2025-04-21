@@ -199,6 +199,9 @@
     display: inline-flex;
     align-items: center;
     transition: color 0.3s ease;
+    border: 1px solid var(--secondary);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .service-link:hover {
