@@ -224,6 +224,8 @@ background-color: var(--light-alt, #f9f9f9);
 
     .engagement-container {
         padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .engagement-content {

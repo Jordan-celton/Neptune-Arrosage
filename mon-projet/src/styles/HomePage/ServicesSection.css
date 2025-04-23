@@ -61,8 +61,8 @@
     color: var(--secondary);
 }
 
-.icon-before-heading {
-    width: 50px;
+.iconService-before-heading {
+    width: 40px;
     margin-right: 1rem;
     vertical-align: middle;
 }
@@ -238,6 +238,7 @@
         flex-direction: column-reverse;
         gap: 2rem;
         margin-bottom: 3rem;
+        align-items: flex-start;
     }
 
     .services-scroller {
@@ -267,11 +268,10 @@
 
     .services-main-title {
         margin-bottom: 3rem;
-        text-align: center;
     }
 
     .icon-before-heading {
         display: block;
-        margin: 0 auto 1rem;
+        margin: 0;
     }
 }

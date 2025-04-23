@@ -243,6 +243,7 @@
         opacity: 1;
         display: flex;
         justify-content: center;
+        height: 100vh;
     }
 
     /* Items du menu */
@@ -317,7 +318,7 @@
 
     .navbar-logo a {
         width: 130px;
-        height: 35px;
+        height: 55px;
     }
 
     .navbar-links {

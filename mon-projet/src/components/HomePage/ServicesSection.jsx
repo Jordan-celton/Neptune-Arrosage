@@ -29,7 +29,7 @@ const ServicesSection = () => {
             <img
               src={servicesHero.icon}
               alt=""
-              className="icon-before-heading"
+              className="iconService-before-heading"
               aria-hidden="true"
             />
             <span className="services-label">Nos services</span>
