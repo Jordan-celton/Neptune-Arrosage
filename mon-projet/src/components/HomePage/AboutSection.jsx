@@ -2,12 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/HomePage/AboutSection.css";
 
-// Import des images
 import Image1 from "../../assets/photos/Home/20180614_160716.webp";
 import Image2 from "../../assets/photos/Home/Capture.webp";
 import Image3 from "../../assets/photos/Home/DSC_0779.webp";
-
-// Import de l'icône
 import Icon from "../../assets/icons/picto_bulles.svg";
 
 const AboutSection = () => {
@@ -19,21 +16,33 @@ const AboutSection = () => {
         <div className="about-grid">
           {/* Grille d'images */}
           <div className="images-grid">
-            <div className="image-container-1">
+            <div
+              className="image-container-1"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <img
                 src={Image1}
                 alt="Projet d'arrosage"
                 className="about-image"
               />
             </div>
-            <div className="image-container-2">
+            <div
+              className="image-container-2"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <img
                 src={Image2}
                 alt="Fontaine décorative"
                 className="about-image"
               />
             </div>
-            <div className="image-container-3">
+            <div
+              className="image-container-3"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               <img
                 src={Image3}
                 alt="Aménagement paysager"
@@ -43,7 +52,11 @@ const AboutSection = () => {
           </div>
 
           {/* Colonne du texte */}
-          <div className="text-column">
+          <div
+            className="text-column"
+            data-aos="fade-left"
+            data-aos-delay="700"
+          >
             <div className="title-with-icon">
               <img src={Icon} alt="" className="icon-before-heading" />
               <h2 className="about-heading">
@@ -66,6 +79,8 @@ const AboutSection = () => {
             <button
               className="about-button"
               onClick={() => navigate("/neptune")}
+              data-aos="zoom-in"
+              data-aos-delay="900"
             >
               En savoir plus sur Neptune
               <span className="button-arrow">→</span>

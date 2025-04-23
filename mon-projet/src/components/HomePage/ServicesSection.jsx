@@ -14,7 +14,11 @@ const ServicesSection = () => {
     <section className="services-section">
       {/* Bloc Hero */}
       <div className="hero-block">
-        <div className="hero-image-container">
+        <div
+          className="hero-image-container"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <img
             src={servicesHero.image}
             alt="Services d'arrosage et d'aménagement paysager"
@@ -24,7 +28,11 @@ const ServicesSection = () => {
             height={800}
           />
         </div>
-        <div className="hero-title-container">
+        <div
+          className="hero-title-container"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
           <h1 className="services-main-title">
             <img
               src={servicesHero.icon}
@@ -48,11 +56,12 @@ const ServicesSection = () => {
             role="region"
             aria-label="Liste des services"
           >
-            {servicesList.map((service) => (
+            {servicesList.map((service, index) => (
               <ServiceCard
                 key={service.id}
                 service={service}
                 onLinkClick={handleServiceLinkClick}
+                index={index}
               />
             ))}
           </div>
@@ -62,8 +71,14 @@ const ServicesSection = () => {
   );
 };
 
-const ServiceCard = ({ service, onLinkClick }) => (
-  <div className="service-card">
+// 💡 Animation individuelle pour chaque carte avec delay croissant
+const ServiceCard = ({ service, onLinkClick, index }) => (
+  <div
+    className="service-card"
+    data-aos="zoom-in-up"
+    data-aos-delay={100 * index}
+    data-aos-duration="600"
+  >
     <div className="card-image-container">
       <img
         src={service.image}

@@ -2,8 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/HomePage/Projects.css";
 import realisationsData from "../../data/realisationData";
-import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
-import { MapPin } from "lucide-react"; // Importer l'icône de localisation
+import { ArrowLeft, ArrowRight, ChevronRight, MapPin } from "lucide-react";
 
 const Projects = () => {
   const carouselRef = useRef(null);
@@ -20,16 +19,28 @@ const Projects = () => {
   return (
     <section className="realisation-section">
       <div className="container">
-        <h1 className="section-title">Découvrez nos dernières réalisations</h1>
+        <h1
+          className="section-title"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          Découvrez nos dernières réalisations
+        </h1>
 
-        <div className="carousel-container">
+        <div className="carousel-container" data-aos="fade-in">
           <button className="nav-button left" onClick={scrollLeft}>
             <ArrowLeft color="var(--secondary)" size={24} />
           </button>
 
           <div className="realisation-carousel" ref={carouselRef}>
             {realisationsData.map((item, index) => (
-              <article key={index} className="realisation-card">
+              <article
+                key={index}
+                className="realisation-card"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
+                data-aos-duration="600"
+              >
                 <div
                   className="card-image"
                   style={{ backgroundImage: item.backgroundImage }}
@@ -43,8 +54,7 @@ const Projects = () => {
                         size={16}
                         color="#666"
                         style={{ marginRight: "5px" }}
-                      />{" "}
-                      {/* Icône de localisation */}
+                      />
                       {item.ville}
                     </span>
                     <span className="separator">•</span>
@@ -67,7 +77,7 @@ const Projects = () => {
           </button>
         </div>
 
-        <div className="section-footer">
+        <div className="section-footer" data-aos="fade-up" data-aos-delay="300">
           <button
             className="see-all-button"
             onClick={() => navigate("/realisations")}
