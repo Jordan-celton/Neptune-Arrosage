@@ -97,6 +97,7 @@
 @media (max-width: 576px) {
     .contact-banner__container {
         padding: 0 1.25rem;
+        flex-wrap: wrap;
     }
 
     .contact-banner__title {
