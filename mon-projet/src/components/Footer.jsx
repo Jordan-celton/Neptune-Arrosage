@@ -48,8 +48,12 @@ const Footer = () => {
           <h3 className="footer-section-title">Neptune arrosage</h3>
           <ul className="footer-links">
             <li>Recrutement</li>
-            <li>Qui sommes-nous ?</li>
-            <li>Contact</li>
+            <li>
+              <Link to="/neptune">Qui sommes-nous ?</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
             <li>Mentions légales</li>
           </ul>
         </div>
