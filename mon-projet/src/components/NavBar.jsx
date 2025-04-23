@@ -84,7 +84,7 @@ const NavBar = () => {
       <ul
         id="navbar-links"
         className={`navbar-links ${isMenuOpen ? "active" : ""}`}
-        aria-hidden={!isMenuOpen}
+        hidden={!isMenuOpen}
       >
         <li>
           <NavLink

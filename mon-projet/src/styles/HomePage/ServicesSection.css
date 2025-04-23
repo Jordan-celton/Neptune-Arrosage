@@ -17,7 +17,7 @@
 }
 
 .hero-image-container {
-    flex: 1;
+    flex: 2.3;
     min-width: 300px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -29,6 +29,7 @@
     display: block;
     transition: transform 0.5s ease;
     filter: brightness(0.7);
+    object-fit: cover;
 }
 
 .hero-image:hover {
@@ -125,7 +126,7 @@
 /* Icône au-dessus de la carte */
 .icon-wrapper {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -135,8 +136,8 @@
 }
 
 .card-icon-container {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #eaf7ea;
     display: flex;
@@ -247,6 +248,7 @@
     .services-cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
         overflow-x: visible;
         gap: 1.5rem;
         padding: 1rem 0;

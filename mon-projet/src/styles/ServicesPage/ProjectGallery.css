@@ -119,12 +119,17 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary);
+    color: var(--light-bg);
+    background: var(--secondary);
     text-decoration: none;
     font-weight: 600;
     margin-top: auto;
     width: fit-content;
-    transition: color 0.3s ease;
+    transition: var(--transition);
+    border: 1px solid var(--secondary);
+    padding: 0.5rem 1rem;
+    ;
+    border-radius: 10px;
 }
 
 .project-link:hover {

@@ -1,13 +1,13 @@
 import React from "react";
-import engagementImage from "../../assets/photos/Home/bg_nos_services.webp";
+import engagementImage from "../../assets/photos/Neptune/AdobeStock_219437631.jpeg";
 import icon from "../../assets/icons/picto_bulles.svg";
-import icon1 from "../../assets/icons/picto_materiel_arrosage.svg";
-import icon2 from "../../assets/icons/picto_parc_jardins.svg";
-import icon3 from "../../assets/icons/picto_recup_EP.svg";
+import icon1 from "../../assets/icons/picto_pompage.svg";
+import icon2 from "../../assets/icons/picto_stockage.svg";
+import icon3 from "../../assets/icons/picto_eaux_grises.svg";
 
-import cardsImage1 from "../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp";
-import cardsImage2 from "../../assets/photos/Home/header_accueil.webp";
-import cardsImage3 from "../../assets/photos/Home/bg_nos_services.webp";
+import cardsImage1 from "../../assets/photos/Neptune/AdobeStock_410343655.jpeg";
+import cardsImage2 from "../../assets/photos/Neptune/AdobeStock_301104036.jpeg";
+import cardsImage3 from "../../assets/photos/Neptune/AdobeStock_559732379.jpeg";
 
 import "../../styles/NeptunePage/EngagementSection.css";
 

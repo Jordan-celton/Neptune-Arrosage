@@ -30,7 +30,7 @@ const HeroNeptune = () => {
         {/* Contenu texte */}
         <div className="heroNeptune-content">
           <div className="heroNeptune-title-with-icon">
-            <img src={Icon} alt="" className="icon-before-heading" />
+            <img src={Icon} alt="" className="iconNeptune-before-heading" />
             <h3 className="heroNeptune-tagline">
               Depuis 1970 expert en solutions
             </h3>

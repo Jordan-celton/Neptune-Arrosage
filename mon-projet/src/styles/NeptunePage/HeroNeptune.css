@@ -67,9 +67,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
+    gap: 10px;
 }
 
-.icon-before-heading {
+.iconNeptune-before-heading {
     width: 32px;
     height: 32px;
     flex-shrink: 0;
@@ -202,7 +203,7 @@
         font-size: 1.1rem;
     }
 
-    .icon-before-heading {
+    .iconNeptune-before-heading {
         width: 28px;
         height: 28px;
     }
