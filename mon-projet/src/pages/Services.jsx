@@ -16,6 +16,7 @@ const Services = () => {
   useEffect(() => {
     const hash = location.hash.replace("#", "").toLowerCase();
 
+    // Vérifie si l'ID du service existe dans l'URL et le met à jour
     if (hash) {
       const matchedService = servicesData.find(
         (service) => service.id === hash
@@ -24,11 +25,13 @@ const Services = () => {
         setSelectedService(matchedService);
       }
     }
-  }, [location.pathname, location.hash]);
+  }, [location.hash]); // Dépendance à location.hash uniquement
 
   return (
     <main className="services-page">
       <Breadcrumb title={selectedService.name} />
+
+      {/* Section principale des services */}
       <section className="services-section">
         <div className="services-list-container">
           <div className="services-overlay">
@@ -45,9 +48,13 @@ const Services = () => {
               />
             </div>
           </div>
+
+          {/* Description du service sélectionné */}
           <ServiceDescription service={selectedService} />
         </div>
       </section>
+
+      {/* Bannière et galerie de projets */}
       <EmotionWaterBanner />
       <ProjectGallery />
     </main>

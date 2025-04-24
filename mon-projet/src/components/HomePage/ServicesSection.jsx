@@ -11,7 +11,10 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="services-section">
+    <section
+      className="services-section"
+      aria-labelledby="services-main-heading"
+    >
       {/* Bloc Hero */}
       <div className="hero-block">
         <div
@@ -21,7 +24,7 @@ const ServicesSection = () => {
         >
           <img
             src={servicesHero.image}
-            alt="Services d'arrosage et d'aménagement paysager"
+            alt="Illustration d'aménagement paysager avec systèmes d’arrosage"
             className="hero-image"
             loading="eager"
             width={1200}
@@ -33,7 +36,7 @@ const ServicesSection = () => {
           data-aos="fade-left"
           data-aos-delay="300"
         >
-          <h1 className="services-main-title">
+          <h1 className="services-main-title" id="services-main-heading">
             <img
               src={servicesHero.icon}
               alt=""
@@ -54,7 +57,7 @@ const ServicesSection = () => {
           <div
             className="services-cards"
             role="region"
-            aria-label="Liste des services"
+            aria-label="Liste des services proposés par Neptune"
           >
             {servicesList.map((service, index) => (
               <ServiceCard
@@ -73,7 +76,7 @@ const ServicesSection = () => {
 
 // 💡 Animation individuelle pour chaque carte avec delay croissant
 const ServiceCard = ({ service, onLinkClick, index }) => (
-  <div
+  <article
     className="service-card"
     data-aos="zoom-in-up"
     data-aos-delay={100 * index}
@@ -82,7 +85,7 @@ const ServiceCard = ({ service, onLinkClick, index }) => (
     <div className="card-image-container">
       <img
         src={service.image}
-        alt={`${service.title} - ${service.description}`}
+        alt={`Service : ${service.title} – ${service.description}`}
         loading="lazy"
         width={400}
         height={300}
@@ -101,12 +104,12 @@ const ServiceCard = ({ service, onLinkClick, index }) => (
         href={`/services#${service.anchor}`}
         className="service-link"
         onClick={(e) => onLinkClick(e, service.anchor)}
-        aria-label={`En savoir plus sur ${service.title}`}
+        aria-label={`En savoir plus sur le service ${service.title}`}
       >
         Lire la suite <span aria-hidden="true">→</span>
       </a>
     </div>
-  </div>
+  </article>
 );
 
 export default ServicesSection;

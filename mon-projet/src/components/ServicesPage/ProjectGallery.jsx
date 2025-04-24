@@ -30,8 +30,7 @@ const ProjectGallery = () => {
       link: "#",
       image: image1,
     },
-    // Ajoutez autant de projets que nécessaire en suivant la même structure
-    // Les données pourraient aussi venir d'une API ou d'un fichier JSON
+    // Ajoutez autant de projets que nécessaire
   ];
 
   return (
@@ -44,8 +43,9 @@ const ProjectGallery = () => {
             <div className="project-image-container">
               <img
                 src={project.image}
-                alt={project.title}
+                alt={`Projet: ${project.title}`}
                 className="project-image"
+                loading="lazy" // Amélioration de la performance
               />
               <div className="project-overlay"></div>
             </div>
@@ -56,7 +56,11 @@ const ProjectGallery = () => {
                 <p className="project-date">{project.date}</p>
               </div>
               <h3 className="project-title">{project.title}</h3>
-              <a href={project.link} className="project-link">
+              <a
+                href={project.link}
+                className="project-link"
+                aria-label={`Lire la suite sur ${project.title}`} // Accessibilité
+              >
                 Lire la suite
               </a>
             </div>

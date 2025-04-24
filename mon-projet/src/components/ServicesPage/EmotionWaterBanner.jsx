@@ -6,7 +6,11 @@ const EmotionWaterBanner = () => {
   return (
     <div className="emotion-water-banner">
       <div className="banner-content">
-        <img src={apostrophe} alt="Citation" className="apostrophe-icon" />
+        <img
+          src={apostrophe}
+          alt="Guillemet de citation" // Accessibilité améliorée
+          className="apostrophe-icon"
+        />
         <h1 className="banner-title">
           Créer l'émotion par l'eau
           <br />

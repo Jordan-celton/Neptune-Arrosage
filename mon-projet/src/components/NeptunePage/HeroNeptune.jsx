@@ -6,38 +6,47 @@ import Icon from "../../assets/icons/picto_bulles.svg";
 
 const HeroNeptune = () => {
   return (
-    <div className="heroNeptune">
+    <section className="heroNeptune" aria-labelledby="hero-neptune-title">
       {/* Colonne de l'image */}
       <div className="heroNeptune-image-column">
         <img
           src={heroImage}
-          alt="Fontaine Wallace à Paris"
+          alt="Fontaine Wallace à Paris, symbole de l'expertise Neptune"
           className="heroNeptune-image"
+          width={600}
+          height={800}
         />
       </div>
 
       {/* Colonne du contenu */}
       <div className="heroNeptune-content-column">
-        {/* Logo et titre */}
-        <div className="heroNeptune-header">
+        <header className="heroNeptune-header">
           <img
             src={logo}
             alt="Logo Neptune Arrosage"
             className="heroNeptune-logo"
+            width={160}
+            height={80}
           />
-        </div>
+        </header>
 
-        {/* Contenu texte */}
         <div className="heroNeptune-content">
           <div className="heroNeptune-title-with-icon">
-            <img src={Icon} alt="" className="iconNeptune-before-heading" />
-            <h3 className="heroNeptune-tagline">
+            <img
+              src={Icon}
+              alt=""
+              className="iconNeptune-before-heading"
+              aria-hidden="true"
+            />
+            <h1 id="hero-neptune-title" className="heroNeptune-tagline">
               Depuis 1970 expert en solutions
-            </h3>
+            </h1>
           </div>
-          <h4 className="heroNeptune-service">
+
+          <h2 className="heroNeptune-service">
             Arrosage & aménagement <span>hydraulique</span>
-          </h4>
+          </h2>
+
           <div className="heroNeptune-description">
             <p>
               Fondée en 1970 à Nantes, Neptune Arrosage est une entreprise
@@ -50,7 +59,7 @@ const HeroNeptune = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

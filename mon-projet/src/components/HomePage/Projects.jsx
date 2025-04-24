@@ -17,18 +17,31 @@ const Projects = () => {
   };
 
   return (
-    <section className="realisation-section">
+    <section
+      className="realisation-section"
+      aria-labelledby="realisation-title"
+    >
       <div className="container">
         <h1
           className="section-title"
+          id="realisation-title"
           data-aos="fade-up"
           data-aos-duration="800"
         >
           Découvrez nos dernières réalisations
         </h1>
 
-        <div className="carousel-container" data-aos="fade-in">
-          <button className="nav-button left" onClick={scrollLeft}>
+        <div
+          className="carousel-container"
+          data-aos="fade-in"
+          role="region"
+          aria-label="Galerie de projets réalisés"
+        >
+          <button
+            className="nav-button left"
+            onClick={scrollLeft}
+            aria-label="Faire défiler vers la gauche"
+          >
             <ArrowLeft color="var(--secondary)" size={24} />
           </button>
 
@@ -44,6 +57,8 @@ const Projects = () => {
                 <div
                   className="card-image"
                   style={{ backgroundImage: item.backgroundImage }}
+                  role="img"
+                  aria-label={`${item.titre} – ${item.ville}, ${item.date}`}
                 >
                   <span className="category-badge">{item.category}</span>
                 </div>
@@ -54,17 +69,28 @@ const Projects = () => {
                         size={16}
                         color="#666"
                         style={{ marginRight: "5px" }}
+                        aria-hidden="true"
                       />
                       {item.ville}
                     </span>
-                    <span className="separator">•</span>
+                    <span className="separator" aria-hidden="true">
+                      •
+                    </span>
                     <span className="date">{item.date}</span>
                   </div>
                   <h2 className="card-title">{item.titre}</h2>
                   <div className="card-footer">
-                    <a href="#" className="read-more">
+                    <a
+                      href="#"
+                      className="read-more"
+                      aria-label={`Lire la suite à propos du projet ${item.titre}`}
+                    >
                       {item.lien}
-                      <ChevronRight size={16} color="var(--secondary)" />
+                      <ChevronRight
+                        size={16}
+                        color="var(--secondary)"
+                        aria-hidden="true"
+                      />
                     </a>
                   </div>
                 </div>
@@ -72,7 +98,11 @@ const Projects = () => {
             ))}
           </div>
 
-          <button className="nav-button right" onClick={scrollRight}>
+          <button
+            className="nav-button right"
+            onClick={scrollRight}
+            aria-label="Faire défiler vers la droite"
+          >
             <ArrowRight color="var(--secondary)" size={24} />
           </button>
         </div>
@@ -81,9 +111,10 @@ const Projects = () => {
           <button
             className="see-all-button"
             onClick={() => navigate("/realisations")}
+            aria-label="Voir toutes les réalisations"
           >
             Voir toutes nos réalisations
-            <ChevronRight size={16} color="white" />
+            <ChevronRight size={16} color="white" aria-hidden="true" />
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Navbar from "./components/NavBar";
 import Home from "./pages/Home";
 import Neptune from "./pages/Neptune";
@@ -30,11 +31,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    AOS.refresh(); // Rafraîchit les animations à chaque changement de page
+    AOS.refresh();
   }, [location.pathname]);
 
   return (
-    <>
+    <HelmetProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -45,11 +46,10 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
 
-// 👇 Wrapping App with Router to access useLocation
 const WrappedApp = () => (
   <Router>
     <ScrollToTop />

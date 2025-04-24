@@ -4,14 +4,14 @@ import "../../styles/ContactPage/ContactAgence.css";
 
 const ContactAgence = () => {
   const agencies = [
-    {
-      city: "Paris",
-      region: "Île-de-France",
-      address: "1 Rue du bois des carreaux, 92290 Chantenay-Malabry",
-      phone: "02 40 73 64 89",
-      email: "contact@neptune-arrosage.fr",
-      hours: "Lun-Ven: 9h-18h / Sam: 9h-12h",
-    },
+    // {
+    //   city: "Paris",
+    //   region: "Île-de-France",
+    //   address: "1 Rue du bois des carreaux, 92290 Chantenay-Malabry",
+    //   phone: "02 40 73 64 89",
+    //   email: "contact@neptune-arrosage.fr",
+    //   hours: "Lun-Ven: 9h-18h / Sam: 9h-12h",
+    // },
     {
       city: "Nantes",
       region: "Pays de la Loire",
@@ -25,14 +25,14 @@ const ContactAgence = () => {
   return (
     <section className="agencies-section">
       <div className="container">
-        <h2 className="section-title">Nos agences</h2>
+        <h2 className="section-title">Notre agence</h2>
 
         <div className="intro-text">
           <p>
             Chez Neptune Arrosage, la proximité est au cœur de notre engagement.
-            Grâce à nos deux agences situées à Paris et à Nantes, nous
-            accompagnons efficacement vos projets d'arrosage automatique,
-            partout en Île-de-France et dans les Pays de la Loire.
+            Grâce à notre agence située à Nantes, nous accompagnons efficacement
+            vos projets d'arrosage automatique, partout en Île-de-France et dans
+            les Pays de la Loire.
           </p>
           <p>
             Nos équipes locales vous conseillent avec réactivité et expertise,

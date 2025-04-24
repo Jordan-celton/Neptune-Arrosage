@@ -23,8 +23,9 @@ const AboutSection = () => {
             >
               <img
                 src={Image1}
-                alt="Projet d'arrosage"
+                alt="Système d’arrosage automatique installé dans un jardin paysager"
                 className="about-image"
+                loading="lazy"
               />
             </div>
             <div
@@ -34,8 +35,9 @@ const AboutSection = () => {
             >
               <img
                 src={Image2}
-                alt="Fontaine décorative"
+                alt="Fontaine décorative design dans un espace vert public"
                 className="about-image"
+                loading="lazy"
               />
             </div>
             <div
@@ -45,8 +47,9 @@ const AboutSection = () => {
             >
               <img
                 src={Image3}
-                alt="Aménagement paysager"
+                alt="Aménagement paysager complet avec gazon et massifs fleuris"
                 className="about-image"
+                loading="lazy"
               />
             </div>
           </div>
@@ -58,7 +61,12 @@ const AboutSection = () => {
             data-aos-delay="700"
           >
             <div className="title-with-icon">
-              <img src={Icon} alt="" className="icon-before-heading" />
+              <img
+                src={Icon}
+                alt="Icône décorative de bulles"
+                className="icon-before-heading"
+                loading="lazy"
+              />
               <h2 className="about-heading">
                 Pour des espaces verts d'exception
               </h2>
@@ -79,6 +87,7 @@ const AboutSection = () => {
             <button
               className="about-button"
               onClick={() => navigate("/neptune")}
+              aria-label="En savoir plus sur Neptune, spécialiste de l'arrosage et des fontaines"
               data-aos="zoom-in"
               data-aos-delay="900"
             >
