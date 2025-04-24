@@ -72,7 +72,11 @@ const AboutSection = () => {
               </h2>
             </div>
             <h3 className="about-subheading">
-              L'art de l'eau & <span>de l'arrosage</span>
+              L'art de l'eau &{" "}
+              <span>
+                <br />
+                de l'arrosage
+              </span>
             </h3>
 
             <div className="about-text">
@@ -92,7 +96,7 @@ const AboutSection = () => {
               data-aos-delay="900"
             >
               En savoir plus sur Neptune
-              <span className="button-arrow">→</span>
+              {/* <span className="button-arrow">→</span> */}
             </button>
           </div>
         </div>

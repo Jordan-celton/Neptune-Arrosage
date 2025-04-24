@@ -3,11 +3,11 @@
     /* Palette de base */
     --primary: #232B63;
     /* Bleu Neptune - Couleur dominante */
-    --secondary: #2A7D38;
+    --secondary: #2a7d2e;
     /* Vert menthe - Couleur secondaire */
     --light-accent: #F1F2C4;
     /* Crème clair - Arrière-plan doux */
-    --dark-text: #736B5C;
+    --dark-text: #797979;
     /* Gris anthracite - Texte principal */
     --light-bg: #FFF;
     /* Blanc - Arrière-plan */
@@ -23,6 +23,11 @@
     /* Variations */
     --primary-light: rgba(80, 139, 191, 0.1);
     --secondary-dark: #104911;
+
+   /* Polices */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'DM Sans', sans-serif;
+    --font-tertiary: 'Roboto', sans-serif;
 }
 
 /* Reset et base */
@@ -38,7 +43,6 @@ html {
 
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
     color: var(--dark-text);
     background-color: var(--light-bg);
     overflow-x: hidden;
@@ -59,42 +63,6 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-}
-
-section {
-    padding: 5rem 0;
-}
-
-/* Boutons */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--light-bg);
-}
-
-.btn-primary:hover {
-    background-color: var(--secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(80, 139, 191, 0.3);
-}
-
-.btn-secondary {
-    background-color: var(--secondary);
-    color: var(--light-bg);
-}
-
-.btn-secondary:hover {
-    background-color: var(--secondary-dark);
 }
 
 /* Cartes */
