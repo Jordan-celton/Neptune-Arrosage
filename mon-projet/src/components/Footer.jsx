@@ -78,7 +78,9 @@ const Footer = () => {
               <Link to="/services#contrats">Contrats d'entretien</Link>
             </li>
             <li>
-              <Link to="/services#recuperation">Récupération des eaux</Link>
+              <Link to="/services#recuperation">
+                Récupération des eaux pluviales
+              </Link>
             </li>
           </ul>
         </div>

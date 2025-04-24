@@ -39,7 +39,7 @@ const HeroNeptune = () => {
               aria-hidden="true"
             />
             <h1 id="hero-neptune-title" className="heroNeptune-tagline">
-              Depuis 1970 expert en solutions
+              Spécialiste de l’arrosage depuis 1970
             </h1>
           </div>
 
@@ -50,11 +50,12 @@ const HeroNeptune = () => {
           <div className="heroNeptune-description">
             <p>
               Fondée en 1970 à Nantes, Neptune Arrosage est une entreprise
-              spécialisée dans la conception et la réalisation de solutions
-              d'arrosage et d'aménagements hydrauliques. Forte de plus de 50 ans
-              d'expérience, Neptune intervient sur des projets variés, des
-              fontaines et miroirs d'eau aux terrains sportifs (golf, centres
-              équestres, stades), en passant par les jardins et espaces publics.
+              indépendante spécialisée dans la conception et la réalisation de
+              solutions d'arrosage et d'aménagements hydrauliques. Forte de plus
+              de 50 ans d'expérience, Neptune intervient sur des projets variés,
+              des fontaines et miroirs d'eau aux terrains sportifs (golf,
+              centres équestres, stades), en passant par les jardins et espaces
+              publics.
             </p>
           </div>
         </div>
