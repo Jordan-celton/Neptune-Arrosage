@@ -6,10 +6,10 @@
 }
 
 /* ----------- Section Services ----------- */
-.services-section {
+/* .services-section {
     padding: 4rem 2rem;
     background-color: var(--light-alt, #f9f9f9);
-}
+} */
 
 .services-list-container {
     max-width: 1200px;

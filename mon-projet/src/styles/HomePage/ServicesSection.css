@@ -1,8 +1,8 @@
 /* Section Principale */
 .services-section {
     position: relative;
-    padding: 5rem 0 0;
-    background-color: var(--light-bg);
+    padding: 0;
+    background-color: #f5f5f5;
     overflow: hidden;
 }
 
@@ -11,9 +11,8 @@
     display: flex;
     align-items: center;
     margin: 0 auto 5rem;
-    padding: 0 2rem;
+    padding: 0 ;
     gap: 4rem;
-    max-width: 1400px;
 }
 
 .hero-image-container {
