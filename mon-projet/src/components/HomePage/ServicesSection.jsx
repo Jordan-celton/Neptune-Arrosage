@@ -18,7 +18,7 @@ const ServicesSection = () => {
       {/* Bloc Hero */}
       <div className="hero-block">
         <div
-          className="hero-image-container"
+          class="hero-image-container"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
@@ -31,6 +31,7 @@ const ServicesSection = () => {
             height={800}
           />
         </div>
+
         <div
           className="hero-title-container"
           data-aos="fade-left"
