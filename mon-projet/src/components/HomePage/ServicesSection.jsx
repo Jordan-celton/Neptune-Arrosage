@@ -1,6 +1,7 @@
 import React from "react";
 import { servicesHero, servicesList } from "../../data/servicesData";
 import "../../styles/HomePage/ServicesSection.css";
+import Carousel from "../HomePage/Carousel";
 
 const ServicesSection = () => {
   const handleServiceLinkClick = (e, anchor) => {
@@ -18,7 +19,7 @@ const ServicesSection = () => {
       {/* Bloc Hero */}
       <div className="hero-block">
         <div
-          class="hero-image-container"
+          className="hero-image-container"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
@@ -55,11 +56,7 @@ const ServicesSection = () => {
       {/* Grille des services */}
       <div className="services-overlay-container">
         <div className="services-scroller">
-          <div
-            className="services-cards"
-            role="region"
-            aria-label="Liste des services proposés par Neptune"
-          >
+          <Carousel>
             {servicesList.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -68,7 +65,7 @@ const ServicesSection = () => {
                 index={index}
               />
             ))}
-          </div>
+          </Carousel>
         </div>
       </div>
     </section>

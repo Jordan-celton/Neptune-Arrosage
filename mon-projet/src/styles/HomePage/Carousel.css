@@ -1,0 +1,135 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* Aligner les éléments (carousel et dots) verticalement */
+    align-items: center;
+    /* Centrer le contenu horizontalement */
+    gap: 1rem;
+    /* Espacement entre les éléments (carousel et dots) */
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-slide {
+    display: flex;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+    /* ajusté dans le composant React */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--secondary, #2a5c7c);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background-color: var(--primary, #17405e);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Position des boutons à gauche et droite */
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+/* Dots sous le carousel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    /* Espacement entre les dots et le carousel */
+    gap: 0.5rem;
+}
+
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: black;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .carousel-slide {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .carousel-wrapper {
+        flex-direction: column;
+    }
+
+    .carousel-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .carousel-slide {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        gap: 0.5rem;
+    }
+
+    .carousel-btn {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .carousel-slide {
+        padding: 0.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .carousel-slide {
+        padding: 0.2rem;
+    }
+}
