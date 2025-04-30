@@ -83,7 +83,7 @@ const NavBar = () => {
 
       <ul
         id="navbar-links"
-        className={`navbar-links ${isMenuOpen ? "active" : ""}`}
+        className={`navbar-links "active" : ""}`}
         hidden={!isMenuOpen}
       >
         <li>

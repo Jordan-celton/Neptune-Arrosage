@@ -1,19 +1,28 @@
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import "../../styles/HomePage/Projects.css";
 import realisationsData from "../../data/realisationData";
 import { ArrowLeft, ArrowRight, ChevronRight, MapPin } from "lucide-react";
+import iconProjects from "../../assets/icons/picto_bulles.svg";
 
 const Projects = () => {
   const carouselRef = useRef(null);
-  const navigate = useNavigate();
+
+  const CARD_WIDTH = 460;
+  const GAP = 20;
+  const SCROLL_AMOUNT = CARD_WIDTH * 2 + GAP; // pour 2 cartes visibles
 
   const scrollLeft = () => {
-    carouselRef.current?.scrollBy({ left: -300, behavior: "smooth" });
+    carouselRef.current?.scrollBy({
+      left: -SCROLL_AMOUNT,
+      behavior: "smooth",
+    });
   };
 
   const scrollRight = () => {
-    carouselRef.current?.scrollBy({ left: 300, behavior: "smooth" });
+    carouselRef.current?.scrollBy({
+      left: SCROLL_AMOUNT,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -21,30 +30,54 @@ const Projects = () => {
       className="realisation-section"
       aria-labelledby="realisation-title"
     >
-      <div className="container">
-        <h1
-          className="section-title"
-          id="realisation-title"
-          data-aos="fade-up"
-          data-aos-duration="800"
-        >
-          Découvrez nos dernières réalisations
-        </h1>
+      <div className="container-projects">
+        {/* En-tête + Boutons */}
+        <div className="carousel-header">
+          <div className="header-image-container-projects">
+            <img
+              src={iconProjects}
+              alt="Image d'une réalisation"
+              className="header-image-projects"
+              loading="eager"
+            />
+            <h2>Nos réalisations</h2>
+          </div>
 
+          <div className="header-content-wrapper">
+            <h1
+              className="section-title-projects"
+              id="realisation-title"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
+              Découvrez nos dernières réalisations
+            </h1>
+            <div className="carousel-buttons">
+              <button
+                className="nav-button"
+                onClick={scrollLeft}
+                aria-label="Défiler vers la gauche"
+              >
+                <ArrowLeft color="var(--secondary)" size={24} />
+              </button>
+              <button
+                className="nav-button"
+                onClick={scrollRight}
+                aria-label="Défiler vers la droite"
+              >
+                <ArrowRight color="var(--secondary)" size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Carrousel */}
         <div
-          className="carousel-container"
+          className="carousel-wrapper"
           data-aos="fade-in"
           role="region"
           aria-label="Galerie de projets réalisés"
         >
-          <button
-            className="nav-button left"
-            onClick={scrollLeft}
-            aria-label="Faire défiler vers la gauche"
-          >
-            <ArrowLeft color="var(--secondary)" size={24} />
-          </button>
-
           <div className="realisation-carousel" ref={carouselRef}>
             {realisationsData.map((item, index) => (
               <article
@@ -97,25 +130,6 @@ const Projects = () => {
               </article>
             ))}
           </div>
-
-          <button
-            className="nav-button right"
-            onClick={scrollRight}
-            aria-label="Faire défiler vers la droite"
-          >
-            <ArrowRight color="var(--secondary)" size={24} />
-          </button>
-        </div>
-
-        <div className="section-footer" data-aos="fade-up" data-aos-delay="300">
-          <button
-            className="see-all-button"
-            onClick={() => navigate("/realisations")}
-            aria-label="Voir toutes les réalisations"
-          >
-            Voir toutes nos réalisations
-            <ChevronRight size={16} color="white" aria-hidden="true" />
-          </button>
         </div>
       </div>
     </section>

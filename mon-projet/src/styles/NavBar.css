@@ -1,17 +1,16 @@
 /* NavBar.css - Version complète avec votre palette */
 .navbar {
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
     background-color: var(--light-bg);
     box-shadow: 0 2px 20px var(--primary-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    backface-visibility: hidden;
-    will-change: transform;
+}
+
+.navbar-logo {
+    flex: 1;
+    /* pousse vers la gauche */
 }
 
 /* Logo */
@@ -28,14 +27,22 @@
     transform: scale(1.05);
 }
 
+.navbar .navbar-links {
+    flex: 2;
+    /* pousse vers la droite */
+}
+
 /* Liens principaux */
 .navbar-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 6rem;
     margin: 0;
     padding: 0;
     align-items: center;
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    color: var(--text-color);
 }
 
 .nav-link,
@@ -94,9 +101,8 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 220px;
+    width: 280px;
     background-color: var(--light-bg);
-    border: 1px solid var(--light-accent);
     box-shadow: 0 10px 15px var(--primary-light);
     border-radius: 0 0 5px 5px;
     overflow: hidden;
@@ -104,6 +110,8 @@
     opacity: 0;
     transition: max-height var(--transition), opacity 0.2s ease;
     z-index: 1000;
+    font-family: var(--font-secondary);
+    font-weight: 600;
 }
 
 .submenu.show {
@@ -118,11 +126,10 @@
 .submenu li a {
     display: block;
     padding: 0.8rem 1.5rem;
-    color: var(--dark-text);
-    font-weight: 500;
+    color: var(--text-color);
+    font-weight: 600;
     text-transform: none;
     letter-spacing: normal;
-    border-bottom: 1px solid var(--light-accent);
     transition: var(--transition);
 }
 
