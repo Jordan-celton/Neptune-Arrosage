@@ -4,6 +4,7 @@
     padding: 6rem 0;
     color: var(--light-bg);
     overflow: hidden;
+    height: 560px;
 }
 
 .expertise-background {
@@ -16,6 +17,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    isolation: isolate;
     z-index: -1;
 
     /* Effet d'assombrissement */
@@ -26,7 +29,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         /* Ajustez l'opacité (0.5 = 50%) */
         mix-blend-mode: multiply;
     }
@@ -41,7 +44,6 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
     border-radius: 10px;
 }
 
@@ -58,10 +60,11 @@
 }
 
 .section-header p {
-    color: var(--light-bg);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 0;
+    color: #cecece;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    font-style: italic;
+    font-family: 'DM Sans', sans-serif;
 }
 
 /* Animation */
@@ -73,7 +76,8 @@
 
 .section-header img {
     opacity: 0;
-    height: 80px;
+    width: 188px;
+    height: 120px;
     animation: fadeIn 0.8s ease forwards 0.3s;
 }
 

@@ -104,7 +104,7 @@ const ServiceCard = ({ service, onLinkClick, index }) => (
         onClick={(e) => onLinkClick(e, service.anchor)}
         aria-label={`En savoir plus sur le service ${service.title}`}
       >
-        Lire la suite <span aria-hidden="true">→</span>
+        Lire la suite
       </a>
     </div>
   </article>

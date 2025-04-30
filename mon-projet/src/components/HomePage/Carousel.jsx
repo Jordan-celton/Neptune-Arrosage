@@ -8,19 +8,32 @@ const Carousel = ({
   interval = 3000,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const totalSlides = React.Children.count(children);
   const maxIndex = totalSlides - 1;
   const carouselRef = useRef(null);
-  const cloneRef = useRef(null); // Ref for cloned elements
+  const cloneRef = useRef(null);
 
   let startX = 0;
 
+  // Vérifie la taille de l'écran
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
   const nextSlide = React.useCallback(() => {
-    setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1)); // Loop to the first slide after the last one
+    setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
   }, [maxIndex]);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1)); // Loop to the last slide if we are on the first one
+    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
   };
 
   const goToSlide = (index) => {
@@ -28,38 +41,54 @@ const Carousel = ({
   };
 
   const handleTouchStart = (e) => {
-    startX = e.touches[0].clientX;
+    if (!isMobile) {
+      startX = e.touches[0].clientX;
+    }
   };
 
   const handleTouchEnd = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextSlide();
-    else if (endX - startX > 50) prevSlide();
+    if (!isMobile) {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) nextSlide();
+      else if (endX - startX > 50) prevSlide();
+    }
   };
 
   useEffect(() => {
-    if (!autoPlay) return;
+    if (!autoPlay || isMobile) return;
     const timer = setInterval(() => nextSlide(), interval);
     return () => clearInterval(timer);
-  }, [currentIndex, autoPlay, interval, nextSlide]);
+  }, [currentIndex, autoPlay, interval, nextSlide, isMobile]);
 
-  // Effect for smooth transition when reaching the last slide
   useEffect(() => {
-    if (currentIndex === maxIndex) {
-      // Disable transition to make the jump smooth to the first slide
+    if (currentIndex === maxIndex && !isMobile) {
       carouselRef.current.style.transition = "none";
       carouselRef.current.style.transform = `translateX(0%)`;
       setTimeout(() => {
-        setCurrentIndex(0); // Set index to 0 after transition
-        carouselRef.current.style.transition = "transform 0.5s ease-in-out"; // Re-enable transition
-      }, 500); // Wait for transition duration
+        setCurrentIndex(0);
+        carouselRef.current.style.transition = "transform 0.5s ease-in-out";
+      }, 500);
     }
-  }, [currentIndex, maxIndex]);
+  }, [currentIndex, maxIndex, isMobile]);
 
+  // Version mobile - affichage en colonne
+  if (isMobile) {
+    return (
+      <div className="cards-column-view">
+        {React.Children.map(children, (child, index) => (
+          <div className="card-item" key={index}>
+            {child}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Version desktop/tablette - carousel
   return (
-    <div className="carousel-container">
+    <div className="carousel-container-cards">
       <button
-        className="carousel-btn left"
+        className="carousel-btn-cards left"
         onClick={prevSlide}
         disabled={currentIndex === 0}
       >
@@ -67,42 +96,40 @@ const Carousel = ({
       </button>
 
       <div
-        className="carousel-wrapper"
+        className="carousel-wrapper-cards"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className="carousel-inner"
+          className="carousel-inner-cards"
           ref={carouselRef}
           style={{
             transform: `translateX(-${(currentIndex * 100) / visibleSlides}%)`,
-            width: `${((totalSlides + 2) * 10) / visibleSlides}%`, // We add +1 to include the cloned first item
+            width: `${((totalSlides + 2) * 10) / visibleSlides}%`,
           }}
         >
           {React.Children.map(children, (child, index) => (
-            <div className="carousel-slide" key={index}>
+            <div className="carousel-slide-cards" key={index}>
               {child}
             </div>
           ))}
-          {/* Clone the first slide at the end for seamless transition */}
           {React.Children.count(children) > 1 && (
-            <div className="carousel-slide" ref={cloneRef}>
-              {React.Children.toArray(children)[0]}{" "}
-              {/* Cloning the first slide */}
+            <div className="carousel-slide-cards" ref={cloneRef}>
+              {React.Children.toArray(children)[0]}
             </div>
           )}
         </div>
       </div>
 
       <button
-        className="carousel-btn right"
+        className="carousel-btn-cards right"
         onClick={nextSlide}
         disabled={currentIndex === maxIndex}
       >
         ▶
       </button>
 
-      <div className="carousel-dots">
+      <div className="carousel-dots-cards">
         {Array.from({ length: totalSlides }).map((_, idx) => (
           <button
             key={idx}
