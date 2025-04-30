@@ -42,8 +42,7 @@ const Projects = () => {
             />
             <h2>Nos réalisations</h2>
           </div>
-
-          <div className="header-content-wrapper">
+          <div className="header-title-container-projects">
             <h1
               className="section-title-projects"
               id="realisation-title"
@@ -52,20 +51,21 @@ const Projects = () => {
             >
               Découvrez nos dernières réalisations
             </h1>
+
             <div className="carousel-buttons">
               <button
                 className="nav-button"
                 onClick={scrollLeft}
                 aria-label="Défiler vers la gauche"
               >
-                <ArrowLeft color="var(--secondary)" size={24} />
+                <ArrowLeft color="var(--light-bg)" size={20} />
               </button>
               <button
                 className="nav-button"
                 onClick={scrollRight}
                 aria-label="Défiler vers la droite"
               >
-                <ArrowRight color="var(--secondary)" size={24} />
+                <ArrowRight color="var(--light-bg)" size={20} />
               </button>
             </div>
           </div>
