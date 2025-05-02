@@ -11,7 +11,7 @@
     display: flex;
     max-width: 1800px;
     align-items: center;
-    padding: 0 ;
+    padding: 0;
     gap: 4rem;
 }
 
@@ -196,7 +196,7 @@
     font-size: 2rem;
     font-weight: 600;
     margin-top: 20px;
-    font-family: 'DM Sans', sans-serif; 
+    font-family: 'DM Sans', sans-serif;
     margin-bottom: 10px;
     color: #333;
 }
@@ -258,17 +258,17 @@
         width: 25px;
         height: 30px;
         margin-right: 0.5rem;
-    }  
+    }
+
     .icon-wrapper {
         position: absolute;
-        top: 35%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
         background: white;
         padding: 8px;
         border-radius: 50%;
-    } 
+    }
 
     .services-scroller {
         margin-top: 0;
@@ -296,6 +296,31 @@
 
     .services-scroller {
         margin-top: 0;
+        padding-top: 3rem;
+    }
+}
+
+/* Nouveaux styles pour 1024px (tablette) */
+@media (max-width: 1024px) {
+    .services-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .service-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .services-main-title {
+        font-size: 2.8rem;
+        margin-bottom: 4rem;
+    }
+
+    .services-scroller {
         padding-top: 3rem;
     }
 }

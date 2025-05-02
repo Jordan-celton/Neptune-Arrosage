@@ -98,6 +98,10 @@
     .carousel-slide {
         padding: 0.5rem;
     }
+
+    .cards-column-view {
+        padding: 3rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -113,6 +117,10 @@
     .carousel-slide {
         padding: 0.5rem;
     }
+
+        .cards-column-view {
+        padding: 2rem;
+        }
 }
 
 @media (max-width: 768px) {
@@ -128,6 +136,10 @@
     .carousel-slide {
         padding: 0.2rem;
     }
+
+        .cards-column-view {
+        padding: 1rem;
+        }
 }
 
 @media (max-width: 480px) {
@@ -139,4 +151,8 @@
     .carousel-slide {
         padding: 0.2rem;
     }
+
+        .cards-column-view {
+        padding: 0.5rem;
+        }
 }

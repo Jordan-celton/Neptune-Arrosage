@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { servicesHero, servicesList } from "../../data/servicesData";
 import "../../styles/HomePage/ServicesSection.css";
 import Carousel from "../HomePage/Carousel";
 
 const ServicesSection = () => {
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 992) {
+        setIsMobileOrTablet(true); // Pass to column for mobile/tablet
+      } else {
+        setIsMobileOrTablet(false); // Default to row for desktop
+      }
+    };
+
+    handleResize(); // Check size on mount
+    window.addEventListener("resize", handleResize); // Listen to resize events
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup
+    };
+  }, []);
+
   const handleServiceLinkClick = (e, anchor) => {
     if (window.location.pathname === "/services") {
       e.preventDefault();
@@ -56,7 +76,8 @@ const ServicesSection = () => {
       {/* Grille des services */}
       <div className="services-overlay-container">
         <div className="services-scroller">
-          <Carousel>
+          {/* Pass the isMobileOrTablet prop to adjust the carousel layout */}
+          <Carousel isMobileOrTablet={isMobileOrTablet}>
             {servicesList.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -72,7 +93,6 @@ const ServicesSection = () => {
   );
 };
 
-// 💡 Animation individuelle pour chaque carte avec delay croissant
 const ServiceCard = ({ service, onLinkClick, index }) => (
   <article
     className="service-card"
