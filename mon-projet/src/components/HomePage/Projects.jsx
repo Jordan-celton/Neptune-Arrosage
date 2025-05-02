@@ -7,9 +7,13 @@ import iconProjects from "../../assets/icons/picto_bulles.svg";
 const Projects = () => {
   const carouselRef = useRef(null);
 
+  // Constantes pour gérer le défilement
   const CARD_WIDTH = 460;
   const GAP = 20;
-  const SCROLL_AMOUNT = CARD_WIDTH * 2 + GAP; // pour 2 cartes visibles
+  const isMobile = window.innerWidth <= 768;
+
+  // Défilement pour 2 cartes
+  const SCROLL_AMOUNT = isMobile ? CARD_WIDTH * 2 + GAP : CARD_WIDTH * 2 + GAP;
 
   const scrollLeft = () => {
     carouselRef.current?.scrollBy({
@@ -92,9 +96,7 @@ const Projects = () => {
                   style={{ backgroundImage: item.backgroundImage }}
                   role="img"
                   aria-label={`${item.titre} – ${item.ville}, ${item.date}`}
-                >
-                  <span className="category-badge">{item.category}</span>
-                </div>
+                ></div>
                 <div className="card-content">
                   <div className="meta-info">
                     <span className="location">

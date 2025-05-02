@@ -28,12 +28,12 @@
 /* Conteneur principal */
 .footer-container {
     position: relative;
+    align-content: center;
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2.5rem;
-    max-width: 1280px;
-    margin: 50px auto;
+    margin: 40px ;
     padding: 0 2rem;
 }
 
@@ -51,13 +51,16 @@
 
 /* Titres */
 .footer-section-title {
-    font-size: 1.25rem;
-    font-weight: 700;
+    display: flex;
+    justify-content: flex-start;
+font-size: clamp(1.4rem, 2.3vw, 2.3rem);
+    font-weight: 900;
     color: var(--secondary);
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--overlay-light);
     position: relative;
+    font-family: var(--font-secondary);
 }
 
 .footer-section-title::after {
@@ -84,25 +87,45 @@
     line-height: 1.6;
     transition: var(--transition);
     color: var(--light-bg);
-    justify-content: center;
+    justify-content: flex-start;
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+    font-weight: 500;
 }
 
 .footer-contact:hover {
-    transform: translateX(8px);
+    transform: translateY(-5px);
     color: var(--secondary);
-}
-
-.footer-icon {
-    color: var(--secondary);
-    font-size: 1.25rem;
-    flex-shrink: 0;
-    margin-top: 0.25rem;
-    transition: var(--transition);
 }
 
 .footer-contact:hover .footer-icon {
     transform: scale(1.1);
+    color: var(--secondary);
+}
+
+.footer-contact,
+.footer-links li {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+/* Liens type "mailto" harmonisés */
+.footer-link {
+    position: relative;
+    display: inline-block;
     color: var(--light-bg);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: var(--secondary);
+    padding-left: 1.5rem;
+}
+
+.footer-link:hover::before {
+    opacity: 1;
+    left: 0.25rem;
+    color: var(--secondary);
 }
 
 /* Navigation */
@@ -112,15 +135,20 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.75rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
 }
 
 .footer-links li {
     position: relative;
-    padding-left: 1.25rem;
     cursor: pointer;
     transition: var(--transition);
     color: var(--light-bg);
+    font-size: 1.2rem;
 }
 
 .footer-links li::before {
@@ -200,6 +228,22 @@
 
     .footer-section-title {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-container {
+        padding: 0 0.75rem;
+        gap: 1rem;
+    }
+
+    .footer-section-title {
+        font-size: 1rem;
+    }
+
+    .footer-contact,
+    .footer-links li {
+        font-size: 1rem;
     }
 }
 

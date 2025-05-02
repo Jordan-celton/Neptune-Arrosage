@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/Footer.css";
-import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import ContactHome from "../../src/components/HomePage/ContactHome";
 import { Link } from "react-router-dom";
 
@@ -13,7 +12,6 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Nantes</h3>
           <div className="footer-contact">
-            <MdLocationOn className="footer-icon" />
             <p>
               3 rue Réaumur
               <br />
@@ -21,11 +19,15 @@ const Footer = () => {
             </p>
           </div>
           <div className="footer-contact">
-            <MdEmail className="footer-icon" />
-            <p>contact@neptunearrosage.com</p>
+            <a
+              href="mailto:contact@neptunearrosage.com"
+              className="footer-link"
+            >
+              contact@neptunearrosage.com
+            </a>
           </div>
+
           <div className="footer-contact">
-            <MdPhone className="footer-icon" />
             <p>02 40 73 64 89</p>
           </div>
         </div>
@@ -34,7 +36,6 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Paris</h3>
           <div className="footer-contact">
-            <MdLocationOn className="footer-icon" />
             <p>
               1 rue du bois des carreaux
               <br />
@@ -47,7 +48,9 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Neptune arrosage</h3>
           <ul className="footer-links">
-            <li>Recrutement</li>
+            <li>
+              <Link to="/contact"> Recrutement</Link>
+            </li>
             <li>
               <Link to="/neptune">Qui sommes-nous ?</Link>
             </li>
