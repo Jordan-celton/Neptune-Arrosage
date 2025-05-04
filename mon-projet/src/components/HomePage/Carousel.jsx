@@ -92,7 +92,7 @@ const Carousel = ({
         onClick={prevSlide}
         disabled={currentIndex === 0}
       >
-        ◀
+        &#8592;
       </button>
 
       <div
@@ -126,7 +126,7 @@ const Carousel = ({
         onClick={nextSlide}
         disabled={currentIndex === maxIndex}
       >
-        ▶
+        &#8594;
       </button>
 
       <div className="carousel-dots-cards">

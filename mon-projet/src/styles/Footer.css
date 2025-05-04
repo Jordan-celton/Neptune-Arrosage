@@ -151,18 +151,8 @@ font-size: clamp(1.4rem, 2.3vw, 2.3rem);
     font-size: 1.2rem;
 }
 
-.footer-links li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--light-bg);
-    opacity: 0;
-    transition: var(--transition);
-}
-
 .footer-links li:hover {
     color: var(--secondary);
-    padding-left: 1.5rem;
 }
 
 .footer-links li:hover::before {

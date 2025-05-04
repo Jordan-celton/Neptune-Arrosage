@@ -88,8 +88,8 @@
     cursor: pointer;
 }
 
-.carousel-dots .dot.active {
-    background-color: black;
+.carousel-dots-cards .dot.active {
+    background-color: var(--secondary);
 }
 
 

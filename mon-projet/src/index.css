@@ -52,7 +52,6 @@ body {
 
 a {
     color: var(--text-color);
-    font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
 }
