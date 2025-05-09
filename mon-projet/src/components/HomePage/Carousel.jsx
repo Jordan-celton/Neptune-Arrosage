@@ -1,143 +1,123 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../../styles/HomePage/Carousel.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const Carousel = ({
-  children,
-  visibleSlides = 3,
-  autoPlay = true,
-  interval = 3000,
-}) => {
+const Carousel = ({ children, autoScroll = true, interval = 3000 }) => {
+  const [visibleItems, setVisibleItems] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const totalSlides = React.Children.count(children);
-  const maxIndex = totalSlides - 1;
-  const carouselRef = useRef(null);
-  const cloneRef = useRef(null);
+  const trackRef = useRef();
+  const intervalRef = useRef();
 
-  let startX = 0;
-
-  // Vérifie la taille de l'écran
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => window.removeEventListener("resize", checkIfMobile);
+  // 📌 1. Fonction de défilement automatique
+  const stopAutoScroll = useCallback(() => {
+    clearInterval(intervalRef.current);
   }, []);
 
-  const nextSlide = React.useCallback(() => {
-    setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
-  }, [maxIndex]);
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  }, []);
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
-  };
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prevIndex) => prevIndex - 1);
+  }, []);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
+  const startAutoScroll = useCallback(() => {
+    stopAutoScroll(); // Pour éviter les doublons
+    intervalRef.current = setInterval(() => {
+      handleNext();
+    }, interval);
+  }, [interval, stopAutoScroll, handleNext]);
 
-  const handleTouchStart = (e) => {
-    if (!isMobile) {
-      startX = e.touches[0].clientX;
-    }
-  };
-
-  const handleTouchEnd = (e) => {
-    if (!isMobile) {
-      const endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) nextSlide();
-      else if (endX - startX > 50) prevSlide();
-    }
-  };
-
+  // 📌 2. Mise à jour du nombre d'éléments visibles
   useEffect(() => {
-    if (!autoPlay || isMobile) return;
-    const timer = setInterval(() => nextSlide(), interval);
-    return () => clearInterval(timer);
-  }, [currentIndex, autoPlay, interval, nextSlide, isMobile]);
+    const updateVisibleItems = () => {
+      const width = window.innerWidth;
+      if (width <= 576) setVisibleItems(1);
+      else if (width <= 992) setVisibleItems(2);
+      else setVisibleItems(3);
+    };
 
+    updateVisibleItems();
+    window.addEventListener("resize", updateVisibleItems);
+    return () => window.removeEventListener("resize", updateVisibleItems);
+  }, []);
+
+  // 📌 3. Clonage des éléments pour permettre le défilement infini
   useEffect(() => {
-    if (currentIndex === maxIndex && !isMobile) {
-      carouselRef.current.style.transition = "none";
-      carouselRef.current.style.transform = `translateX(0%)`;
-      setTimeout(() => {
-        setCurrentIndex(0);
-        carouselRef.current.style.transition = "transform 0.5s ease-in-out";
-      }, 500);
+    const track = trackRef.current;
+    const items = Array.from(track.children);
+    const totalItems = items.length;
+
+    // Cloner les éléments seulement si ce n'est pas déjà fait
+    if (!track.hasAttribute("data-cloned")) {
+      for (let i = 0; i < totalItems; i++) {
+        const cloneStart = items[i].cloneNode(true);
+        const cloneEnd = items[i].cloneNode(true);
+        cloneStart.setAttribute("data-clone", "true");
+        cloneEnd.setAttribute("data-clone", "true");
+        track.appendChild(cloneEnd);
+        track.insertBefore(cloneStart, items[0]);
+      }
+      track.setAttribute("data-cloned", "true");
+      setCurrentIndex(totalItems); // Positionner au premier "vrai" élément
     }
-  }, [currentIndex, maxIndex, isMobile]);
+  }, [children]);
 
-  // Version mobile - affichage en colonne
-  if (isMobile) {
-    return (
-      <div className="cards-column-view">
-        {React.Children.map(children, (child, index) => (
-          <div className="card-item" key={index}>
-            {child}
-          </div>
-        ))}
-      </div>
-    );
-  }
+  // 📌 4. Défilement automatique (début dès le montage)
+  useEffect(() => {
+    if (autoScroll) {
+      startAutoScroll();
+    }
+    return stopAutoScroll; // Assurez-vous de nettoyer l'intervalle
+  }, [autoScroll, startAutoScroll, stopAutoScroll]);
 
-  // Version desktop/tablette - carousel
+  // 📌 5. Mise à jour de la position du carrousel
+  useEffect(() => {
+    const track = trackRef.current;
+    const items = track.children;
+    const totalItems = items.length / 3; // Prendre en compte les clones
+    const itemWidth = items[0].offsetWidth + 20;
+
+    // Appliquer la transition du carrousel
+    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+    const handleTransitionEnd = () => {
+      // Si on atteint la fin des clones, on remet l'index à la première vraie image sans transition visible
+      if (currentIndex >= totalItems * 2) {
+        track.style.transition = "none";
+        setCurrentIndex(totalItems); // Retour à la position initiale des éléments (sans voir le saut)
+      } else if (currentIndex < 0) {
+        track.style.transition = "none";
+        setCurrentIndex(totalItems * 2 - visibleItems); // Réinitialisation au clone final
+      }
+    };
+
+    track.addEventListener("transitionend", handleTransitionEnd);
+    return () =>
+      track.removeEventListener("transitionend", handleTransitionEnd);
+  }, [currentIndex, visibleItems]);
+
+  // 📌 6. Rendu du composant
   return (
-    <div className="carousel-container-cards">
-      <button
-        className="carousel-btn-cards left"
-        onClick={prevSlide}
-        disabled={currentIndex === 0}
-      >
-        &#8592;
+    <div
+      className="carousel-container"
+      onMouseEnter={stopAutoScroll}
+      onMouseLeave={startAutoScroll}
+    >
+      <button className="carousel-button prev" onClick={handlePrev}>
+        <ChevronLeft size={24} />
       </button>
 
-      <div
-        className="carousel-wrapper-cards"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div
-          className="carousel-inner-cards"
-          ref={carouselRef}
-          style={{
-            transform: `translateX(-${(currentIndex * 100) / visibleSlides}%)`,
-            width: `${((totalSlides + 2) * 10) / visibleSlides}%`,
-          }}
-        >
-          {React.Children.map(children, (child, index) => (
-            <div className="carousel-slide-cards" key={index}>
-              {child}
-            </div>
-          ))}
-          {React.Children.count(children) > 1 && (
-            <div className="carousel-slide-cards" ref={cloneRef}>
-              {React.Children.toArray(children)[0]}
-            </div>
-          )}
+      <div className="carousel-wrapper">
+        <div className="carousel-track" ref={trackRef}>
+          {children}
         </div>
       </div>
 
-      <button
-        className="carousel-btn-cards right"
-        onClick={nextSlide}
-        disabled={currentIndex === maxIndex}
-      >
-        &#8594;
+      <button className="carousel-button next" onClick={handleNext}>
+        <ChevronRight size={24} />
       </button>
-
-      <div className="carousel-dots-cards">
-        {Array.from({ length: totalSlides }).map((_, idx) => (
-          <button
-            key={idx}
-            className={`dot ${idx === currentIndex ? "active" : ""}`}
-            onClick={() => goToSlide(idx)}
-          />
-        ))}
-      </div>
     </div>
   );
 };
