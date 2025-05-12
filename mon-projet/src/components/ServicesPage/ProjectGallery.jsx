@@ -30,6 +30,27 @@ const ProjectGallery = () => {
       link: "#",
       image: image1,
     },
+    {
+      icon: <IoLocationSharp className="project-icon" />,
+      date: "THIAIS (93) 27 MARS 2025",
+      title: "Fontaine et mouvement d'eau",
+      link: "#",
+      image: image1,
+    },
+    {
+      icon: <IoLocationSharp className="project-icon" />,
+      date: "THIAIS (93) 27 MARS 2025",
+      title: "Fontaine et mouvement d'eau",
+      link: "#",
+      image: image1,
+    },
+    {
+      icon: <IoLocationSharp className="project-icon" />,
+      date: "THIAIS (93) 27 MARS 2025",
+      title: "Fontaine et mouvement d'eau",
+      link: "#",
+      image: image1,
+    },
     // Ajoutez autant de projets que nécessaire
   ];
 

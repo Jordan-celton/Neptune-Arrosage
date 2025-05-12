@@ -3,7 +3,7 @@ import "../../styles/ServicesPage/ServiceList.css";
 
 const ServiceList = ({ services, selectedService, setSelectedService }) => (
   <>
-    <h2 className="section-title">Nos services</h2>
+    <h2 className="section-services-title">Nos services</h2>
     <ul className="services-list">
       {services.map((service) => {
         const slug = service.name
