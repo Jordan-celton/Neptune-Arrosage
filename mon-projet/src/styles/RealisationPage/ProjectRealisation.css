@@ -18,10 +18,12 @@
 .gallery-title {
     text-align: center;
     font-size: clamp(1.5rem, 4vw, 2rem);
-    color: var(--primary);
+    color: var(--text-color);
     /* Bleu Neptune */
     margin-bottom: 3rem;
+    font-weight: 700;
     position: relative;
+    font-family: var(--font-secondary);
 }
 
 .gallery-title::after {
@@ -127,8 +129,9 @@
 .project-title {
     font-size: 1.2rem;
     margin: 0.5rem 0 1rem;
-    color: var(--dark-text);
+    color: var(--text-color);
     line-height: 1.4;
+    font-family: var(--font-secondary);
     flex-grow: 1;
 }
 

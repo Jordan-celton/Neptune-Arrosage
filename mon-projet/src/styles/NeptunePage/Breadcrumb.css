@@ -9,6 +9,7 @@
     padding: 3rem 2rem;
     color: var(--light-bg);
     text-align: center;
+    font-family: var(--font-secondary);
 }
 
 .services-header h1 {
