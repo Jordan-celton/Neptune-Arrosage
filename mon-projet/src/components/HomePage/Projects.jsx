@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "../../styles/HomePage/Projects.css";
 import realisationsData from "../../data/realisationData";
 import { ArrowLeft, ArrowRight, ChevronRight, MapPin } from "lucide-react";
@@ -6,25 +6,43 @@ import iconProjects from "../../assets/icons/picto_bulles.svg";
 
 const Projects = () => {
   const carouselRef = useRef(null);
-
-  // Constantes pour gérer le défilement
-  const CARD_WIDTH = 460;
+  const [cardWidth, setCardWidth] = useState(460);
   const GAP = 20;
-  const isMobile = window.innerWidth <= 768;
 
-  // Défilement pour 2 cartes
-  const SCROLL_AMOUNT = isMobile ? CARD_WIDTH * 2 + GAP : CARD_WIDTH * 2 + GAP;
+  // Détecter la largeur des cartes en fonction de l'écran
+  useEffect(() => {
+    const updateCardWidth = () => {
+      const screenWidth = window.innerWidth;
+      const cardElement = document.querySelector(".realisation-card");
+
+      if (cardElement) {
+        if (screenWidth <= 768) {
+          setCardWidth(cardElement.offsetWidth + GAP);
+        } else if (screenWidth <= 1024) {
+          // 2 cartes pour tablettes
+          setCardWidth((cardElement.offsetWidth + GAP) * 2);
+        } else {
+          // 2 cartes pour desktop
+          setCardWidth((cardElement.offsetWidth + GAP) * 2);
+        }
+      }
+    };
+
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
+    return () => window.removeEventListener("resize", updateCardWidth);
+  }, []);
 
   const scrollLeft = () => {
     carouselRef.current?.scrollBy({
-      left: -SCROLL_AMOUNT,
+      left: -cardWidth,
       behavior: "smooth",
     });
   };
 
   const scrollRight = () => {
     carouselRef.current?.scrollBy({
-      left: SCROLL_AMOUNT,
+      left: cardWidth,
       behavior: "smooth",
     });
   };
