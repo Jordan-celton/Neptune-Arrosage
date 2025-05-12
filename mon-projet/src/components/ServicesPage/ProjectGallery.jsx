@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/ServicesPage/ProjectGallery.css";
 
 // import des images
@@ -56,13 +56,13 @@ const ProjectGallery = () => {
                 <p className="project-date">{project.date}</p>
               </div>
               <h3 className="project-title">{project.title}</h3>
-              <a
-                href={project.link}
+              <Link
+                to="/realisations"
                 className="project-link"
                 aria-label={`Lire la suite sur ${project.title}`} // Accessibilité
               >
                 Lire la suite
-              </a>
+              </Link>
             </div>
           </div>
         ))}
