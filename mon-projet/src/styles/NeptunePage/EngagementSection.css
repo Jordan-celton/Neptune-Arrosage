@@ -9,6 +9,7 @@
 
 .engagement-container {
     margin: 0 auto;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -41,9 +42,17 @@
 }
 
 .engagement-content {
-background-color: var(--light-alt, #f9f9f9);
+    background-color: var(--light-alt, #f9f9f9);
     padding: 2rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
 }
 
 .engagement-header {
@@ -86,13 +95,19 @@ background-color: var(--light-alt, #f9f9f9);
     line-height: 1.7;
     font-size: 1.1rem;
     font-family: var(--font-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .engagement-card-list {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    margin-top: -6rem;
+    margin-top: -5rem;
     position: relative;
     z-index: 10;
     padding: 0 2rem;
@@ -105,7 +120,6 @@ background-color: var(--light-alt, #f9f9f9);
     max-width: 350px;
     flex-shrink: 0;
     background: var(--light-bg);
-    /* Utilisation de la couleur blanche */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
