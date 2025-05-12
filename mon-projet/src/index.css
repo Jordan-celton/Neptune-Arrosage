@@ -130,7 +130,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--light-bg);
+    color: #cecece;
 }
 
 .footer-links a:hover {

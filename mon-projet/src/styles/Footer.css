@@ -86,7 +86,7 @@ font-size: clamp(1.4rem, 2.3vw, 2.3rem);
     margin-bottom: 1.25rem;
     line-height: 1.6;
     transition: var(--transition);
-    color: var(--light-bg);
+    color: #cecece;
     justify-content: flex-start;
     font-family: var(--font-secondary);
     font-size: 1.125rem;
