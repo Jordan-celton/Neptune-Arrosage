@@ -137,7 +137,7 @@
 /* Icône au-dessus de la carte */
 .icon-wrapper {
     position: absolute;
-    top: 27%;
+    top: 33%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
