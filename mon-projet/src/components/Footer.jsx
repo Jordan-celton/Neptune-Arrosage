@@ -57,7 +57,9 @@ const Footer = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>Mentions légales</li>
+            <li>
+              <Link to="/contact#mentions">Mentions légales</Link>
+            </li>
           </ul>
         </div>
 
@@ -82,7 +84,7 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/services#recuperation">
-                Récupération des eaux pluviales
+                Récupération eaux pluviales
               </Link>
             </li>
           </ul>
