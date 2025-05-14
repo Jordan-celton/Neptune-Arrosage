@@ -109,10 +109,20 @@
         font-size: 1.2rem;
     }
 
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+
     .section-header img {
         width: 60px;
         height: 60px;
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 }
 
