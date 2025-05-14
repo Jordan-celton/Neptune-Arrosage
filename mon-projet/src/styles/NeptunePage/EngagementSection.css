@@ -236,9 +236,8 @@
     }
 
     .engagement-container {
-        padding: 0 1.5rem;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .engagement-content {

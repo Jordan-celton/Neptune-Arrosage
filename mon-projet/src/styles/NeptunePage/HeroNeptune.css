@@ -157,16 +157,18 @@
 @media (max-width: 768px) {
     .heroNeptune {
         flex-direction: column;
+        padding: 0;
     }
 
     .heroNeptune-image-column,
     .heroNeptune-content-column {
-        padding: 2rem;
+        padding: 0;
         width: 100%;
     }
 
     .heroNeptune-image {
         max-height: 60vh;
+        border-radius: 0;
     }
 
     .heroNeptune-content {
