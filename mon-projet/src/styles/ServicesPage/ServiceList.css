@@ -30,15 +30,32 @@
     padding: 2rem;
 }
 
+/* ----------- Liste des services - Items ----------- */
 .service-item {
     display: flex;
     align-items: center;
     padding: 1rem 1.2rem;
-    border-radius: 10px;
     transition: var(--transition);
     color: #232B63;
     position: relative;
     gap: 1rem;
+    border-bottom: 2px solid #177c3c;
+}
+
+.service-item:last-child {
+    border-bottom: 2px solid #177c3c;
+}
+
+/* Active item styling */
+.service-item.active {
+    background-color: #232B63;
+    color: #ffffff;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+.service-item.active .service-link-page {
+    color: #ffffff;
 }
 
 .service-link-page {
@@ -46,16 +63,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    color: inherit;
     font-weight: 600;
+    color: inherit;
 }
 
-.service-item.active {
-    font-weight: bold;
-    background-color: var(--primary);
-    color: var(--light-bg);
-}
-
+/* Arrow styling */
 .arrow-icon {
     margin-left: 0.5rem;
     transition: all 0.2s ease;
@@ -63,7 +75,7 @@
 }
 
 .service-item.active .arrow-icon {
-    color: var(--light-bg);
+    color: #ffffff;
 }
 
 /* ----------- Icône ----------- */
@@ -73,7 +85,6 @@
 }
 
 .service-page-icon {
-
     height: 120px;
     transition: transform 0.3s ease-in-out;
 }
@@ -82,6 +93,7 @@
     transform: scale(1.1);
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .section-title {
         font-size: 1.5rem;
