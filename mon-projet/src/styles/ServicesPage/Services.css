@@ -12,14 +12,14 @@
 } */
 
 .services-list-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: stretch;
     flex-wrap: wrap;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
 }
 
 /* Responsive */

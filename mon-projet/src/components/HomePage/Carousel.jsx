@@ -3,102 +3,123 @@ import "../../styles/HomePage/Carousel.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Carousel = ({ children, autoScroll = true, interval = 3000 }) => {
-  const [visibleItems, setVisibleItems] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef();
   const intervalRef = useRef();
+  const isTransitioning = useRef(false);
 
-  // 📌 1. Fonction de défilement automatique
+  // 1. Fonctions de navigation
   const stopAutoScroll = useCallback(() => {
     clearInterval(intervalRef.current);
   }, []);
 
   const handleNext = useCallback(() => {
+    if (isTransitioning.current) return;
     setCurrentIndex((prevIndex) => prevIndex + 1);
   }, []);
 
   const handlePrev = useCallback(() => {
+    if (isTransitioning.current) return;
     setCurrentIndex((prevIndex) => prevIndex - 1);
   }, []);
 
   const startAutoScroll = useCallback(() => {
-    stopAutoScroll(); // Pour éviter les doublons
+    stopAutoScroll();
     intervalRef.current = setInterval(() => {
       handleNext();
     }, interval);
   }, [interval, stopAutoScroll, handleNext]);
 
-  // 📌 2. Mise à jour du nombre d'éléments visibles
+  // 2. Responsive design
   useEffect(() => {
-    const updateVisibleItems = () => {
-      const width = window.innerWidth;
-      if (width <= 576) setVisibleItems(1);
-      else if (width <= 992) setVisibleItems(2);
-      else setVisibleItems(3);
-    };
-
-    updateVisibleItems();
-    window.addEventListener("resize", updateVisibleItems);
-    return () => window.removeEventListener("resize", updateVisibleItems);
+    // Responsive logic for visible items can be added here if needed in the future.
   }, []);
 
-  // 📌 3. Clonage des éléments pour permettre le défilement infini
+  // 3. Clonage des éléments pour le défilement infini
   useEffect(() => {
     const track = trackRef.current;
     const items = Array.from(track.children);
     const totalItems = items.length;
 
-    // Cloner les éléments seulement si ce n'est pas déjà fait
     if (!track.hasAttribute("data-cloned")) {
       for (let i = 0; i < totalItems; i++) {
         const cloneStart = items[i].cloneNode(true);
         const cloneEnd = items[i].cloneNode(true);
-        cloneStart.setAttribute("data-clone", "true");
-        cloneEnd.setAttribute("data-clone", "true");
+        cloneStart.setAttribute("data-clone", "start");
+        cloneEnd.setAttribute("data-clone", "end");
         track.appendChild(cloneEnd);
         track.insertBefore(cloneStart, items[0]);
       }
       track.setAttribute("data-cloned", "true");
-      setCurrentIndex(totalItems); // Positionner au premier "vrai" élément
+      setCurrentIndex(totalItems); // Commencer au premier élément original
     }
   }, [children]);
 
-  // 📌 4. Défilement automatique (début dès le montage)
+  // 4. Gestion du défilement automatique
   useEffect(() => {
     if (autoScroll) {
       startAutoScroll();
     }
-    return stopAutoScroll; // Assurez-vous de nettoyer l'intervalle
+    return stopAutoScroll;
   }, [autoScroll, startAutoScroll, stopAutoScroll]);
 
-  // 📌 5. Mise à jour de la position du carrousel
+  // 5. Animation du carrousel
   useEffect(() => {
     const track = trackRef.current;
-    const items = track.children;
-    const totalItems = items.length / 3; // Prendre en compte les clones
-    const itemWidth = items[0].offsetWidth + 20;
+    if (!track) return;
 
-    // Appliquer la transition du carrousel
-    track.style.transition = "transform 0.5s ease-in-out";
+    const items = track.children;
+    const originalItemsCount = items.length / 3; // Nombre d'éléments originaux
+    const itemWidth = items[0].offsetWidth + 20; // Inclure le margin si nécessaire
+
+    // Positionner le track
     track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 
     const handleTransitionEnd = () => {
-      // Si on atteint la fin des clones, on remet l'index à la première vraie image sans transition visible
-      if (currentIndex >= totalItems * 2) {
+      isTransitioning.current = false;
+
+      // Si on arrive à la fin des clones (droite)
+      if (currentIndex >= originalItemsCount * 2) {
+        isTransitioning.current = true;
         track.style.transition = "none";
-        setCurrentIndex(totalItems); // Retour à la position initiale des éléments (sans voir le saut)
-      } else if (currentIndex < 0) {
+        setCurrentIndex(originalItemsCount); // Retour discret au début
+        // Forcer le recalcul du style
+        requestAnimationFrame(() => {
+          track.style.transform = `translateX(-${
+            originalItemsCount * itemWidth
+          }px)`;
+          requestAnimationFrame(() => {
+            track.style.transition = "transform 0.5s ease-in-out";
+            isTransitioning.current = false;
+          });
+        });
+      }
+      // Si on arrive au début des clones (gauche)
+      else if (currentIndex < 0) {
+        isTransitioning.current = true;
         track.style.transition = "none";
-        setCurrentIndex(totalItems * 2 - visibleItems); // Réinitialisation au clone final
+        setCurrentIndex(originalItemsCount * 2 - 1); // Retour discret à la fin
+        requestAnimationFrame(() => {
+          track.style.transform = `translateX(-${
+            (originalItemsCount * 2 - 1) * itemWidth
+          }px)`;
+          requestAnimationFrame(() => {
+            track.style.transition = "transform 0.5s ease-in-out";
+            isTransitioning.current = false;
+          });
+        });
       }
     };
 
+    track.style.transition = "transform 0.5s ease-in-out";
+    isTransitioning.current = true;
     track.addEventListener("transitionend", handleTransitionEnd);
-    return () =>
-      track.removeEventListener("transitionend", handleTransitionEnd);
-  }, [currentIndex, visibleItems]);
 
-  // 📌 6. Rendu du composant
+    return () => {
+      track.removeEventListener("transitionend", handleTransitionEnd);
+    };
+  }, [currentIndex]);
+
   return (
     <div
       className="carousel-container"
