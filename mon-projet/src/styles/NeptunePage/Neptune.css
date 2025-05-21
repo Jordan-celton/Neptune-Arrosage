@@ -275,10 +275,6 @@
     .materiel-list {
         grid-template-columns: 1fr;
     }
-
-    section {
-        padding: 3rem 0;
-    }
 }
 
 @media (max-width: 480px) {

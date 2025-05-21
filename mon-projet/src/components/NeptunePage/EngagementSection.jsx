@@ -49,7 +49,9 @@ const EngagementSection = () => {
           </div>
 
           <h2 className="engagement-subtitle">
-            Pour une gestion <span>raisonnée de l'eau</span>
+            Pour une gestion
+            <br />
+            <span>raisonnée de l'eau</span>
           </h2>
 
           <div className="engagement-text">

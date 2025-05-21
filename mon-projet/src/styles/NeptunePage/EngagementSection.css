@@ -1,15 +1,14 @@
 /* Engagement Section */
 .engagement-section {
-    padding: 5rem 0 8rem;
+    padding: 5rem 0;
     background-color: var(--light-bg);
-    /* Utilisation de la couleur claire de l'index.css */
     position: relative;
     overflow: visible;
+    margin: 0 auto;
 }
 
 .engagement-container {
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -19,7 +18,7 @@
 
 .engagement-image-container {
     position: relative;
-    height: 100%;
+    height: 683px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -38,7 +37,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(42, 92, 124, 0.3) 0%, rgba(22, 58, 82, 1.7) 100%);
+    background: linear-gradient(to left, rgba(14, 28, 65, 0.85) 40%, rgba(14, 28, 65, 0.3) 100%, rgba(14, 28, 65, 0) 100%);
 }
 
 .engagement-content {
@@ -63,12 +62,12 @@
 }
 
 .engagement-icon {
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 30px;
 }
 
 .engagement-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--secondary);
     font-family: var(--font-secondary);
@@ -76,13 +75,12 @@
 }
 
 .engagement-subtitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: var(--text-color);
     margin: 1rem 0;
     position: relative;
     padding-bottom: 0.5rem;
-    line-height: 1.2;
     font-family: var(--font-secondary);
 }
 
@@ -93,7 +91,7 @@
 .engagement-text {
     color: var(--dark-text);
     line-height: 1.7;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: var(--font-secondary);
     margin-bottom: 2rem;
     max-width: 600px;
@@ -133,7 +131,7 @@
 }
 
 .card-image-container {
-    height: 200px;
+    height: 193px;
     overflow: hidden;
 }
 
@@ -197,13 +195,14 @@
     flex-direction: column;
     justify-content: center;
     margin: 10px;
+    height: 247px;
     font-family: var(--font-secondary);
 }
 
 .engagement-card-content p {
     color: var(--text-color);
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     line-height: 1.5;
 }
@@ -251,26 +250,31 @@
 
 @media (max-width: 576px) {
     .engagement-header {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
+        margin: 1rem auto;
     }
 
     .engagement-title {
-        font-size: 1.8rem;
+        font-size: 1.1rem;
     }
 
     .engagement-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        margin: 1rem auto;
     }
 
     .engagement-text {
         font-size: 1rem;
+        margin: 1rem ;
     }
 
     .engagement-card-list {
         padding: 0 1rem;
+    }
+
+    .engagement-card-content {
+        padding: 1rem;
+        height: 200px;
     }
 
     .engagement-card-content p {
