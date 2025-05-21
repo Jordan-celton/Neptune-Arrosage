@@ -131,6 +131,61 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .heroNeptune {
+        flex-direction: column;
+        height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .heroNeptune-image-column,
+    .heroNeptune-content-column {
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .heroNeptune-image {
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        max-height: 60vh;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+
+    .heroNeptune-logo {
+        width: 380px;
+        height: auto;
+    }
+
+    .heroNeptune-service {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .heroNeptune-tagline {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .heroNeptune-header {
+        text-align: center;
+    }
+
+    .heroNeptune-title-with-icon {
+        justify-content: center;
+    }
+
+    .heroNeptune-content {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .heroNeptune-cta {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 992px) {
     .heroNeptune-service {
         font-size: 2rem;
@@ -176,6 +231,7 @@
 
     .heroNeptune-title-with-icon {
         justify-content: center;
+        align-items: normal;
     }
 
     .heroNeptune-service::after {
