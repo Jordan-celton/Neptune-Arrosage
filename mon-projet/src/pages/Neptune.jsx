@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/NeptunePage/Neptune.css";
 
 import Breadcrumb from "../components/NeptunePage/Breadcrumb";
@@ -15,19 +14,19 @@ const Neptune = () => {
     >
       <Breadcrumb title="Qui sommes-nous ?" />
 
-      <section aria-labelledby="neptune-hero-title">
+      <section aria-labelledby="neptune-hero-title" data-aos="fade-up">
         <HeroNeptune />
       </section>
 
-      <section aria-labelledby="engagement-title">
+      <section aria-labelledby="engagement-title" data-aos="fade-right">
         <EngagementSection />
       </section>
 
-      <section aria-labelledby="expertise-heading">
+      <section aria-labelledby="expertise-heading" data-aos="zoom-in">
         <Expertise />
       </section>
 
-      <section aria-labelledby="project-gallery-title">
+      <section aria-labelledby="project-gallery-title" data-aos="fade-up">
         <ProjectGallery />
       </section>
     </main>

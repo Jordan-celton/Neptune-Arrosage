@@ -34,17 +34,29 @@ const ProjectGallery = () => {
 
   return (
     <section className="project-gallery">
-      <h2 className="gallery-title">Découvrez nos derniers projets</h2>
+      <h2
+        className="gallery-title"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
+        Découvrez nos derniers projets
+      </h2>
 
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-card">
+          <div
+            key={index}
+            className="project-card"
+            data-aos="fade-up"
+            data-aos-delay={index * 150} // décalage pour effet en cascade
+            data-aos-duration="800"
+          >
             <div className="project-image-container">
               <img
                 src={project.image}
                 alt={`Projet: ${project.title}`}
                 className="project-image"
-                loading="lazy" // Amélioration de la performance
+                loading="lazy"
               />
               <div className="project-overlay"></div>
             </div>
@@ -58,7 +70,7 @@ const ProjectGallery = () => {
               <Link
                 to="/realisations"
                 className="project-link"
-                aria-label={`Lire la suite sur ${project.title}`} // Accessibilité
+                aria-label={`Lire la suite sur ${project.title}`}
               >
                 Lire la suite
               </Link>

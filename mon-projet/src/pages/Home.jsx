@@ -15,11 +15,11 @@ const Home = () => {
         </title>
         <meta
           name="description"
-          content="Installation et entretien de systèmes d'arrosage automatique dans [Région]. Solutions sur mesure pour jardins et espaces verts. Devis gratuit et intervention rapide."
+          content="Installation et entretien de systèmes d'arrosage automatique en Loire Atlantique et Ile de France. Solutions sur mesure pour jardins et espaces verts. Devis gratuit et intervention rapide."
         />
         <meta
           name="keywords"
-          content="arrosage automatique [Région], installation arrosage, entretien jardin, système irrigation, fontainerie, paysagiste [Ville]"
+          content="arrosage automatique en Loire Atlantique et Ile de France, installation arrosage, entretien jardin, système irrigation, fontainerie, paysagiste [Ville]"
         />
         <link rel="canonical" href="https://www.neptune-arrosage.com" />
 
@@ -30,15 +30,29 @@ const Home = () => {
         />
         <meta
           property="og:description"
-          content="Professionnels de l'arrosage automatique dans [Région]. Solutions écologiques et entretien sur mesure pour votre jardin."
+          content="Professionnels de l'arrosage automatique dans en Loire Atlantique et Ile de France. Solutions écologiques et entretien sur mesure pour votre jardin."
         />
       </Helmet>
 
-      <Hero />
-      <AboutSection />
-      <ServicesSection />
-      <Expertise />
-      <Projects />
+      <section data-aos="fade-up">
+        <Hero />
+      </section>
+
+      <section data-aos="fade-right">
+        <AboutSection />
+      </section>
+
+      <section data-aos="fade-left">
+        <ServicesSection />
+      </section>
+
+      <section data-aos="zoom-in">
+        <Expertise />
+      </section>
+
+      <section data-aos="fade-up" data-aos-delay="200">
+        <Projects />
+      </section>
 
       {/* Section cachée pour SEO sémantique */}
       <div
@@ -47,8 +61,7 @@ const Home = () => {
         aria-hidden="true"
       >
         <h1>
-          Neptune Arrosage - Expert en installation d'arrosage automatique à
-          Nantes et Paris.
+          Neptune Arrosage - Expert en installation d'arrosage automatique.
         </h1>
         <h2>
           Installation et entretien d'arrosage automatique en Loire Atlantique

@@ -2,7 +2,11 @@ import React from "react";
 import "../../styles/ServicesPage/Breadcrumb.css";
 
 const Breadcrumb = ({ title }) => (
-  <section className="breadcrumb-section">
+  <section
+    className="breadcrumb-section"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
     <div className="breadcrumb-overlay">
       <header className="services-header">
         <h1>{title}</h1>

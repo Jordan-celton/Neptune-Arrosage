@@ -9,12 +9,16 @@ const ServiceDescription = ({ service }) => {
   }
 
   return (
-    <div className="services-image-section animate delay-1">
+    <div
+      className="services-image-section"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <img
         src={service.image}
         alt={`Illustration de ${service.name}`}
         className="service-image"
-        loading="lazy" // Améliore la performance avec le lazy loading
+        loading="lazy"
       />
       <h2 className="description-title">
         {service.name} – de la conception à l'aménagement
