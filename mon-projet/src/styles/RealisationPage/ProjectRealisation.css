@@ -1,13 +1,10 @@
 .project-gallery {
     --icon-size: 30px;
     --icon-bg: var(--primary);
-    /* Utilisation du bleu Neptune */
     --icon-color: white;
     --card-radius: 8px;
     --hover-elevation: 0 10px 25px rgba(80, 139, 191, 0.2);
-    /* Ombre avec teinte primaire */
     --text-muted: #736B5C;
-    /* Gris anthracite pour texte secondaire */
 
     padding: 4rem 2rem;
     background-color: var(--light-bg);
@@ -17,7 +14,7 @@
 
 .gallery-title {
     text-align: center;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: 2.5rem;
     color: var(--text-color);
     /* Bleu Neptune */
     margin-bottom: 3rem;
@@ -26,20 +23,10 @@
     font-family: var(--font-secondary);
 }
 
-.gallery-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: var(--secondary);
-    /* Vert menthe pour la ligne décorative */
-    margin: 1rem auto 0;
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-    gap: 2rem;
+    gap: 25px;
 }
 
 .project-card {
@@ -64,7 +51,8 @@
 
 .project-image-container {
     position: relative;
-    height: 200px;
+    height: 210px;
+    width: 370px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -90,7 +78,7 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    height: 255px;
 }
 
 .project-header {
@@ -122,12 +110,12 @@
 .project-date {
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 1.3rem;
+    font-family: var(--font-secondary);
 }
 
 .project-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 0.5rem 0 1rem;
     color: var(--text-color);
     line-height: 1.4;
@@ -144,20 +132,13 @@
     text-decoration: none;
     font-weight: 600;
     margin-top: auto;
-    width: fit-content;
+    width: 150px;
+    height: 45px;
     transition: var(--transition);
     border: 1px solid var(--secondary);
     padding: 0.5rem 1rem; ;
     border-radius: 10px;
-}
-
-.project-link::after {
-    content: '→';
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover::after {
-    transform: translateX(3px);
+    justify-content: center;
 }
 
 /* Filtres */
@@ -236,6 +217,31 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .project-image-container {
+        height: 180px;
+        width: 100%;
+    }
+
+    .project-info {
+        padding: 1.2rem;
+        height: auto;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .project-date {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .project-gallery {
         padding: 2rem 1rem;

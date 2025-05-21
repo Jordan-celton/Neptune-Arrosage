@@ -257,6 +257,11 @@
         font-size: 1.8rem;
     }
 
+    .heroNeptune-logo {
+        height: 120px;
+        width: 300px;
+    }
+
     .heroNeptune-tagline {
         font-size: 1.1rem;
     }

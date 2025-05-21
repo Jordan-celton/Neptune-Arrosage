@@ -4,7 +4,6 @@ import { IoLocationSharp } from "react-icons/io5";
 
 // Import des images
 import image1 from "../../assets/photos/Services/DSCF0989.webp";
-import image2 from "../../assets/photos/Services/DSCF0989.webp";
 import image3 from "../../assets/photos//Home/article_réalisation.webp";
 
 const ProjectRealisation = () => {
@@ -38,7 +37,7 @@ const ProjectRealisation = () => {
       date: "PARIS (75) 15 JUIN 2025",
       title: "Fontaine urbaine moderne",
       link: "#",
-      image: image2,
+      image: image1,
       type: "Terrains sportifs",
     },
     {

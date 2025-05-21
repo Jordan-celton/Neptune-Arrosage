@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../../styles/ServicesPage/ProjectGallery.css";
 
 // import des images
 import image1 from "../../assets/photos/Services/DSCF0989.webp";
@@ -9,27 +8,6 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const ProjectGallery = () => {
   const projects = [
-    {
-      icon: <IoLocationSharp className="project-icon" />,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
-      link: "#",
-      image: image1,
-    },
-    {
-      icon: <IoLocationSharp className="project-icon" />,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
-      link: "#",
-      image: image1,
-    },
-    {
-      icon: <IoLocationSharp className="project-icon" />,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
-      link: "#",
-      image: image1,
-    },
     {
       icon: <IoLocationSharp className="project-icon" />,
       date: "THIAIS (93) 27 MARS 2025",
