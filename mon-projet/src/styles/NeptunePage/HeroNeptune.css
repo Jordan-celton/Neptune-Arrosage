@@ -3,27 +3,23 @@
 /* Structure principale */
 .heroNeptune {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-    margin: 0 auto;
-    font-family: inherit;
-    /* Utilise la police définie dans le body */
+    height: 985px;
+    justify-content: center;
+    align-items: center;
     background-color: var(--light-bg);
+    gap: 3.5rem;
 }
 
 /* Colonne image */
 .heroNeptune-image-column {
-    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    width: 50%;
+    justify-content: flex-end;
 }
 
 .heroNeptune-image {
-    width: 100%;
-    height: 100%;
-    max-height: 80vh;
+    width: 613px;
+    height: 750px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 10px 30px var(--primary-light);
@@ -37,22 +33,18 @@
 
 /* Colonne contenu */
 .heroNeptune-content-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 4rem;
-    position: relative;
+    width: 50%;
+    margin-top: 4rem;
 }
 
 /* En-tête avec logo */
 .heroNeptune-header {
-    margin-bottom: 3rem;
+    margin-bottom: 5.5rem;
 }
 
 .heroNeptune-logo {
-    height: 150px;
-    width: auto;
+    height: 190px;
+    width: 450px;
     margin-bottom: 1.5rem;
     transition: opacity 0.3s ease;
 }
@@ -66,7 +58,7 @@
 .heroNeptune-title-with-icon {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.75rem;
     gap: 10px;
 }
 
@@ -79,7 +71,7 @@
 }
 
 .heroNeptune-tagline {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     color: var(--secondary);
@@ -89,9 +81,8 @@
 
 /* Titre principal */
 .heroNeptune-service {
-    font-size: 3.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin: 0 0 2.5rem 0;
     line-height: 1.2;
     color: var(--text-color);
     position: relative;
@@ -106,11 +97,11 @@
 
 /* Description */
 .heroNeptune-description {
-    margin-top: 2rem;
+    margin-top: 3.9rem;
 }
 
 .heroNeptune-description p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: var(--dark-text);
     margin: 0 0 1.5rem 0;
