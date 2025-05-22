@@ -220,6 +220,11 @@
     .projectRealisation-date {
         font-size: 1.1rem;
     }
+
+    .filter-btn {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -249,6 +254,13 @@
     }
 
     .projectRealisation-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
         gap: 0.5rem;
     }
 
