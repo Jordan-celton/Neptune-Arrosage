@@ -107,7 +107,48 @@
 }
 
 /* Responsive adjustments */
-/* ----------- Responsive : écrans <= 768px ----------- */
+
+@media (max-width: 900px) {
+    .services-overlay {
+        width: 100%;
+        height: auto;
+        padding: 2rem 1.5rem;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .section-services-title {
+        font-size: 1.8rem;
+        padding: 0.8rem 0;
+        border-radius: 0;
+    }
+
+    .services-list-container {
+        flex-direction: column;
+        padding: 40px 20px;
+        height: auto;
+        gap: 2rem;
+    }
+
+    .services-list {
+        padding: 1rem 0;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .service-item {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--secondary);
+        width: 100%;
+    }
+
+    .services-image-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
 @media (max-width: 768px) {
     .services-overlay {
         width: 100%;

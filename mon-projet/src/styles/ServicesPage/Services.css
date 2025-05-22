@@ -17,6 +17,7 @@
 }
 
 /* Responsive pour tablettes et petits écrans */
+
 @media (max-width: 900px) {
     .services-overlay {
         padding: 2rem 1.5rem;
@@ -34,7 +35,6 @@
         gap: 2rem;
     }
 
-    .services-overlay,
     .services-image-section {
         flex: 1 1 100%;
         max-width: 100%;
