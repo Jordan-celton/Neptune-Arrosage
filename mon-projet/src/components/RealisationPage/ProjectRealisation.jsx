@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "../../styles/RealisationPage/ProjectRealisation.css";
-import { IoLocationSharp } from "react-icons/io5";
+import IconLocation from "../../assets/icons/picto_gps.svg";
 
 // Import des images
 import image1 from "../../assets/photos/Services/DSCF0989.webp";
-import image3 from "../../assets/photos//Home/article_réalisation.webp";
+import image3 from "../../assets/photos/Home/article_réalisation.webp";
 
 const ProjectRealisation = () => {
   // Types de projets disponibles
@@ -24,7 +24,7 @@ const ProjectRealisation = () => {
   const projects = [
     {
       id: 1,
-      icon: <IoLocationSharp className="project-icon" />,
+      icon: IconLocation,
       date: "THIAIS (93) 27 MARS 2025",
       title: "Fontaine et mouvement d'eau",
       link: "#",
@@ -33,7 +33,7 @@ const ProjectRealisation = () => {
     },
     {
       id: 2,
-      icon: <IoLocationSharp className="project-icon" />,
+      icon: IconLocation,
       date: "PARIS (75) 15 JUIN 2025",
       title: "Fontaine urbaine moderne",
       link: "#",
@@ -42,14 +42,14 @@ const ProjectRealisation = () => {
     },
     {
       id: 3,
-      icon: <IoLocationSharp className="project-icon" />,
+      icon: IconLocation,
       date: "LYON (69) 3 MAI 2025",
       title: "Arrosage terrain de football",
       link: "#",
       image: image3,
       type: "Materiel d'arrosage",
     },
-    // Ajoutez d'autres projets...
+    // Ajoutez d'autres projets ici si nécessaire
   ];
 
   // Filtrer les projets selon la sélection
@@ -92,7 +92,13 @@ const ProjectRealisation = () => {
 
             <div className="project-info">
               <div className="project-header">
-                <div className="project-icon-container">{project.icon}</div>
+                <div className="project-icon-container">
+                  <img
+                    src={project.icon}
+                    alt="Location icon"
+                    className="project-icon"
+                  />
+                </div>
                 <p className="project-date">{project.date}</p>
               </div>
               <h3 className="project-title">{project.title}</h3>

@@ -4,26 +4,26 @@ import { Link } from "react-router-dom";
 import image1 from "../../assets/photos/Services/DSCF0989.webp";
 
 // import des icônes
-import { IoLocationSharp } from "react-icons/io5";
+import IconLocation from "../../assets/icons/picto_gps.svg";
 
 const ProjectGallery = () => {
   const projects = [
     {
-      icon: <IoLocationSharp className="project-icon" />,
+      icon: IconLocation,
       date: "THIAIS (93) 27 MARS 2025",
       title: "Fontaine et mouvement d'eau",
       link: "#",
       image: image1,
     },
     {
-      icon: <IoLocationSharp className="project-icon" />,
+      icon: IconLocation,
       date: "THIAIS (93) 27 MARS 2025",
       title: "Fontaine et mouvement d'eau",
       link: "#",
       image: image1,
     },
     {
-      icon: <IoLocationSharp className="project-icon" />,
+      icon: IconLocation,
       date: "THIAIS (93) 27 MARS 2025",
       title: "Fontaine et mouvement d'eau",
       link: "#",
@@ -51,7 +51,13 @@ const ProjectGallery = () => {
 
             <div className="project-info">
               <div className="project-header">
-                <div className="project-icon-container">{project.icon}</div>
+                <div className="project-icon-container">
+                  <img
+                    src={project.icon}
+                    alt="Location icon"
+                    className="project-icon"
+                  />
+                </div>
                 <p className="project-date">{project.date}</p>
               </div>
               <h3 className="project-title">{project.title}</h3>
