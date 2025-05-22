@@ -12,21 +12,21 @@
 }
 
 .services-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
     animation: fadeIn 0.6s ease forwards;
+    font-family: var(--font-secondary);
 }
 
 .breadcrumb {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--light-bg);
+    font-family: var(--font-secondary);
 }
 
 .breadcrumb ol {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .breadcrumb li::after {
-    content: "/";
-    margin: 0 0.5rem;
+    content: ">";
+    margin: 1rem;
     color: var(--light-accent);
 }
 
