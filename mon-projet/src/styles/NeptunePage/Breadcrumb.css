@@ -34,7 +34,6 @@
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -44,8 +43,8 @@
 }
 
 .breadcrumbNeptune li::after {
-    content: "/";
-    margin: 0 0.5rem;
+    content: ">";
+    margin: 1rem;
     color: var(--light-accent);
 }
 

@@ -1,47 +1,48 @@
 /* ----------- Fil d’Ariane ----------- */
-.breadcrumb-section {
+.breadcrumb-Services-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.932)), url("../../assets/photos/Home/Fontaine 2.webp") no-repeat center center / cover;
     padding: 6rem 2rem;
     position: relative;
 }
 
-.breadcrumb-overlay {
+.breadcrumb-Services-overlay {
     padding: 3rem 2rem;
     color: var(--light-bg);
     text-align: center;
 }
 
-.services-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+.breadcrumb-services-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2.8rem;
     animation: fadeIn 0.6s ease forwards;
+    font-family: var(--font-secondary);
 }
 
-.breadcrumb {
-    font-size: 0.95rem;
+.Services-breadcrumb {
+    font-size: 1rem;
     color: var(--light-bg);
 }
 
-.breadcrumb ol {
+.Services-breadcrumb ol {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
+    font-family: var(--font-secondary);
 }
 
-.breadcrumb a {
+.Services-breadcrumb a {
     color: var(--light-accent);
     text-decoration: none;
 }
 
-.breadcrumb li::after {
-    content: "/";
-    margin: 0 0.5rem;
+.Services-breadcrumb li::after {
+    content: ">";
+    margin: 1rem;
     color: var(--light-accent);
 }
 
-.breadcrumb li:last-child::after {
+.Services-breadcrumb li:last-child::after {
     content: "";
     margin: 0;
 }

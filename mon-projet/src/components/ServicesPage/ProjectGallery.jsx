@@ -34,23 +34,11 @@ const ProjectGallery = () => {
 
   return (
     <section className="project-gallery">
-      <h2
-        className="gallery-title"
-        data-aos="fade-down"
-        data-aos-duration="1000"
-      >
-        Découvrez nos derniers projets
-      </h2>
+      <h2 className="gallery-title">Découvrez nos derniers projets</h2>
 
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="project-card"
-            data-aos="fade-up"
-            data-aos-delay={index * 150} // décalage pour effet en cascade
-            data-aos-duration="800"
-          >
+          <div key={index} className="project-card">
             <div className="project-image-container">
               <img
                 src={project.image}

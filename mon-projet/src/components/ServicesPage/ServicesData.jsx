@@ -17,7 +17,7 @@ export const servicesData = [
     id: "fontaines",
     name: "Fontainerie",
     description:
-      "Neptune Arrosage possède une solide expertise dans la conception et la réalisation de fontaines et d'aménagements hydrauliques, alliant génie civil, stations de pompage, traitement et filtration de l'eau.",
+      "Neptune Arrosage bénéficie d’une solide expérience dans la conception, la réalisation et la maintenance de systèmes d’arrosage pour les terrains de sport, en création comme en rénovation. Nous intervenons sur des installations alimentées par forage, bâche de reprise, eau de ville ou eaux de drainage, avec une parfaite maîtrise des contraintes techniques et environnementales.",
     image: fontaine,
     icon: iconFontaine,
   },

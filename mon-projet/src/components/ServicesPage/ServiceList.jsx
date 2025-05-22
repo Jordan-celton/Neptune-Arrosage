@@ -3,15 +3,9 @@ import "../../styles/ServicesPage/ServiceList.css";
 
 const ServiceList = ({ services, selectedService, setSelectedService }) => (
   <>
-    <h2
-      className="section-services-title"
-      data-aos="fade-down"
-      data-aos-duration="800"
-    >
-      Nos services
-    </h2>
+    <h2 className="section-services-title">Nos services</h2>
     <ul className="services-list">
-      {services.map((service, index) => {
+      {services.map((service) => {
         const slug = service.name
           .toLowerCase()
           .normalize("NFD")
@@ -25,10 +19,13 @@ const ServiceList = ({ services, selectedService, setSelectedService }) => (
             key={slug}
             className={`service-item ${isActive ? "active" : ""}`}
             onClick={() => setSelectedService(service)}
-            data-aos="fade-right"
-            data-aos-delay={index * 100} // décalage pour animation en cascade
-            data-aos-duration="600"
           >
+            <img
+              src={service.icon}
+              alt={`Icône de ${service.name}`}
+              className={`icon-serviceList ${isActive ? "icon-active" : ""}`}
+            />
+
             <div className="service-icon">
               <img
                 src={service.icon}

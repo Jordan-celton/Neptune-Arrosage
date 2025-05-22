@@ -9,11 +9,7 @@ const ServiceDescription = ({ service }) => {
   }
 
   return (
-    <div
-      className="services-image-section"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
+    <div className="services-image-section">
       <img
         src={service.image}
         alt={`Illustration de ${service.name}`}

@@ -6,36 +6,49 @@
 }
 
 /* ----------- Section Services ----------- */
-/* .services-section {
-    padding: 4rem 2rem;
-    background-color: var(--light-alt, #f9f9f9);
-} */
-
 .services-list-container {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    align-items: stretch;
-    flex-wrap: wrap;
-    padding: 5rem 1rem;
+    gap: 3.5rem;
+    padding: 75px;
+    height: 1040px;
 }
 
-/* Responsive */
+/* Responsive pour tablettes et petits écrans */
 @media (max-width: 900px) {
+    .services-overlay {
+        padding: 2rem 1.5rem;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        height: auto;
+    }
+
+
     .services-list-container {
         flex-direction: column;
+        padding: 40px 20px;
+        height: auto;
+        gap: 2rem;
     }
 
     .services-overlay,
     .services-image-section {
         flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
+/* Responsive pour mobiles */
 @media (max-width: 768px) {
     .services-overlay {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .services-list-container {
+        padding: 20px 10px;
+        gap: 1.5rem;
     }
 }
