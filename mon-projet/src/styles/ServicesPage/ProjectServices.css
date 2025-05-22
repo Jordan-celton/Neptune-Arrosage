@@ -232,10 +232,12 @@
     .project-gallery {
         padding: 50px 20px;
     }
+
     .project-card {
         max-width: 100%;
         width: 100%;
     }
+
     .projects-grid {
         grid-template-columns: 1fr;
     }

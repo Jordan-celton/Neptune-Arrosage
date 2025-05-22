@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "../../styles/ServicesPage/ProjectServices.css";
 // import des images
 import image1 from "../../assets/photos/Services/DSCF0989.webp";
 

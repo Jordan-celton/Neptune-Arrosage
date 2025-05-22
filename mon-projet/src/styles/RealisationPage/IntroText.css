@@ -1,66 +1,38 @@
-.intro-text {
+.intro-text-realisation {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
-    color: var(--dark-text);
+    padding: 2rem 1rem;
+    color: var(--text-color);
+    height: 170px;
 }
 
-.intro-container {
+.intro-container-realisation {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
 }
 
-.intro-paragraph {
-    font-size: 1.1rem;
-    line-height: 1.8;
+.intro-paragraph-realisation {
+    font-size: 1rem;
+    line-height: 1.5;
     text-align: center;
     margin-bottom: 1rem;
+    font-family: var(--font-secondary);
 }
 
-.intro-callout {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--primary);
-    text-align: center;
-    margin: 1.5rem 0;
-    position: relative;
-}
-
-.intro-callout::before,
-.intro-callout::after {
-    content: "";
-    display: inline-block;
-    width: 40px;
-    height: 1px;
-    background: var(--primary);
-    margin: 0 1rem;
-    vertical-align: middle;
-}
-
-.intro-highlights {
+.intro-highlights-realisation {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.5;
     text-align: center;
-    font-style: italic;
-    color: var(--text-muted);
+    font-family: var(--font-secondary);
 }
 
 @media (max-width: 768px) {
-    .intro-text {
+    .intro-text-realisation {
         padding: 2rem 1rem;
     }
 
-    .intro-paragraph {
+    .intro-paragraph-realisation {
         font-size: 1rem;
-    }
-
-    .intro-callout {
-        font-size: 1.1rem;
-    }
-
-    .intro-callout::before,
-    .intro-callout::after {
-        width: 20px;
     }
 }
