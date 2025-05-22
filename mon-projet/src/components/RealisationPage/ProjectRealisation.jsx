@@ -9,7 +9,6 @@ import image3 from "../../assets/photos/Home/article_réalisation.webp";
 const ProjectRealisation = () => {
   // Types de projets disponibles
   const projectTypes = [
-    "Tous les projets",
     "Fontainerie",
     "Terrains sportifs",
     "Jardins espaces publics",
@@ -18,6 +17,7 @@ const ProjectRealisation = () => {
     "Récupération d'eau de pluie",
   ];
 
+  // État pour le filtre actif
   const [activeFilter, setActiveFilter] = useState("Tous les projets");
 
   // Données des projets avec catégories
@@ -56,7 +56,7 @@ const ProjectRealisation = () => {
       title: "Arrosage terrain de football",
       link: "#",
       image: image3,
-      type: "Materiel d'arrosage",
+      type: "Jardins espaces publics",
     },
     {
       id: 3,
@@ -65,7 +65,7 @@ const ProjectRealisation = () => {
       title: "Arrosage terrain de football",
       link: "#",
       image: image3,
-      type: "Materiel d'arrosage",
+      type: "Contrats d'entretien",
     },
     {
       id: 3,
@@ -74,7 +74,7 @@ const ProjectRealisation = () => {
       title: "Arrosage terrain de football",
       link: "#",
       image: image3,
-      type: "Materiel d'arrosage",
+      type: "Récupération d'eau de pluie",
     },
     // Ajoutez d'autres projets ici si nécessaire
   ];
@@ -86,12 +86,14 @@ const ProjectRealisation = () => {
       : projects.filter((project) => project.type === activeFilter);
 
   return (
-    <section className="project-gallery">
-      <div className="gallery-header">
-        <h2 className="gallery-title">Découvrez nos derniers projets</h2>
+    <section className="projectRealisation-gallery">
+      <div className="galleryRealisation-header">
+        <h2 className="galleryRealisation-title">
+          Découvrez nos derniers projets
+        </h2>
 
         {/* Filtres */}
-        <div className="project-filters">
+        <div className="projectRealisation-filters">
           {projectTypes.map((type) => (
             <button
               key={type}
@@ -105,31 +107,31 @@ const ProjectRealisation = () => {
       </div>
 
       {/* Grille de projets filtrés */}
-      <div className="projects-grid">
+      <div className="projectsRealisation-grid">
         {filteredProjects.map((project) => (
-          <div key={project.id} className="project-card">
-            <div className="project-image-container">
+          <div key={project.id} className="projectRealisation-card">
+            <div className="projectRealisation-image-container">
               <img
                 src={project.image}
                 alt={project.title}
-                className="project-image"
+                className="projectRealisation-image"
               />
-              <div className="project-overlay"></div>
+              <div className="projectRealisation-overlay"></div>
             </div>
 
-            <div className="project-info">
-              <div className="project-header">
-                <div className="project-icon-container">
+            <div className="projectRealisation-info">
+              <div className="projectRealisation-header">
+                <div className="projectRealisation-icon-container">
                   <img
                     src={project.icon}
                     alt="Location icon"
-                    className="project-icon"
+                    className="projectRealisation-icon"
                   />
                 </div>
-                <p className="project-date">{project.date}</p>
+                <p className="projectRealisation-date">{project.date}</p>
               </div>
-              <h3 className="project-title">{project.title}</h3>
-              <a href={project.link} className="project-link">
+              <h3 className="projectRealisation-title">{project.title}</h3>
+              <a href={project.link} className="projectRealisation-link">
                 Lire la suite
               </a>
             </div>
