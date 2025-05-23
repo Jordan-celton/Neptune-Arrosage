@@ -133,7 +133,7 @@
 
 @media (max-width: 1080px) {
     .heroNeptune {
-        flex-direction: column;
+        flex-direction: row;
         height: auto;
         padding: 3rem 1rem;
     }
@@ -147,7 +147,6 @@
     .heroNeptune-image {
         width: 100%;
         max-width: 650px;
-        height: auto;
         max-height: 60vh;
         border-radius: 8px;
         margin: 0 auto;
@@ -170,15 +169,28 @@
 
     .heroNeptune-header {
         text-align: center;
+        margin-bottom: 3rem;
     }
 
     .heroNeptune-title-with-icon {
         justify-content: center;
+        margin-bottom: 2rem;
     }
 
     .heroNeptune-content {
         margin: 0 auto;
         text-align: center;
+    }
+
+    .heroNeptune-description {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .heroNeptune-description p {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
 
     .heroNeptune-cta {
@@ -191,12 +203,12 @@
         font-size: 2rem;
     }
 
-    .heroNeptune-description p {
-        font-size: 1rem;
+    .heroNeptune-description {
+        margin-top: 2rem;
     }
 
-    .heroNeptune-image {
-        max-height: 65vh;
+    .heroNeptune-description p {
+        font-size: 1rem;
     }
 }
 

@@ -1,13 +1,13 @@
 import React from "react";
 import "../../styles/NeptunePage/EngagementSection.css";
-import engagementImage from "../../assets/photos/Neptune/AdobeStock_219437631.jpeg";
+import engagementImage from "../../assets/photos/Neptune/fontaine_683x570.webp";
 import icon from "../../assets/icons/picto_bulles.svg";
 import icon1 from "../../assets/icons/picto_pompage.svg";
 import icon2 from "../../assets/icons/picto_stockage.svg";
 import icon3 from "../../assets/icons/picto_eaux_grises.svg";
-import cardsImage1 from "../../assets/photos/Neptune/AdobeStock_410343655.jpeg";
-import cardsImage2 from "../../assets/photos/Neptune/AdobeStock_301104036.jpeg";
-import cardsImage3 from "../../assets/photos/Neptune/AdobeStock_559732379.jpeg";
+import cardsImage1 from "../../assets/photos/Neptune/AdobeStock_410343655.webp";
+import cardsImage2 from "../../assets/photos/Neptune/AdobeStock_301104036.webp";
+import cardsImage3 from "../../assets/photos/Neptune/AdobeStock_559732379.webp";
 
 const cards = [
   {

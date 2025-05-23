@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo/logo_neptune.svg";
-import heroImage from "../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp";
+import heroImage from "../../assets/photos/Neptune/fontaine_613x750.webp";
 import "../../styles/NeptunePage/HeroNeptune.css";
 import Icon from "../../assets/icons/picto_bulles.svg";
 
