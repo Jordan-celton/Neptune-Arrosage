@@ -1,8 +1,7 @@
 /* ----------- Fil d’Ariane ----------- */
 .breadcrumb-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.932)), url("../../assets/photos/Home/Fontaine 2.webp") no-repeat center center / cover;
-    padding: 6rem 2rem;
-    position: relative;
+    height: 195px;
 }
 
 .breadcrumb-overlay {

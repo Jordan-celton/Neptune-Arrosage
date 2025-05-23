@@ -1,8 +1,7 @@
 /* ----------- Fil d’Ariane ----------- */
 .breadcrumbNeptune-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.932)), url("../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp") no-repeat center center / cover;
-    padding: 6rem 2rem;
-    position: relative;
+    height: 195px;
 }
 
 .breadcrumbNeptune-overlay {
