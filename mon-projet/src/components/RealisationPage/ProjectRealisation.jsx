@@ -3,18 +3,23 @@ import "../../styles/RealisationPage/ProjectRealisation.css";
 import IconLocation from "../../assets/icons/picto_gps.svg";
 
 // Import des images
-import image1 from "../../assets/photos/Services/DSCF0989.webp";
-import image3 from "../../assets/photos/Home/article_réalisation.webp";
+import image1 from "../../assets/photos/Realisations/STADE.webp";
+import image2 from "../../assets/photos/Realisations/HIPPO.webp";
+import image3 from "../../assets/photos/Realisations/GOLF.webp";
+import image4 from "../../assets/photos/Realisations/TRAM.webp";
+import image5 from "../../assets/photos/Realisations/PARC.webp";
+import image6 from "../../assets/photos/Realisations/FONTAINE 12.webp";
 
 const ProjectRealisation = () => {
   // Types de projets disponibles
   const projectTypes = [
+    "Tous les projets",
+    "Stades",
+    "Hippodromes",
+    "Golfs",
+    "Parcs et jardins",
+    "Tramways",
     "Fontainerie",
-    "Terrains sportifs",
-    "Jardins espaces publics",
-    "Materiel d'arrosage",
-    "Contrats d'entretien",
-    "Récupération d'eau de pluie",
   ];
 
   // État pour le filtre actif
@@ -25,56 +30,56 @@ const ProjectRealisation = () => {
     {
       id: 1,
       icon: IconLocation,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
+      date: "ARGENTEUIL (93)",
+      title: "TERRAIN DE SPORT",
       link: "#",
       image: image1,
-      type: "Fontainerie",
+      type: "Stades",
     },
     {
       id: 2,
       icon: IconLocation,
-      date: "PARIS (75) 15 JUIN 2025",
-      title: "Fontaine urbaine moderne",
+      date: "LE LION D'ANGERS (49)",
+      title: "HIPPODROME",
       link: "#",
-      image: image1,
-      type: "Terrains sportifs",
+      image: image2,
+      type: "Hippodromes",
     },
     {
       id: 3,
       icon: IconLocation,
-      date: "LYON (69) 3 MAI 2025",
-      title: "Arrosage terrain de football",
+      date: "BRESSUIRE (79)",
+      title: "GOLF",
       link: "#",
       image: image3,
-      type: "Materiel d'arrosage",
+      type: "Golfs",
     },
     {
       id: 4,
       icon: IconLocation,
-      date: "LYON (69) 3 MAI 2025",
-      title: "Arrosage terrain de football",
+      date: "ANGERS (49)",
+      title: "TRAMWAYS D'ANGERS",
       link: "#",
-      image: image3,
-      type: "Jardins espaces publics",
+      image: image4,
+      type: "Tramways",
     },
     {
       id: 5,
       icon: IconLocation,
-      date: "LYON (69) 3 MAI 2025",
-      title: "Arrosage terrain de football",
+      date: "PARC DU PUY DU FOU (85)",
+      title: "PARCS ET LIEUX CULTURELS",
       link: "#",
-      image: image3,
-      type: "Contrats d'entretien",
+      image: image5,
+      type: "Parcs et jardins",
     },
     {
       id: 6,
       icon: IconLocation,
-      date: "LYON (69) 3 MAI 2025",
-      title: "Arrosage terrain de football",
+      date: "MONTGERON (91)",
+      title: "FONTAINES DES ROIS GRACES",
       link: "#",
-      image: image3,
-      type: "Récupération d'eau de pluie",
+      image: image6,
+      type: "Fontainerie",
     },
     // Ajoutez d'autres projets ici si nécessaire
   ];
