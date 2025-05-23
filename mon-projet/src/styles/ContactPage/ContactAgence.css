@@ -1,41 +1,23 @@
 /* ContactAgence.css */
 
 .agencies-section {
-    background-color: var(--light-bg);
+    background-color: #f5f5f5;
     color: var(--dark-text);
     position: relative;
+    height: 1100px;
+    padding: 70px;
 }
 
-.section-title {
-    color: var(--primary);
+.section-titleAgence {
+    color: var(--text-color);
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    text-align: center;
-    position: relative;
     padding-bottom: 1rem;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background-color: var(--secondary);
-    border-radius: 2px;
-}
-
 .intro-text {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    line-height: 1.8;
-}
-
-.intro-text p {
-    margin-bottom: 1.5rem;
+    margin: 2rem;
+    font-size: 1rem;
 }
 
 .agencies-grid {
@@ -43,6 +25,8 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    height: 725px;
+    width: 1226px;
 }
 
 .agency-card {
@@ -52,11 +36,6 @@
     box-shadow: 0 5px 15px var(--primary-light);
     transition: var(--transition);
     position: relative;
-}
-
-.agency-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(80, 139, 191, 0.2);
 }
 
 .city-badge {

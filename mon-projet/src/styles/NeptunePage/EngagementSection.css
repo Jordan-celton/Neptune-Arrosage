@@ -42,7 +42,7 @@
 
 .engagement-content {
     background-color: var(--light-alt, #f9f9f9);
-    padding: 2rem;
+    padding: 75px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -103,19 +103,19 @@
 
 .engagement-card-list {
     display: flex;
-    gap: 2rem;
+    gap: 23px;
     justify-content: center;
-    margin-top: -5rem;
+    margin-top: -10rem;
     position: relative;
     z-index: 10;
-    padding: 0 2rem;
+    padding: 0;
     flex-wrap: wrap;
 }
 
 .engagement-card {
     position: relative;
     width: 100%;
-    max-width: 350px;
+    max-width: 390px;
     flex-shrink: 0;
     background: var(--light-bg);
     border-radius: 8px;
