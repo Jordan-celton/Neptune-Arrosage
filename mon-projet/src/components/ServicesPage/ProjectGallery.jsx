@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "../../styles/ServicesPage/ProjectServices.css";
 // import des images
-import image1 from "../../assets/photos/Services/DSCF0989.webp";
+import image1 from "../../assets/photos/Realisations/GOLF.webp";
+import image2 from "../../assets/photos/Realisations/FONTAINE 12.webp";
+import image3 from "../../assets/photos/Realisations/HIPPO.webp";
 
 // import des icônes
 import IconLocation from "../../assets/icons/picto_gps.svg";
@@ -10,24 +12,24 @@ const ProjectGallery = () => {
   const projects = [
     {
       icon: IconLocation,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
+      date: "BRESSUIRE (79)",
+      title: "GOLF DE BRESSUIRE",
       link: "#",
       image: image1,
     },
     {
       icon: IconLocation,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
+      date: "MONTGERON (91)",
+      title: "FONTAINES DES ROIS GRACES",
       link: "#",
-      image: image1,
+      image: image2,
     },
     {
       icon: IconLocation,
-      date: "THIAIS (93) 27 MARS 2025",
-      title: "Fontaine et mouvement d'eau",
+      date: "LE LION D'ANGERS (49)",
+      title: "HIPPODROME",
       link: "#",
-      image: image1,
+      image: image3,
     },
     // Ajoutez autant de projets que nécessaire
   ];
