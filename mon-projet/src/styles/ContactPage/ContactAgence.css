@@ -8,6 +8,12 @@
     padding: 70px;
 }
 
+.section-headerAgence {
+    display: flex;
+    flex-direction: column;
+    height: 295px;
+}
+
 .section-titleAgence {
     color: var(--text-color);
     font-size: 2.5rem;
@@ -54,7 +60,8 @@
 }
 
 .agency-details {
-    padding: 1.5rem;
+    padding: 53px;
+    height: 725px;
 }
 
 .agency-details h3 {
@@ -96,6 +103,7 @@
     overflow: hidden;
     margin-top: 1.5rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    height: 415px;
 }
 
 /* Responsive */

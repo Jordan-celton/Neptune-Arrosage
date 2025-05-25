@@ -6,7 +6,7 @@
     padding: 1.5rem 2rem;
     background-color: var(--light-bg);
     box-shadow: 0 2px 20px var(--primary-light);
-    height: 80px;
+    height: 100px;
 }
 
 .navbar-logo {

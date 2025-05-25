@@ -5,21 +5,20 @@ import "../../styles/ContactPage/ContactAgence.css";
 const ContactAgence = () => {
   const agencies = [
     {
-      city: "Nantes",
-      region: "Pays de la Loire",
+      title: "Nous trouver",
+      title2: "Horaires d'ouverture",
       address: "3 rue réaumur, 44100 Nantes",
       phone: "02 40 73 64 89",
       email: "contact@neptune-arrosage.fr",
-      hours: "Lun-Ven: 8h30-17h30 / Sam: fermé",
+      clock: "Du lundi au vendredi : 8h30-12h00 - 13h30-17h30",
     },
   ];
 
   return (
     <section className="agencies-section">
-      <div className="container">
-        <h2 className="section-titleAgence">Notre agence</h2>
-
-        <div className="intro-text">
+      <div className="container-agency">
+        <div className="section-headerAgence">
+          <h2 className="section-titleAgence">Notre agence</h2>
           <p>
             Chez Neptune Arrosage, la proximité est au cœur de notre engagement.
             Grâce à notre agence située à Nantes, nous accompagnons efficacement
@@ -34,46 +33,40 @@ const ContactAgence = () => {
         <div className="agencies-grid">
           {agencies.map((agency, index) => (
             <div key={index} className="agency-card">
-              <div className="city-badge">
-                <FaMapMarkerAlt className="icon" />
-                <span>{agency.city}</span>
-              </div>
-
               <div className="agency-details">
-                <h3>{agency.region}</h3>
-
-                <div className="contact-info">
-                  <div className="info-item">
+                <div className="agency-info">
+                  <h3 className="agency-title">{agency.title}</h3>
+                  <p className="agency-address">
                     <FaMapMarkerAlt className="icon" />
-                    <span>{agency.address}</span>
-                  </div>
-
-                  <div className="info-item">
+                    {agency.address}
+                  </p>
+                  <p className="agency-phone">
                     <FaPhone className="icon" />
-                    <a href={`tel:${agency.phone.replace(/\s/g, "")}`}>
-                      {agency.phone}
-                    </a>
-                  </div>
-
-                  <div className="info-item">
+                    {agency.phone}
+                  </p>
+                  <p className="agency-email">
                     <FaEnvelope className="icon" />
-                    <a href={`mailto:${agency.email}`}>{agency.email}</a>
-                  </div>
-
-                  <div className="info-item">
+                    {agency.email}
+                  </p>
+                </div>
+                <div className="agency-hours">
+                  <h3 className="agency-title">{agency.title2}</h3>
+                  <p className="agency-clock">
                     <FaClock className="icon" />
-                    <span>{agency.hours}</span>
-                  </div>
+                    {agency.clock}
+                  </p>
+                  <p>Samedi et dimanche :</p>
+                  <p className="agency-clock">Fermé</p>
                 </div>
 
                 <div className="map-embed">
                   <iframe
-                    title={`map-${agency.city}`}
+                    title={`map-${agency.region}`}
                     src={`https://www.google.com/maps?q=${encodeURIComponent(
                       agency.address
                     )}&output=embed`}
                     width="100%"
-                    height="250"
+                    height="415"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"

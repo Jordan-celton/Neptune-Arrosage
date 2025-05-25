@@ -1,7 +1,10 @@
 /* ----------- Fil d’Ariane ----------- */
 .breadcrumb-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.932)), url("../../assets/photos/Home/Fontaine 2.webp") no-repeat center center / cover;
-    height: 195px;
+    height: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .breadcrumb-overlay {
