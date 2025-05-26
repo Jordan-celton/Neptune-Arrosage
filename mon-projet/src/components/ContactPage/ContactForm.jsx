@@ -16,13 +16,15 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
-  const createMailToLink = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const {
       nom,
       prenom,
@@ -37,10 +39,21 @@ const ContactForm = () => {
 
     const subject = encodeURIComponent("Demande de contact depuis le site");
     const body = encodeURIComponent(
-      `Nom : ${nom}\nPrénom : ${prenom}\nSociété : ${societe}\nEmail : ${email}\nTéléphone : ${telephone}\nAdresse : ${adresse}, ${codePostal} ${ville}\n\nMessage :\n${message}`
+      `Nom : ${nom}
+Prénom : ${prenom}
+Société : ${societe}
+Email : ${email}
+Téléphone : ${telephone}
+Adresse : ${adresse}
+Code Postal : ${codePostal}
+Ville : ${ville}
+
+Message :
+${message}`
     );
 
-    return `mailto:contact@neptunearrosage.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:contact@neptunearrosage.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -48,13 +61,7 @@ const ContactForm = () => {
       <h1>Formulaire de contact</h1>
       <p className="required-fields">*Champs obligatoires</p>
 
-      <form
-        action={createMailToLink()}
-        method="GET"
-        onSubmit={() =>
-          setTimeout(() => (window.location.href = createMailToLink()), 100)
-        }
-      >
+      <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="nom">Nom *</label>
@@ -160,7 +167,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             required
-          ></textarea>
+          />
         </div>
 
         <div className="checkbox-group">

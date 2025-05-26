@@ -147,7 +147,7 @@
 
 @media (min-width: 1024px) {
     .contact-form-container {
-        margin: 0 123px;
+        margin: 0 auto;
         padding: 70px 0;
     }
 }
