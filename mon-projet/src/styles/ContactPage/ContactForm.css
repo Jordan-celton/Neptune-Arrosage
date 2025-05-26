@@ -1,38 +1,31 @@
 .contact-form-container {
     max-width: 1120px;
-    margin: 0 123px;
-    padding: 70px 0;
+    margin: 0 auto;
+    padding: 40px 20px;
     font-family: Arial, sans-serif;
     background-color: white;
-    min-height: 1290px;
+    min-height: auto;
 }
 
 .contact-form-container h1 {
-    font-size: 28px;
-    /* Taille H3 comme sur l'accueil */
+    font-size: 24px;
     margin-bottom: 10px;
     color: #253040;
+    text-align: center;
 }
 
 .required-fields {
     color: var(--dark-text);
     font-style: italic;
     margin-bottom: 20px;
-    font-size: 16px;
-    /* Même taille que les paragraphes */
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    font-family: var(--font-secondary);
+    font-size: 14px;
+    text-align: center;
 }
 
 .form-row {
     display: flex;
-    gap: 30px;
-    /* Espacement entre les champs adjacents */
+    flex-direction: column;
+    gap: 15px;
 }
 
 .form-row .form-group {
@@ -43,41 +36,29 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     font-weight: normal;
-    /* Pas en gras comme avant */
     color: black;
-    /* Couleur noire */
-    font-size: 16px;
-    /* Taille p3 */
+    font-size: 14px;
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 12px 15px;
+    padding: 10px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 16px;
-    height: 50px;
-    /* Hauteur spécifique pour les champs */
+    font-size: 14px;
+    height: 45px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group textarea {
-    min-height: 330px;
-    /* Hauteur augmentée pour le message */
+    min-height: 200px;
     resize: vertical;
-}
-
-.error {
-    border-color: #ff4444;
-}
-
-.error-message {
-    color: #ff4444;
-    font-size: 14px;
-    margin-top: 5px;
 }
 
 .checkbox-group {
@@ -88,107 +69,85 @@
 }
 
 .checkbox-group input {
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .checkbox-group label {
-    font-size: 16px;
-    /* Taille p */
+    font-size: 14px;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .submit-btn {
     background-color: #2a7d2e;
-    /* Couleur spécifiée */
     color: white;
     border: none;
-    padding: 15px 0;
+    padding: 12px 0;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 310px;
+    width: 100%;
     height: 50px;
     margin-top: 20px;
 }
 
 .submit-btn:hover {
     background-color: #272727;
-    /* Couleur au survol */
 }
 
 .submit-btn:disabled {
     background-color: #cccccc;
-    cursor: not-allowed; }
+    cursor: not-allowed;
+}
 
-        /* Responsive Mobile (<= 767px) */
-        @media (max-width: 767px) {
-            .contact-form-container {
-                padding: 20px;
-                min-height: auto;
-            }
-    
-            .contact-form-container h1 {
-                font-size: 24px;
-            }
-    
-            .form-row {
-                flex-direction: column;
-                gap: 15px;
-            }
-    
-            .form-group input,
-            .form-group textarea {
-                height: 42px;
-                padding: 10px;
-                font-size: 15px;
-            }
-    
-            .form-group textarea {
-                min-height: 140px;
-            }
-    
-            .checkbox-group {
-                margin: 15px 0;
-            }
-    
-            .checkbox-group label {
-                font-size: 15px;
-            }
-    
-            .submit-btn {
-                width: 100%;
-                max-width: 310px;
-                margin: 20px auto 0;
-            }
-    
-            .required-fields,
-            .form-group label {
-                font-size: 15px;
-            }
-        }
-    
-        /* Petit mobile (<= 480px) */
-        @media (max-width: 480px) {
-            .contact-form-container {
-                padding: 15px;
-            }
-    
-            .contact-form-container h1 {
-                font-size: 22px;
-            }
-    
-            .form-group input,
-            .form-group textarea {
-                height: 40px;
-            }
-    
-            .checkbox-group label {
-                font-size: 14px;
-            }
-    
-            .submit-btn {
-                height: 46px;
-                font-size: 15px;
-            } }
+/* Media Queries pour les écrans plus larges */
+@media (min-width: 768px) {
+    .contact-form-container {
+        padding: 70px 40px;
+    }
+
+    .contact-form-container h1 {
+        font-size: 28px;
+        text-align: left;
+    }
+
+    .required-fields {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .form-row {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .form-group textarea {
+        min-height: 330px;
+    }
+
+    .checkbox-group label {
+        font-size: 16px;
+    }
+
+    .submit-btn {
+        width: 310px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-form-container {
+        margin: 0 123px;
+        padding: 70px 0;
+    }
+}
