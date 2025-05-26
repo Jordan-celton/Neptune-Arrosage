@@ -160,11 +160,18 @@
     width: 100%;
 }
 
-/* === RESPONSIVE DESIGN === */
+/* === RESPONSIVE DESIGN OPTIMISÉ === */
 
+/* Tablette (992px) */
 @media (max-width: 992px) {
+    .agencies-section {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
     .agency-sections {
         flex-direction: column;
+        gap: 1.5rem;
     }
 
     .agency-info,
@@ -174,37 +181,126 @@
 
     .agency-hours {
         border-top: 2px solid #3e8f50;
-        margin-top: 2rem;
-        padding-top: 1rem;
+        padding-top: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .map-embed {
+        height: 350px;
     }
 }
 
+/* Petite tablette (768px) */
 @media (max-width: 768px) {
-    .section-titleAgence {
-        font-size: 1.8rem;
+    .section-headerAgence {
+        padding: 2rem 1.5rem;
+        height: auto;
+        text-align: center;
     }
 
-    .agency-title {
-        font-size: 1.5rem;
+    .section-titleAgence {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .section-descriptionAgence {
+        font-size: 0.95rem;
     }
 
     .agencies-grid {
-        padding: 2rem;
+        padding: 1.5rem;
+        height: auto;
     }
 
     .agency-card {
         padding: 1.5rem;
     }
 
-    .section-headerAgence {
-        padding: 2rem 1rem;
-        height: auto;
+    .agency-title {
+        font-size: 1.8rem;
+    }
+
+    .info-date {
+        font-size: 1.1rem;
+        margin-top: 1.2rem;
+    }
+
+    .agency-clock,
+    .info-item {
+        font-size: 1.1rem;
+    }
+
+    .map-embed {
+        height: 300px;
     }
 }
 
+/* Mobile (480px) */
 @media (max-width: 480px) {
+    .section-headerAgence {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-titleAgence {
+        font-size: 1.7rem;
+    }
+
+    .agencies-grid {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .agency-card {
+        padding: 1.2rem;
+    }
+
+    .agency-title {
+        font-size: 1.5rem;
+    }
+
     .info-item {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .info-date {
+        font-size: 1rem;
+    }
+
+    .info-date::before {
+        width: 25%;
+        margin-bottom: 1rem;
+    }
+
+    .map-embed {
+        height: 250px;
+    }
+
+    .agency-clock {
+        font-size: 1rem;
+        white-space: normal;
+    }
+}
+
+/* Très petit mobile (<= 360px) */
+@media (max-width: 360px) {
+    .section-titleAgence {
+        font-size: 1.5rem;
+    }
+
+    .agency-title {
+        font-size: 1.3rem;
+    }
+
+    .info-item .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .map-embed {
+        height: 200px;
     }
 }
