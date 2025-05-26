@@ -1,44 +1,42 @@
-/* === CONTAINER GENERAL INTRO (section-headerAgence) === */
-
+/* === SECTION GÉNÉRALE AGENCES === */
 .agencies-section {
     height: 1100px;
+    /* Hauteur du content selon cotations */
     background-color: #f5f5f5;
+    /* Couleur arrière-plan intro */
 }
 
+/* === HEADER INTRO (TITRE + TEXTE) === */
 .section-headerAgence {
     padding: 0 123px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 295px;
-    /* conservé */
     text-align: left;
 }
 
-/* === TITRE PRINCIPAL === */
-
 .section-titleAgence {
     color: #253040;
-    /* comme demandé */
+    /* Couleur H3 */
     font-size: 2.5rem;
-    /* même que H3 sur accueil */
+    /* Taille H3 accueil */
     font-family: var(--font-secondary);
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
-/* === TEXTE INTRO === */
-
 .section-descriptionAgence {
     color: #253040;
+    /* Couleur “p” */
     font-size: 1rem;
+    /* Taille “p” */
     line-height: 1.6;
     font-family: var(--font-secondary);
     margin: 0 auto;
 }
 
-/* === AGENCIES GRID === */
-
+/* === GRILLE DES AGENCES === */
 .agencies-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -49,8 +47,7 @@
     height: 725px;
 }
 
-/* === AGENCY CARD === */
-
+/* === CARTE AGENCE === */
 .agency-card {
     display: flex;
     flex-direction: column;
@@ -59,12 +56,10 @@
     overflow: hidden;
     box-shadow: 0 5px 15px var(--primary-light);
     padding: 53px;
-    height: 1100px;
     width: 100%;
 }
 
-/* === FLEX ENTRE ADRESSE ET HORAIRES === */
-
+/* === BLOCS ADRESSE / HORAIRES === */
 .agency-sections {
     display: flex;
     gap: 2rem;
@@ -73,36 +68,46 @@
     margin-bottom: 2rem;
 }
 
-/* === BLOCS ADRESSE + HORAIRES === */
-
 .agency-info,
 .agency-hours {
     flex: 1 1 45%;
     background-color: var(--light-bg);
 }
 
-.agency-hours .info-item {
-    white-space: pre-line;
-}
-
-/* === TITRES “NOUS TROUVER” ET “HORAIRES” === */
-
 .agency-title {
     color: #253040;
     font-size: 2rem;
+    /* H1 */
     font-weight: bold;
     font-family: var(--font-secondary);
 }
 
+/* === COORDONNÉES / HORAIRES === */
 .info-date {
     color: #253040;
     font-size: 1.2rem;
     font-weight: 700;
     font-family: var(--font-secondary);
+    margin-top: 1.5rem;
 }
 
-/* === TEXTES COORDONNÉES === */
+.info-date::before {
+    content: "";
+    display: block;
+    width: 15%;
+    height: 3px;
+    background-color: #3e8f50;
+    margin-bottom: 1.5rem;
+}
 
+.agency-clock {
+    color: #253040;
+    white-space: pre-line;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* === LIGNES D’INFOS (TEL, MAIL, ETC.) === */
 .info-item {
     display: flex;
     align-items: center;
@@ -120,13 +125,9 @@
     color: #253040;
 }
 
-/* === ICONES : TEL & MAIL (taille et couleur) === */
-
 .info-item .icon {
     flex-shrink: 0;
     color: #3e8f50;
-    height: 23px;
-    width: 23px;
 }
 
 .info-item .icon.phone {
@@ -149,33 +150,17 @@
     color: #3e8f50;
 }
 
-/* === HORAIRES : TRAIT SÉPARATEUR + FERMÉ === */
-
-.info-date::before {
-    content: "";
-    display: block;
-    width: 15%;
-    height: 3px;
-    background-color: #3e8f50;
-    margin-bottom: 1.5rem;
-}
-
-.agency-clock {
-    color: #253040;
-}
-
-/* === MAP EMBED === */
-
+/* === GOOGLE MAP === */
 .map-embed {
     border-radius: 8px;
     overflow: hidden;
-    margin: 2rem 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     height: 415px;
-
+    /* Dimensions selon cotations */
+    width: 100%;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE DESIGN === */
 
 @media (max-width: 992px) {
     .agency-sections {
@@ -185,7 +170,6 @@
     .agency-info,
     .agency-hours {
         flex: 1 1 100%;
-        border-left: none;
     }
 
     .agency-hours {
@@ -197,7 +181,7 @@
 
 @media (max-width: 768px) {
     .section-titleAgence {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     .agency-title {
