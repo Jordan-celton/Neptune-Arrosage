@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/ContactPage/ContactForm.css"; // Assurez-vous d'avoir un fichier CSS pour le style
+import "../../styles/ContactPage/ContactForm.css";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -14,9 +14,6 @@ const ContactForm = () => {
     telephone: "",
   });
 
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -25,53 +22,25 @@ const ContactForm = () => {
     });
   };
 
-  const validateForm = () => {
-    const newErrors = {};
+  const createMailToLink = () => {
+    const {
+      nom,
+      prenom,
+      societe,
+      email,
+      adresse,
+      codePostal,
+      ville,
+      message,
+      telephone,
+    } = formData;
 
-    if (!formData.nom.trim()) newErrors.nom = "Nom est obligatoire";
-    if (!formData.prenom.trim()) newErrors.prenom = "Prénom est obligatoire";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email est obligatoire";
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Email invalide";
-    }
-    if (!formData.telephone.trim())
-      newErrors.telephone = "Téléphone est obligatoire";
-    if (!formData.codePostal.trim())
-      newErrors.codePostal = "Code postal est obligatoire";
-    if (!formData.ville.trim()) newErrors.ville = "Ville est obligatoire";
-    if (!formData.message.trim()) newErrors.message = "Message est obligatoire";
+    const subject = encodeURIComponent("Demande de contact depuis le site");
+    const body = encodeURIComponent(
+      `Nom : ${nom}\nPrénom : ${prenom}\nSociété : ${societe}\nEmail : ${email}\nTéléphone : ${telephone}\nAdresse : ${adresse}, ${codePostal} ${ville}\n\nMessage :\n${message}`
+    );
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-
-    // Ici vous pourriez ajouter la logique d'envoi au serveur
-    console.log("Données du formulaire:", formData);
-
-    // Simulation d'envoi
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Votre message a été envoyé avec succès!");
-      setFormData({
-        nom: "",
-        prenom: "",
-        email: "",
-        societe: "",
-        adresse: "",
-        codePostal: "",
-        ville: "",
-        message: "",
-        telephone: "",
-      });
-    }, 1000);
+    return `mailto:contact@neptunearrosage.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -79,7 +48,13 @@ const ContactForm = () => {
       <h1>Formulaire de contact</h1>
       <p className="required-fields">*Champs obligatoires</p>
 
-      <form onSubmit={handleSubmit} className="contact-form">
+      <form
+        action={createMailToLink()}
+        method="GET"
+        onSubmit={() =>
+          setTimeout(() => (window.location.href = createMailToLink()), 100)
+        }
+      >
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="nom">Nom *</label>
@@ -89,11 +64,9 @@ const ContactForm = () => {
               name="nom"
               value={formData.nom}
               onChange={handleChange}
-              className={errors.nom ? "error" : ""}
+              required
             />
-            {errors.nom && <span className="error-message">{errors.nom}</span>}
           </div>
-
           <div className="form-group">
             <label htmlFor="prenom">Prénom *</label>
             <input
@@ -102,11 +75,8 @@ const ContactForm = () => {
               name="prenom"
               value={formData.prenom}
               onChange={handleChange}
-              className={errors.prenom ? "error" : ""}
+              required
             />
-            {errors.prenom && (
-              <span className="error-message">{errors.prenom}</span>
-            )}
           </div>
         </div>
 
@@ -130,13 +100,9 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={errors.email ? "error" : ""}
+              required
             />
-            {errors.email && (
-              <span className="error-message">{errors.email}</span>
-            )}
           </div>
-
           <div className="form-group">
             <label htmlFor="telephone">Téléphone *</label>
             <input
@@ -145,11 +111,8 @@ const ContactForm = () => {
               name="telephone"
               value={formData.telephone}
               onChange={handleChange}
-              className={errors.telephone ? "error" : ""}
+              required
             />
-            {errors.telephone && (
-              <span className="error-message">{errors.telephone}</span>
-            )}
           </div>
         </div>
 
@@ -173,13 +136,9 @@ const ContactForm = () => {
               name="codePostal"
               value={formData.codePostal}
               onChange={handleChange}
-              className={errors.codePostal ? "error" : ""}
+              required
             />
-            {errors.codePostal && (
-              <span className="error-message">{errors.codePostal}</span>
-            )}
           </div>
-
           <div className="form-group">
             <label htmlFor="ville">Ville *</label>
             <input
@@ -188,11 +147,8 @@ const ContactForm = () => {
               name="ville"
               value={formData.ville}
               onChange={handleChange}
-              className={errors.ville ? "error" : ""}
+              required
             />
-            {errors.ville && (
-              <span className="error-message">{errors.ville}</span>
-            )}
           </div>
         </div>
 
@@ -203,29 +159,19 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className={errors.message ? "error" : ""}
-          />
-          {errors.message && (
-            <span className="error-message">{errors.message}</span>
-          )}
+            required
+          ></textarea>
         </div>
 
         <div className="checkbox-group">
-          <input
-            type="checkbox"
-            id="consentement"
-            name="consentement"
-            required
-          />
+          <input type="checkbox" id="consentement" required />
           <label htmlFor="consentement">
-            J'accepte que mes données saisies soient utilisées pour me contacter
-            dans le cadre de ma demande. Je peux rectifier mes données
-            personnelles à tout moment en suivant ce lien.
+            J'accepte que mes données soient utilisées pour me contacter.
           </label>
         </div>
 
-        <button type="submit" className="submit-btn" disabled={isSubmitting}>
-          {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
+        <button type="submit" className="submit-btn">
+          Envoyer ma demande
         </button>
       </form>
     </div>

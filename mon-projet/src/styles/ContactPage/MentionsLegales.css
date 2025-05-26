@@ -1,81 +1,168 @@
+/* MentionsLegales.css */
 .mentions-container {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 3rem auto;
+    padding: 3rem 4rem;
     background-color: var(--light-bg);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px var(--primary-light);
-    font-family: var(--font-secondary);
-    color: var(--dark-text);
-    transition: var(--transition);
+    border-radius: 16px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.mentions-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
 }
 
 .mentions-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
     color: var(--primary);
-    text-align: center;
     font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.mentions-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
 }
 
 .mentions-section {
-    margin-bottom: 20px;
-    background-color: var(--primary-light);
-    padding: 15px;
-    border-radius: 8px;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.mentions-section:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(35, 43, 99, 0.1);
 }
 
 .mentions-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: var(--secondary);
-    font-family: var(--font-primary);
+    color: var(--primary);
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.mentions-section h2::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--secondary);
+    border-radius: 50%;
 }
 
 .mentions-section p {
-    font-size: 1em;
     color: var(--dark-text);
-    line-height: 1.6;
-    margin-bottom: 5px;
-    font-family: var(--font-secondary);
+    font-family: var(--font-tertiary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
 }
 
-.mentions-link {
+.mentions-section address {
+    font-style: normal;
+}
+
+.mentions-section a {
     color: var(--secondary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
     text-decoration: none;
-    transition: var(--transition);
 }
 
-.mentions-link:hover {
-    text-decoration: underline;
-    color: var(--primary);
+.mentions-section a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
 }
 
-/* Animation */
-.mentions-container.animate {
-    animation: fadeIn 0.6s ease forwards;
+.mentions-section a:hover {
+    color: var(--secondary-dark);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.mentions-section a:hover::after {
+    width: 100%;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .mentions-container {
+        padding: 2rem;
+        margin: 1.5rem;
+        border-radius: 12px;
+    }
+
     .mentions-title {
         font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .mentions-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mentions-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .mentions-title {
+        font-size: 1.7rem;
+        padding-bottom: 1rem;
+    }
+
+    .mentions-title::after {
+        width: 80px;
+        height: 3px;
     }
 
     .mentions-section h2 {
-        font-size: 1.5em;
+        font-size: 1.3rem;
+    }
+
+    .mentions-section p {
+        font-size: 1rem;
     }
 }
