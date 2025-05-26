@@ -6,10 +6,19 @@ import MentionsLegales from "../components/ContactPage/MentionsLegales";
 const Contact = () => {
   return (
     <main className="contact-page">
-      <Breadcrumb title="Contactez-nous" />
-      <ContactAgence />
-      <ContactForm />
-      <div id="mentions">
+      <div data-aos="fade-down">
+        <Breadcrumb title="Contactez-nous" />
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <ContactAgence />
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200">
+        <ContactForm />
+      </div>
+
+      <div id="mentions" data-aos="fade-up" data-aos-delay="300">
         <MentionsLegales />
       </div>
     </main>

@@ -1,14 +1,15 @@
 /* MentionsLegales.css */
 .mentions-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 3rem auto;
-    padding: 3rem 4rem;
+    padding: 3rem;
     background-color: var(--light-bg);
     border-radius: 16px;
-    box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.05),
-        0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.6s ease forwards;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -18,9 +19,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 8px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
 }
 
 .mentions-title {
@@ -28,11 +29,11 @@
     font-family: var(--font-primary);
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
+    grid-column: 1 / -1;
     position: relative;
-    padding-bottom: 1.5rem;
-    letter-spacing: -0.5px;
+    padding-bottom: 1rem;
 }
 
 .mentions-title::after {
@@ -41,104 +42,115 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
+    width: 150px;
     height: 4px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     border-radius: 2px;
 }
 
 .mentions-section {
-    margin-bottom: 3rem;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
     position: relative;
+    overflow: hidden;
+}
+
+.mentions-section:nth-child(odd) {
+    transform: rotate(-1deg);
+}
+
+.mentions-section:nth-child(even) {
+    transform: rotate(1deg);
 }
 
 .mentions-section:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(35, 43, 99, 0.1);
+    transform: rotate(0deg) scale(1.02) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mentions-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    opacity: 0.7;
 }
 
 .mentions-section h2 {
     color: var(--primary);
     font-family: var(--font-secondary);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
 .mentions-section h2::before {
     content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: var(--secondary);
-    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 70%;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    border-radius: 4px;
 }
 
 .mentions-section p {
     color: var(--dark-text);
     font-family: var(--font-tertiary);
-    line-height: 1.8;
+    line-height: 1.7;
     margin-bottom: 1rem;
     font-size: 1.05rem;
 }
 
 .mentions-section address {
     font-style: normal;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary);
 }
 
 .mentions-section a {
     color: var(--secondary);
     font-weight: 500;
     transition: all 0.2s ease;
-    position: relative;
     text-decoration: none;
-}
-
-.mentions-section a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--secondary);
-    transition: width 0.3s ease;
+    border-bottom: 1px dashed currentColor;
+    padding-bottom: 2px;
 }
 
 .mentions-section a:hover {
     color: var(--secondary-dark);
-}
-
-.mentions-section a:hover::after {
-    width: 100%;
+    border-bottom-style: solid;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .mentions-container {
         padding: 2rem;
         margin: 1.5rem;
-        border-radius: 12px;
+        grid-template-columns: 1fr;
     }
 
-    .mentions-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+    .mentions-section:nth-child(odd),
+    .mentions-section:nth-child(even) {
+        transform: none;
     }
 
-    .mentions-section {
-        padding: 1.5rem;
+    .mentions-section:hover {
+        transform: scale(1.01) !important;
     }
 }
 
@@ -149,20 +161,10 @@
     }
 
     .mentions-title {
-        font-size: 1.7rem;
-        padding-bottom: 1rem;
+        font-size: 2rem;
     }
 
-    .mentions-title::after {
-        width: 80px;
-        height: 3px;
-    }
-
-    .mentions-section h2 {
-        font-size: 1.3rem;
-    }
-
-    .mentions-section p {
-        font-size: 1rem;
+    .mentions-section {
+        padding: 1.5rem;
     }
 }

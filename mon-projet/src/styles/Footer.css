@@ -3,7 +3,7 @@
     position: relative;
     color: var(--text-light);
     padding: 4rem 0 0;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: var(--font-secondary);
     background-image: url('../assets/photos/Home/bg_footer.webp');
     background-size: cover;
     background-position: center;

@@ -62,11 +62,7 @@ const Footer = () => {
         </div>
 
         {/* Section Entreprise */}
-        <div
-          className="footer-section"
-          data-aos="fade-left"
-          data-aos-delay="300"
-        >
+        <div className="footer-section">
           <h3 className="footer-section-title">Neptune arrosage</h3>
           <ul className="footer-links">
             <li>
@@ -85,11 +81,7 @@ const Footer = () => {
         </div>
 
         {/* Section Services */}
-        <div
-          className="footer-section"
-          data-aos="fade-left"
-          data-aos-delay="1000"
-        >
+        <div className="footer-section">
           <h3 className="footer-section-title">Nos services</h3>
           <ul className="footer-links">
             <li>
