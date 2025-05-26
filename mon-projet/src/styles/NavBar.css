@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 70px;
     background-color: var(--light-bg);
     box-shadow: 0 2px 20px var(--primary-light);
     height: 100px;
