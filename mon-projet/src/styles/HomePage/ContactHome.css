@@ -1,127 +1,121 @@
 /* ContactBanner.css */
+
 .contact-banner {
-    padding: 40px 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     border-bottom: solid 1px var(--light-bg);
+    padding: 2rem 1rem;
+    background-color: var(--bg-color);
 }
 
 .contact-banner__container {
     display: flex;
-    margin: 0 auto;
-    padding: 0 20px;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    gap: 2rem;
 }
 
+/* Title */
 .contact-banner__title {
-    display: flex;
-    height: 255px;
-    align-items: center;
-    width: 55%;
-    font-size: 2.8rem;
+    font-size: clamp(1.75rem, 5vw, 2.8rem);
     color: var(--light-bg);
-    margin-bottom: 20px;
     font-weight: 700;
     font-family: var(--font-secondary);
+    text-align: center;
+    width: 100%;
 }
 
+/* Content wrapper */
 .contact-banner__content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 1.5rem;
+    width: 100%;
 }
 
+/* Contact info group */
 .contact-banner__contact-info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 1rem;
 }
 
+/* Phone text */
 .contact-banner__phone {
     display: flex;
-    font-size: 2.6rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(1.5rem, 4vw, 2.6rem);
     color: var(--light-bg);
     font-weight: 700;
-    align-items: center;
-    justify-content: space-evenly;
     font-family: var(--font-secondary);
+    gap: 0.5rem;
 }
 
+/* Icon next to phone number */
 .picto-casque {
-    width: 38px;
-    height: 38px;
-    margin-right: 10px;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 0.5rem;
 }
 
+/* CTA button */
 .contact-banner__button {
     background-color: var(--secondary);
     color: var(--light-bg);
     border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 300;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .contact-banner__button:hover {
     background-color: var(--primary);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .contact-banner__container {
-        flex-direction: column;
-        padding: 0 1.5rem;
+/* Larger screens */
+@media (min-width: 768px) {
+    .contact-banner {
+        padding: 4rem 2rem;
     }
+
+    .contact-banner__container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .contact-banner__title {
-        font-size: 3rem;
+        width: 55%;
+        text-align: left;
+    }
+
+    .contact-banner__content {
+        width: 45%;
+        align-items: flex-end;
     }
 
     .contact-banner__phone {
-        font-size: 2.5rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
     .contact-banner {
-        padding: 2.5rem 0;
-    }
-
-    .contact-banner__title {
-        font-size: 2.75rem;
-    }
-
-    .contact-banner__phone {
-        font-size: 2.25rem;
+        padding: 80px 100px;
     }
 
     .contact-banner__button {
-        padding: 0.65rem 1.75rem;
-        font-size: 1.95rem;
-    }
-}
-
-@media (max-width: 576px) {
-
-    .contact-banner__container {
-        padding: 0 1.25rem;
-        flex-wrap: wrap;
-    }
-
-    .contact-banner__title {
-        height: auto;
-        font-size: 1.5rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .contact-banner__divider {
-        margin-bottom: 1.5rem;
-    }
-
-    .contact-banner__phone {
-        flex-direction: column;
-        gap: 0.5rem;
+        padding: 1rem 2.5rem;
+        font-size: 1.6rem;
     }
 }
