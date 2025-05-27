@@ -1,7 +1,7 @@
 /* Hero.css */
 .hero-section {
     position: relative;
-    height: 100vh;
+    height: 850px;
     min-height: 700px;
     background:
         url('../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp') no-repeat center center;
@@ -26,7 +26,7 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 90px 70px 75px 160px;
     z-index: 2;
 }
 
@@ -36,7 +36,7 @@
 
 .hero-content img {
     width: 305px;
-    height: 130px;
+    height: 131px;
     margin-bottom: 1.5rem;
     filter: brightness(0) invert(1);
     /* Assure que le logo reste blanc */
@@ -113,8 +113,12 @@
 /* Responsive */
 @media (max-width: 768px) {
     .hero-section {
-        min-height: 600px;
-        text-align: center;
+        height: 600px;
+        padding: 60px 20px;
+    }
+
+    .hero-container {
+        padding: 60px 20px;
     }
 
     .hero-content {

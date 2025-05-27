@@ -5,7 +5,8 @@
     background-color: #fffaf6;
     position: relative;
     overflow: hidden;
-    padding: 2.5rem 1rem;
+    padding: 100px 70px;
+    height: 600px;
 }
 
 /* ===========================
@@ -13,8 +14,8 @@
 =========================== */
 .about-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
     align-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
@@ -28,35 +29,39 @@
     grid-template-areas:
         "image1 image2 image2"
         "image1 image3 image3";
-    gap: 1.5rem;
-    height: 100%;
+    width: 612px;
+    height: 400px;
+    gap: 16px;
 }
 
 .image-container-1 {
     grid-area: image1;
     width: 280px;
+    height: 400px;
 }
 
 .image-container-2 {
     grid-area: image2;
-    width: 335px;
+    width: 317px;
+    height: 192px;
 }
 
 .image-container-3 {
     grid-area: image3;
-    width: 335px;
+    width: 317px;
+    height: 192px;
 }
 
 /* Fixed Image Sizes */
 .image-container-1 .about-image {
     width: 280px;
-    height: 500px;
+    height: 400px;
 }
 
 .image-container-2 .about-image,
 .image-container-3 .about-image {
-    width: 335px;
-    height: 100%;
+    width: 317px;
+    height: 192px;
 }
 
 /* General Image Styles */
@@ -153,6 +158,10 @@
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
+    .about-section {
+        padding: 4rem 2rem;
+        height: auto;
+    }
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -168,6 +177,9 @@
             "image3";
         gap: 1.2rem;
         width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+        
     }
 
     .image-container-1,
@@ -186,11 +198,12 @@
     }
 
     .about-heading {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .about-subheading {
-        font-size: 2rem;
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
     }
 }
 
