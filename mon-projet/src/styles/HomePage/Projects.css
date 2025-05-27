@@ -108,8 +108,8 @@
     display: flex;
     flex-direction: column;
     scroll-snap-align: start;
-    border-radius: 10px;
     transition: transform 0.3s ease;
+    height: 560px;
 }
 
 .realisation-card:hover {
@@ -117,7 +117,7 @@
 }
 
 .card-image {
-    height: 250px;
+    height: 308px;
     background-size: cover;
     background-position: center;
 }
@@ -138,6 +138,14 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .card-title {

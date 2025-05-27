@@ -118,18 +118,19 @@ const Projects = () => {
                 <div className="card-content">
                   <div className="meta-info">
                     <span className="location">
-                      <MapPin
-                        size={16}
-                        color="#666"
-                        style={{ marginRight: "5px" }}
+                      <img
+                        src={item.icons}
+                        alt=""
+                        className="location-icon"
+                        style={{
+                          width: "16px",
+                          height: "25px",
+                          marginRight: "5px",
+                        }}
                         aria-hidden="true"
                       />
                       {item.ville}
                     </span>
-                    <span className="separator" aria-hidden="true">
-                      •
-                    </span>
-                    <span className="date">{item.date}</span>
                   </div>
                   <h2 className="card-title">{item.titre}</h2>
                   <div className="card-footer">
