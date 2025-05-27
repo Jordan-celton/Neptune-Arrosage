@@ -108,11 +108,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-bottom" data-aos="fade-up" data-aos-delay="500">
+      {/* <div className="footer-bottom" data-aos="fade-up" data-aos-delay="500">
         <p>
           © {new Date().getFullYear()} Neptune Arrosage - Tous droits réservés
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 };
