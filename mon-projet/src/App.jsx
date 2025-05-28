@@ -11,6 +11,7 @@ import Neptune from "./pages/Neptune";
 import Services from "./pages/Services";
 import Realisations from "./pages/Realisations";
 import Contact from "./pages/Contact";
+import Recrutement from "./pages/Recrutement";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import React, { useEffect } from "react";
@@ -43,6 +44,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/realisations" element={<Realisations />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/recrutement" element={<Recrutement />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
