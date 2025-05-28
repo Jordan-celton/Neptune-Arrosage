@@ -1,10 +1,11 @@
 .candidature-section {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
+    max-width: 1126px;
+    margin: 50px auto;
+    padding: 70px 50px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    height: auto;
 }
 
 .candidature-section h2 {
@@ -34,6 +35,7 @@
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 6px;
+    width: 550px;
 }
 
 .form-file label {
@@ -45,6 +47,13 @@
     margin-top: 0.5rem;
 }
 
+.form-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 330px;
+}
+
 .form-message textarea {
     width: 100%;
     min-height: 120px;
@@ -52,15 +61,24 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     resize: vertical;
+    height: 100%;
 }
 
 .form-consent {
-    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .form-consent a {
     color: #2c7a2c;
     text-decoration: underline;
+}
+
+.form-consent input[type="checkbox"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
 }
 
 .form-submit {
@@ -71,6 +89,7 @@
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+    width: 30%;
 }
 
 .form-submit:hover {
