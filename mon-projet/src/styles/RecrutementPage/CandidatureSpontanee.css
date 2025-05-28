@@ -95,3 +95,55 @@
 .form-submit:hover {
     background-color: #256e25;
 }
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .candidature-section {
+        margin: 60px 30px;
+    }
+
+    .form-row input {
+        width: 100%;
+    }
+
+    .form-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .candidature-section {
+        padding: 40px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row input {
+        width: 100%;
+    }
+
+    .form-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .candidature-section {
+        padding: 30px 15px;
+    }
+
+    .candidature-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-row input {
+        width: 100%;
+    }
+
+    .form-message textarea {
+        min-height: 100px;
+    }
+}
