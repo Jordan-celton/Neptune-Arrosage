@@ -73,3 +73,22 @@
     }
 }
 
+@media (max-width: 480px) {
+    .breadcrumb-Recrutement-section {
+        height: 150px;
+    }
+
+    .breadcrumb-Recrutement-overlay {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .breadcrumb-recrutement-header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .Recrutement-breadcrumb ol {
+        font-size: 0.9rem;
+    }
+}
+

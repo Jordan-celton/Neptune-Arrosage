@@ -14,13 +14,17 @@ const Offre = () => {
           végétaux dans nos villes. Notre structure à taille humaine favorise
           l’autonomie, la responsabilisation et la collaboration.
         </p>
-        <p>
+        <p className="offre-mission">
           Dans le cadre de notre développement, nous recrutons un(e){" "}
           <strong>Chef de chantier expérimenté(e)</strong> pour encadrer et
           piloter nos chantiers d’arrosage automatique.
         </p>
 
         <h2>Vos missions :</h2>
+        <p>
+          Sous la responsabilité directe du dirigeant et en lien avec le bureau
+          d'études, vous assurez :
+        </p>
         <ul>
           <li>
             L'encadrement opérationnel des chantiers (équipe de 2 à 5 personnes)
