@@ -6,9 +6,17 @@ import CandidatureSpontanee from "../components/RecrutementPage/CandidatureSpont
 const Recrutement = () => {
   return (
     <div>
-      <Breadcrumb title="Chef de chantier arrosage automatique H/F" />
-      <Offre />
-      <CandidatureSpontanee />
+      <div data-aos="fade-down">
+        <Breadcrumb title="Chef de chantier arrosage automatique H/F" />
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200">
+        <Offre />
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="400">
+        <CandidatureSpontanee />
+      </div>
     </div>
   );
 };
