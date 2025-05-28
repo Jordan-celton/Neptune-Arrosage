@@ -147,7 +147,7 @@
     .heroNeptune-image {
         width: 100%;
         max-width: 650px;
-        max-height: 60vh;
+        max-height: 100vh;
         border-radius: 8px;
         margin: 0 auto;
     }

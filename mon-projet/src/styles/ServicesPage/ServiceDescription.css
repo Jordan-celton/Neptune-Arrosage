@@ -64,3 +64,26 @@
         margin: 0 auto;
     }
 }
+
+@media (max-width: 1200px) {
+    .services-image-section {
+        flex: 1 1 100%;
+        padding: 0 2rem;
+        border-radius: 0;
+    }
+
+    .service-image {
+        width: 100%;
+        max-height: none;
+        margin-bottom: 2rem;
+    }
+
+    .description-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .description-text {
+        font-size: 1rem;
+    }
+}

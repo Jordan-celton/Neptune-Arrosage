@@ -313,9 +313,23 @@
     }
 
     .service-card {
-        width: 90%;
-        max-width: 350px;
+        width: 100%;
     }
+
+    .icon-wrapper {
+        top: 35%;
+    }
+
+    .card-icon-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-content-services {
+        padding: 20px;
+        height: auto;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -362,8 +376,7 @@
     }
 
     .service-card {
-        width: 90%;
-        max-width: 300px;
+        width: 100%;
     }
 
     .card-image-container {
