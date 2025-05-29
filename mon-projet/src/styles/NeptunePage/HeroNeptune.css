@@ -8,6 +8,7 @@
     align-items: center;
     background-color: var(--light-bg);
     gap: 3.5rem;
+    padding: 70px;
 }
 
 /* Colonne image */
