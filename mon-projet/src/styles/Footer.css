@@ -10,6 +10,7 @@
     background-attachment: fixed;
     isolation: isolate;
     overflow: hidden;
+    height: 570px;
 }
 
 /* Overlay amélioré */
@@ -27,13 +28,11 @@
 /* Conteneur principal */
 .footer-container {
     display: flex;
+    justify-content: center;
     gap: 2.5rem;
     padding: 55px 100px;
     height: 315px;
     min-height: 315px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 0;
 }
 
 /* Sections */
@@ -52,10 +51,9 @@
 .footer-section-title {
     display: flex;
     justify-content: flex-start;
-    font-size: clamp(1.4rem, 2vw, 2.3rem);
+    font-size: 1.8rem;
     font-weight: 900;
     color: var(--secondary);
-    margin-bottom: 1.5rem;
     position: relative;
     font-family: var(--font-secondary);
     white-space: nowrap;
@@ -139,7 +137,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    line-height: 1.6;
 }
 
 .footer-links a:hover {
@@ -202,4 +200,67 @@
 
 .footer-section:nth-child(4) {
     animation-delay: 0.4s;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .footer-container {
+        padding: 40px 20px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .footer-section-title {
+        justify-content: flex-start;
+    }
+
+    .footer-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-section-title {
+        justify-content: center;
+    }
+
+    .footer-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
 }
