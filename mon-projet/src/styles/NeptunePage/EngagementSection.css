@@ -208,10 +208,15 @@
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .engagement-container {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+
+    .engagement-section {
+        height: auto;
+        padding: 3rem 0 5rem;
     }
 
     .engagement-image-container {
