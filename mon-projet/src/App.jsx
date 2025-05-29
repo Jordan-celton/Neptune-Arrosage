@@ -45,6 +45,7 @@ function App() {
         <Route path="/realisations" element={<Realisations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/recrutement" element={<Recrutement />} />
+        <Route path="/recrutement/:jobId" element={<Recrutement />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,0 +1,86 @@
+.job-card {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #1d7a32;
+    /* Vert foncé */
+    border-radius: 8px;
+    padding: 24px;
+    margin: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-card h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.job-card .location,
+.job-card .contract {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 0.95rem;
+}
+
+.job-card .location {
+    color: #1d7a32;
+    /* Vert */
+}
+
+.job-card .contract {
+    color: #4a5568;
+    /* Gris */
+}
+
+.job-card .icon {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.job-card .arrow-icon {
+    font-size: 1.75rem;
+    color: #2d3748;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .job-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .job-card .location,
+    .job-card .contract {
+        font-size: 0.9rem;
+    }
+
+    .job-card .arrow-icon {
+        margin-top: 8px;
+    }
+}
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .job-card {
+        padding: 16px;
+    }
+
+    .job-card h2 {
+        font-size: 1rem;
+    }
+
+    .job-card .location,
+    .job-card .contract {
+        font-size: 0.85rem;
+    }
+
+    .job-card .arrow-icon {
+        font-size: 1.5rem;
+    }
+}

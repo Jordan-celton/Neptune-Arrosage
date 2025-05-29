@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/RecrutementPage/Offre.css";
+import CandidatureSpontanee from "../RecrutementPage/CandidatureSpontanee";
 
 const Offre = () => {
   return (
@@ -103,6 +104,7 @@ const Offre = () => {
           <li>CACES Engins de chantier</li>
         </ul>
       </div>
+      <CandidatureSpontanee />
     </section>
   );
 };
