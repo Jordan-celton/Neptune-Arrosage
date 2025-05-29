@@ -71,7 +71,8 @@ const Projects = () => {
               data-aos="fade-up"
               data-aos-duration="800"
             >
-              Découvrez nos dernières réalisations
+              Découvrez nos <br />
+              dernières réalisations
             </h1>
 
             <div className="carousel-buttons">
