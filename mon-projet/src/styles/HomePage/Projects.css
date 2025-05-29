@@ -178,6 +178,11 @@
     font-family: var(--font-secondary);
 }
 
+.read-more:hover {
+    color: var(--light-bg);
+    background-color: var(--secondary);
+}
+
 /* === Responsive === */
 @media (max-width: 1024px) {
     .realisation-card {
