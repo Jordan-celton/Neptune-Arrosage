@@ -1,4 +1,4 @@
-import fontaine from "../../assets/photos/Services/Fontaine Rueil Imp 1.webp";
+import fontaine from "../../assets/photos/Services/fontaine_services_796x517.webp";
 import terrains from "../../assets/photos/Home/article_réalisation.webp";
 import jardins from "../../assets/photos/Home/services_jardins_parcs.webp";
 import materiel from "../../assets/photos/Home/sprinkler-498514_1920.webp";
