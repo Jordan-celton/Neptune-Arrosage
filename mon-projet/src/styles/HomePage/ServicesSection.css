@@ -20,14 +20,18 @@
 
 .hero-image-container {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 683px;
-    height: 570px;
-    max-width: 100%;
+    height: 683px;
+    /* même hauteur que engagement-image-container */
     overflow: hidden;
-    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* même ombre portée */
+    transition: transform 0.5s ease;
+    /* ajoute une transition si tu souhaites un effet d'agrandissement */
+}
+
+.hero-image-container:hover {
+    transform: scale(1.05);
+    /* agrandissement au hover */
 }
 
 .hero-image-container::before {
@@ -43,16 +47,13 @@
             rgba(14, 28, 65, 0.8) 100%);
     z-index: 1;
     pointer-events: none; }
-
-
+    
 .hero-image {
-    width: 683px;
-    height: 570px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: block;
-    position: relative;
-    z-index: 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
+    /* même transition que l'image d'engagement */
 }
 
 .hero-image:hover {
