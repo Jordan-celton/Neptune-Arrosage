@@ -112,7 +112,7 @@
 .service-page-icon {
     height: 120px;
     transition: transform 0.3s ease-in-out;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
 }
 
 .service-item.active .service-icon {
