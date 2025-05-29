@@ -13,7 +13,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    margin: 0 auto;
     width: 100%;
     max-width: 1366px;
     /* ✅ Conteneur centré avec largeur max */
@@ -35,13 +34,15 @@
     content: '';
     position: absolute;
     top: 0;
-    left: -50vw;
-    width: 200vw;
+    left: 0;
+    width: 100%;
+    /* Prend 100% de la largeur de son parent */
     height: 100%;
-    background: linear-gradient(135deg, rgba(14, 28, 65, 0.3) 0%, rgba(14, 28, 65, 0.8) 100%);
+    background: linear-gradient(135deg,
+            rgba(14, 28, 65, 0.3) 0%,
+            rgba(14, 28, 65, 0.8) 100%);
     z-index: 1;
-    pointer-events: none;
-}
+    pointer-events: none; }
 
 
 .hero-image {
