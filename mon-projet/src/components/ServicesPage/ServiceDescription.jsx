@@ -17,7 +17,11 @@ const ServiceDescription = ({ service }) => {
         loading="lazy"
       />
       <h2 className="description-title">
-        {service.name} – de la conception à l'aménagement
+        <span className="description-title1">
+          {service.name} – de la conception
+        </span>{" "}
+        <br />
+        <span className="description-title2">à l'aménagement</span>
       </h2>
       <p className="description-text">{service.description}</p>
     </div>
