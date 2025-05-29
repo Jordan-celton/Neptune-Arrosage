@@ -32,17 +32,25 @@
 /* ----------- Liste des services - Items ----------- */
 .service-item {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
     width: 310px;
     height: 60px;
-    align-items: center;
     padding: 1rem 1.2rem;
     transition: var(--transition);
     color: #232B63;
     position: relative;
-    gap: 1rem;
-    border-bottom: 2px solid #177c3c;
+    border-bottom: 2px solid #177c3c; 
 }
+
+.service-name {
+    flex-grow: 1;
+    /* prend tout l'espace disponible */
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .service-item:last-child {
     border-bottom: 2px solid #177c3c;
@@ -53,28 +61,29 @@
     background-color: #232B63;
     color: #ffffff;
     border-radius: 10px;
-    border-bottom: none;
-}
+    border-bottom: none; }
 
 .service-item.active .service-link-page {
     color: #ffffff;
 }
 
 .service-link-page {
-    flex: 1;
     display: flex;
     justify-content: space-between;
+    /* Espace entre le nom du service et l'icône */
     align-items: center;
-    height: 100%;
-    font-size: 1rem;
-    font-family: var(--font-secondary); }
+    width: 100%;
+    /* Important si tu veux que l'icône aille tout à droite */
+    text-decoration: none;
+    color: inherit; }
 
 /* Arrow styling */
 .arrow-icon {
-    margin-left: 0.5rem;
-    transition: all 0.2s ease;
-    font-size: 1.2rem;
-}
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    align-items: center;
+    /* Facultatif avec justify-content, mais utile dans certains cas */ }
 
 .service-item.active .arrow-icon {
     color: #ffffff;
