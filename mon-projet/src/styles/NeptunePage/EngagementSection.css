@@ -42,7 +42,7 @@
 
 .engagement-content {
     background-color: var(--light-alt, #f9f9f9);
-    padding: 70px;
+    padding: 20px 70px;
     height: 100%;
     display: flex;
     flex-direction: column;
