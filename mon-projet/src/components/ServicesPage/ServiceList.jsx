@@ -35,7 +35,7 @@ const ServiceList = ({ services, selectedService, setSelectedService }) => (
             </div>
             <a href={`#${slug}`} className="service-link-page">
               {service.name}
-              <span className="arrow-icon">{isActive ? "✔" : "→"}</span>
+              <span className="arrow-icon"> →</span>
             </a>
           </li>
         );
