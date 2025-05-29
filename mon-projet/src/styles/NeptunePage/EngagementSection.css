@@ -4,6 +4,7 @@
     position: relative;
     overflow: visible;
     margin: 0 auto;
+    height: 925px;
 }
 
 .engagement-container {
@@ -17,7 +18,7 @@
 
 .engagement-image-container {
     position: relative;
-    height: 683px;
+    height: 570px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -41,12 +42,12 @@
 
 .engagement-content {
     background-color: var(--light-alt, #f9f9f9);
-    padding: 75px;
+    padding: 70px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     z-index: 10;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
