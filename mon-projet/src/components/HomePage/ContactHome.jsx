@@ -17,7 +17,8 @@ const ContactBanner = () => {
           data-aos="fade-in"
           data-aos-delay="100"
         >
-          Neptune arrosage est à votre écoute
+          Neptune arrosage est
+          <br />à votre écoute
         </h1>
         <div className="contact-banner__content">
           <div
