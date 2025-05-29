@@ -1,7 +1,8 @@
 .intro-text-realisation {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
     color: var(--text-color);
     height: 170px;
 }
