@@ -11,14 +11,17 @@
 }
 
 .section-services-title {
+    display: flex;
     font-size: 2rem;
     background-color: var(--secondary);
-    padding: 1rem 0;
+    padding: 2rem;
     font-weight: 600;
     border-radius: 20px 20px 0 0;
     color: var(--light-bg);
     margin-bottom: 0;
-    text-align: center;
+    font-family: var(--font-secondary);
+    height: 75px;
+    align-items: center;
 }
 
 .services-list {
