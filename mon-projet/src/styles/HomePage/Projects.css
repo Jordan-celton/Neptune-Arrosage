@@ -187,7 +187,7 @@
 /* === Responsive === */
 @media (max-width: 1024px) {
     .realisation-section {
-        padding: 40px 20px;
+        padding: 2rem;
     }
     .realisation-card {
         width: 100%;
