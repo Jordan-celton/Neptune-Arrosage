@@ -32,15 +32,13 @@ const Footer = () => {
               44100 Nantes
             </p>
           </div>
-          <div className="footer-contact">
+          <div className="footer-contact-details">
             <a
               href="mailto:contact@neptunearrosage.com"
               className="footer-link"
             >
               contact@neptunearrosage.com
             </a>
-          </div>
-          <div className="footer-contact">
             <p>02 40 73 64 89</p>
           </div>
         </div>
@@ -91,7 +89,7 @@ const Footer = () => {
               <Link to="/services#sports">Terrains sportifs</Link>
             </li>
             <li>
-              <Link to="/services#jardins">Jardins et parcs</Link>
+              <Link to="/services#jardins">Jardins et espaces publics</Link>
             </li>
             <li>
               <Link to="/services#materiel">Matériel d'arrosage</Link>
