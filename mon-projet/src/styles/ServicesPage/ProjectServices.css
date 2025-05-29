@@ -116,7 +116,7 @@
     color: var(--light-bg);
     background: var(--secondary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: auto;
     width: 150px;
     height: 45px;
@@ -125,6 +125,13 @@
     padding: 0.5rem 1rem;
     border-radius: 10px;
     justify-content: center;
+    font-family: var(--font-secondary);
+}
+
+.project-link:hover {
+    background: #272727;
+    color: var(--light-bg);
+    border-color: var(--secondary-light);
 }
 
 /* Filtres */
