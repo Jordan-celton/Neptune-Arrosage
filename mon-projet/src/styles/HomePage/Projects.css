@@ -152,6 +152,7 @@
     font-weight: 600;
     color: #222;
     margin-bottom: 16px;
+    font-family: var(--font-secondary);
 }
 
 .card-footer {
