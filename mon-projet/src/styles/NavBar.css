@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 1.5rem 260px;
+    padding: 1.5rem 70px;
     background-color: var(--light-bg);
     box-shadow: 0 2px 20px var(--primary-light);
     height: 100px;
@@ -50,7 +50,7 @@
 .services-button {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
