@@ -16,10 +16,10 @@ const EmotionWaterBanner = () => {
           className="apostrophe-icon"
         />
         <h1 className="banner-title">
-          Créer l'émotion par l'eau
+          Créer l'émotion par l'eau avec
           <br />
           <span className="banner-subtitle">
-            avec des fontaines durables et sur mesure
+            des fontaines durables et sur mesure
           </span>
         </h1>
       </div>
