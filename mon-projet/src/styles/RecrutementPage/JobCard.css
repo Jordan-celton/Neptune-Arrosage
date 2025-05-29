@@ -1,86 +1,87 @@
+/* Centrage global */
 .job-card {
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #1d7a32;
-    /* Vert foncé */
-    border-radius: 8px;
-    padding: 24px;
-    margin: 70px;
+    background-color: #fffaf6;
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Bloc blanc principal */
+.job-details {
+    background-color: #fff;
+    width: 1220px;
+    height: 190px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
+    /* Colonne gauche et flèche à droite */
     align-items: center;
+    position: relative;
+    box-sizing: border-box;
 }
 
-.job-card h2 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #2d3748;
+/* Colonne gauche (titre + infos) */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.job-card .location,
-.job-card .contract {
+/* Titre */
+.job-details h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #253040;
+    margin: 0;
+}
+
+/* Ligne infos (location + contract) */
+.job-info {
     display: flex;
     align-items: center;
-    margin-top: 8px;
-    font-size: 0.95rem;
+    gap: 30px;
 }
 
-.job-card .location {
-    color: #1d7a32;
-    /* Vert */
-}
-
-.job-card .contract {
-    color: #4a5568;
-    /* Gris */
-}
-
-.job-card .icon {
-    margin-right: 8px;
+.location,
+.contract {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1rem;
 }
 
-.job-card .arrow-icon {
-    font-size: 1.75rem;
-    color: #2d3748;
+.location span {
+    font-weight: 400;
+    color: #2a7d2e;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .job-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .job-card h2 {
-        font-size: 1.1rem;
-    }
-
-    .job-card .location,
-    .job-card .contract {
-        font-size: 0.9rem;
-    }
-
-    .job-card .arrow-icon {
-        margin-top: 8px;
-    }
+.contract span {
+    font-weight: 400;
+    color: #253040;
 }
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-    .job-card {
-        padding: 16px;
-    }
 
-    .job-card h2 {
-        font-size: 1rem;
-    }
+.icon {
+    width: 20px;
+    height: 25px;
+}
 
-    .job-card .location,
-    .job-card .contract {
-        font-size: 0.85rem;
-    }
+.location .icon {
+    color: #2a7d2e;
+}
 
-    .job-card .arrow-icon {
-        font-size: 1.5rem;
-    }
+.contract .icon {
+    color: #253040;
+}
+
+/* Flèche bien alignée à droite */
+.arrow-icon {
+    width: 76px;
+    height: 50px;
+    color: #253040;
+    transition: color 0.3s;
+}
+
+.arrow-icon:hover {
+    color: #2a7d2e;
 }

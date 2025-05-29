@@ -12,23 +12,23 @@ const JobCard = ({ title, location, contractType, jobId }) => {
   };
 
   return (
-    <div
-      className="job-card"
-      onClick={handleClick}
-      style={{ cursor: "pointer" }}
-    >
-      <div>
-        <h2>{title}</h2>
-        <div className="location">
-          <FaMapMarkerAlt className="icon" />
-          <span>{location}</span>
+    <div className="job-card" onClick={handleClick}>
+      <div className="job-details">
+        <div className="info-section">
+          <h2>{title}</h2>
+          <div className="job-info">
+            <div className="location">
+              <FaMapMarkerAlt className="icon" />
+              <span>{location}</span>
+            </div>
+            <div className="contract">
+              <FaRegFileAlt className="icon" />
+              <span>{contractType}</span>
+            </div>
+          </div>
         </div>
-        <div className="contract">
-          <FaRegFileAlt className="icon" />
-          <span>{contractType}</span>
-        </div>
+        <IoArrowForwardSharp className="arrow-icon" />
       </div>
-      <IoArrowForwardSharp className="arrow-icon" />
     </div>
   );
 };
