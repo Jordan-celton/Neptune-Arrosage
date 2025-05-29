@@ -141,11 +141,6 @@ const Projects = () => {
                       aria-label={`Lire la suite à propos du projet ${item.titre}`}
                     >
                       {item.lien}
-                      <ChevronRight
-                        size={16}
-                        color="var(--secondary)"
-                        aria-hidden="true"
-                      />
                     </a>
                   </div>
                 </div>

@@ -162,6 +162,7 @@
 .read-more {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     color: var(--secondary);
     font-weight: 500;
     font-size: 0.95rem;
@@ -172,6 +173,9 @@
     padding: 8px 12px;
     border-radius: 8px;
     background-color: #eaf7ea;
+    width: 160px;
+    height: 45px;
+    font-family: var(--font-secondary);
 }
 
 /* === Responsive === */
