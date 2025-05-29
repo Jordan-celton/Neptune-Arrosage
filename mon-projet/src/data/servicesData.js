@@ -19,7 +19,7 @@ import EquipmentIcon from "../assets/icons/picto_materiel_arrosage.svg";
 // ================================================
 import Service1Img from "../assets/photos/Home/DSC_0767.webp";
 import Service2Img from "../assets/photos/Home/20200512_155618.webp";
-import Service3Img from "../assets/photos/Home/Fontaine 2.webp";
+import Service3Img from "../assets/photos/Home/services_fontainerie_a.webp";
 import Service4Img from "../assets/photos/Home/article_réalisation.webp";
 import Service5Img from "../assets/photos/Home/sprinkler-498514_1920.webp";
 
