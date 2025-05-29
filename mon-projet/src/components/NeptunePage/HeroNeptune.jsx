@@ -44,7 +44,8 @@ const HeroNeptune = () => {
           </div>
 
           <h2 className="heroNeptune-service">
-            Arrosage & aménagement <span>hydraulique</span>
+            Arrosage & <br />
+            aménagement <span>hydraulique</span>
           </h2>
 
           <div className="heroNeptune-description">
