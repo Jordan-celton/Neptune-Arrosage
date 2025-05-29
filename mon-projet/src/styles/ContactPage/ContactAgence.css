@@ -82,6 +82,15 @@
     font-family: var(--font-secondary);
 }
 
+.agency-subtitle {
+    color: #253040;
+    font-size: 1.5rem;
+    /* H2 */
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    margin-top: 0.5rem;
+}
+
 /* === COORDONNÉES / HORAIRES === */
 .info-date {
     color: #253040;

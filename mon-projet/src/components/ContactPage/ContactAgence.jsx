@@ -2,11 +2,20 @@ import React from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import "../../styles/ContactPage/ContactAgence.css";
 
-const AgencyCard = ({ title, title2, address, phone, email, clock }) => (
+const AgencyCard = ({
+  title,
+  title2,
+  title3,
+  address,
+  phone,
+  email,
+  clock,
+}) => (
   <article className="agency-card">
     <div className="agency-sections">
       <section className="agency-info">
         <h3 className="agency-title">{title}</h3>
+        <h4 className="agency-subtitle">{title2}</h4>
         <p className="info-item">{address}</p>
         <p className="info-item">
           <FaPhone className="icon" />
@@ -19,8 +28,16 @@ const AgencyCard = ({ title, title2, address, phone, email, clock }) => (
       </section>
 
       <section className="agency-hours">
-        <h3 className="agency-title">{title2}</h3>
-        <p className="info-item">{clock}</p>
+        <h3 className="agency-title">{title3}</h3>
+        <p className="info-item">
+          {clock.map((line, i) => (
+            <React.Fragment key={i}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+
         <p className="info-date">Samedi et dimanche :</p>
         <p className="agency-clock">Fermé</p>
       </section>
@@ -48,11 +65,12 @@ const ContactAgence = () => {
   const agencies = [
     {
       title: "Nous trouver",
-      title2: "Horaires d'ouverture",
+      title2: "Neptune Arrosage",
+      title3: "Horaires d'ouverture",
       address: "3 rue réaumur, 44100 Nantes",
       phone: "02 40 73 64 89",
       email: "contact@neptune-arrosage.fr",
-      clock: "Du lundi au vendredi :\n8h30-12h00 - 13h30-17h30",
+      clock: ["Du lundi au vendredi :", "8h30-12h00 - 13h30-17h30"],
     },
   ];
 
