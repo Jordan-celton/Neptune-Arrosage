@@ -73,9 +73,12 @@
     /* Espace entre le nom du service et l'icône */
     align-items: center;
     width: 100%;
-    /* Important si tu veux que l'icône aille tout à droite */
+    font-weight: 300;
     text-decoration: none;
-    color: inherit; }
+    color: inherit;
+    font-family: var(--font-secondary); 
+}
+    
 
 /* Arrow styling */
 .arrow-icon {
