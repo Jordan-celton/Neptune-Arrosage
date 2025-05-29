@@ -4,7 +4,7 @@
     --text-muted: #736B5C;
     height: 1250px;
     background-color: #f5f5f5;
-    padding: 70px;
+    padding: 100px 70px;
 }
 
 .galleryRealisation-title {
@@ -123,6 +123,13 @@
     padding: 0.5rem 1rem;
     border-radius: 10px;
     justify-content: center;
+    font-family: var(--font-secondary);
+}
+
+.projectRealisation-link:hover {
+    background: #272727;
+    color: var(--light-bg);
+    border-color: var(--secondary-light);
 }
 
 /* Filtres */
