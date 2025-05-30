@@ -112,6 +112,7 @@
     white-space: pre-line;
     font-size: 1.3rem;
     line-height: 1.6;
+    font-family: var(--font-secondary);
 }
 
 /* === LIGNES D’INFOS (TEL, MAIL, ETC.) === */
