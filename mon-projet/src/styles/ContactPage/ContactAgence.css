@@ -65,7 +65,6 @@
     gap: 2rem;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
 }
 
 .agency-info,
@@ -133,7 +132,7 @@
     flex-direction: column;
     font-size: 1.3rem;
     color: #253040;
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     margin-bottom: 1rem;
     font-family: var(--font-secondary);
 }
@@ -204,6 +203,27 @@
         gap: 1.5rem;
     }
 
+    .section-headerAgence {
+        padding: 2rem 2.5rem;
+        height: auto;
+        text-align: left;
+    }
+
+    .agencies-grid {
+        padding: 1.5rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .agency-title {
+        font-size: 2.2rem;
+    }
+
+    .agency-subtitle {
+        font-size: 1.2rem;
+        margin-top: 0.3rem;
+    }
+
     .agency-info,
     .agency-hours {
         flex: 1 1 100%;
@@ -216,6 +236,10 @@
         margin-bottom: 1rem;
     }
 
+    .highlight-clock {
+        font-size: 1.3rem;
+    }
+
     .map-embed {
         height: 350px;
     }
@@ -224,9 +248,9 @@
 /* Petite tablette (768px) */
 @media (max-width: 768px) {
     .section-headerAgence {
-        padding: 2rem 1.5rem;
+        padding: 2rem 2.5rem;
         height: auto;
-        text-align: center;
+        text-align: left;
     }
 
     .section-titleAgence {
@@ -263,74 +287,5 @@
 
     .map-embed {
         height: 300px;
-    }
-}
-
-/* Mobile (480px) */
-@media (max-width: 480px) {
-    .section-headerAgence {
-        padding: 1.5rem 1rem;
-    }
-
-    .section-titleAgence {
-        font-size: 1.7rem;
-    }
-
-    .agencies-grid {
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-
-    .agency-card {
-        padding: 1.2rem;
-    }
-
-    .agency-title {
-        font-size: 1.5rem;
-    }
-
-    .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        font-size: 1rem;
-    }
-
-    .info-date {
-        font-size: 1rem;
-    }
-
-    .info-date::before {
-        width: 25%;
-        margin-bottom: 1rem;
-    }
-
-    .map-embed {
-        height: 250px;
-    }
-
-    .agency-clock {
-        font-size: 1rem;
-        white-space: normal;
-    }
-}
-
-/* Très petit mobile (<= 360px) */
-@media (max-width: 360px) {
-    .section-titleAgence {
-        font-size: 1.5rem;
-    }
-
-    .agency-title {
-        font-size: 1.3rem;
-    }
-
-    .info-item .icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    .map-embed {
-        height: 200px;
     }
 }
