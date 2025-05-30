@@ -123,6 +123,7 @@
     }
 
     .contact-banner__title {
+        justify-content: center;
         font-size: 2.2rem;
         margin-bottom: 1rem;
     }
@@ -149,6 +150,7 @@
     .contact-banner__title {
         font-size: 1.8rem;
         line-height: 1.3;
+        justify-content: center;
     }
 
     .contact-banner__phone {
