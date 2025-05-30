@@ -224,6 +224,7 @@
     .heroNeptune-content-column {
         padding: 0;
         width: 100%;
+        margin-top: 0;
     }
 
     .heroNeptune-logo {
@@ -263,6 +264,7 @@
 
 @media (max-width: 480px) {
     .heroNeptune-content-column {
+        margin-top: 0;
         padding: 1.5rem;
     }
 
