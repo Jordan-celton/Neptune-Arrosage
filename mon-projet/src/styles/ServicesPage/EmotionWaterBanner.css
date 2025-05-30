@@ -43,6 +43,11 @@
 }
 
 @media (max-width: 768px) {
+    .banner-content {
+        padding: 2rem;
+        text-align: center;
+    }
+    
     .emotion-water-banner {
         padding: 3rem 2rem;
         height: 400px;
