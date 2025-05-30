@@ -14,19 +14,21 @@
     justify-content: space-between;
     gap: 50px;
     width: 100%;
-    max-width: 1366px;
-    /* ✅ Conteneur centré avec largeur max */
+    /* max-width: 1366px; */
+    position: relative;
+    /* Nécessaire pour le positionnement absolu de l'image */
 }
 
 .hero-image-container {
     position: relative;
     height: 683px;
-    /* même hauteur que engagement-image-container */
+    width: 53%;
+    /* Contrôle la largeur de l'image */
+    margin-left: auto;
+    /* Pousse le conteneur vers la droite */
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    /* même ombre portée */
     transition: transform 0.5s ease;
-    /* ajoute une transition si tu souhaites un effet d'agrandissement */
 }
 
 .hero-image-container:hover {
@@ -110,6 +112,7 @@
     width: 100%;
     position: relative;
     margin-top: -17rem;
+    margin-bottom: 70px;
 }
 
 .services-scroller::before {
