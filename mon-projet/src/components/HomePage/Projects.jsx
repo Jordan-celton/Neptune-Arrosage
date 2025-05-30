@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/HomePage/Projects.css";
 import realisationsData from "../../data/realisationData";
 import { ArrowLeft, ArrowRight, ChevronRight, MapPin } from "lucide-react";
@@ -135,13 +136,12 @@ const Projects = () => {
                   </div>
                   <h2 className="card-title">{item.titre}</h2>
                   <div className="card-footer">
-                    <a
-                      href="#"
-                      className="read-more"
-                      aria-label={`Lire la suite à propos du projet ${item.titre}`}
+                    <Link
+                      to="/realisations"
+                      className="projectRealisation-link"
                     >
-                      {item.lien}
-                    </a>
+                      Lire la suite
+                    </Link>
                   </div>
                 </div>
               </article>
