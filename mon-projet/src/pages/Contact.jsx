@@ -17,10 +17,6 @@ const Contact = () => {
       <div data-aos="fade-up" data-aos-delay="200">
         <ContactForm />
       </div>
-
-      <div id="mentions" data-aos="fade-up" data-aos-delay="300">
-        <MentionsLegales />
-      </div>
     </main>
   );
 };

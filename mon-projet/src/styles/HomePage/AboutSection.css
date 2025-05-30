@@ -119,6 +119,10 @@
     color: var(--secondary);
 }
 
+.about-subheading .line-break {
+    display: block;
+}
+
 .about-text {
     margin-bottom: 2rem;
 }
@@ -150,6 +154,13 @@
     background-color: var(--secondary-dark);
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(22, 193, 114, 0.3);
+}
+
+.about-button:focus-visible {
+    outline: 3px solid #16c172;
+    /* Couleur visible et cohérente avec ta charte */
+    outline-offset: 4px;
+    box-shadow: 0 0 8px rgba(22, 193, 114, 0.7);
 }
 
 /* ===========================

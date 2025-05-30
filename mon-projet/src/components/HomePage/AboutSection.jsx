@@ -72,11 +72,7 @@ const AboutSection = () => {
               </h2>
             </div>
             <h3 className="about-subheading">
-              L'art de l'eau &{" "}
-              <span>
-                <br />
-                de l'arrosage
-              </span>
+              L'art de l'eau & <span className="line-break">de l'arrosage</span>
             </h3>
 
             <div className="about-text">
@@ -89,6 +85,7 @@ const AboutSection = () => {
             </div>
 
             <button
+              type="button"
               className="about-button"
               onClick={() => navigate("/neptune")}
               aria-label="En savoir plus sur Neptune, spécialiste de l'arrosage et des fontaines"
@@ -96,7 +93,6 @@ const AboutSection = () => {
               data-aos-delay="900"
             >
               En savoir plus sur Neptune
-              {/* <span className="button-arrow">→</span> */}
             </button>
           </div>
         </div>
