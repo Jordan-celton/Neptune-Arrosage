@@ -230,6 +230,14 @@
         padding: 3rem 0 5rem;
     }
 
+    .engagement-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3rem;
+        width: 100%;
+    }
+
     .engagement-image-container {
         height: 350px;
         order: -1;
