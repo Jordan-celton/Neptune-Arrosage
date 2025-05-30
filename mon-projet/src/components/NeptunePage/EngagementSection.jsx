@@ -36,31 +36,34 @@ const EngagementSection = () => {
       <div className="engagement-container">
         {/* Colonne contenu */}
         <div className="engagement-content">
-          <div className="engagement-header">
-            <img
-              src={icon}
-              className="engagement-icon"
-              alt=""
-              aria-hidden="true"
-            />
-            <h1 className="engagement-title" id="engagement-title">
-              Un fort engagement
-            </h1>
-          </div>
+          <div>
+            <div className="engagement-header">
+              <img
+                src={icon}
+                className="engagement-icon"
+                alt=""
+                aria-hidden="true"
+              />
+              <h1 className="engagement-title" id="engagement-title">
+                Un fort engagement
+              </h1>
+            </div>
 
-          <h2 className="engagement-subtitle">
-            Pour une gestion
-            <br />
-            <span>raisonnée de l'eau</span>
-          </h2>
+            <h2 className="engagement-subtitle">
+              Pour une gestion
+              <br />
+              <span>raisonnée de l'eau</span>
+            </h2>
 
-          <div className="engagement-text">
-            <p>
-              Face aux enjeux environnementaux, Neptune Arrosage s'engage
-              activement dans une démarche d'économie et de gestion durable de
-              l'eau. L'entreprise développe des solutions innovantes pour
-              optimiser l'usage des ressources hydriques, notamment à travers :
-            </p>
+            <div className="engagement-text">
+              <p>
+                Face aux enjeux environnementaux, Neptune Arrosage s'engage
+                activement dans une démarche d'économie et de gestion durable de
+                l'eau. L'entreprise développe des solutions innovantes pour
+                optimiser l'usage des ressources hydriques, notamment à travers
+                :
+              </p>
+            </div>
           </div>
         </div>
 
