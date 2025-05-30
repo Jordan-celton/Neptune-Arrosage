@@ -97,7 +97,6 @@
     font-size: 1.2rem;
     font-weight: 700;
     font-family: var(--font-secondary);
-    margin-top: 1.5rem;
 }
 
 .info-date::before {
@@ -110,7 +109,7 @@
 }
 
 .agency-clock {
-    color: #253040;
+    color: #797979;
     white-space: pre-line;
     font-size: 1.3rem;
     line-height: 1.6;
@@ -127,6 +126,29 @@
     font-family: var(--font-secondary);
     font-weight: 400;
     color: #797979;
+}
+
+.info-item-clock {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    color: #253040;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-secondary);
+}
+
+.clock {
+    color: #797979;
+}
+
+.highlight-clock {
+    color: #253040;
+    /* remplace par la couleur de ton choix */
+    font-weight: 700;
+    line-height: 1.6;
+    font-size: 1.5rem;
+    font-family: var(--font-secondary);
 }
 
 .info-item strong {

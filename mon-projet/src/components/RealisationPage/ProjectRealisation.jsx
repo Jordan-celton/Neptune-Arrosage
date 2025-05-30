@@ -8,7 +8,7 @@ import image2 from "../../assets/photos/Realisations/HIPPO.webp";
 import image3 from "../../assets/photos/Realisations/GOLF.webp";
 import image4 from "../../assets/photos/Realisations/TRAM.webp";
 import image5 from "../../assets/photos/Realisations/PARC.webp";
-import image6 from "../../assets/photos/Realisations/FONTAINE 12.webp";
+import image6 from "../../assets/photos/Realisations/FONTAINE.webp";
 
 const ProjectRealisation = () => {
   // Types de projets disponibles

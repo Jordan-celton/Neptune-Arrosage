@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../../styles/ServicesPage/ProjectServices.css";
 // import des images
 import image1 from "../../assets/photos/Realisations/GOLF.webp";
-import image2 from "../../assets/photos/Realisations/FONTAINE 12.webp";
+import image2 from "../../assets/photos/Realisations/FONTAINE.webp";
 import image3 from "../../assets/photos/Realisations/HIPPO.webp";
 
 // import des icônes

@@ -29,14 +29,10 @@ const AgencyCard = ({
 
       <section className="agency-hours">
         <h3 className="agency-title">{title3}</h3>
-        <p className="info-item">
-          {clock.map((line, i) => (
-            <React.Fragment key={i}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </p>
+        <div className="info-item-clock">
+          <p className="highlight-clock">{clock[0]}</p>
+          <p className="clock">{clock[1]}</p>
+        </div>
 
         <p className="info-date">Samedi et dimanche :</p>
         <p className="agency-clock">Fermé</p>
