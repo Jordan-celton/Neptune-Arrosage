@@ -1,21 +1,21 @@
 .candidature-section {
-    max-width: 1126px;
+    max-width: 1226px;
     margin: 50px auto;
-    padding: 70px 50px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     height: auto;
+    font-family: var(--font-secondary);
 }
 
 .candidature-section h2 {
     font-size: 2rem;
+    color: #253040;
     margin-bottom: 0.5rem;
 }
 
 .form-subtitle {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
@@ -28,6 +28,7 @@
 .form-row {
     display: flex;
     gap: 1rem;
+    color: var(--text-color);
 }
 
 .form-row input {
@@ -36,6 +37,10 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     width: 550px;
+}
+
+.form-row input::placeholder {
+    color: var(--text-color);
 }
 
 .form-file label {
@@ -52,6 +57,10 @@
     flex-direction: column;
     gap: 0.5rem;
     height: 330px;
+}
+
+.form-message textarea::placeholder {
+    color: var(--text-color);
 }
 
 .form-message textarea {
