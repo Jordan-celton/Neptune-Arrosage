@@ -25,14 +25,6 @@ const ServiceList = ({ services, selectedService, setSelectedService }) => (
               alt={`Icône de ${service.name}`}
               className={`icon-serviceList ${isActive ? "icon-active" : ""}`}
             />
-
-            <div className="service-icon">
-              <img
-                src={service.icon}
-                alt={`Icône de ${service.name}`}
-                className="service-list-icon"
-              />
-            </div>
             <a href={`#${slug}`} className="service-link-page">
               {service.name}
               <span className="arrow-icon"> →</span>
