@@ -13,7 +13,9 @@
     flex-direction: column;
     justify-content: center;
     height: 295px;
+    width: 1226px;
     text-align: left;
+    margin: 0 auto;
 }
 
 .section-titleAgence {
@@ -45,6 +47,7 @@
     margin: 0 auto;
     padding: 0 70px;
     height: 725px;
+    width: 1226px;
 }
 
 /* === CARTE AGENCE === */
