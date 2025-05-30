@@ -22,7 +22,9 @@ const Recrutement = () => {
   return (
     <div>
       <div data-aos="fade-down">
-        <Breadcrumb title="Nos offres d'emploi" />
+        <Breadcrumb
+          title={selectedJob ? selectedJob.title : "Nos offres d'emploi"}
+        />
       </div>
 
       <div data-aos="fade-up" data-aos-delay="400">
