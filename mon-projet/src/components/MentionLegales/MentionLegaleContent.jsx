@@ -7,7 +7,7 @@ const MentionLegaleContent = () => {
       <div className="mentionlegale-container">
         <h2>Éditeur du site :</h2>
         <p>
-          Le présent site est la propriété de la société Neptune Arrosage, SARL
+          Le présent site est la propriété de la société Neptune Arrosage, SAS
           au capital social variable, immatriculée au Registre du Commerce et
           des Sociétés sous le numéro 870 800 711 00059, dont le siège social
           est situé :

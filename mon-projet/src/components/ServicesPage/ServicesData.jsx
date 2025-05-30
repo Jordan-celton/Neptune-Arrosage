@@ -31,7 +31,7 @@ export const servicesData = [
   },
   {
     id: "jardins",
-    name: "Jardins et parcs",
+    name: "parcs et jardins",
     description:
       "Nous proposons des solutions d'arrosage adaptées aux jardins et parcs, garantissant une irrigation efficace et respectueuse de l'environnement.",
     image: jardins,

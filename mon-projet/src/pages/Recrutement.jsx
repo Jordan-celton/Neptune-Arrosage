@@ -12,6 +12,19 @@ const offres = [
     location: "Nantes & déplacements ponctuels Grand Ouest",
     contractType: "CDI – Temps plein – De journée",
   },
+  {
+    id: "Technicien spécialisé en arrosage automatique",
+    title: "Technicien spécialisé en arrosage automatique H/F",
+    location: "Nantes & déplacements ponctuels Grand Ouest",
+    contractType: "CDI – Temps plein – De journée",
+  },
+  {
+    id: "Alternant(e) Technicien(ne) de Maintenance Arrosage & Fontaine (H/F)",
+    title:
+      "Alternant(e) Technicien(ne) de Maintenance Arrosage & Fontaine (H/F)",
+    location: "Orléans(45) et environs",
+    contractType: "CDI – Temps plein – De journée",
+  },
   // ... autres offres
 ];
 

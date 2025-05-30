@@ -147,7 +147,7 @@ const NavBar = () => {
                 className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={closeAllMenus}
               >
-                JARDINS & ESPACES PUBLICS
+                PARCS ET JARDINS
               </NavLink>
             </li>
             <li>
