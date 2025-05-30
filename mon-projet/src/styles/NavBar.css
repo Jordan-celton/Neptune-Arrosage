@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 1.5rem 70px;
+    padding: 1.5rem 160px;
     background-color: var(--light-bg);
     box-shadow: 0 2px 20px var(--primary-light);
     height: 100px;
@@ -228,7 +228,7 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem 1.5rem;
+        padding: 1rem 1.5rem !important;
     }
 
     .navbar-logo a {
@@ -348,6 +348,21 @@
 
     .navbar-links::before {
         top: 60px;
+    }
+}
+
+@media ( max-width: 1200px) {
+    .navbar {
+        padding: 1.5rem 2rem;
+    }
+
+    .navbar-logo a {
+        width: 140px;
+        height: 50px;
+    }
+
+    .navbar-links {
+        gap: 4rem;
     }
 }
 
