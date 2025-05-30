@@ -17,7 +17,7 @@ const JobCard = ({ title, location, contractType, jobId }) => {
         <div className="info-section">
           <h2>{title}</h2>
           <div className="job-info">
-            <div className="location">
+            <div className="location-contract">
               <FaMapMarkerAlt className="icon" />
               <span>{location}</span>
             </div>

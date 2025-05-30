@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-family: var(--font-secondary);
 }
 
 /* Titre */
@@ -41,9 +42,35 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    padding-bottom: 2rem;
+    /* border-bottom: none; */
+    /* enlever la bordure ici */
 }
 
-.location,
+.job-details {
+    position: relative;
+    /* position parent pour le ::after */
+    padding-bottom: 1rem;
+    /* espace sous le contenu */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+}
+
+.job-details::after {
+    content: "";
+    position: absolute;
+    bottom: 35px;
+    width: 93%;
+    height: 1px;
+    background-color: var(--secondary);
+}
+
+.location-contract,
 .contract {
     display: flex;
     align-items: center;
@@ -51,7 +78,7 @@
     font-size: 1rem;
 }
 
-.location span {
+.location-contract span {
     font-weight: 400;
     color: #2a7d2e;
 }
@@ -66,7 +93,7 @@
     height: 25px;
 }
 
-.location .icon {
+.location-contract .icon {
     color: #2a7d2e;
 }
 
