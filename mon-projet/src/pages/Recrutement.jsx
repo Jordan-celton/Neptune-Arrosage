@@ -13,16 +13,16 @@ const offres = [
     contractType: "CDI – Temps plein – De journée",
   },
   {
-    id: "Technicien spécialisé en arrosage automatique",
+    id: "technicien-specialise",
     title: "Technicien spécialisé en arrosage automatique H/F",
     location: "Nantes & déplacements ponctuels Grand Ouest",
     contractType: "CDI – Temps plein – De journée",
   },
   {
-    id: "Alternant(e) Technicien(ne) de Maintenance Arrosage & Fontaine (H/F)",
+    id: "alternant-technicien-maintenance",
     title:
       "Alternant(e) Technicien(ne) de Maintenance Arrosage & Fontaine (H/F)",
-    location: "Orléans(45) et environs",
+    location: "Orléans (45) et environs",
     contractType: "CDI – Temps plein – De journée",
   },
   // ... autres offres
@@ -43,7 +43,7 @@ const Recrutement = () => {
       <div data-aos="fade-up" data-aos-delay="400">
         {selectedJob ? (
           <div>
-            <Offre />
+            <Offre jobId={selectedJob.id} />
           </div>
         ) : (
           <>
