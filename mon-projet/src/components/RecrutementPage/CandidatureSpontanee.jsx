@@ -104,12 +104,7 @@ ${message}
               onChange={handleChange}
             />
             J’accepte que mes données saisies soient utilisées pour me contacter
-            dans le cadre de ma demande. Je peux rectifier mes données à tout
-            moment en suivant{" "}
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              ce lien
-            </a>
-            .
+            dans le cadre de ma demande.
           </label>
         </div>
 
