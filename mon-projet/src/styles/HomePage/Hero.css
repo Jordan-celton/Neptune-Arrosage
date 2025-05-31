@@ -3,12 +3,15 @@
     position: relative;
     height: 850px;
     min-height: 700px;
-    background:
-        url('../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp') no-repeat center center;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     color: var(--light-bg);
+    /* Permet un rendu plus fluide sur animations */
+    will-change: transform;
+    backface-visibility: hidden; 
 }
 
 .hero-overlay {
@@ -110,9 +113,15 @@
     color: var(--dark-bg);
 }
 
+/* Focus visible accessible sur bouton */
+.hero-button:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 2px; }
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero-section {
+        width: auto;
         height: 600px;
         padding: 60px 20px;
     }
@@ -134,3 +143,14 @@
         padding: 0.8rem 2rem;
     }
 }
+
+/* Réduction des animations pour utilisateurs préférant moins */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-content,
+    .hero-title-line,
+    .hero-button,
+    .hero-content img {
+        animation: none !important;
+        transition: none !important;
+    } }

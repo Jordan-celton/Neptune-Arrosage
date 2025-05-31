@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import "../../styles/HomePage/Hero.css";
+import heroBg from "../../assets/photos/Home/A_photograph_captures_a_Wallace_Fountain_situated_.webp";
 import logoNeptuneBlanc from "../../assets/logo/logo_neptune_blanc.svg";
+import "../../styles/HomePage/Hero.css";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -10,8 +11,19 @@ const Hero = () => {
   return (
     <>
       <Helmet>
+        <title>Neptune Arrosage - Expert en arrosage automatique</title>
+        <meta
+          name="description"
+          content="Neptune Arrosage, expert en solutions d'arrosage automatique et aménagement hydraulique depuis 1970."
+        />
         <meta property="og:image" content={logoNeptuneBlanc} />
         <meta property="og:image:alt" content="Logo Neptune Arrosage" />
+        <link
+          rel="preload"
+          as="image"
+          href={logoNeptuneBlanc}
+          type="image/svg+xml"
+        />
       </Helmet>
 
       <section
@@ -19,6 +31,7 @@ const Hero = () => {
         aria-label="Présentation de Neptune Arrosage"
         itemScope
         itemType="https://schema.org/WPHeader"
+        style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="hero-overlay" aria-hidden="true"></div>
 
@@ -36,6 +49,8 @@ const Hero = () => {
               data-aos-delay="100"
               loading="eager"
               itemProp="logo"
+              width={305}
+              height={131}
             />
 
             <div
@@ -53,7 +68,7 @@ const Hero = () => {
                 data-aos="fade-right"
                 data-aos-delay="500"
               >
-                Arrosage &
+                Arrosage &amp;
               </span>
               <span
                 className="hero-title-line"
