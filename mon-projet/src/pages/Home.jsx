@@ -11,27 +11,37 @@ const Home = () => {
     <div className="home-page">
       <Helmet>
         <title>
-          Neptune Arrosage - Experts en Arrosage Automatique | [Région]
+          Neptune Arrosage - Experts en Arrosage Automatique en Loire-Atlantique
+          et Île-de-France
         </title>
         <meta
           name="description"
-          content="Installation et entretien de systèmes d'arrosage automatique en Loire Atlantique et Ile de France. Solutions sur mesure pour jardins et espaces verts. Devis gratuit et intervention rapide."
+          content="Installation et entretien de systèmes d'arrosage automatique en Loire-Atlantique et Île-de-France. Solutions sur mesure pour jardins et espaces verts. Devis gratuit et intervention rapide."
         />
         <meta
           name="keywords"
-          content="arrosage automatique en Loire Atlantique et Ile de France, installation arrosage, entretien jardin, système irrigation, fontainerie, paysagiste [Ville]"
+          content="arrosage automatique Loire Atlantique, arrosage automatique Ile de France, installation arrosage Nantes, arrosage jardin Paris, système d'irrigation automatique, entretien arrosage automatique, fontainerie jardin, installation arrosage enterré, paysagiste arrosage Loire Atlantique, système arrosage programmable, arrosage espaces verts, Neptune Arrosage"
         />
-        <link rel="canonical" href="https://www.neptune-arrosage.com" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Neptune Arrosage" />
+        <meta name="language" content="fr" />
+        <link rel="canonical" href="https://www.neptunearrosage.com" />
 
-        {/* Balises Open Graph spécifiques à la page d'accueil */}
+        {/* Open Graph pour réseaux sociaux */}
         <meta
           property="og:title"
-          content="Neptune Arrosage - Experts en Arrosage Automatique | [Région]"
+          content="Neptune Arrosage - Experts en Arrosage Automatique en Loire-Atlantique et Île-de-France"
         />
         <meta
           property="og:description"
-          content="Professionnels de l'arrosage automatique dans en Loire Atlantique et Ile de France. Solutions écologiques et entretien sur mesure pour votre jardin."
+          content="Professionnels de l'arrosage automatique en Loire-Atlantique et Île-de-France. Solutions écologiques et entretien sur mesure pour votre jardin."
         />
+        <meta property="og:type" content="website" />
+        {/* <meta
+          property="og:image"
+          content="https://www.neptune-arrosage.com/og-image.jpg"
+        /> */}
+        <meta property="og:url" content="https://www.neptunearrosage.com/" />
       </Helmet>
 
       <section data-aos="fade-up">
@@ -54,27 +64,33 @@ const Home = () => {
         <Projects />
       </section>
 
-      {/* Section cachée pour SEO sémantique */}
+      {/* Section SEO cachée mais lisible par Google */}
       <div
         className="seo-content"
-        style={{ display: "none" }}
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
         aria-hidden="true"
       >
         <h1>
-          Neptune Arrosage - Expert en installation d'arrosage automatique.
+          Neptune Arrosage - Expert en installation d'arrosage automatique
         </h1>
         <h2>
-          Installation et entretien d'arrosage automatique en Loire Atlantique
-          et Ile de France
+          Installation et entretien d'arrosage automatique en Loire-Atlantique
+          et Île-de-France
         </h2>
         <p>
           Neptune Arrosage est votre spécialiste en systèmes d'irrigation à
-          Nantes et dans toute la Loire-Atlantique. Nous installons et
-          entretenons des systèmes d'arrosage automatique résidentiels et
-          professionnels, avec des solutions adaptées à chaque type de jardin et
-          espace vert.
+          Nantes, Paris et dans les régions de Loire-Atlantique et
+          Île-de-France. Nous installons et entretenons des systèmes d'arrosage
+          automatique résidentiels et professionnels, avec des solutions
+          adaptées à chaque type de jardin et espace vert.
         </p>
-        <h3>Nos services d'arrosage à Nantes</h3>
+        <h3>Nos services d'arrosage</h3>
         <ul>
           <li>Installation complète d'arrosage enterré</li>
           <li>Programmation de systèmes intelligents</li>
