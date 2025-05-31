@@ -47,15 +47,20 @@ const Recrutement = () => {
           </div>
         ) : (
           <>
-            {offres.map((offre) => (
-              <JobCard
-                key={offre.id}
-                title={offre.title}
-                location={offre.location}
-                contractType={offre.contractType}
-                jobId={offre.id}
-              />
-            ))}
+            <section
+              className="job-listing"
+              style={{ background: "#f9f9f9", padding: "70px 0 40px" }}
+            >
+              {offres.map((offre) => (
+                <JobCard
+                  key={offre.id}
+                  title={offre.title}
+                  location={offre.location}
+                  contractType={offre.contractType}
+                  jobId={offre.id}
+                />
+              ))}
+            </section>
             <CandidatureSpontanee />
           </>
         )}
