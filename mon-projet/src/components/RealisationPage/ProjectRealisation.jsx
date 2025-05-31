@@ -11,7 +11,6 @@ import image5 from "../../assets/photos/Realisations/PARC.webp";
 import image6 from "../../assets/photos/Realisations/FONTAINE.webp";
 
 const ProjectRealisation = () => {
-  // Types de projets disponibles
   const projectTypes = [
     "Tous les projets",
     "Stades",
@@ -22,10 +21,9 @@ const ProjectRealisation = () => {
     "Fontainerie",
   ];
 
-  // État pour le filtre actif
   const [activeFilter, setActiveFilter] = useState("Tous les projets");
+  const [selectedProject, setSelectedProject] = useState(null); // Pour la modale
 
-  // Données des projets avec catégories
   const projects = [
     {
       id: 1,
@@ -81,10 +79,8 @@ const ProjectRealisation = () => {
       image: image6,
       type: "Fontainerie",
     },
-    // Ajoutez d'autres projets ici si nécessaire
   ];
 
-  // Filtrer les projets selon la sélection
   const filteredProjects =
     activeFilter === "Tous les projets"
       ? projects
@@ -97,7 +93,6 @@ const ProjectRealisation = () => {
           Découvrez nos derniers projets
         </h2>
 
-        {/* Filtres */}
         <div className="projectRealisation-filters">
           {projectTypes.map((type) => (
             <button
@@ -111,7 +106,6 @@ const ProjectRealisation = () => {
         </div>
       </div>
 
-      {/* Grille de projets filtrés */}
       <div className="projectsRealisation-grid">
         {filteredProjects.map((project) => (
           <div key={project.id} className="projectRealisation-card">
@@ -136,13 +130,35 @@ const ProjectRealisation = () => {
                 <p className="projectRealisation-date">{project.date}</p>
               </div>
               <h3 className="projectRealisation-title">{project.title}</h3>
-              <a href={project.link} className="projectRealisation-link">
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="projectRealisation-link"
+              >
                 Lire la suite
-              </a>
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {/* MODALE */}
+      {selectedProject && (
+        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="modal-image"
+            />
+            <button
+              className="modal-close"
+              onClick={() => setSelectedProject(null)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
